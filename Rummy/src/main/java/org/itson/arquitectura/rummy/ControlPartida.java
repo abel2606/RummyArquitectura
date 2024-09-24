@@ -19,4 +19,5 @@ public class ControlPartida {
     public void tomarFicha() {
         modelo.agregarFichaJugador(controlAuxiliar.obtenerJugadorActual(), modelo.obtenerFichaMazo());
     }
+    
 }

@@ -6,8 +6,6 @@ package componentes;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 

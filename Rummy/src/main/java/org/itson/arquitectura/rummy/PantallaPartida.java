@@ -8,13 +8,15 @@ import java.awt.Graphics;
  * @author Abe
  */
 public class PantallaPartida extends javax.swing.JDialog {
+
     private ControlPartida controlPartida;
-    
+
     /**
      * Creates new form Partida
      */
     public PantallaPartida(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        setTitle("Rummy - Partida");
         initComponents();
         this.controlPartida = new ControlPartida(this);
     }
@@ -58,14 +60,14 @@ public class PantallaPartida extends javax.swing.JDialog {
         );
         panelAceptarLayout.setVerticalGroup(
             panelAceptarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(botonIcono2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+            .addComponent(botonIcono2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, Short.MAX_VALUE)
         );
 
         jPanel1.add(panelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, -1, 104));
 
         btnMasFicha.setBackground(new java.awt.Color(40, 34, 107));
         btnMasFicha.setForeground(new java.awt.Color(255, 255, 255));
-        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botonTomarFichaCh.png"))); // NOI18N
+        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botonTomarFichaG.png"))); // NOI18N
         btnMasFicha.setText("20");
         btnMasFicha.setBorderColor(new java.awt.Color(40, 34, 107));
         btnMasFicha.setBorderPainted(false);
@@ -74,6 +76,7 @@ public class PantallaPartida extends javax.swing.JDialog {
         btnMasFicha.setColorOver(new java.awt.Color(40, 34, 107));
         btnMasFicha.setFocusPainted(false);
         btnMasFicha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        btnMasFicha.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonTomarFichaCh.png"))); // NOI18N
         btnMasFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasFichaActionPerformed(evt);
@@ -134,11 +137,11 @@ public class PantallaPartida extends javax.swing.JDialog {
 
     private void btnMasFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasFichaActionPerformed
         controlPartida.tomarFicha();
-        System.out.println("Se generó un componente");
+        btnMasFicha.setEnabled(false);
     }//GEN-LAST:event_btnMasFichaActionPerformed
 
     public void update(Graphics g, FichaComponente ficha) {
-        super.update(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.update(g);
         panelFila1Tabla.add(ficha);
         panelFila1Tabla.revalidate();
         panelFila1Tabla.repaint();

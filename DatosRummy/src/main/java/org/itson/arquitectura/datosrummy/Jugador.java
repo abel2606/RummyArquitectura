@@ -40,5 +40,9 @@ public class Jugador {
     public void setColores(List<Color> colores) {
         this.colores = colores;
     }
+    
+    public void setTurno(Turno turno){
+        this.turno = turno;
+    }
 
 }

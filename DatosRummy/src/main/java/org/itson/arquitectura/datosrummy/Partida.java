@@ -14,6 +14,7 @@ public class Partida {
     private List<Jugador> jugadores;
     private int numeroComodines;
     private int rangoFichas;
+    private List<Turno> turnos;
 //    private int codigo;
 //    private Tablero tablero;
 
