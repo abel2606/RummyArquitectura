@@ -30,6 +30,7 @@ public class BotonIcono extends JButton{
         setText(this.getText());
         setVerticalTextPosition(SwingConstants.BOTTOM);
         setHorizontalTextPosition(SwingConstants.CENTER);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         //event mouse
         addMouseListener(new MouseAdapter() {

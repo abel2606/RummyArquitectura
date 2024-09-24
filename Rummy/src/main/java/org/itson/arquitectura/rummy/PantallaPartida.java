@@ -1,19 +1,22 @@
 package org.itson.arquitectura.rummy;
 
 import componentes.FichaComponente;
+import java.awt.Graphics;
 
 /**
  *
  * @author Abe
  */
 public class PantallaPartida extends javax.swing.JDialog {
-
+    private ControlPartida controlPartida;
+    
     /**
      * Creates new form Partida
      */
     public PantallaPartida(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.controlPartida = new ControlPartida(this);
     }
 
     /**
@@ -31,7 +34,6 @@ public class PantallaPartida extends javax.swing.JDialog {
         panelMasFicha = new javax.swing.JPanel();
         btnMasFicha = new componentes.BotonIcono();
         panelFila1Tabla = new javax.swing.JPanel();
-        panelFila2Tabla = new javax.swing.JPanel();
         panelTablero = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -63,7 +65,7 @@ public class PantallaPartida extends javax.swing.JDialog {
 
         btnMasFicha.setBackground(new java.awt.Color(40, 34, 107));
         btnMasFicha.setForeground(new java.awt.Color(255, 255, 255));
-        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaG.png"))); // NOI18N
+        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botonTomarFichaCh.png"))); // NOI18N
         btnMasFicha.setText("20");
         btnMasFicha.setBorderColor(new java.awt.Color(40, 34, 107));
         btnMasFicha.setBorderPainted(false);
@@ -72,7 +74,6 @@ public class PantallaPartida extends javax.swing.JDialog {
         btnMasFicha.setColorOver(new java.awt.Color(40, 34, 107));
         btnMasFicha.setFocusPainted(false);
         btnMasFicha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
-        btnMasFicha.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaCh.png"))); // NOI18N
         btnMasFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasFichaActionPerformed(evt);
@@ -94,11 +95,9 @@ public class PantallaPartida extends javax.swing.JDialog {
 
         jPanel1.add(panelMasFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, 75, -1));
 
+        panelFila1Tabla.setOpaque(false);
         panelFila1Tabla.setPreferredSize(new java.awt.Dimension(546, 70));
-        jPanel1.add(panelFila1Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 546, 70));
-
-        panelFila2Tabla.setPreferredSize(new java.awt.Dimension(546, 70));
-        jPanel1.add(panelFila2Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 546, 70));
+        jPanel1.add(panelFila1Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 500, 530, 130));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tablero.png"))); // NOI18N
 
@@ -134,12 +133,12 @@ public class PantallaPartida extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMasFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasFichaActionPerformed
-        crearComponenteFicha();
+        controlPartida.tomarFicha();
         System.out.println("Se generó un componente");
     }//GEN-LAST:event_btnMasFichaActionPerformed
 
-    public void crearComponenteFicha() {
-        FichaComponente ficha = new FichaComponente();
+    public void update(Graphics g, FichaComponente ficha) {
+        super.update(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         panelFila1Tabla.add(ficha);
         panelFila1Tabla.revalidate();
         panelFila1Tabla.repaint();
@@ -196,7 +195,6 @@ public class PantallaPartida extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelAceptar;
     private javax.swing.JPanel panelFila1Tabla;
-    private javax.swing.JPanel panelFila2Tabla;
     private javax.swing.JPanel panelMasFicha;
     private javax.swing.JPanel panelTablero;
     // End of variables declaration//GEN-END:variables

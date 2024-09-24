@@ -6,15 +6,15 @@ package org.itson.arquitectura.datosrummy;
  */
 public class Color {
 
-    private String codigoHex;
+    private int codigoHex;
     private TipoConjunto tipoConjunto;
 
-    public Color(String codigoHex, TipoConjunto tipo) {
+    public Color(int codigoHex, TipoConjunto tipo) {
         this.codigoHex = codigoHex;
         this.tipoConjunto = tipo;
     }
 
-    public String getCodigoHex() {
+    public int getCodigoHex() {
         return codigoHex;
     }
 

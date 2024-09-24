@@ -15,12 +15,28 @@ public class Numerica extends Ficha {
         this.tipoConjunto = tipoConjunto;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public TipoConjunto getTipoConjunto() {
         return tipoConjunto;
     }
 
+    public void setTipoConjunto(TipoConjunto tipoConjunto) {
+        this.tipoConjunto = tipoConjunto;
+    }
+    
 }

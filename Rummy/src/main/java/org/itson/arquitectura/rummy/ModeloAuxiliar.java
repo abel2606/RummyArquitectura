@@ -1,5 +1,6 @@
 package org.itson.arquitectura.rummy;
 
+import componentes.FichaComponente;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,9 +20,11 @@ import org.itson.arquitectura.datosrummy.TipoConjunto;
 public class ModeloAuxiliar {
     
     private Partida partida;
+    private PantallaPartida pantalla;
 
-    public ModeloAuxiliar() {
+    public ModeloAuxiliar(PantallaPartida pantalla) {
         partida = Partida.getInstance();
+        this.pantalla = pantalla;
     }
     
     public Jugador getJugadorActual(){
@@ -52,18 +55,18 @@ public class ModeloAuxiliar {
     public void anadirJugadores(){
         Jugador jugador1 = new Jugador();
         List<Color> colores1 = new LinkedList<>();
-        colores1.add(new Color("000000", new TipoConjunto(1)));
-        colores1.add(new Color("0014CB", new TipoConjunto(2)));
-        colores1.add(new Color("D40000", new TipoConjunto(3)));
-        colores1.add(new Color("008309", new TipoConjunto(4)));
+        colores1.add(new Color(0x000000, new TipoConjunto(1)));
+        colores1.add(new Color(0x0014CB, new TipoConjunto(2)));
+        colores1.add(new Color(0xD40000, new TipoConjunto(3)));
+        colores1.add(new Color(0x008309, new TipoConjunto(4)));
         jugador1.setColores(colores1);
         
         Jugador jugador2 = new Jugador();
         List<Color> colores2 = new LinkedList<>();
-        colores2.add(new Color("000000", new TipoConjunto(1)));
-        colores2.add(new Color("0014CB", new TipoConjunto(2)));
-        colores2.add(new Color("D40000", new TipoConjunto(3)));
-        colores2.add(new Color("008309", new TipoConjunto(4)));
+        colores2.add(new Color(0x000000, new TipoConjunto(1)));
+        colores2.add(new Color(0x0014CB, new TipoConjunto(2)));
+        colores2.add(new Color(0xD40000, new TipoConjunto(3)));
+        colores2.add(new Color(0x008309, new TipoConjunto(4)));
         jugador2.setColores(colores2);
         
         List<Jugador> jugadores = new ArrayList<>();
@@ -87,24 +90,38 @@ public class ModeloAuxiliar {
             // Asigna la ficha al jugador correspondiente
             Jugador jugadorActual = partida.getJugadores().get(i % cantidadJugadores);
             jugadorActual.agregarFicha(fichaSeleccionada);
+            if (fichaSeleccionada instanceof Numerica numerica) {
+                colorearFicha(numerica, jugadorActual.getColores());
+            }
 
             // Remueve la ficha del mazo
             partida.getMazo().remove(numero);
         }
     }
 
-    public void colorearFichas() {
-        List<Jugador> jugadores = partida.getJugadores();
-        for (Jugador jugador : jugadores) {
-            for (Ficha ficha : jugador.getManoFichas()) {
-                if (ficha instanceof Numerica numerica) {
-                    for (Color color : jugador.getColores()) {
-                        if (numerica.getTipoConjunto().getTipo() == color.getTipoConjunto().getTipo()) {
-                            numerica.setColor(color);
-                        }
-                    }
-                }
+    public void colorearFicha(Numerica ficha, List<Color> colores) {
+        for (Color color : colores) {
+            if (ficha.getTipoConjunto().getTipo() == color.getTipoConjunto().getTipo()) {
+                ficha.setColor(color);
             }
         }
+    }
+
+    void dibujarMano() {
+        List<Ficha> fichas = partida.getJugadores().getFirst().getManoFichas();
+        for (Ficha ficha : fichas) {
+            FichaComponente fichaComponente = convertirFicha(ficha);
+            pantalla.update(pantalla.getGraphics(), fichaComponente);
+        }
+    }
+    
+    public FichaComponente convertirFicha(Ficha ficha) {
+        if (ficha instanceof Numerica numerica) {
+            int numero = numerica.getNumero();
+            int color = numerica.getColor().getCodigoHex();
+            FichaComponente fichaComponente = new FichaComponente(numero, color);
+            return fichaComponente;
+        }
+        return null;
     }
 }

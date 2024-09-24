@@ -4,17 +4,26 @@
  */
 package componentes;
 
+import java.awt.Color;
+
 /**
  *
  * @author Abe
  */
 public class FichaComponente extends javax.swing.JPanel {
-
+    private int numero;
+    private int color;
+    
     /**
      * Creates new form FichaComponente
      */
-    public FichaComponente() {
+    public FichaComponente(int numero, int color) {
         initComponents();
+        this.numero = numero;
+        this.color = color;
+        
+        lblNumero.setText(String.valueOf(numero));
+        lblNumero.setForeground(new Color(this.color));
     }
 
     /**
@@ -26,16 +35,27 @@ public class FichaComponente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblNumero = new javax.swing.JLabel();
+        lblFichaCuerpo = new javax.swing.JLabel();
 
+        setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ficha.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 40, 60));
+        lblNumero.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        lblNumero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNumero.setText("13");
+        lblNumero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(lblNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        lblFichaCuerpo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFichaCuerpo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ficha.png"))); // NOI18N
+        lblFichaCuerpo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(lblFichaCuerpo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 60));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblFichaCuerpo;
+    private javax.swing.JLabel lblNumero;
     // End of variables declaration//GEN-END:variables
 }

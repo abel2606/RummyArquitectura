@@ -1,6 +1,7 @@
 package org.itson.arquitectura.datosrummy;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -17,12 +18,13 @@ public class Partida {
 //    private Tablero tablero;
 
     private Partida() {
-        this.numeroComodines = 2;
-        this.rangoFichas = 10;
+        this.numeroComodines = 0;
+        this.rangoFichas = 13;
     }
 
     public Ficha tomarFicha() {
-        return mazo.removeFirst();
+        Random random = new Random();
+        return mazo.remove(random.nextInt(mazo.size()));
     }
 
     public List<Jugador> getJugadores() {

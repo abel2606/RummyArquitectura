@@ -21,25 +21,25 @@ public class Pruebas {
 
 //        Partida partida = new Partida(2, 13);
 
-        Jugador jugador1 = new Jugador();
-        List<Color> colores1 = new LinkedList<>();
-        colores1.add(new Color("000000", new TipoConjunto(1)));
-        colores1.add(new Color("0014CB", new TipoConjunto(2)));
-        colores1.add(new Color("D40000", new TipoConjunto(3)));
-        colores1.add(new Color("008309", new TipoConjunto(4)));
-        jugador1.setColores(colores1);
-        
-        Jugador jugador2 = new Jugador();
-        List<Color> colores2 = new LinkedList<>();
-        colores2.add(new Color("000000", new TipoConjunto(1)));
-        colores2.add(new Color("0014CB", new TipoConjunto(2)));
-        colores2.add(new Color("D40000", new TipoConjunto(3)));
-        colores2.add(new Color("008309", new TipoConjunto(4)));
-        jugador2.setColores(colores2);
-        
-        List<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
+//        Jugador jugador1 = new Jugador();
+//        List<Color> colores1 = new LinkedList<>();
+//        colores1.add(new Color("000000", new TipoConjunto(1)));
+//        colores1.add(new Color("0014CB", new TipoConjunto(2)));
+//        colores1.add(new Color("D40000", new TipoConjunto(3)));
+//        colores1.add(new Color("008309", new TipoConjunto(4)));
+//        jugador1.setColores(colores1);
+//        
+//        Jugador jugador2 = new Jugador();
+//        List<Color> colores2 = new LinkedList<>();
+//        colores2.add(new Color("000000", new TipoConjunto(1)));
+//        colores2.add(new Color("0014CB", new TipoConjunto(2)));
+//        colores2.add(new Color("D40000", new TipoConjunto(3)));
+//        colores2.add(new Color("008309", new TipoConjunto(4)));
+//        jugador2.setColores(colores2);
+//        
+//        List<Jugador> jugadores = new ArrayList<>();
+//        jugadores.add(jugador1);
+//        jugadores.add(jugador2);
         
 //        partida.setJugadores(jugadores);
 //        

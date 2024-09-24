@@ -10,8 +10,8 @@ public class ControlAuxiliar {
 
     private ModeloAuxiliar modelo;
     
-    public ControlAuxiliar() {
-        modelo = new ModeloAuxiliar();
+    public ControlAuxiliar(PantallaPartida pantalla) {
+        modelo = new ModeloAuxiliar(pantalla);
     }
     
     public Jugador obtenerJugadorActual(){
@@ -22,7 +22,7 @@ public class ControlAuxiliar {
         modelo.generarMazo();
         modelo.anadirJugadores();
         modelo.repartirFichas();
-        modelo.colorearFichas();
+        modelo.dibujarMano();
     }
     
 }

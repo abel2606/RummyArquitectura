@@ -9,10 +9,10 @@ public class ControlPartida {
     private ModeloPantallaPartida modelo;
     private ControlAuxiliar controlAuxiliar;
 
-    public ControlPartida(ModeloPantallaPartida modelo) {
-        this.modelo = modelo;
+    public ControlPartida(PantallaPartida pantalla) {
+        this.modelo = new ModeloPantallaPartida(pantalla);
         
-        controlAuxiliar = new ControlAuxiliar();
+        controlAuxiliar = new ControlAuxiliar(pantalla);
         controlAuxiliar.prepararDatos();
     }
 
