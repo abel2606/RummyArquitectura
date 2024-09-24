@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.itson.arquitectura.rummy;
 
+import org.itson.arquitectura.datosrummy.Ficha;
 import org.itson.arquitectura.datosrummy.Jugador;
 import org.itson.arquitectura.datosrummy.Partida;
 
@@ -16,10 +13,13 @@ public class ModeloPantallaPartida {
     private Jugador jugador;
 
     public ModeloPantallaPartida() {
-       
     }
      
-    public void obtenerFicha(){
-        
+    public Ficha obtenerFichaMazo(){
+        return partida.tomarFicha();
+    }
+    
+    public void agregarFichaJugador(Ficha ficha){
+        jugador.agregarFicha(ficha);
     }
 }

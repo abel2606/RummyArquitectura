@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.itson.arquitectura.datosrummy;
 
 import java.util.List;
@@ -11,6 +7,7 @@ import java.util.List;
  * @author Abe
  */
 public class Partida {
+
     private List<Ficha> mazo;
     private List<Jugador> jugadores;
     private int numeroComodines;
@@ -27,11 +24,10 @@ public class Partida {
         this.tablero = tablero;
     }
 
-    
-    public Ficha tomarFicha(){
+    public Ficha tomarFicha() {
         return mazo.getFirst();
     }
-            
+
     public List<Ficha> getMazo() {
         return mazo;
     }
@@ -79,6 +75,5 @@ public class Partida {
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
-    
-    
+
 }

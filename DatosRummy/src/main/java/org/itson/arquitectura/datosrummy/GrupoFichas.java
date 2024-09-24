@@ -11,6 +11,7 @@ import java.util.List;
  * @author Abe
  */
 public class GrupoFichas {
+
     private List<Ficha> fichas;
 
     public List<Ficha> getFichas() {
@@ -20,6 +21,5 @@ public class GrupoFichas {
     public void setFichas(List<Ficha> fichas) {
         this.fichas = fichas;
     }
-    
-    
+
 }

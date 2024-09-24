@@ -15,15 +15,14 @@ import javax.swing.border.Border;
  *
  * @author Abe
  */
-public class Partida extends javax.swing.JDialog {
+public class PantallaPartida extends javax.swing.JDialog {
 
     /**
      * Creates new form Partida
      */
-    public Partida(java.awt.Frame parent, boolean modal) {
+    public PantallaPartida(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-       
     }
 
     /**
@@ -147,13 +146,13 @@ public class Partida extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonIcono2ActionPerformed
 
-    public void crearComponenteFicha(){
-        FichaComponente ficha = new FichaComponente(); 
-        panelFila1Tabla.add(ficha); 
-        panelFila1Tabla.revalidate(); 
+    public void crearComponenteFicha() {
+        FichaComponente ficha = new FichaComponente();
+        panelFila1Tabla.add(ficha);
+        panelFila1Tabla.revalidate();
         panelFila1Tabla.repaint();
-        
     }
+
     /**
      * @param args the command line arguments
      */
@@ -171,20 +170,21 @@ public class Partida extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Partida dialog = new Partida(new javax.swing.JFrame(), true);
+                PantallaPartida dialog = new PantallaPartida(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
