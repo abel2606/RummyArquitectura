@@ -22,15 +22,26 @@ public class ModeloAuxiliar {
     private Partida partida;
     private PantallaPartida pantalla;
 
+    /**
+     * Constructor del modelo auxiliar
+     * @param pantalla pantalla de la vista
+     */
     public ModeloAuxiliar(PantallaPartida pantalla) {
         partida = Partida.getInstance();
         this.pantalla = pantalla;
     }
     
+     /**
+     * Regresa el jugador actual
+     * @return jugador actual del turno
+     */
     public Jugador getJugadorActual(){
         return partida.getJugadores().getFirst();
     }
     
+    /**
+     * Genera un mazo a la partida
+     */
     public void generarMazo() {
         partida.setMazo(new LinkedList<>());
 
@@ -52,6 +63,9 @@ public class ModeloAuxiliar {
         }
     }
     
+    /**
+     * Añade unjugador a la partida
+     */
     public void anadirJugadores(){
         Jugador jugador1 = new Jugador();
         List<Color> colores1 = new LinkedList<>();
@@ -76,6 +90,9 @@ public class ModeloAuxiliar {
         partida.setJugadores(jugadores);
     }
 
+    /**
+     * Reparte las fichas a cadda jugador
+     */
     public void repartirFichas() {        
         Random random = new Random();
         int cantidadJugadores = partida.getJugadores().size();
@@ -101,6 +118,11 @@ public class ModeloAuxiliar {
         }
     }
 
+    /**
+     * Establece los colores de las fichas
+     * @param ficha el valor de la ficha a colorear
+     * @param colores lista de los 4 colore a establecer
+     */
     public void colorearFicha(Numerica ficha, List<Color> colores) {
         for (Color color : colores) {
             if (ficha.getTipoConjunto().getTipo() == color.getTipoConjunto().getTipo()) {
@@ -109,6 +131,9 @@ public class ModeloAuxiliar {
         }
     }
 
+    /**
+     * Dibuja la mano de fichas del jugador
+     */
     void dibujarMano() {
         List<Ficha> fichas = partida.getJugadores().getFirst().getManoFichas();
         for (Ficha ficha : fichas) {

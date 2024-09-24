@@ -17,10 +17,18 @@ public class PanelImagen extends JPanel {
 
    private Image backgroundImage;
 
+   /**
+     * Constructor del panel que permite colocar imagenes de fondo
+     * @param ruta ruta de la imagen de fondo
+     */
     public PanelImagen(String ruta) {
         backgroundImage = new ImageIcon(getClass().getResource(ruta)).getImage();
     }
 
+    /**
+     * Pinta el componente con el fondo
+     * @param g valor de los gráficos
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
