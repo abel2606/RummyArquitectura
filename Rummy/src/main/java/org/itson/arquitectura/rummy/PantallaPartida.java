@@ -146,6 +146,10 @@ public class PantallaPartida extends javax.swing.JDialog {
         panelFila1Tabla.revalidate();
         panelFila1Tabla.repaint();
     }
+    
+    public void modificarTamanioMazo(int tamanioMazo){
+        btnMasFicha.setText(Integer.toString(tamanioMazo));
+    }
 
     /**
      * @param args the command line arguments

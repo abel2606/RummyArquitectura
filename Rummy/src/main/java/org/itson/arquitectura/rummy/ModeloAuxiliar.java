@@ -96,6 +96,8 @@ public class ModeloAuxiliar {
 
             // Remueve la ficha del mazo
             partida.getMazo().remove(numero);
+            
+            pantalla.modificarTamanioMazo(partida.getMazo().size());
         }
     }
 

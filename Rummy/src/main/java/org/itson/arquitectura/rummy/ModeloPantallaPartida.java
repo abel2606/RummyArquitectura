@@ -67,8 +67,13 @@ public class ModeloPantallaPartida {
             }
         }
     }
+    
+    public int obtenerTamanioMazo(){
+        return partida.getMazo().size();
+    }
 
     private void notify(FichaComponente ficha) {
         pantalla.update(pantalla.getGraphics(), ficha);
+        pantalla.modificarTamanioMazo(obtenerTamanioMazo());
     }
 }
