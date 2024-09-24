@@ -13,7 +13,7 @@ import org.itson.arquitectura.datosrummy.TipoConjunto;
 
 /**
  *
- * @author 
+ * @author Equipo4
  */
 public class ModeloPantallaPartida {
 

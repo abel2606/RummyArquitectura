@@ -2,7 +2,7 @@ package org.itson.arquitectura.rummy;
 
 /**
  *
- * @author Abe
+ * @author Equipo4 
  */
 public class ControlPartida {
 

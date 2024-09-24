@@ -8,14 +8,16 @@ import java.awt.Color;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class FichaComponente extends javax.swing.JPanel {
     private int numero;
     private int color;
     
     /**
-     * Creates new form FichaComponente
+     * Constructor de fichaComponente
+     * @param numero numero de la ficha
+     * @param color color de la ficha
      */
     public FichaComponente(int numero, int color) {
         initComponents();

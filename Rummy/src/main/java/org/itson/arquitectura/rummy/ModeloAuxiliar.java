@@ -15,7 +15,7 @@ import org.itson.arquitectura.datosrummy.TipoConjunto;
 
 /**
  *
- * @author ricar
+ * @author Equipo4
  */
 public class ModeloAuxiliar {
     
@@ -142,6 +142,11 @@ public class ModeloAuxiliar {
         }
     }
     
+    /**
+     * Convierte una ficha en un componente de ficha
+     * @param ficha ficha que se convierte en ficha
+     * @return regresa el valor del comopnente de ficha
+     */
     public FichaComponente convertirFicha(Ficha ficha) {
         if (ficha instanceof Numerica numerica) {
             int numero = numerica.getNumero();

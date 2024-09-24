@@ -4,7 +4,7 @@ import org.itson.arquitectura.datosrummy.Jugador;
 
 /**
  *
- * @author ricar
+ * @author Equipo4
  */
 public class ControlAuxiliar {
 

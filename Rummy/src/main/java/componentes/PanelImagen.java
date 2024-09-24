@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class PanelImagen extends JPanel {
 

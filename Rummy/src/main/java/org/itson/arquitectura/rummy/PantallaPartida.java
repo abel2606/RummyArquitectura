@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class PantallaPartida extends javax.swing.JDialog {
 

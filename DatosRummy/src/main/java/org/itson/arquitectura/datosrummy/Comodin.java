@@ -2,7 +2,7 @@ package org.itson.arquitectura.datosrummy;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class Comodin extends Ficha {
 
