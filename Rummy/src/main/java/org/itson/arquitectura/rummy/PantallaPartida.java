@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package org.itson.arquitectura.rummy;
 
 import componentes.FichaComponente;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 /**
  *
@@ -54,11 +45,6 @@ public class PantallaPartida extends javax.swing.JDialog {
 
         botonIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnAceptar.png"))); // NOI18N
         botonIcono2.setPreferredSize(new java.awt.Dimension(75, 105));
-        botonIcono2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonIcono2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelAceptarLayout = new javax.swing.GroupLayout(panelAceptar);
         panelAceptar.setLayout(panelAceptarLayout);
@@ -75,7 +61,17 @@ public class PantallaPartida extends javax.swing.JDialog {
 
         jPanel1.add(panelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, -1, 104));
 
+        btnMasFicha.setBackground(new java.awt.Color(40, 34, 107));
+        btnMasFicha.setForeground(new java.awt.Color(255, 255, 255));
         btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaG.png"))); // NOI18N
+        btnMasFicha.setText("20");
+        btnMasFicha.setBorderColor(new java.awt.Color(40, 34, 107));
+        btnMasFicha.setBorderPainted(false);
+        btnMasFicha.setColor(new java.awt.Color(40, 34, 107));
+        btnMasFicha.setColorClick(new java.awt.Color(40, 34, 107));
+        btnMasFicha.setColorOver(new java.awt.Color(40, 34, 107));
+        btnMasFicha.setFocusPainted(false);
+        btnMasFicha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
         btnMasFicha.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaCh.png"))); // NOI18N
         btnMasFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,10 +137,6 @@ public class PantallaPartida extends javax.swing.JDialog {
         crearComponenteFicha();
         System.out.println("Se generó un componente");
     }//GEN-LAST:event_btnMasFichaActionPerformed
-
-    private void botonIcono2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIcono2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonIcono2ActionPerformed
 
     public void crearComponenteFicha() {
         FichaComponente ficha = new FichaComponente();

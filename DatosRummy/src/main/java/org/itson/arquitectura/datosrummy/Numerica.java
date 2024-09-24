@@ -19,4 +19,8 @@ public class Numerica extends Ficha {
         this.color = color;
     }
 
+    public TipoConjunto getTipoConjunto() {
+        return tipoConjunto;
+    }
+
 }

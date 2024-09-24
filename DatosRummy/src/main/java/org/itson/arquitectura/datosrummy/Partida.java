@@ -41,7 +41,6 @@ public class Partida {
                 mazo.add(new Numerica(j + 1, conjuntos[i]));
             }
         }
-
     }
 
     public Ficha tomarFicha() {

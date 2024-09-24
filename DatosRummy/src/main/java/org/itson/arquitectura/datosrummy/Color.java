@@ -13,5 +13,13 @@ public class Color {
         this.codigoHex = codigoHex;
         this.tipo = tipo;
     }
-    
+
+    public String getCodigoHex() {
+        return codigoHex;
+    }
+
+    public TipoConjunto getTipo() {
+        return tipo;
+    }
+
 }

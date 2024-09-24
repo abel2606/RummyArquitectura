@@ -1,7 +1,5 @@
 package org.itson.arquitectura.rummy;
 
-import org.itson.arquitectura.datosrummy.Ficha;
-
 /**
  *
  * @author Abe
