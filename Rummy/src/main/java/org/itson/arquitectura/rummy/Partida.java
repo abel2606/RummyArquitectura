@@ -76,7 +76,8 @@ public class Partida extends javax.swing.JDialog {
 
         jPanel1.add(panelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, -1, 104));
 
-        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnFichaMas.png"))); // NOI18N
+        btnMasFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaG.png"))); // NOI18N
+        btnMasFicha.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/BotonTomarFichaCh.png"))); // NOI18N
         btnMasFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasFichaActionPerformed(evt);

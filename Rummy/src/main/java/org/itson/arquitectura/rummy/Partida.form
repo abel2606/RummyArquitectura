@@ -109,7 +109,10 @@
             <Component class="componentes.BotonIcono" name="btnMasFicha">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/btnFichaMas.png"/>
+                  <Image iconType="3" name="/BotonTomarFichaG.png"/>
+                </Property>
+                <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/BotonTomarFichaCh.png"/>
                 </Property>
               </Properties>
               <Events>
