@@ -9,17 +9,18 @@ import org.itson.arquitectura.datosrummy.Partida;
  * @author Abe
  */
 public class ModeloPantallaPartida {
+
     private Partida partida;
-    private Jugador jugador;
 
     public ModeloPantallaPartida() {
-    }
-     
-    public Ficha obtenerFichaMazo(){
-        return partida.tomarFicha();
+        partida = Partida.getInstance();
     }
     
-    public void agregarFichaJugador(Ficha ficha){
+    public Ficha obtenerFichaMazo() {
+        return partida.tomarFicha();
+    }
+
+    public void agregarFichaJugador(Jugador jugador, Ficha ficha) {
         jugador.agregarFicha(ficha);
     }
 }

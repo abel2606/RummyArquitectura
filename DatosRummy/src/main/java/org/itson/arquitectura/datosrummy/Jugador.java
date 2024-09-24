@@ -13,7 +13,7 @@ public class Jugador {
     private List<Color> colores;
 //    private int puntuacion;
 //    private String avatar;
-//    private Turno turno;
+    private Turno turno;
 //    private boolean estado;
     private List<Ficha> manoFichas;
 
@@ -39,18 +39,6 @@ public class Jugador {
 
     public void setColores(List<Color> colores) {
         this.colores = colores;
-    }
-    
-    public void colorearFichas(){
-        for (Ficha ficha : manoFichas) {
-            if (ficha instanceof Numerica numerica) {
-                for (Color color : colores) {
-                    if (numerica.getTipoConjunto().getTipo() == color.getTipoConjunto().getTipo()){
-                        numerica.setColor(color);
-                    }
-                }
-            }
-        }
     }
 
 }

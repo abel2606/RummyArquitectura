@@ -19,7 +19,7 @@ public class Pruebas {
      */
     public static void main(String[] args) {
 
-        Partida partida = new Partida(2, 13);
+//        Partida partida = new Partida(2, 13);
 
         Jugador jugador1 = new Jugador();
         List<Color> colores1 = new LinkedList<>();
@@ -41,13 +41,13 @@ public class Pruebas {
         jugadores.add(jugador1);
         jugadores.add(jugador2);
         
-        partida.setJugadores(jugadores);
+//        partida.setJugadores(jugadores);
+//        
+//        partida.repartirFichas();
         
-        partida.repartirFichas();
-        
-        for (Jugador jugador : jugadores) {
-            jugador.colorearFichas();
-        }
+//        for (Jugador jugador : jugadores) {
+//            jugador.colorearFichas();
+//        }
 
     }
 
