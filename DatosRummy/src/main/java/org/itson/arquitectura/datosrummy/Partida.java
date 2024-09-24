@@ -24,24 +24,28 @@ public class Partida {
 
     private void generarMazo() {
         mazo = new LinkedList<>();
-        
+
         for (int i = 0; i < numeroComodines; i++) {
             mazo.add(new Comodin());
         }
 
-        TipoConjunto conjunto = new TipoConjunto();
+        TipoConjunto[] conjuntos = new TipoConjunto[4];
+        conjuntos[0] = new TipoConjunto(1);
+        conjuntos[1] = new TipoConjunto(2);
+        conjuntos[2] = new TipoConjunto(3);
+        conjuntos[3] = new TipoConjunto(4);
+
         for (int i = 0; i < 4; i++) {
-            conjunto.setTipo(i+1);
             for (int j = 0; j < rangoFichas; j++) {
-                mazo.add(new Numerica(j + 1, conjunto));
-                mazo.add(new Numerica(j + 1, conjunto));
+                mazo.add(new Numerica(j + 1, conjuntos[i]));
+                mazo.add(new Numerica(j + 1, conjuntos[i]));
             }
         }
-        
+
     }
 
     public Ficha tomarFicha() {
-        return mazo.getFirst();
+        return mazo.removeFirst();
     }
 
 }
