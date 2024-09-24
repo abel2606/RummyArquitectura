@@ -6,20 +6,20 @@ package org.itson.arquitectura.datosrummy;
  */
 public class TipoConjunto {
 
-    private String tipo;
+    private int tipo;
 
     public TipoConjunto() {
     }
 
-    public TipoConjunto(String tipo) {
+    public TipoConjunto(int tipo) {
         this.tipo = tipo;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 

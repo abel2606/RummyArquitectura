@@ -1,5 +1,6 @@
 package org.itson.arquitectura.datosrummy;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,71 +10,38 @@ import java.util.List;
 public class Partida {
 
     private List<Ficha> mazo;
-    private List<Jugador> jugadores;
+//    private List<Jugador> jugadores;
     private int numeroComodines;
-    private String rangoFichas;
-    private int codigo;
-    private Tablero tablero;
+    private int rangoFichas;
+//    private int codigo;
+//    private Tablero tablero;
 
-    public Partida(List<Ficha> mazo, List<Jugador> jugadores, int numeroComodines, String rangoFichas, int codigo, Tablero tablero) {
-        this.mazo = mazo;
-        this.jugadores = jugadores;
+    public Partida(int numeroComodines, int rangoFichas) {
         this.numeroComodines = numeroComodines;
         this.rangoFichas = rangoFichas;
-        this.codigo = codigo;
-        this.tablero = tablero;
+        generarMazo();
+    }
+
+    private void generarMazo() {
+        mazo = new LinkedList<>();
+        
+        for (int i = 0; i < numeroComodines; i++) {
+            mazo.add(new Comodin());
+        }
+
+        TipoConjunto conjunto = new TipoConjunto();
+        for (int i = 0; i < 4; i++) {
+            conjunto.setTipo(i+1);
+            for (int j = 0; j < rangoFichas; j++) {
+                mazo.add(new Numerica(j + 1, conjunto));
+                mazo.add(new Numerica(j + 1, conjunto));
+            }
+        }
+        
     }
 
     public Ficha tomarFicha() {
         return mazo.getFirst();
-    }
-
-    public List<Ficha> getMazo() {
-        return mazo;
-    }
-
-    public void setMazo(List<Ficha> mazo) {
-        this.mazo = mazo;
-    }
-
-    public List<Jugador> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(List<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-
-    public int getNumeroComodines() {
-        return numeroComodines;
-    }
-
-    public void setNumeroComodines(int numeroComodines) {
-        this.numeroComodines = numeroComodines;
-    }
-
-    public String getRangoFichas() {
-        return rangoFichas;
-    }
-
-    public void setRangoFichas(String rangoFichas) {
-        this.rangoFichas = rangoFichas;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public Tablero getTablero() {
-        return tablero;
-    }
-
-    public void setTablero(Tablero tablero) {
-        this.tablero = tablero;
     }
 
 }
