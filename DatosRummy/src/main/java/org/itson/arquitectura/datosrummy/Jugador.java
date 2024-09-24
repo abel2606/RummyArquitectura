@@ -1,5 +1,6 @@
 package org.itson.arquitectura.datosrummy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ public class Jugador {
     private List<Ficha> manoFichas;
 
     public Jugador() {
+        manoFichas = new ArrayList<>();
     }
 
     public void agregarFicha(Ficha ficha) {
@@ -29,7 +31,6 @@ public class Jugador {
 
     public void setManoFichas(List<Ficha> fichas) {
         manoFichas = fichas;
-        colorearFichas();
     }
 
     public List<Color> getColores() {
@@ -40,11 +41,11 @@ public class Jugador {
         this.colores = colores;
     }
     
-    private void colorearFichas(){
+    public void colorearFichas(){
         for (Ficha ficha : manoFichas) {
             if (ficha instanceof Numerica numerica) {
                 for (Color color : colores) {
-                    if (numerica.getTipoConjunto() == color.getTipo()){
+                    if (numerica.getTipoConjunto().getTipo() == color.getTipoConjunto().getTipo()){
                         numerica.setColor(color);
                     }
                 }

@@ -7,19 +7,19 @@ package org.itson.arquitectura.datosrummy;
 public class Color {
 
     private String codigoHex;
-    private TipoConjunto tipo;
+    private TipoConjunto tipoConjunto;
 
     public Color(String codigoHex, TipoConjunto tipo) {
         this.codigoHex = codigoHex;
-        this.tipo = tipo;
+        this.tipoConjunto = tipo;
     }
 
     public String getCodigoHex() {
         return codigoHex;
     }
 
-    public TipoConjunto getTipo() {
-        return tipo;
+    public TipoConjunto getTipoConjunto() {
+        return tipoConjunto;
     }
 
 }

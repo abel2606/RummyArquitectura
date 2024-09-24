@@ -1,11 +1,10 @@
 package pruebas;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import org.itson.arquitectura.datosrummy.Color;
-import org.itson.arquitectura.datosrummy.Ficha;
 import org.itson.arquitectura.datosrummy.Jugador;
-import org.itson.arquitectura.datosrummy.Numerica;
 import org.itson.arquitectura.datosrummy.Partida;
 import org.itson.arquitectura.datosrummy.TipoConjunto;
 
@@ -22,22 +21,32 @@ public class Pruebas {
 
         Partida partida = new Partida(2, 13);
 
-        Jugador jugador = new Jugador();
-        List<Color> colores = new LinkedList<>();
-        colores.add(new Color("000000", new TipoConjunto(1)));
-        colores.add(new Color("0014CB", new TipoConjunto(2)));
-        colores.add(new Color("D40000", new TipoConjunto(3)));
-        colores.add(new Color("008309", new TipoConjunto(4)));
-        jugador.setColores(colores);
+        Jugador jugador1 = new Jugador();
+        List<Color> colores1 = new LinkedList<>();
+        colores1.add(new Color("000000", new TipoConjunto(1)));
+        colores1.add(new Color("0014CB", new TipoConjunto(2)));
+        colores1.add(new Color("D40000", new TipoConjunto(3)));
+        colores1.add(new Color("008309", new TipoConjunto(4)));
+        jugador1.setColores(colores1);
         
-        for (Ficha ficha : jugador.getManoFichas()) {
-            if (ficha instanceof Numerica) {
-                for (Color color : jugador.getColores()) {
-                    if (((Numerica) ficha).getTipoConjunto() == color.getTipo()){
-                        ((Numerica) ficha).setColor(color);
-                    }
-                }
-            }
+        Jugador jugador2 = new Jugador();
+        List<Color> colores2 = new LinkedList<>();
+        colores2.add(new Color("000000", new TipoConjunto(1)));
+        colores2.add(new Color("0014CB", new TipoConjunto(2)));
+        colores2.add(new Color("D40000", new TipoConjunto(3)));
+        colores2.add(new Color("008309", new TipoConjunto(4)));
+        jugador2.setColores(colores2);
+        
+        List<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
+        
+        partida.setJugadores(jugadores);
+        
+        partida.repartirFichas();
+        
+        for (Jugador jugador : jugadores) {
+            jugador.colorearFichas();
         }
 
     }

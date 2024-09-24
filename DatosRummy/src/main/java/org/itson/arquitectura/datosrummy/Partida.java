@@ -2,6 +2,7 @@ package org.itson.arquitectura.datosrummy;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -10,7 +11,7 @@ import java.util.List;
 public class Partida {
 
     private List<Ficha> mazo;
-//    private List<Jugador> jugadores;
+    private List<Jugador> jugadores;
     private int numeroComodines;
     private int rangoFichas;
 //    private int codigo;
@@ -43,8 +44,32 @@ public class Partida {
         }
     }
 
+    public void repartirFichas() {
+        Random random = new Random();
+        int cantidadJugadores = jugadores.size();
+        int fichasPorJugador = 14;
+
+        // Para cada jugador se repartirán 14 fichas
+        for (int i = 0; i < fichasPorJugador * cantidadJugadores; i++) {
+            // Selecciona una ficha aleatoria del mazo
+            int numero = random.nextInt(mazo.size());
+            Ficha fichaSeleccionada = mazo.get(numero);
+
+            // Asigna la ficha al jugador correspondiente
+            Jugador jugadorActual = jugadores.get(i % cantidadJugadores);
+            jugadorActual.agregarFicha(fichaSeleccionada);
+
+            // Remueve la ficha del mazo
+            mazo.remove(numero);
+        }
+    }
+
     public Ficha tomarFicha() {
         return mazo.removeFirst();
+    }
+
+    public void setJugadores(List<Jugador> jugadores) {
+        this.jugadores = jugadores;
     }
 
 }
