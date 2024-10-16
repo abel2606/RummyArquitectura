@@ -2,15 +2,18 @@ package org.itson.arquitectura.vistas;
 
 import componentes.FichaComponente;
 import java.awt.Graphics;
+import org.itson.arquitectura.datosrummy.Partida;
+import org.itson.arquitectura.dtos.DTO;
 import org.itson.arquitectura.rummy.ControlPartida;
 
 /**
  *
  * @author Equipo4
  */
-public class PantallaPartida extends javax.swing.JDialog {
+public class PantallaPartida extends javax.swing.JDialog implements IPantalla {
 
     private ControlPartida controlPartida;
+    private Partida partida;
 
     /**
      * Creates new form Partida
@@ -20,6 +23,7 @@ public class PantallaPartida extends javax.swing.JDialog {
         setTitle("Rummy - Partida");
         initComponents();
         this.controlPartida = new ControlPartida(this);
+        this.partida = Partida.getInstance();
     }
 
     /**
@@ -137,18 +141,20 @@ public class PantallaPartida extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMasFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasFichaActionPerformed
-        controlPartida.tomarFicha();
+        controlPartida.tomarFicha(partida.getTurnos().getFirst().getJugador());
         btnMasFicha.setEnabled(false);
     }//GEN-LAST:event_btnMasFichaActionPerformed
 
-    public void update(Graphics g, FichaComponente ficha) {
-        super.update(g);
-        panelFila1Tabla.add(ficha);
+    @Override
+    public void update(DTO dto) {
+        super.update(this.getGraphics());
+        panelFila1Tabla.add(dto.getFicha());
         panelFila1Tabla.revalidate();
         panelFila1Tabla.repaint();
+        modificarTamanioMazo(dto.getTamanioMazo());
     }
-    
-    public void modificarTamanioMazo(int tamanioMazo){
+
+    public void modificarTamanioMazo(int tamanioMazo) {
         btnMasFicha.setText(Integer.toString(tamanioMazo));
     }
 
@@ -179,6 +185,8 @@ public class PantallaPartida extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -206,4 +214,5 @@ public class PantallaPartida extends javax.swing.JDialog {
     private javax.swing.JPanel panelMasFicha;
     private javax.swing.JPanel panelTablero;
     // End of variables declaration//GEN-END:variables
+
 }

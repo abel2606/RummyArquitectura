@@ -18,4 +18,22 @@ public class Turno {
         this.jugador = jugador;
         this.turno = turno;
     }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+    
+    
 }

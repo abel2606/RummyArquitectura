@@ -21,13 +21,22 @@ public class Partida {
     /**
      * Constructor sin parametros de la partida
      */
-    private Partida() {
+    public Partida() {
         this.numeroComodines = 0;
         this.rangoFichas = 13;
     }
 
+    public List<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(List<Turno> turnos) {
+        this.turnos = turnos;
+    }
+
     /**
      * toma una ficha
+     *
      * @return regresa el valor de la ficha tomada
      */
     public Ficha tomarFicha() {
@@ -37,6 +46,7 @@ public class Partida {
 
     /**
      * Regresa la lista de jugadores
+     *
      * @return lista de los jugadores
      */
     public List<Jugador> getJugadores() {
@@ -45,6 +55,7 @@ public class Partida {
 
     /**
      * Establece los jugadores
+     *
      * @param jugadores valor de los jugadores
      */
     public void setJugadores(List<Jugador> jugadores) {
@@ -53,6 +64,7 @@ public class Partida {
 
     /**
      * obtiene el numero de comodines
+     *
      * @return valor del numero de comodines
      */
     public int getNumeroComodines() {
@@ -60,7 +72,8 @@ public class Partida {
     }
 
     /**
-     * Obtiene el rango de las fichas 
+     * Obtiene el rango de las fichas
+     *
      * @return rango de las fichas
      */
     public int getRangoFichas() {
@@ -69,6 +82,7 @@ public class Partida {
 
     /**
      * Obtiene el mazo
+     *
      * @return regresa el mazo
      */
     public List<Ficha> getMazo() {
@@ -77,6 +91,7 @@ public class Partida {
 
     /**
      * establece el mazo
+     *
      * @param mazo valor del mazo
      */
     public void setMazo(List<Ficha> mazo) {
@@ -85,6 +100,7 @@ public class Partida {
 
     /**
      * Añade una ficha al mazo
+     *
      * @param ficha valor de la ficha
      */
     public void addFicha(Ficha ficha) {
@@ -93,6 +109,7 @@ public class Partida {
 
     /**
      * Regresa una instancia de la partida
+     *
      * @return valor de la isntancia de partida
      */
     public static Partida getInstance() {
@@ -100,6 +117,10 @@ public class Partida {
             instance = new Partida();
         }
         return instance;
+    }
+
+    public void anadirTurno(Turno turno) {
+        this.turnos.add(turno);
     }
 
 }

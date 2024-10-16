@@ -1,5 +1,6 @@
 package org.itson.arquitectura.rummy;
 
+import org.itson.arquitectura.datosrummy.Jugador;
 import org.itson.arquitectura.vistas.PantallaPartida;
 
 /**
@@ -9,7 +10,6 @@ import org.itson.arquitectura.vistas.PantallaPartida;
 public class ControlPartida {
 
     private ModeloPantallaPartida modelo;
-    private ControlAuxiliar controlAuxiliar;
 
     /**
      * Constructor del modelo
@@ -17,16 +17,13 @@ public class ControlPartida {
      */
     public ControlPartida(PantallaPartida pantalla) {
         this.modelo = new ModeloPantallaPartida(pantalla);
-        
-        controlAuxiliar = new ControlAuxiliar(pantalla);
-        controlAuxiliar.prepararDatos();
     }
 
     /**
      * Indica al modelo que debe de tomar ua ficha
      */
-    public void tomarFicha() {
-        modelo.agregarFichaJugador(controlAuxiliar.obtenerJugadorActual(), modelo.obtenerFichaMazo());
+    public void tomarFicha(Jugador jugador) {
+        modelo.agregarFichaJugador(jugador, modelo.obtenerFichaMazo());
     }
     
 }

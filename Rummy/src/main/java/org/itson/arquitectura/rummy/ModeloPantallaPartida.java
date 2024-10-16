@@ -11,6 +11,8 @@ import org.itson.arquitectura.datosrummy.Jugador;
 import org.itson.arquitectura.datosrummy.Numerica;
 import org.itson.arquitectura.datosrummy.Partida;
 import org.itson.arquitectura.datosrummy.TipoConjunto;
+import org.itson.arquitectura.dtos.DTO;
+import org.itson.arquitectura.vistas.IPantalla;
 
 /**
  *
@@ -20,10 +22,11 @@ public class ModeloPantallaPartida {
 
     private Partida partida;
     private Jugador jugador;
-    private PantallaPartida pantalla;
+    private IPantalla pantalla;
 
     /**
      * Constructor del modelo que crea una partida
+     *
      * @param pantalla pantantalla de la vista
      */
     public ModeloPantallaPartida(PantallaPartida pantalla) {
@@ -46,7 +49,8 @@ public class ModeloPantallaPartida {
 
     /**
      * Regresa el mazo de fichas de la partida
-     * @return 
+     *
+     * @return
      */
     public Ficha obtenerFichaMazo() {
         return partida.tomarFicha();
@@ -54,6 +58,7 @@ public class ModeloPantallaPartida {
 
     /**
      * Agrega una ficha al jugador
+     *
      * @param jugador valor del jugador
      * @param ficha ficha a agregar
      */
@@ -65,6 +70,7 @@ public class ModeloPantallaPartida {
 
     /**
      * Regresa el componente de ficha a la vista
+     *
      * @param ficha ficha a crear
      * @return regresa el componente de la ficha creada
      */
@@ -81,6 +87,7 @@ public class ModeloPantallaPartida {
 
     /**
      * Agrega el color a la ficha
+     *
      * @param ficha ficha a dibujar color
      */
     public void colorearFicha(Numerica ficha) {
@@ -92,19 +99,14 @@ public class ModeloPantallaPartida {
     }
     
     /**
-     * Obtiene el tamaño del mazo
-     * @return valor de la cantidad de fichas del mazo
-     */
-    public int obtenerTamanioMazo(){
-        return partida.getMazo().size();
-    }
-
-    /**
      * Nofica a la vista la actualización de los datos
+     *
      * @param ficha valor de la ficha a actualizar
      */
     private void notify(FichaComponente ficha) {
-        pantalla.update(pantalla.getGraphics(), ficha);
-        pantalla.modificarTamanioMazo(obtenerTamanioMazo());
+        DTO dto = new DTO();
+        dto.setFicha(ficha);
+        dto.setTamanioMazo(partida.getMazo().size());
+        pantalla.update(dto);
     }
 }
