@@ -1,4 +1,6 @@
 org\itson\arquitectura\rummy\ModeloPantallaPartida.class
+org\itson\arquitectura\rummy\Inicio$1.class
+org\itson\arquitectura\rummy\Inicio.class
 componentes\PanelImagen.class
 org\itson\arquitectura\rummy\PantallaPartida$2$1.class
 componentes\BotonIcono$1.class
@@ -7,6 +9,7 @@ org\itson\arquitectura\rummy\ModeloAuxiliar.class
 org\itson\arquitectura\rummy\PantallaPartida.class
 componentes\BotonIcono.class
 org\itson\arquitectura\rummy\PantallaPartida$2.class
+org\itson\arquitectura\rummy\Inicio$1$1.class
 org\itson\arquitectura\rummy\PantallaPartida$1.class
 org\itson\arquitectura\rummy\ControlAuxiliar.class
 componentes\FichaComponente.class
