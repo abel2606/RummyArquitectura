@@ -1,5 +1,7 @@
 package org.itson.arquitectura.rummy;
 
+import org.itson.arquitectura.vistas.PantallaPartida;
+
 /**
  *
  * @author Equipo4 

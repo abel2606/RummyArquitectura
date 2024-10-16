@@ -1,5 +1,6 @@
 package org.itson.arquitectura.rummy;
 
+import org.itson.arquitectura.vistas.PantallaPartida;
 import org.itson.arquitectura.datosrummy.Jugador;
 
 /**

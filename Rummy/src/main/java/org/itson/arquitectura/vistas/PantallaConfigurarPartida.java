@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package org.itson.arquitectura.configurarpartida;
+package org.itson.arquitectura.vistas;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,12 +14,12 @@ import javax.swing.ImageIcon;
  *
  * @author Abe
  */
-public class Inicio extends javax.swing.JDialog {
+public class PantallaConfigurarPartida extends javax.swing.JDialog {
 
     /**
      * Creates new form Inicio
      */
-    public Inicio(java.awt.Frame parent, boolean modal) {
+    public PantallaConfigurarPartida(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         dibujarComponentes();
@@ -42,9 +42,10 @@ public class Inicio extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         chk2 = new javax.swing.JCheckBox();
         chk1 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbboComodines = new javax.swing.JComboBox<>();
         btnVolver = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
         btnCrearPartida = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
+        btnConfigurar = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -87,16 +88,21 @@ public class Inicio extends javax.swing.JDialog {
         });
         jPanel1.add(chk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 118, 67));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 110, 40));
+        cbboComodines.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
+        jPanel1.add(cbboComodines, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 102, 40));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/volver.png"))); // NOI18N
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 262, 52));
+        btnVolver.setToolTipText("");
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 262, 52));
 
         btnCrearPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartida.png"))); // NOI18N
-        jPanel1.add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 262, 52));
+        btnCrearPartida.setToolTipText("");
+        jPanel1.add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, 262, 52));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo.png"))); // NOI18N
+        btnConfigurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        jPanel1.add(btnConfigurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 72, 72));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,8 +134,8 @@ public class Inicio extends javax.swing.JDialog {
         chk1.setBorderPainted(false);  
         chk1.setFocusPainted(false); 
         
-        chk2.setIcon(noSeleccionado);  
-        chk2.setSelectedIcon(seleccionado);  
+        chk2.setIcon(noSeleccionado2);  
+        chk2.setSelectedIcon(seleccionado2);  
         chk2.setBorderPainted(false);  
         chk2.setFocusPainted(false); 
         
@@ -166,6 +172,16 @@ public class Inicio extends javax.swing.JDialog {
         btnCrearPartida.setSelectedIcon(crearPartidaSelect);  
         btnCrearPartida.setBorderPainted(false);  
         btnCrearPartida.setFocusPainted(false); 
+        
+        ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
+        ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
+
+        btnConfigurar.setIcon(settings);  
+        btnConfigurar.setSelectedIcon(settingsSelect);  
+        btnConfigurar.setBorderPainted(false);  
+        btnConfigurar.setFocusPainted(false); 
+        
+        
     }
     private void chk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk1ActionPerformed
         // TODO add your handling code here:
@@ -174,6 +190,10 @@ public class Inicio extends javax.swing.JDialog {
     private void chk2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chk2ActionPerformed
+
+    private void btnConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfiguracionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,21 +212,23 @@ public class Inicio extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaConfigurarPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaConfigurarPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaConfigurarPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaConfigurarPartida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Inicio dialog = new Inicio(new javax.swing.JFrame(), true);
+                PantallaConfigurarPartida dialog = new PantallaConfigurarPartida(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -219,12 +241,13 @@ public class Inicio extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnConfigurar;
     private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnCrearPartida;
     private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnVolver;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> cbboComodines;
     private javax.swing.JCheckBox chk1;
     private javax.swing.JCheckBox chk2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -1,5 +1,6 @@
 package org.itson.arquitectura.rummy;
 
+import org.itson.arquitectura.vistas.PantallaPartida;
 import componentes.FichaComponente;
 import java.util.ArrayList;
 import java.util.LinkedList;
