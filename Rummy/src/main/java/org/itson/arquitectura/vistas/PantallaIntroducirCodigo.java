@@ -63,7 +63,6 @@ public class PantallaIntroducirCodigo extends javax.swing.JDialog {
         getContentPane().add(btnUnirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 200, 50));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoIntroducirCodigo.png"))); // NOI18N
-        fondo.setPreferredSize(new java.awt.Dimension(1042, 643));
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

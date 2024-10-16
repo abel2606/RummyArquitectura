@@ -4,6 +4,8 @@
  */
 package org.itson.arquitectura.vistas;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Abe
@@ -16,8 +18,33 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
     public PantallaSalaEspera(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        dibujarComponentes();
     }
 
+    public void dibujarComponentes(){
+        ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
+        ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
+
+        btnConfiguracion.setIcon(settings);  
+        btnConfiguracion.setSelectedIcon(settingsSelect);  
+        btnConfiguracion.setBorderPainted(false);  
+        btnConfiguracion.setFocusPainted(false); 
+        
+        ImageIcon boton = new ImageIcon("src\\main\\resources\\boton.png");
+        ImageIcon botonHover = new ImageIcon("src\\main\\resources\\botonHover.png");
+
+        btnListo.setIcon(boton);  
+        btnListo.setSelectedIcon(botonHover);  
+        btnListo.setBorderPainted(false);  
+        btnListo.setFocusPainted(false); 
+        
+        btnSalir.setIcon(boton);  
+        btnSalir.setSelectedIcon(botonHover);  
+        btnSalir.setBorderPainted(false);  
+        btnSalir.setFocusPainted(false); 
+        
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,18 +54,129 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        lblSalir = new javax.swing.JLabel();
+        lblListo = new javax.swing.JLabel();
+        btnConfiguracion = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
+        btnListo = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
+        btnSalir = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
+        lblAvatar1 = new javax.swing.JLabel();
+        lblAvatar2 = new javax.swing.JLabel();
+        lblAvatar3 = new javax.swing.JLabel();
+        lblAvatar4 = new javax.swing.JLabel();
+        lblNombreJugador5 = new javax.swing.JLabel();
+        lblNombreJugador1 = new javax.swing.JLabel();
+        lblNombreJugador2 = new javax.swing.JLabel();
+        lblNombreJugador3 = new javax.swing.JLabel();
+        lblNombreJugador4 = new javax.swing.JLabel();
+        lblNombreJugador6 = new javax.swing.JLabel();
+        lblNombreJugador7 = new javax.swing.JLabel();
+        lblNombreJugador8 = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSalir.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblSalir.setForeground(new java.awt.Color(255, 255, 255));
+        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSalir.setText("Salir");
+        getContentPane().add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 90, 50));
+
+        lblListo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblListo.setForeground(new java.awt.Color(255, 255, 255));
+        lblListo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblListo.setText("Listo");
+        getContentPane().add(lblListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 90, 50));
+
+        btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 72, 72));
+
+        btnListo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
+        btnListo.setToolTipText("");
+        getContentPane().add(btnListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 165, 61));
+
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
+        btnSalir.setToolTipText("");
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 165, 61));
+
+        lblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
+        getContentPane().add(lblAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 60, 60));
+
+        lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
+        getContentPane().add(lblAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, 60));
+
+        lblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
+        getContentPane().add(lblAvatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 60, 60));
+
+        lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
+        getContentPane().add(lblAvatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 60, 60));
+
+        lblNombreJugador5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador5.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador5.setText("Jugador1");
+        getContentPane().add(lblNombreJugador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 360, 60));
+
+        lblNombreJugador1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador1.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador1.setText("Jugador1");
+        getContentPane().add(lblNombreJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 360, 50));
+
+        lblNombreJugador2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador2.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador2.setText("Jugador1");
+        getContentPane().add(lblNombreJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 360, 50));
+
+        lblNombreJugador3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador3.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador3.setText("Jugador1");
+        getContentPane().add(lblNombreJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 360, 50));
+
+        lblNombreJugador4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador4.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombreJugador4.setText("listo");
+        getContentPane().add(lblNombreJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
+
+        lblNombreJugador6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador6.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombreJugador6.setText("listo");
+        getContentPane().add(lblNombreJugador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 360, 50));
+
+        lblNombreJugador7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador7.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombreJugador7.setText("listo");
+        getContentPane().add(lblNombreJugador7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 360, 50));
+
+        lblNombreJugador8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNombreJugador8.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreJugador8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombreJugador8.setText("listo");
+        getContentPane().add(lblNombreJugador8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 360, 60));
+
+        lblCodigo.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCodigo.setText("xxxxxx");
+        getContentPane().add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, 130, 50));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Esperando jugadores");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 360, 50));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Código:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 130, 50));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoSalaEspera.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,5 +224,26 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnConfiguracion;
+    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnListo;
+    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnSalir;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lblAvatar1;
+    private javax.swing.JLabel lblAvatar2;
+    private javax.swing.JLabel lblAvatar3;
+    private javax.swing.JLabel lblAvatar4;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblListo;
+    private javax.swing.JLabel lblNombreJugador1;
+    private javax.swing.JLabel lblNombreJugador2;
+    private javax.swing.JLabel lblNombreJugador3;
+    private javax.swing.JLabel lblNombreJugador4;
+    private javax.swing.JLabel lblNombreJugador5;
+    private javax.swing.JLabel lblNombreJugador6;
+    private javax.swing.JLabel lblNombreJugador7;
+    private javax.swing.JLabel lblNombreJugador8;
+    private javax.swing.JLabel lblSalir;
     // End of variables declaration//GEN-END:variables
 }
