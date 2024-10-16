@@ -1,13 +1,20 @@
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaSeleccionColor.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ControlAuxiliar.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\PanelImagen.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaInicio.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\BotonIcono.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaConfigurarPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaDatosJugador.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ModeloAuxiliar.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ModeloPantallaPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\FichaComponente.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\configurarpartida\componentesgraficos\BotonConImagen.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ControlPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\configurarpartida\componentesgraficos\BotonConImagen.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\componentes\BotonIcono.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\controladores\ControlIniciarPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\modelos\ModeloConfigurarJugador.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ControlAuxiliar.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ControlPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaConfigurarPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\componentes\PanelImagen.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ModeloPantallaPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\modelos\ModeloIniciarPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaInicio.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\controladores\ControlConfigurarPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaIntroducirCodigo.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaSeleccionColor.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\componentes\FichaComponente.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\rummy\ModeloAuxiliar.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaSalaEspera.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaPartida.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\controladores\ControlConfigurarJugador.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\vistas\PantallaDatosJugador.java

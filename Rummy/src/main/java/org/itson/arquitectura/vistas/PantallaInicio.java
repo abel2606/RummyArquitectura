@@ -75,6 +75,11 @@ public class PantallaInicio extends javax.swing.JDialog {
         getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 72, 72));
 
         btnCrearPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartidaInicio.png"))); // NOI18N
+        btnCrearPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearPartidaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 525, 117));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoInicio.png"))); // NOI18N
@@ -86,6 +91,10 @@ public class PantallaInicio extends javax.swing.JDialog {
     private void btnUnirsePartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirsePartidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUnirsePartidaActionPerformed
+
+    private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearPartidaActionPerformed
 
     /**
      * @param args the command line arguments
