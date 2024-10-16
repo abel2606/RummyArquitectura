@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package org.itson.arquitectura.registrarjugador;
-
+package org.itson.arquitectura.vistas;
 /**
  *
  * @author Dell
@@ -27,29 +26,28 @@ public class PantallaDatosJugador extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
         btnConfirmar = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btnAjustes = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
-        avatar3 = new javax.swing.JButton();
         avatar4 = new javax.swing.JButton();
+        avatar8 = new javax.swing.JButton();
+        avatar2 = new javax.swing.JButton();
+        avatar3 = new javax.swing.JButton();
+        avatar1 = new javax.swing.JButton();
         avatar5 = new javax.swing.JButton();
         avatar6 = new javax.swing.JButton();
         avatar7 = new javax.swing.JButton();
-        avatar8 = new javax.swing.JButton();
-        avatar9 = new javax.swing.JButton();
-        avatar10 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1042, 643));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 10, true));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 540, 50));
+        nombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 540, 50));
 
         btnConfirmar.setBackground(new java.awt.Color(100, 0, 143));
         btnConfirmar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -58,11 +56,11 @@ public class PantallaDatosJugador extends javax.swing.JDialog {
         btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
         getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 200, 50));
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/tuerca.png"))); // NOI18N
-        jButton11.setText("jButton11");
-        jButton11.setBorder(null);
-        jButton11.setContentAreaFilled(false);
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 110, 80));
+        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tuerca.png"))); // NOI18N
+        btnAjustes.setText("jButton11");
+        btnAjustes.setBorder(null);
+        btnAjustes.setContentAreaFilled(false);
+        getContentPane().add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 110, 80));
 
         btnVolver.setBackground(new java.awt.Color(100, 0, 143));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -71,98 +69,104 @@ public class PantallaDatosJugador extends javax.swing.JDialog {
         btnVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 200, 50));
 
-        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar5.png"))); // NOI18N
-        avatar3.setContentAreaFilled(false);
-        avatar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 346, 80, 80));
-
-        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar9.png"))); // NOI18N
+        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar5.png"))); // NOI18N
         avatar4.setContentAreaFilled(false);
         avatar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 avatar4ActionPerformed(evt);
             }
         });
-        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 427, 80, 80));
+        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 346, 80, 80));
 
-        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar2.png"))); // NOI18N
-        avatar5.setContentAreaFilled(false);
-        avatar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 346, 80, 80));
-
-        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar3.png"))); // NOI18N
-        avatar6.setContentAreaFilled(false);
-        avatar6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 346, 80, 80));
-
-        avatar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar1.png"))); // NOI18N
-        avatar7.setContentAreaFilled(false);
-        avatar7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 346, 80, 80));
-
-        avatar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar6.png"))); // NOI18N
+        avatar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar9.png"))); // NOI18N
         avatar8.setContentAreaFilled(false);
         avatar8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 avatar8ActionPerformed(evt);
             }
         });
-        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 427, 80, 80));
+        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 427, 80, 80));
 
-        avatar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar7.png"))); // NOI18N
-        avatar9.setContentAreaFilled(false);
-        avatar9.addActionListener(new java.awt.event.ActionListener() {
+        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar2.png"))); // NOI18N
+        avatar2.setContentAreaFilled(false);
+        avatar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar9ActionPerformed(evt);
+                avatar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(avatar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 427, 80, 80));
+        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 346, 80, 80));
 
-        avatar10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/avatar8.png"))); // NOI18N
-        avatar10.setContentAreaFilled(false);
-        avatar10.addActionListener(new java.awt.event.ActionListener() {
+        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar3.png"))); // NOI18N
+        avatar3.setContentAreaFilled(false);
+        avatar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar10ActionPerformed(evt);
+                avatar3ActionPerformed(evt);
             }
         });
-        getContentPane().add(avatar10, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 427, 80, 80));
+        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 346, 80, 80));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/fondo.jpg"))); // NOI18N
-        fondo.setMaximumSize(new java.awt.Dimension(1042, 643));
-        fondo.setMinimumSize(new java.awt.Dimension(1042, 643));
-        fondo.setPreferredSize(new java.awt.Dimension(1042, 643));
+        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1.png"))); // NOI18N
+        avatar1.setContentAreaFilled(false);
+        avatar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avatar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 346, 80, 80));
+
+        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar6.png"))); // NOI18N
+        avatar5.setContentAreaFilled(false);
+        avatar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avatar5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 427, 80, 80));
+
+        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar7.png"))); // NOI18N
+        avatar6.setContentAreaFilled(false);
+        avatar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avatar6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 427, 80, 80));
+
+        avatar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar8.png"))); // NOI18N
+        avatar7.setContentAreaFilled(false);
+        avatar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avatar7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 427, 80, 80));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoDatosJugador.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void avatar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar3ActionPerformed
 
     private void avatar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_avatar4ActionPerformed
 
-    private void avatar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar5ActionPerformed
+    private void avatar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_avatar5ActionPerformed
+    }//GEN-LAST:event_avatar8ActionPerformed
+
+    private void avatar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_avatar2ActionPerformed
+
+    private void avatar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_avatar3ActionPerformed
+
+    private void avatar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_avatar1ActionPerformed
 
     private void avatar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar6ActionPerformed
         // TODO add your handling code here:
@@ -172,17 +176,9 @@ public class PantallaDatosJugador extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_avatar7ActionPerformed
 
-    private void avatar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar8ActionPerformed
+    private void avatar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_avatar8ActionPerformed
-
-    private void avatar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar9ActionPerformed
-
-    private void avatar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar10ActionPerformed
+    }//GEN-LAST:event_avatar5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,18 +223,18 @@ public class PantallaDatosJugador extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton avatar10;
+    private javax.swing.JButton avatar1;
+    private javax.swing.JButton avatar2;
     private javax.swing.JButton avatar3;
     private javax.swing.JButton avatar4;
     private javax.swing.JButton avatar5;
     private javax.swing.JButton avatar6;
     private javax.swing.JButton avatar7;
     private javax.swing.JButton avatar8;
-    private javax.swing.JButton avatar9;
+    private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }
