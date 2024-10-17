@@ -6,9 +6,11 @@ componentes\BotonIcono$1.class
 registrarJugadorMVC\PantallaConfigurarJugador$6.class
 configurarPartidaMVC\PantallaConfigurarPartida$5.class
 partidaMVC\PantallaPartida.class
+inicioMVC\PantallaInicio$1$1.class
 configurarPartidaMVC\ControlConfigurarPartida.class
 registrarJugadorMVC\PantallaConfigurarJugador.class
 configurarPartidaMVC\PantallaConfigurarPartida$4.class
+inicioMVC\PantallaInicio$1.class
 partidaMVC\PantallaPartida$2.class
 partidaMVC\ModeloPartida.class
 salaEsperaMVC\PantallaSalaEspera$1$1.class
@@ -30,6 +32,7 @@ registrarJugadorMVC\PantallaConfigurarJugador$5.class
 componentes\BotonConImagen.class
 seleccionColorMVC\PantallaSeleccionColor$1.class
 configurarPartidaMVC\PantallaConfigurarPartida$3.class
+inicioMVC\PantallaInicio.class
 seleccionColorMVC\ControlColores.class
 inicioMVC\Inicio$1$1.class
 org\itson\arquitectura\modelos\ModeloIniciarPartida.class
