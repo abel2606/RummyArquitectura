@@ -10,8 +10,9 @@ package seleccionColorMVC;
  */
 public class ControlColores {
     
+    public ModeloColores modelo;
     public ControlColores(){
-        
+        modelo = new ModeloColores();
     }
     
     public void agregarcoloresJugador(String[] colores){

@@ -4,11 +4,26 @@
  */
 package configurarPartidaMVC;
 
+import registrarJugadorMVC.ControlConfigurarJugador;
+
 /**
  *
  * @author Abe
  */
 public class ControlConfigurarPartida {
-
+    public ControlConfigurarJugador otroControl;
+    
+    public ControlConfigurarPartida(){
+        
+    }
+    
+    /**
+     * Continua una configuracion a otro control
+     * @param rangoFichas
+     * @param numComodines 
+     */
+    public void continuarConfiguracion(int rangoFichas, int numComodines){
+        
+    }
     
 }

@@ -4,6 +4,7 @@
  */
 package inicioMVC;
 
+import configurarPartidaMVC.PantallaConfigurarPartida;
 import javax.swing.ImageIcon;
 
 /**
@@ -67,6 +68,11 @@ public class PantallaInicio extends javax.swing.JDialog {
         getContentPane().add(btnUnirsePartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 525, 117));
 
         btnCrearPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartidaInicio.png"))); // NOI18N
+        btnCrearPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearPartidaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 525, 117));
 
         btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
@@ -85,7 +91,7 @@ public class PantallaInicio extends javax.swing.JDialog {
     }//GEN-LAST:event_btnUnirsePartidaActionPerformed
 
     private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
-        // TODO add your handling code here:
+        PantallaConfigurarPartida pantallaConfigurarPartida = new PantallaConfigurarPartida(null, true);
     }//GEN-LAST:event_btnCrearPartidaActionPerformed
 
     /**
