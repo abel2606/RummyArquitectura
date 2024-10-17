@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
  */
 public class PantallaSalaEspera extends javax.swing.JDialog {
 
+    private ControlSalaEspera control;
+    
     /**
      * Creates new form PantallaSalaEspera
      */
@@ -19,9 +21,15 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         dibujarComponentes();
+        control = new ControlSalaEspera();
     }
 
     public void dibujarComponentes(){
+        lblNombreJugador4.setText("Pendiente...");
+        lblNombreJugador6.setText("Pendiente...");
+        lblNombreJugador7.setText("Pendiente...");
+        lblNombreJugador8.setText("Pendiente...");
+        
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
 
@@ -45,6 +53,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         
         
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,6 +105,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
 
         btnListo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
         btnListo.setToolTipText("");
+        btnListo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 165, 61));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
@@ -181,6 +195,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
+        lblNombreJugador4.setText("Listo");
+//        control.solicitudInicioPartida();
+    }//GEN-LAST:event_btnListoActionPerformed
 
     /**
      * @param args the command line arguments

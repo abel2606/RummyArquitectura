@@ -27,7 +27,7 @@ public class ModeloPartida {
      *
      * @param pantalla pantantalla de la vista
      */
-    public ModeloPartida(PantallaPartida pantalla) {
+    public ModeloPartida() {
         partida = Partida.getInstance();
         this.pantalla = pantalla;
         jugador = new Jugador();
@@ -106,5 +106,9 @@ public class ModeloPartida {
 //        dto.setFicha(ficha);
 //        dto.setTamanioMazo(partida.getMazo().size());
 //        pantalla.update(dto);
+    }
+    
+    public void mostrar(){
+        pantalla.setVisible(true);
     }
 }

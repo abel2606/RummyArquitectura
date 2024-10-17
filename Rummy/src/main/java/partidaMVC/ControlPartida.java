@@ -16,8 +16,8 @@ public class ControlPartida {
      * Constructor del modelo
      * @param pantalla valor de la pantalla de vista
      */
-    public ControlPartida(PantallaPartida pantalla) {
-        this.modelo = new ModeloPartida(pantalla);
+    public ControlPartida() {
+        this.modelo = new ModeloPartida();
     }
 
     /**
@@ -25,6 +25,10 @@ public class ControlPartida {
      */
     public void tomarFicha(Jugador jugador) {
         modelo.agregarFichaJugador(jugador, modelo.obtenerFichaMazo());
+    }
+    
+    public void mostrarPantalla(){
+        modelo.mostrar();
     }
     
 }

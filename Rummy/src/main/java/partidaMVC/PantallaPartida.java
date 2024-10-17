@@ -18,7 +18,7 @@ public class PantallaPartida extends javax.swing.JDialog implements IPantalla {
         super(parent, modal);
         setTitle("Rummy - Partida");
         initComponents();
-        this.controlPartida = new ControlPartida(this);
+        this.controlPartida = new ControlPartida();
         this.partida = Partida.getInstance();
     }
 
