@@ -19,6 +19,7 @@ public class ControlConfigurarJugador {
         modelo.crearPartida(rangoFichas, numeroComodines);
         
         mostrarVista();
+        
     }
     
     public void mostrarVista(){

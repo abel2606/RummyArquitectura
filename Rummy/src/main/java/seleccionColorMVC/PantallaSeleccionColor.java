@@ -4,17 +4,20 @@
  */
 package seleccionColorMVC;
 
+import java.awt.Color;
+import static java.awt.Color.BLACK;
 import registrarJugadorMVC.PantallaConfigurarJugador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JColorChooser;
 
 /**
  *
  * @author Dell
  */
 public class PantallaSeleccionColor extends javax.swing.JDialog {
-
+    private Color color1, color2, color3, color4;
     /**
      * Creates new form PantallaSeleccionColor
      */
@@ -39,11 +42,10 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         btnAjustes = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
-        checkColorNegro = new javax.swing.JCheckBox();
-        checkColorAmarillo = new javax.swing.JCheckBox();
-        checkColorAzul = new javax.swing.JCheckBox();
-        checkColorRojo = new javax.swing.JCheckBox();
-        checkColorVerde = new javax.swing.JCheckBox();
+        btnColor1 = new componentes.BotonIcono();
+        btnColor2 = new componentes.BotonIcono();
+        btnColor3 = new componentes.BotonIcono();
+        btnColor4 = new componentes.BotonIcono();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -69,11 +71,38 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         btnConfirmar.setText("Confirmar");
         btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
         getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 200, 50));
-        getContentPane().add(checkColorNegro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, -1));
-        getContentPane().add(checkColorAmarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, -1, -1));
-        getContentPane().add(checkColorAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
-        getContentPane().add(checkColorRojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
-        getContentPane().add(checkColorVerde, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
+
+        btnColor1.setRadius(50);
+        btnColor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 112, 112));
+
+        btnColor2.setRadius(50);
+        btnColor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnColor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 112, 112));
+
+        btnColor3.setRadius(50);
+        btnColor3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnColor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 112, 112));
+
+        btnColor4.setRadius(50);
+        btnColor4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnColor4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 112, 112));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoSeleccionarColor.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -82,24 +111,83 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnColor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor1ActionPerformed
+        color1 = color1.BLACK;
+        color1 = JColorChooser.showDialog(this, "Selecciona un color", color1);
+        
+        if(color1==null){
+            color1 = color1.WHITE;
+        }
+        btnColor1.setColor(color1);
+
+        
+        btnColor1.setBackground(color1);
+        btnColor1.setColorClick(color1);
+        btnColor1.setColorOver(color1);
+        System.out.println(color1.toString());
+        System.out.println(color1);
+        System.out.println(Integer.toHexString(color1.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor1ActionPerformed
+
+    private void btnColor4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor4ActionPerformed
+        color4 = color4.BLACK;
+        color4 = JColorChooser.showDialog(this, "Selecciona un color", color1);
+        
+        if(color4==null){
+            color4 = color4.WHITE;
+        }
+        
+        btnColor4.setColor(color4);
+
+       
+        btnColor4.setBackground(color4);
+        btnColor4.setColorClick(color4);
+        btnColor4.setColorOver(color4);
+        System.out.println(color4.toString());
+        System.out.println(color4);
+        System.out.println(Integer.toHexString(color1.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor4ActionPerformed
+
+    private void btnColor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor2ActionPerformed
+        color2 = color2.BLACK;
+        color2 = JColorChooser.showDialog(this, "Selecciona un color", color2);
+        
+        if(color2==null){
+            color2 = color2.WHITE;
+        }
+        btnColor2.setColor(color2);
+
+        
+        btnColor2.setBackground(color2);
+        btnColor2.setColorClick(color2);
+        btnColor2.setColorOver(color2);
+        System.out.println(color2.toString());
+        System.out.println(color2);
+        System.out.println(Integer.toHexString(color2.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor2ActionPerformed
+
+    private void btnColor3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor3ActionPerformed
+       color3 = color3.BLACK;
+        color3 = JColorChooser.showDialog(this, "Selecciona un color", color3);
+        
+        if(color3==null){
+            color3 = color3.WHITE;
+        }
+        btnColor3.setColor(color2);
+
+        
+        btnColor3.setBackground(color3);
+        btnColor3.setColorClick(color3);
+        btnColor3.setColorOver(color3);
+        System.out.println(color3.toString());
+        System.out.println(color3);
+        System.out.println(Integer.toHexString(color3.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor3ActionPerformed
+
     public void dibujarComponentes(){
-        ImageIcon negro = new ImageIcon("src\\main\\resources\\colorNegro.png");
-        ImageIcon azul = new ImageIcon("src\\main\\resources\\colorAzul.png");
-        ImageIcon rojo = new ImageIcon("src\\main\\resources\\colorRojo.png");
-        ImageIcon verde = new ImageIcon("src\\main\\resources\\colorVerde.png");
-        ImageIcon amarillo = new ImageIcon("src\\main\\resources\\colorAmarillo.png");
         
-        checkColorNegro.setIcon(negro);
-        checkColorAzul.setIcon(azul);
-        checkColorRojo.setIcon(rojo);
-        checkColorVerde.setIcon(verde);
-        checkColorAmarillo.setIcon(amarillo);
+       
         
-        checkColorNegro.setBorderPainted(false);
-        checkColorAzul.setBorderPainted(false);
-        checkColorRojo.setBorderPainted(false);
-        checkColorVerde.setBorderPainted(false);
-        checkColorAmarillo.setBorderPainted(false);
     }
     
     /**
@@ -148,13 +236,12 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjustes;
+    private componentes.BotonIcono btnColor1;
+    private componentes.BotonIcono btnColor2;
+    private componentes.BotonIcono btnColor3;
+    private componentes.BotonIcono btnColor4;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JCheckBox checkColorAmarillo;
-    private javax.swing.JCheckBox checkColorAzul;
-    private javax.swing.JCheckBox checkColorNegro;
-    private javax.swing.JCheckBox checkColorRojo;
-    private javax.swing.JCheckBox checkColorVerde;
     private javax.swing.JLabel fondo;
     // End of variables declaration//GEN-END:variables
 }
