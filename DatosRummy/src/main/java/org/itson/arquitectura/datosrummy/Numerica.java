@@ -14,10 +14,12 @@ public class Numerica extends Ficha {
      * Constructor de la ficha numerica
      * @param numero valor del numero de la ficha
      * @param tipoConjunto tipo de conjunto de la ficha
+     * @param color el color de la ficha
      */
-    public Numerica(int numero, TipoConjunto tipoConjunto) {
+    public Numerica(int numero, TipoConjunto tipoConjunto, Color color) {
         this.numero = numero;
         this.tipoConjunto = tipoConjunto;
+        this.color = color;
     }
 
     /**

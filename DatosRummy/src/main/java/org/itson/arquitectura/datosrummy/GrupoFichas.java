@@ -1,5 +1,6 @@
 package org.itson.arquitectura.datosrummy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,8 +9,12 @@ import java.util.List;
  */
 public class GrupoFichas {
 
-    private List<Ficha> fichas;
+    protected List<Ficha> fichas;
 
+    public GrupoFichas() {
+        fichas = new ArrayList<>();
+    }
+    
     /**
      * Regresa una lista de fichas
      * @return lista de fichas
@@ -24,6 +29,11 @@ public class GrupoFichas {
      */
     public void setFichas(List<Ficha> fichas) {
         this.fichas = fichas;
+    }
+    
+    public boolean agregarFicha(Ficha ficha) {
+        fichas.add(ficha);
+        return true;
     }
 
 }

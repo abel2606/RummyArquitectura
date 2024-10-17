@@ -9,12 +9,12 @@ import java.util.List;
  */
 public class Jugador {
 
-//    private String nombre;
+    private String nombre;
     private List<Color> colores;
-//    private int puntuacion;
-//    private String avatar;
+    private int puntuacion;
+    private String avatar;
     private Turno turno;
-//    private boolean estado;
+    private boolean estado;
     private List<Ficha> manoFichas;
 
     /**

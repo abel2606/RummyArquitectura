@@ -6,18 +6,4 @@ package org.itson.arquitectura.datosrummy;
  */
 public class Ficha {
     
-    /**
-     * Constructor sin parametros de ficha
-     */
-    public Ficha(){
-        
-    }
-
-    /**
-     * regrea el valor de la ficha
-     * @return regresa el valor de la ficha
-     */
-    public Ficha obtenerFicha(){
-        return this;
-    }
 }

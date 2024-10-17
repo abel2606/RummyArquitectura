@@ -1,13 +1,5 @@
 package pruebas;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import org.itson.arquitectura.datosrummy.Color;
-import org.itson.arquitectura.datosrummy.Jugador;
-import org.itson.arquitectura.datosrummy.Partida;
-import org.itson.arquitectura.datosrummy.TipoConjunto;
-
 /**
  *
  * @author ricar
@@ -49,6 +41,7 @@ public class Pruebas {
 //            jugador.colorearFichas();
 //        }
 
+        
     }
 
 }
