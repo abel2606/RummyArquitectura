@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
  */
 public class PantallaSalaEspera extends javax.swing.JDialog {
 
+    private ControlSalaEspera controlSalaEspera;
+    
     /**
      * Creates new form PantallaSalaEspera
      */
@@ -19,6 +21,10 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         dibujarComponentes();
+        controlSalaEspera = new ControlSalaEspera();
+        lblAvatar2.setVisible(false);
+        lblNombreJugador2.setVisible(false);
+        lblEstadoJugador2.setVisible(false);
     }
 
     public void dibujarComponentes(){
@@ -41,9 +47,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         btnSalir.setIcon(boton);  
         btnSalir.setSelectedIcon(botonHover);  
         btnSalir.setBorderPainted(false);  
-        btnSalir.setFocusPainted(false); 
-        
-        
+        btnSalir.setFocusPainted(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,16 +65,10 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         btnSalir = new componentes.BotonConImagen2();
         lblAvatar1 = new javax.swing.JLabel();
         lblAvatar2 = new javax.swing.JLabel();
-        lblAvatar3 = new javax.swing.JLabel();
-        lblAvatar4 = new javax.swing.JLabel();
-        lblNombreJugador5 = new javax.swing.JLabel();
         lblNombreJugador1 = new javax.swing.JLabel();
         lblNombreJugador2 = new javax.swing.JLabel();
-        lblNombreJugador3 = new javax.swing.JLabel();
-        lblNombreJugador4 = new javax.swing.JLabel();
-        lblNombreJugador6 = new javax.swing.JLabel();
-        lblNombreJugador7 = new javax.swing.JLabel();
-        lblNombreJugador8 = new javax.swing.JLabel();
+        lblEstadoJugador1 = new javax.swing.JLabel();
+        lblEstadoJugador2 = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -96,6 +94,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
 
         btnListo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
         btnListo.setToolTipText("");
+        btnListo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 165, 61));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
@@ -108,17 +111,6 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
         getContentPane().add(lblAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, 60));
 
-        lblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 60, 60));
-
-        lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 60, 60));
-
-        lblNombreJugador5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador5.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador5.setText("Jugador1");
-        getContentPane().add(lblNombreJugador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 360, 60));
-
         lblNombreJugador1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lblNombreJugador1.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreJugador1.setText("Jugador1");
@@ -126,37 +118,20 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
 
         lblNombreJugador2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lblNombreJugador2.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador2.setText("Jugador1");
+        lblNombreJugador2.setText("Jugador2");
         getContentPane().add(lblNombreJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 360, 50));
 
-        lblNombreJugador3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador3.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador3.setText("Jugador1");
-        getContentPane().add(lblNombreJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 360, 50));
+        lblEstadoJugador1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblEstadoJugador1.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoJugador1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstadoJugador1.setText("Pendiente...");
+        getContentPane().add(lblEstadoJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
 
-        lblNombreJugador4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador4.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador4.setText("listo");
-        getContentPane().add(lblNombreJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
-
-        lblNombreJugador6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador6.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador6.setText("listo");
-        getContentPane().add(lblNombreJugador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 360, 50));
-
-        lblNombreJugador7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador7.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador7.setText("listo");
-        getContentPane().add(lblNombreJugador7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 360, 50));
-
-        lblNombreJugador8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador8.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador8.setText("listo");
-        getContentPane().add(lblNombreJugador8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 360, 60));
+        lblEstadoJugador2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblEstadoJugador2.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoJugador2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstadoJugador2.setText("Pendiente...");
+        getContentPane().add(lblEstadoJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 360, 50));
 
         lblCodigo.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,6 +156,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
+        lblEstadoJugador1.setText("Listo");
+        controlSalaEspera.iniciarPartida();
+    }//GEN-LAST:event_btnListoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,19 +212,13 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblAvatar1;
     private javax.swing.JLabel lblAvatar2;
-    private javax.swing.JLabel lblAvatar3;
-    private javax.swing.JLabel lblAvatar4;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblEstadoJugador1;
+    private javax.swing.JLabel lblEstadoJugador2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblListo;
     private javax.swing.JLabel lblNombreJugador1;
     private javax.swing.JLabel lblNombreJugador2;
-    private javax.swing.JLabel lblNombreJugador3;
-    private javax.swing.JLabel lblNombreJugador4;
-    private javax.swing.JLabel lblNombreJugador5;
-    private javax.swing.JLabel lblNombreJugador6;
-    private javax.swing.JLabel lblNombreJugador7;
-    private javax.swing.JLabel lblNombreJugador8;
     private javax.swing.JLabel lblSalir;
     // End of variables declaration//GEN-END:variables
 }

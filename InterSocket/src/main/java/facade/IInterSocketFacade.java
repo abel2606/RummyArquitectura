@@ -2,15 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package partidaMVC;
-
-import componentes.FichaComponente;
+package facade;
 
 /**
  *
- * @author Diego Valenzuela Parra
+ * @author Familia
  */
-public interface IModeloPartida {
-    public FichaComponente getFicha();
-    public int getTamanioMazo();
+public interface IInterSocketFacade {
+    public void aceptarInicio();
 }

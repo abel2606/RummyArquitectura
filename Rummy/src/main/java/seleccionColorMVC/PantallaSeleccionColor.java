@@ -4,9 +4,6 @@
  */
 package seleccionColorMVC;
 
-import registrarJugadorMVC.PantallaConfigurarJugador;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 /**
@@ -15,17 +12,20 @@ import javax.swing.ImageIcon;
  */
 public class PantallaSeleccionColor extends javax.swing.JDialog {
 
+    private ControlColores controlColores;
+    
     /**
      * Creates new form PantallaSeleccionColor
      */
-    public PantallaSeleccionColor(java.awt.Frame parent, boolean modal) {
+    public PantallaSeleccionColor(java.awt.Frame parent, boolean modal, ControlColores controlColores) {
         super(parent, modal);
+        this.controlColores = controlColores;
         initComponents();
         dibujarComponentes();
     }
 
     public void continuarFlujo(){
-        
+        controlColores.continuar();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,6 +68,11 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmar.setText("Confirmar");
         btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 200, 50));
         getContentPane().add(checkColorNegro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, -1));
         getContentPane().add(checkColorAmarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, -1, -1));
@@ -81,6 +86,11 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        int[] colores = {0x000000, 0x0014CB, 0xD40000, 0x008309};
+        controlColores.agregarColoresJugador(colores);
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     public void dibujarComponentes(){
         ImageIcon negro = new ImageIcon("src\\main\\resources\\colorNegro.png");
@@ -102,50 +112,6 @@ public class PantallaSeleccionColor extends javax.swing.JDialog {
         checkColorAmarillo.setBorderPainted(false);
     }
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                PantallaSeleccionColor dialog = new PantallaSeleccionColor(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnConfirmar;

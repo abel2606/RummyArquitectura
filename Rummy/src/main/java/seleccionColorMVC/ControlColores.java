@@ -4,27 +4,32 @@
  */
 package seleccionColorMVC;
 
+import salaEsperaMVC.ControlSalaEspera;
+
 /**
  *
  * @author Abe
  */
 public class ControlColores {
     
-    public ModeloColores modelo;
+    private ControlSalaEspera controlSalaEspera;
+    private ModeloColores modelo;
+    
     public ControlColores(){
         modelo = new ModeloColores();
+        controlSalaEspera = new ControlSalaEspera();
     }
     
-    public void agregarcoloresJugador(String[] colores){
-        
+    public void agregarColoresJugador(int[] colores){
+        modelo.agregarColores(colores);
     }
     
-    public void iniciarConfiguracion(String nombre, String avatar){
-        
+    public void iniciarConfiguracion(String nombre, String avatar, ControlColores controlColores){
+        modelo.agregarNombreYAvatar(nombre, avatar, controlColores);
     }
     
     public void continuar(){
-        
+        controlSalaEspera.mostrarPantalla();
     }
    
 }

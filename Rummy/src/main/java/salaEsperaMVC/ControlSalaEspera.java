@@ -4,18 +4,26 @@
  */
 package salaEsperaMVC;
 
+import partidaMVC.ControlPartida;
+
 /**
  *
  * @author Abe
  */
 public class ControlSalaEspera {
     public ModeloSalaEspera modeloSala;
+    public ControlPartida controlPartida;
     
     public ControlSalaEspera(){
         modeloSala = new ModeloSalaEspera();
+        controlPartida = ControlPartida.getInstance();
     }
     
     public void mostrarPantalla(){
         modeloSala.mostrar();
+    }
+    
+    public void iniciarPartida() {
+        controlPartida.iniciarPartida(controlPartida);
     }
 }

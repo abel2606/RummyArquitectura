@@ -1,23 +1,23 @@
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\inicioMVC\Inicio.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\salaEsperaMVC\PantallaSalaEspera.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\partidaMVC\PantallaPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\partidaMVC\IModeloPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\PanelImagen.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\ControlConfigurarJugador.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\PantallaSeleccionColor.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\BotonIcono.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\ModeloConfigurarJugador.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\BotonConImagen.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\inicioMVC\PantallaInicio.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\ControlColores.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\partidaMVC\IPantalla.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\PantallaConfigurarJugador.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\ModeloColores.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\BotonConImagen2.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\partidaMVC\ModeloPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\componentes\FichaComponente.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\modelos\ModeloIniciarPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\configurarPartidaMVC\ControlConfigurarPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\configurarPartidaMVC\PantallaConfigurarPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\partidaMVC\ControlPartida.java
-D:\ITSON\Semestre 5\Arquitectura de software\Rummy\RummyArquitectura\Rummy\src\main\java\org\itson\arquitectura\controladores\ControlIniciarPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\ControlColores.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\partidaMVC\PantallaPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\partidaMVC\IPantalla.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\ControlConfigurarJugador.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\partidaMVC\ModeloPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\salaEsperaMVC\ModeloSalaEspera.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\PantallaSeleccionColor.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\partidaMVC\ControlPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\componentes\BotonConImagen.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\PantallaConfigurarJugador.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\configurarPartidaMVC\PantallaConfigurarPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\seleccionColorMVC\ModeloColores.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\salaEsperaMVC\PantallaSalaEspera.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\componentes\BotonIcono.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\componentes\PanelImagen.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\configurarPartidaMVC\ControlConfigurarPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\componentes\BotonConImagen2.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\inicioMVC\PantallaInicio.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\partidaMVC\IModeloPartida.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\registrarJugadorMVC\ModeloConfigurarJugador.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\unirsePartidaMVC\PantallaIntroducirCodigo.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\componentes\FichaComponente.java
+C:\Users\Familia\Documents\GitHub\RummyArquitectura\Rummy\src\main\java\salaEsperaMVC\ControlSalaEspera.java

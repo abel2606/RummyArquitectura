@@ -9,11 +9,16 @@ package registrarJugadorMVC;
  */
 public class PantallaConfigurarJugador extends javax.swing.JDialog {
 
+    private ControlConfigurarJugador controlConfigurarJugador;
+    private String nombreUsuario;
+    private String rutaAvatar;
+    
     /**
      * Creates new form PantallaDatosJugador
      */
     public PantallaConfigurarJugador(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        controlConfigurarJugador = new ControlConfigurarJugador();
         initComponents();
     }
 
@@ -53,6 +58,11 @@ public class PantallaConfigurarJugador extends javax.swing.JDialog {
         btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmar.setText("Confirmar");
         btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 200, 50));
 
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tuerca.png"))); // NOI18N
@@ -148,36 +158,40 @@ public class PantallaConfigurarJugador extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void avatar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar4ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar1.png";
     }//GEN-LAST:event_avatar4ActionPerformed
 
     private void avatar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar8ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar8.png";
     }//GEN-LAST:event_avatar8ActionPerformed
 
     private void avatar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar2ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar2.png";
     }//GEN-LAST:event_avatar2ActionPerformed
 
     private void avatar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar3ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar3.png";
     }//GEN-LAST:event_avatar3ActionPerformed
 
     private void avatar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar1ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar1.png";
     }//GEN-LAST:event_avatar1ActionPerformed
 
     private void avatar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar6ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar6.png";
     }//GEN-LAST:event_avatar6ActionPerformed
 
     private void avatar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar7ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar7.png";
     }//GEN-LAST:event_avatar7ActionPerformed
 
     private void avatar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar5ActionPerformed
-        // TODO add your handling code here:
+        rutaAvatar = "src\\main\\resources\\avatar5.png";
     }//GEN-LAST:event_avatar5ActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        controlConfigurarJugador.continuarConfiguracion(nombreUsuario, rutaAvatar);
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments

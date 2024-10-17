@@ -12,10 +12,10 @@ public class ModeloSalaEspera {
     private PantallaSalaEspera salaEspera;
     
     public ModeloSalaEspera(){
-        salaEspera = new PantallaSalaEspera(null, true);
     }
     
     public void mostrar(){
+        salaEspera = new PantallaSalaEspera(null, true);
         salaEspera.setVisible(true);
     }
 }

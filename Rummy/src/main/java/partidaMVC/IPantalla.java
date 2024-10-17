@@ -10,6 +10,4 @@ package partidaMVC;
  */
 public interface IPantalla {
     public void update(IModeloPartida modelo);
-    
-    public void setVisible(boolean response);
 }
