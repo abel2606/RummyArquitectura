@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package org.itson.arquitectura.vistas;
+package configurarPartidaMVC;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,9 +43,9 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
         chk2 = new javax.swing.JCheckBox();
         chk1 = new javax.swing.JCheckBox();
         cbboComodines = new javax.swing.JComboBox<>();
-        btnVolver = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
-        btnCrearPartida = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
-        btnConfigurar = new org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen();
+        btnVolver = new componentes.BotonConImagen();
+        btnCrearPartida = new componentes.BotonConImagen();
+        btnConfigurar = new componentes.BotonConImagen();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -241,9 +241,9 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnConfigurar;
-    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnCrearPartida;
-    private org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen btnVolver;
+    private componentes.BotonConImagen btnConfigurar;
+    private componentes.BotonConImagen btnCrearPartida;
+    private componentes.BotonConImagen btnVolver;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbboComodines;
     private javax.swing.JCheckBox chk1;

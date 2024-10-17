@@ -150,7 +150,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen" name="btnVolver">
+        <Component class="componentes.BotonConImagen" name="btnVolver">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/volver.png"/>
@@ -163,7 +163,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen" name="btnCrearPartida">
+        <Component class="componentes.BotonConImagen" name="btnCrearPartida">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/crearPartida.png"/>
@@ -176,7 +176,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="org.itson.arquitectura.configurarpartida.componentesgraficos.BotonConImagen" name="btnConfigurar">
+        <Component class="componentes.BotonConImagen" name="btnConfigurar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/settings.png"/>

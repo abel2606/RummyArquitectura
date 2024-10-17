@@ -1,7 +1,7 @@
 package org.itson.arquitectura.controladores;
 
 import org.itson.arquitectura.modelos.ModeloIniciarPartida;
-import org.itson.arquitectura.vistas.PantallaPartida;
+import partidaMVC.PantallaPartida;
 
 /**
  *
@@ -10,11 +10,13 @@ import org.itson.arquitectura.vistas.PantallaPartida;
 public class ControlIniciarPartida {
     
     private ModeloIniciarPartida modelo;
+
+    public ControlIniciarPartida() {
+        this.modelo = new ModeloIniciarPartida();
+    }
     
     public void iniciarPartida(/*Aquí van parámetros de configuración de la partida*/) {
-        PantallaPartida pantallaPartida = new PantallaPartida(null, true);
-        modelo = new ModeloIniciarPartida(pantallaPartida);
+        modelo.mostrarVista();
         modelo.iniciarPartida();
-        pantallaPartida.setVisible(true);
     }
 }

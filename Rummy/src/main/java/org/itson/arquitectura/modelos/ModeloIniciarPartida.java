@@ -14,8 +14,8 @@ import org.itson.arquitectura.datosrummy.Numerica;
 import org.itson.arquitectura.datosrummy.Partida;
 import org.itson.arquitectura.datosrummy.TipoConjunto;
 import org.itson.arquitectura.datosrummy.Turno;
-import org.itson.arquitectura.dtos.DTO;
-import org.itson.arquitectura.vistas.IPantalla;
+import partidaMVC.IPantalla;
+import partidaMVC.PantallaPartida;
 
 /**
  *
@@ -27,8 +27,8 @@ public class ModeloIniciarPartida {
     private IPantalla pantalla;
 
     
-    public ModeloIniciarPartida(IPantalla pantalla) {
-        this.pantalla = pantalla;
+    public ModeloIniciarPartida() {
+        this.pantalla = new PantallaPartida(null, true);
     }
     
     public void iniciarPartida() {
@@ -148,12 +148,12 @@ public class ModeloIniciarPartida {
      * Dibuja la mano de fichas del jugador
      */
     private void notificar() {
-        List<Ficha> fichas = partida.getJugadores().getFirst().getManoFichas();
-        for (Ficha ficha : fichas) {
-            DTO dto = convertirFicha(ficha);
-            dto.setTamanioMazo(partida.getMazo().size());
-            pantalla.update(dto);
-        }
+//        List<Ficha> fichas = partida.getJugadores().getFirst().getManoFichas();
+//        for (Ficha ficha : fichas) {
+//            DTO dto = convertirFicha(ficha);
+//            dto.setTamanioMazo(partida.getMazo().size());
+//            pantalla.update(dto);
+//        }
     }
 
     /**
@@ -162,16 +162,20 @@ public class ModeloIniciarPartida {
      * @param ficha ficha que se convierte en ficha
      * @return regresa el valor del comopnente de ficha
      */
-    public DTO convertirFicha(Ficha ficha) {
-        if (ficha instanceof Numerica numerica) {
-            int numero = numerica.getNumero();
-            int color = numerica.getColor().getCodigoHex();
-            FichaComponente fichaComponente = new FichaComponente(numero, color);
-            DTO dto = new DTO();
-            dto.setFicha(fichaComponente);
-            return dto;
-        }
-        return null;
+    public void convertirFicha(Ficha ficha) {
+//        if (ficha instanceof Numerica numerica) {
+//            int numero = numerica.getNumero();
+//            int color = numerica.getColor().getCodigoHex();
+//            FichaComponente fichaComponente = new FichaComponente(numero, color);
+//            DTO dto = new DTO();
+//            dto.setFicha(fichaComponente);
+//            return dto;
+//        }
+//        return null;
+    }
+    
+    public void mostrarVista() {
+        pantalla.setVisible(true);
     }
 
 }

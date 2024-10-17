@@ -1,10 +1,6 @@
-package org.itson.arquitectura.vistas;
+package partidaMVC;
 
-import componentes.FichaComponente;
-import java.awt.Graphics;
 import org.itson.arquitectura.datosrummy.Partida;
-import org.itson.arquitectura.dtos.DTO;
-import org.itson.arquitectura.rummy.ControlPartida;
 
 /**
  *
@@ -146,12 +142,12 @@ public class PantallaPartida extends javax.swing.JDialog implements IPantalla {
     }//GEN-LAST:event_btnMasFichaActionPerformed
 
     @Override
-    public void update(DTO dto) {
-        super.update(this.getGraphics());
-        panelFila1Tabla.add(dto.getFicha());
-        panelFila1Tabla.revalidate();
-        panelFila1Tabla.repaint();
-        modificarTamanioMazo(dto.getTamanioMazo());
+    public void update(IModeloPartida modelo) {
+//        super.update(this.getGraphics());
+//        panelFila1Tabla.add(dto.getFicha());
+//        panelFila1Tabla.revalidate();
+//        panelFila1Tabla.repaint();
+//        modificarTamanioMazo(dto.getTamanioMazo());
     }
 
     public void modificarTamanioMazo(int tamanioMazo) {
