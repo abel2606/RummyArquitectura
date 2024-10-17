@@ -17,12 +17,11 @@ public class ControlConfigurarJugador {
     
     public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
         modelo.crearPartida(rangoFichas, numeroComodines);
-        
-        mostrarVista();
+
     }
     
-    public void mostrarVista(){
-        modelo.mostrarVista();
+    public void continuarConfiguracion(String nombre, String avatar){
+        
     }
     
 }

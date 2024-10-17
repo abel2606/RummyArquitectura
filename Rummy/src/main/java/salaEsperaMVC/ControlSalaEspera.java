@@ -24,7 +24,7 @@ public class ControlSalaEspera {
         modeloSala = new ModeloSalaEspera();
     }
     
-    public void mostrarPantalla(){
+    public void mostrarVista(){
         modeloSala.mostrar();
     }
     

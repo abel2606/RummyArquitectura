@@ -10,23 +10,24 @@ package seleccionColorMVC;
  */
 public class ModeloColores {
     public PantallaSeleccionColor pantalla;
+    
     public ModeloColores(){
         pantalla = new PantallaSeleccionColor(null, true);
+    }
+    
+    public void crearJugador(String nombre, String avatar){
+        
+    }
+    
+    public void mostrarVista(){
+        
     }
     
     public void agregarColores(String[] colores){
         
     }
-    
-    public void mostrarPantalla(){
-        
-    }
-    
-    public void agregarNombreYAvatar(String[] nombre,String avatar){
-        
-    }
-    
-    public void siguientePantalla(){
+
+    public void agregarJugadorPartida(){
         
     }
 }
