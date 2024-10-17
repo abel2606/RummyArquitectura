@@ -9,5 +9,13 @@ package salaEsperaMVC;
  * @author Abe
  */
 public class ControlSalaEspera {
+    public ModeloSalaEspera modeloSala;
     
+    public ControlSalaEspera(){
+        modeloSala = new ModeloSalaEspera();
+    }
+    
+    public void mostrarPantalla(){
+        modeloSala.mostrar();
+    }
 }

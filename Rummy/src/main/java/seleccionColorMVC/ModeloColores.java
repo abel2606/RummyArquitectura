@@ -9,8 +9,9 @@ package seleccionColorMVC;
  * @author Abe
  */
 public class ModeloColores {
+    public PantallaSeleccionColor pantalla;
     public ModeloColores(){
-        
+        pantalla = new PantallaSeleccionColor(null, true);
     }
     
     public void agregarColores(String[] colores){
