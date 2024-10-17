@@ -20,15 +20,38 @@ public class ControlPartida {
         this.modelo = new ModeloPartida();
     }
 
-    /**
-     * Indica al modelo que debe de tomar ua ficha
-     */
-    public void tomarFicha(Jugador jugador) {
-        modelo.agregarFichaJugador(jugador, modelo.obtenerFichaMazo());
-    }
+//    /**
+//     * Indica al modelo que debe de tomar ua ficha
+//     */
+//    public void tomarFicha(Jugador jugador) {
+//        modelo.agregarFichaJugador(jugador, modelo.obtenerFichaMazo());
+//    }
     
     public void mostrarPantalla(){
         modelo.mostrar();
+    }
+    
+    public void iniciarPartida(){
+        
+    }
+    public void avisar(){
+        
+    }
+    public void jalarFicha(){
+        
+    }
+    public void agregarFichaMano(){
+        
+    }
+    public void colocarFichaTablero(){
+        
+    }
+    
+    public void terminarPartida(){
+        
+    }
+    public void terminarTurno(){
+        
     }
     
 }

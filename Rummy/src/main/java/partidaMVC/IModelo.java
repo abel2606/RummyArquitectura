@@ -5,11 +5,15 @@
 package partidaMVC;
 
 import componentes.FichaComponente;
+import java.util.List;
 
 /**
  *
  * @author Diego Valenzuela Parra
  */
-public interface IModeloPartida {
+public interface IModelo {
     public FichaComponente getFicha();
+    public List<String> getAvatares();
+    public List<String> getNombreJugadores();
+    
 }

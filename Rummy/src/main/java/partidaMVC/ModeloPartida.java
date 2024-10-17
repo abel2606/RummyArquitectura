@@ -16,11 +16,11 @@ import org.itson.arquitectura.datosrummy.TipoConjunto;
  *
  * @author Equipo4
  */
-public class ModeloPartida {
+public class ModeloPartida implements IModelo{
 
     private Partida partida;
     private Jugador jugador;
-    private IPantalla pantalla;
+    private IVista pantalla;
 
     /**
      * Constructor del modelo que crea una partida
@@ -109,6 +109,46 @@ public class ModeloPartida {
     }
     
     public void mostrar(){
-        pantalla.setVisible(true);
+//        pantalla.setVisible(true);
     }
+    
+    public void darFichas(){
+        
+    }
+    public void cambiarEstadoPartida(){
+        partida.setIsIniciada(true);
+    }
+    
+    public void repartirTurnos(){
+        
+    }
+    public void jalarFichaMazo(){
+        
+    }
+    public void colocarFichaTablero(){
+        
+    }
+    
+    public void terminarPartida(){
+        
+    }
+    public void terminarTurno(){
+        
+    }
+
+    @Override
+    public FichaComponente getFicha() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<String> getAvatares() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<String> getNombreJugadores() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
 }

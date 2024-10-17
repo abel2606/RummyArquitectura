@@ -14,8 +14,8 @@ import org.itson.arquitectura.datosrummy.Numerica;
 import org.itson.arquitectura.datosrummy.Partida;
 import org.itson.arquitectura.datosrummy.TipoConjunto;
 import org.itson.arquitectura.datosrummy.Turno;
-import partidaMVC.IPantalla;
 import partidaMVC.PantallaPartida;
+import partidaMVC.IVista;
 
 /**
  *
@@ -24,7 +24,7 @@ import partidaMVC.PantallaPartida;
 public class ModeloIniciarPartida {
 
     private Partida partida;
-    private IPantalla pantalla;
+    private IVista pantalla;
 
     
     public ModeloIniciarPartida() {
@@ -175,7 +175,7 @@ public class ModeloIniciarPartida {
     }
     
     public void mostrarVista() {
-        pantalla.setVisible(true);
+//        pantalla.setVisible(true);
     }
 
 }

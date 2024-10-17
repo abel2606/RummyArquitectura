@@ -8,8 +8,7 @@ package partidaMVC;
  *
  * @author Familia
  */
-public interface IPantalla {
-    public void update(IModeloPartida modelo);
+public interface IVista {
+    public void update(IModelo modelo);
     
-    public void setVisible(boolean response);
 }

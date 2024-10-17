@@ -6,7 +6,7 @@ import org.itson.arquitectura.datosrummy.Partida;
  *
  * @author Equipo4
  */
-public class PantallaPartida extends javax.swing.JDialog implements IPantalla {
+public class PantallaPartida extends javax.swing.JDialog implements IVista {
 
     private ControlPartida controlPartida;
     private Partida partida;
@@ -137,17 +137,20 @@ public class PantallaPartida extends javax.swing.JDialog implements IPantalla {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMasFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasFichaActionPerformed
-        controlPartida.tomarFicha(partida.getTurnos().getFirst().getJugador());
-        btnMasFicha.setEnabled(false);
+//        controlPartida.tomarFicha(partida.getTurnos().getFirst().getJugador());
+//        btnMasFicha.setEnabled(false);
     }//GEN-LAST:event_btnMasFichaActionPerformed
 
     @Override
-    public void update(IModeloPartida modelo) {
+    public void update(IModelo modelo) {
 //        super.update(this.getGraphics());
 //        panelFila1Tabla.add(dto.getFicha());
 //        panelFila1Tabla.revalidate();
 //        panelFila1Tabla.repaint();
 //        modificarTamanioMazo(dto.getTamanioMazo());
+    }
+    public void terminarPartida(){
+        
     }
 
     public void modificarTamanioMazo(int tamanioMazo) {
