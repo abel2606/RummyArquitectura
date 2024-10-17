@@ -13,10 +13,11 @@ public class Partida {
     private List<Ficha> mazo;
     private List<Jugador> jugadores;
     private int numeroComodines;
+    private boolean isIniciada;
     private int rangoFichas;
     private List<Turno> turnos;
-//    private int codigo;
-//    private Tablero tablero;
+    private int codigo;
+    private Tablero tablero;
 
     /**
      * Constructor sin parametros de la partida
@@ -34,6 +35,15 @@ public class Partida {
         this.turnos = turnos;
     }
 
+    public void setNumeroComodines(int numeroComodines) {
+        this.numeroComodines = numeroComodines;
+    }
+
+    public void setRangoFichas(int rangoFichas) {
+        this.rangoFichas = rangoFichas;
+    }
+
+    
     /**
      * toma una ficha
      *
@@ -107,6 +117,40 @@ public class Partida {
         mazo.add(ficha);
     }
 
+    /**
+     * Si la partida esta iniciada
+     * @return regrea los valores si la partida está iniciada
+     */
+    public boolean isIsIniciada() {
+        return isIniciada;
+    }
+
+    /**
+     * si la partida está iniciada
+     * @param isIniciada valor de la partida iniciada
+     */
+    public void setIsIniciada(boolean isIniciada) {
+        this.isIniciada = isIniciada;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+
+    
+    
     /**
      * Regresa una instancia de la partida
      *

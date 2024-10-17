@@ -14,7 +14,7 @@ public class ControlConfigurarPartida {
     public ControlConfigurarJugador otroControl;
     
     public ControlConfigurarPartida(){
-        
+        otroControl = new ControlConfigurarJugador();
     }
     
     /**
@@ -23,7 +23,7 @@ public class ControlConfigurarPartida {
      * @param numComodines 
      */
     public void continuarConfiguracion(int rangoFichas, int numComodines){
-        
+        otroControl.iniciarConfiguracion(rangoFichas, numComodines);
     }
     
 }
