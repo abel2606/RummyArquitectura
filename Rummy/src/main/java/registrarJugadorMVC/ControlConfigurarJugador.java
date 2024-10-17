@@ -9,5 +9,20 @@ package registrarJugadorMVC;
  * @author Abe
  */
 public class ControlConfigurarJugador {
+    public ModeloConfigurarJugador modelo;
+    
+    public ControlConfigurarJugador(){
+        modelo = new ModeloConfigurarJugador();
+    }
+    
+    public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
+        modelo.crearPartida(rangoFichas, numeroComodines);
+        
+        mostrarVista();
+    }
+    
+    public void mostrarVista(){
+        modelo.mostrarVista();
+    }
     
 }

@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class PantallaConfigurarPartida extends javax.swing.JDialog {
 
+    private ControlConfigurarPartida control;
+
     /**
      * Creates new form Inicio
      */
@@ -23,6 +25,7 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         dibujarComponentes();
+        control = new ControlConfigurarPartida();
 
     }
 
@@ -44,7 +47,7 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
         chk1 = new javax.swing.JCheckBox();
         cbboComodines = new javax.swing.JComboBox<>();
         btnVolver = new componentes.BotonConImagen();
-        btnCrearPartida = new componentes.BotonConImagen();
+        btnConfirmar = new componentes.BotonConImagen();
         btnConfigurar = new componentes.BotonConImagen();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,9 +98,14 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
         btnVolver.setToolTipText("");
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 262, 52));
 
-        btnCrearPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartida.png"))); // NOI18N
-        btnCrearPartida.setToolTipText("");
-        jPanel1.add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, 262, 52));
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartida.png"))); // NOI18N
+        btnConfirmar.setToolTipText("");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, 262, 52));
 
         btnConfigurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
         jPanel1.add(btnConfigurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 72, 72));
@@ -120,30 +128,28 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public void dibujarComponentes(){
+    public void dibujarComponentes() {
         ImageIcon noSeleccionado = new ImageIcon("src\\main\\resources\\Rectangulo1.png");
         ImageIcon seleccionado = new ImageIcon("src\\main\\resources\\RectanguloSeleccionado1.png");
 
         ImageIcon noSeleccionado2 = new ImageIcon("src\\main\\resources\\Rectangulo2.png");
         ImageIcon seleccionado2 = new ImageIcon("src\\main\\resources\\RectanguloSeleccionado2.png");
 
-        
-        chk1.setIcon(noSeleccionado);  
-        chk1.setSelectedIcon(seleccionado);  
-        chk1.setBorderPainted(false);  
-        chk1.setFocusPainted(false); 
-        
-        chk2.setIcon(noSeleccionado2);  
-        chk2.setSelectedIcon(seleccionado2);  
-        chk2.setBorderPainted(false);  
-        chk2.setFocusPainted(false); 
-        
+        chk1.setIcon(noSeleccionado);
+        chk1.setSelectedIcon(seleccionado);
+        chk1.setBorderPainted(false);
+        chk1.setFocusPainted(false);
+
+        chk2.setIcon(noSeleccionado2);
+        chk2.setSelectedIcon(seleccionado2);
+        chk2.setBorderPainted(false);
+        chk2.setFocusPainted(false);
+
         chk1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (chk1.isSelected()) {
-                    chk2.setSelected(false); 
+                    chk2.setSelected(false);
                 }
             }
         });
@@ -152,36 +158,35 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (chk2.isSelected()) {
-                    chk1.setSelected(false);                    
+                    chk1.setSelected(false);
                 }
             }
         });
-        
+
         ImageIcon crearPartida = new ImageIcon("src\\main\\resources\\crearPartida.png");
         ImageIcon crearPartidaSelect = new ImageIcon("src\\main\\resources\\crearPartidaHover.png");
-        
+
         ImageIcon volver = new ImageIcon("src\\main\\resources\\volver.png");
         ImageIcon volverSelect = new ImageIcon("src\\main\\resources\\volverHover.png");
-        
-        btnVolver.setIcon(volver);  
-        btnVolver.setSelectedIcon(volverSelect);  
-        btnVolver.setBorderPainted(false);  
-        btnVolver.setFocusPainted(false); 
-        
-        btnCrearPartida.setIcon(crearPartida);  
-        btnCrearPartida.setSelectedIcon(crearPartidaSelect);  
-        btnCrearPartida.setBorderPainted(false);  
-        btnCrearPartida.setFocusPainted(false); 
-        
+
+        btnVolver.setIcon(volver);
+        btnVolver.setSelectedIcon(volverSelect);
+        btnVolver.setBorderPainted(false);
+        btnVolver.setFocusPainted(false);
+
+        btnConfirmar.setIcon(crearPartida);
+        btnConfirmar.setSelectedIcon(crearPartidaSelect);
+        btnConfirmar.setBorderPainted(false);
+        btnConfirmar.setFocusPainted(false);
+
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
 
-        btnConfigurar.setIcon(settings);  
-        btnConfigurar.setSelectedIcon(settingsSelect);  
-        btnConfigurar.setBorderPainted(false);  
-        btnConfigurar.setFocusPainted(false); 
-        
-        
+        btnConfigurar.setIcon(settings);
+        btnConfigurar.setSelectedIcon(settingsSelect);
+        btnConfigurar.setBorderPainted(false);
+        btnConfigurar.setFocusPainted(false);
+
     }
     private void chk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk1ActionPerformed
         // TODO add your handling code here:
@@ -194,6 +199,23 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
     private void btnConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfiguracionActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        int rangoFichas = 0;
+
+        if (chk1.isSelected()) {
+            rangoFichas = 10;
+
+        } else if (chk2.isSelected()) {
+            rangoFichas = 13;
+        }
+
+        
+        String comodines = (String) cbboComodines.getSelectedItem();
+        int numComodines = Integer.valueOf(comodines);
+        
+        control.continuarConfiguracion(rangoFichas, numComodines);
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,7 +264,7 @@ public class PantallaConfigurarPartida extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.BotonConImagen btnConfigurar;
-    private componentes.BotonConImagen btnCrearPartida;
+    private componentes.BotonConImagen btnConfirmar;
     private componentes.BotonConImagen btnVolver;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbboComodines;
