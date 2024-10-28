@@ -1,6 +1,9 @@
 package org.itson.arquitectura.dominiorummy;
 
 /**
+ * Representa el turno que tiene un jugador para poder hacer un movimiento en la
+ * partida.
+ *
  * @author Equipo4
  */
 public class Turno {

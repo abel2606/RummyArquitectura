@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Representa un grupo de fichas de al menos 3 fichas.
+ *
  * @author Equipo4
  */
 public class GrupoFichas {
 
+    /**
+     * Las fichas del grupo.
+     */
     protected List<Ficha> fichas;
 
     /**
@@ -18,18 +23,18 @@ public class GrupoFichas {
     }
 
     /**
-     * Regresa una lista de fichas
+     * Permite obtener las fichas del grupo.
      *
-     * @return lista de fichas
+     * @return Las fichas del grupo
      */
     public List<Ficha> getFichas() {
         return fichas;
     }
 
     /**
-     * Establece el valor de la lista de fichas
+     * Permite establecer las fichas del grupo.
      *
-     * @param fichas lista de fichas a establecer
+     * @param fichas Las fichas del grupo
      */
     public void setFichas(List<Ficha> fichas) {
         this.fichas = fichas;
@@ -37,6 +42,7 @@ public class GrupoFichas {
 
     /**
      * Permite agregar una ficha al grupo.
+     *
      * @param ficha La ficha a agregar
      * @return true si se agregó la ficha, false en caso contrario.
      */

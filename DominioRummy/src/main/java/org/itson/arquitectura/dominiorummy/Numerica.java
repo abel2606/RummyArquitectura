@@ -1,20 +1,36 @@
 package org.itson.arquitectura.dominiorummy;
 
+import java.util.Objects;
+
 /**
+ * Representa una ficha que tiene un número.
+ *
  * @author Equipo4
  */
 public class Numerica extends Ficha {
 
+    /**
+     * El número.
+     */
     private int numero;
+    
+    /**
+     * El color asignado.
+     */
     private Color color;
+    
+    /**
+     * El conjunto al que pertenece.
+     */
     private NumeroConjuntoFichas numeroConjunto;
 
     /**
-     * Constructor de la ficha numerica
+     * Constructor que recibe el número de la ficha, el conjunto al que pertence
+     * y el color asignado.
      *
-     * @param numero valor del numero de la ficha
-     * @param numeroConjunto numero de conjunto de la ficha
-     * @param color el color de la ficha
+     * @param numero El número de la ficha
+     * @param numeroConjunto EL conjunto al que pertenece la ficha
+     * @param color El color de la ficha
      */
     public Numerica(int numero, NumeroConjuntoFichas numeroConjunto, Color color) {
         this.numero = numero;
@@ -23,62 +39,80 @@ public class Numerica extends Ficha {
     }
 
     /**
-     * regresa el color de la ficha numerica
+     * Permite obtener el color de la ficha.
      *
-     * @return valor del color
+     * @return El color de la ficha
      */
     public Color getColor() {
         return color;
     }
 
     /**
-     * EStablecel el color de la ficha numerica
+     * Permite establecer el color de la ficha.
      *
-     * @param color color de la ficha
+     * @param color El color de la ficha
      */
     public void setColor(Color color) {
         this.color = color;
     }
 
     /**
-     * regresa el numero de la ficha numerica
+     * Permite obtener el número de la ficha.
      *
-     * @return valor del numero
+     * @return El número de la ficha
      */
     public int getNumero() {
         return numero;
     }
 
     /**
-     * Establece el numero
+     * Permite obtener el conjunto al que pertenece la ficha.
      *
-     * @param numero numero a establecer
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    /**
-     * Regresa el tipo de conjunto de la ficha numerica
-     *
-     * @return regresa el tipo de conjunto
+     * @return El conjunto al que pertenece
      */
     public NumeroConjuntoFichas getNumeroConjunto() {
         return numeroConjunto;
     }
 
     /**
-     * establece el tipo de conjunto
+     * Permite establecer conjunto al que pertenece la ficha.
      *
-     * @param numeroConjunto valor del conjunto
+     * @param numeroConjunto El conjunto al que pertenece
      */
     public void setNumeroConjunto(NumeroConjuntoFichas numeroConjunto) {
         this.numeroConjunto = numeroConjunto;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public String toString() {
-        return "Numerica{" + "numero=" + numero + ", color=" + color + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.numero;
+        hash = 97 * hash + Objects.hashCode(this.color);
+        return hash;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Numerica other = (Numerica) obj;
+        if (this.numero != other.numero) {
+            return false;
+        }
+        return this.color.equals(other.color);
     }
 
 }

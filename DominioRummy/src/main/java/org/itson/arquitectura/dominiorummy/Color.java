@@ -3,39 +3,55 @@ package org.itson.arquitectura.dominiorummy;
 import java.util.Objects;
 
 /**
+ * Representa el color de una ficha numérica.
+ * 
  * @author Equipo4
  */
 public class Color {
 
+    /**
+     * El código hexadecimal del color.
+     */
     private String codigoHex;
-    private NumeroConjuntoFichas tipoConjunto;
+    
+    /**
+     * El conjunto de fichas asociado al color.
+     */
+    private NumeroConjuntoFichas numeroConjunto;
 
     /**
-     * Constructor del color
-     * @param codigoHex valor hexadecimal del color
-     * @param tipo tipo del color
+     * Constructor que recibe el código hexadecimal y el conjunto asociado al
+     * color.
+     *
+     * @param codigoHex El código hexadecimal del color
+     * @param numeroConjunto El conjunto de fichas asociado al color
      */
-    public Color(String codigoHex, NumeroConjuntoFichas tipo) {
+    public Color(String codigoHex, NumeroConjuntoFichas numeroConjunto) {
         this.codigoHex = codigoHex;
-        this.tipoConjunto = tipo;
+        this.numeroConjunto = numeroConjunto;
     }
 
     /**
-     * Regresa el codigo hexadecimal del color
-     * @return codigo hexadecimal del color
+     * Permite obtener el código hexadecimal del color.
+     *
+     * @return El código del color
      */
     public String getCodigoHex() {
         return codigoHex;
     }
 
     /**
-     * Regresa el tipo de conjunto del color
-     * @return valor del tipo de conjunto
+     * Permite obtener el conjunto de fichas asociado al color.
+     *
+     * @return El conjunto de fichas asociado
      */
-    public NumeroConjuntoFichas getTipoConjunto() {
-        return tipoConjunto;
+    public NumeroConjuntoFichas getNumeroConjunto() {
+        return numeroConjunto;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -43,6 +59,9 @@ public class Color {
         return hash;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -56,11 +75,6 @@ public class Color {
         }
         final Color other = (Color) obj;
         return this.codigoHex.equalsIgnoreCase(other.codigoHex);
-    }
-
-    @Override
-    public String toString() {
-        return "Color{" + "codigoHex=" + codigoHex + '}';
     }
 
 }

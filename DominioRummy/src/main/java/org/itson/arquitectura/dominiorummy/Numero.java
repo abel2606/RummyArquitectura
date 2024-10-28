@@ -1,6 +1,9 @@
 package org.itson.arquitectura.dominiorummy;
 
 /**
+ * Representa un grupo de fichas en el que todas las fichas son del mismo número
+ * pero de diferente color.
+ *
  * @author Equipo4
  */
 public class Numero extends GrupoFichas {
@@ -25,8 +28,6 @@ public class Numero extends GrupoFichas {
                 fichas.add(ficha);
                 return true;
             }
-        } else {
-            return false;
         }
         return false;
     }

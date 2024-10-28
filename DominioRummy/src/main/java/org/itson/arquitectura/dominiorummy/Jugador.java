@@ -6,16 +6,40 @@ import java.util.Objects;
 import java.util.Random;
 
 /**
+ * Representa un jugador que juega en una partida.
+ * 
  * @author Equipo4
  */
 public class Jugador {
-
-    private int puntuacion;
+    
+    /**
+     * Si el jugador está listo para iniciar la partida o no.
+     */
     private boolean estado;
+    
+    /**
+     * El nombre del jugador.
+     */
     private String nombre;
+    
+    /**
+     * El avatar del jugador.
+     */
     private String rutaAvatar;
+    
+    /**
+     * El turno en el que juega.
+     */
     private Turno turno;
+    
+    /**
+     * Los colores que seleccionó el jugador para las fichas.
+     */
     private List<Color> colores;
+    
+    /**
+     * Las fichas que puede usar el jugador.
+     */
     private List<Ficha> manoFichas;
 
     /**
@@ -65,32 +89,35 @@ public class Jugador {
     }
 
     /**
-     * Obtiene los colores del jugador
+     * Permite obtener los colores de las fichas que ve el jugador.
      *
-     * @return valor de los colores del jugador
+     * @return Los colores de las fichas
      */
     public List<Color> getColores() {
         return colores;
     }
 
     /**
-     * Establece los colores del jugadores
+     * Permite establecer los colores de las fichas que verá el jugador.
      *
-     * @param colores valor de los colores
+     * @param colores Los colores de las fichas
      */
     public void setColores(List<Color> colores) {
         this.colores = colores;
     }
 
     /**
-     * Esetablece un turno al jugador
+     * Permite establecer el turno del jugador.
      *
-     * @param turno valor del turno a establecer
+     * @param turno El turno del jugador
      */
     public void setTurno(Turno turno) {
         this.turno = turno;
     }
 
+    /**
+     * {@inheritDoc} 
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -98,6 +125,9 @@ public class Jugador {
         return hash;
     }
 
+    /**
+     * {@inheritDoc} 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
