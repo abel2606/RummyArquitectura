@@ -1,0 +1,13 @@
+org\itson\arquitectura\dominiorummy\Jugador.class
+org\itson\arquitectura\dominiorummy\Comodin.class
+org\itson\arquitectura\dominiorummy\Numero.class
+org\itson\arquitectura\dominiorummy\NumeroConjuntoFichas.class
+pruebas\Pruebas.class
+org\itson\arquitectura\dominiorummy\Color.class
+org\itson\arquitectura\dominiorummy\Turno.class
+org\itson\arquitectura\dominiorummy\Ficha.class
+org\itson\arquitectura\dominiorummy\Secuencia.class
+org\itson\arquitectura\dominiorummy\GrupoFichas.class
+org\itson\arquitectura\dominiorummy\Numerica.class
+org\itson\arquitectura\dominiorummy\Partida.class
+org\itson\arquitectura\dominiorummy\Tablero.class
