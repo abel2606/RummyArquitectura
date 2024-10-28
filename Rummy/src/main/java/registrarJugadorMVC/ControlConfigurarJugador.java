@@ -16,7 +16,7 @@ public class ControlConfigurarJugador {
     }
     
     public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
-        modelo.crearPartida(rangoFichas, numeroComodines);
+//        modelo.crearPartida(rangoFichas, numeroComodines);
 
     }
     

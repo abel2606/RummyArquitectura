@@ -1,6 +1,6 @@
 package partidaMVC;
 
-import org.itson.arquitectura.datosrummy.Partida;
+import org.itson.arquitectura.dominiorummy.Partida;
 
 /**
  *
@@ -19,7 +19,7 @@ public class PantallaPartida extends javax.swing.JDialog implements IVista {
         setTitle("Rummy - Partida");
         initComponents();
         this.controlPartida = new ControlPartida();
-        this.partida = Partida.getInstance();
+//        this.partida = Partida.getInstance();
     }
 
     /**

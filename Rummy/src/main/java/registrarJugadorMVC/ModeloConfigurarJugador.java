@@ -4,7 +4,8 @@
  */
 package registrarJugadorMVC;
 
-import org.itson.arquitectura.datosrummy.Partida;
+import org.itson.arquitectura.dominiorummy.Partida;
+
 
 /**
  *
@@ -25,12 +26,12 @@ public class ModeloConfigurarJugador {
         
     }
 
-    public Partida crearPartida(int rangoFichas, int numeroComodines) {
-        Partida partida = new Partida();
-        
-        partida.setRangoFichas(rangoFichas);
-        partida.setNumeroComodines(numeroComodines);
-        
-        return partida;
-    }
+//    public Partida crearPartida(int rangoFichas, int numeroComodines) {
+//        Partida partida = new Partida();
+//        
+//        partida.setRangoFichas(rangoFichas);
+//        partida.setNumeroComodines(numeroComodines);
+//        
+//        return partida;
+//    }
 }

@@ -1,8 +1,7 @@
 package partidaMVC;
 
 import partidaMVC.ModeloPartida;
-import org.itson.arquitectura.datosrummy.Jugador;
-import partidaMVC.PantallaPartida;
+
 
 /**
  *
