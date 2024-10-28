@@ -1,10 +1,9 @@
 package org.itson.arquitectura.datosrummy;
 
 /**
- *
  * @author Equipo4
  */
-public class Numero extends GrupoFichas{
+public class Numero extends GrupoFichas {
 
     @Override
     public boolean agregarFicha(Ficha ficha) {
@@ -13,7 +12,7 @@ public class Numero extends GrupoFichas{
                 fichas.add(ficha);
             } else if (ficha instanceof Numerica) {
                 for (Ficha ficha1 : fichas) {
-                    if (((Numerica)ficha1).getColor().getCodigoHex() == ((Numerica) ficha).getColor().getCodigoHex()) {
+                    if (((Numerica) ficha1).getColor().getCodigoHex().equals(((Numerica) ficha).getColor().getCodigoHex())) {
                         return false;
                     }
                     if (((Numerica) ficha1).getNumero() != ((Numerica) ficha).getNumero()) {
@@ -28,7 +27,5 @@ public class Numero extends GrupoFichas{
         }
         return false;
     }
-    
-    
-    
+
 }

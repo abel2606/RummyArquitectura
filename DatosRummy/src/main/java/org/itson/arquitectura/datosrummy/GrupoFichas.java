@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Abe
+ * @author Equipo4
  */
 public class GrupoFichas {
 

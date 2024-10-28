@@ -1,8 +1,12 @@
 package pruebas;
 
+import java.util.List;
+import org.itson.arquitectura.datosrummy.Ficha;
+import org.itson.arquitectura.datosrummy.Jugador;
+import org.itson.arquitectura.datosrummy.Partida;
+
 /**
- *
- * @author ricar
+ * @author Equipo4
  */
 public class Pruebas {
 
@@ -11,37 +15,43 @@ public class Pruebas {
      */
     public static void main(String[] args) {
 
+//        NumeroConjuntoFichas conjunto1 = new NumeroConjuntoFichas(1);
+//        Color color1 = new Color("BAB400", conjunto1);
+//
+//        Ficha ficha1 = new Numerica(10, conjunto1, color1);
+//
+//        Jugador jugador = new Jugador("imnotrichi", "path");
+//        jugador.agregarFicha(ficha1);
+//
+//        Ficha fichaObtenida = jugador.obtenerFicha();
+//
+//        System.out.println(((Numerica) fichaObtenida).getNumero());
+//        
 //        Partida partida = new Partida(2, 13);
+//        
+//        partida.agregarJugador(new Jugador("licoreeee", "Path"));
+//        partida.agregarJugador(new Jugador("bortcrab", "Path"));
+//        partida.agregarJugador(new Jugador("abel_san", "Path"));
+//        partida.agregarJugador(new Jugador("madero_jl", "Path"));
+//        
+//        boolean resultado = partida.agregarJugador(jugador);
+//        
+//        System.out.println(resultado + ", " + partida.getCodigo());
 
-//        Jugador jugador1 = new Jugador();
-//        List<Color> colores1 = new LinkedList<>();
-//        colores1.add(new Color("000000", new TipoConjunto(1)));
-//        colores1.add(new Color("0014CB", new TipoConjunto(2)));
-//        colores1.add(new Color("D40000", new TipoConjunto(3)));
-//        colores1.add(new Color("008309", new TipoConjunto(4)));
-//        jugador1.setColores(colores1);
-//        
-//        Jugador jugador2 = new Jugador();
-//        List<Color> colores2 = new LinkedList<>();
-//        colores2.add(new Color("000000", new TipoConjunto(1)));
-//        colores2.add(new Color("0014CB", new TipoConjunto(2)));
-//        colores2.add(new Color("D40000", new TipoConjunto(3)));
-//        colores2.add(new Color("008309", new TipoConjunto(4)));
-//        jugador2.setColores(colores2);
-//        
-//        List<Jugador> jugadores = new ArrayList<>();
-//        jugadores.add(jugador1);
-//        jugadores.add(jugador2);
+        Partida partida = new Partida(2, 13);
         
-//        partida.setJugadores(jugadores);
-//        
-//        partida.repartirFichas();
+        partida.agregarJugador(new Jugador("licoreeee", "Path"));
+        partida.agregarJugador(new Jugador("imnotrichi", "Path"));
         
-//        for (Jugador jugador : jugadores) {
-//            jugador.colorearFichas();
-//        }
+        partida.iniciarPartida();
+        
+        List<Ficha> mazo = partida.getMazo();
 
-        
+        for (int i = 0; i < mazo.size(); i++) {
+            Ficha ficha = mazo.get(i);
+            
+            System.out.println(ficha.toString());
+        }
     }
 
 }

@@ -2,38 +2,53 @@ package org.itson.arquitectura.datosrummy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 /**
- *
- * @author Abe
+ * @author Equipo4
  */
 public class Jugador {
 
-    private String nombre;
-    private List<Color> colores;
     private int puntuacion;
-    private String avatar;
-    private Turno turno;
     private boolean estado;
+    private String nombre;
+    private String rutaAvatar;
+    private Turno turno;
+    private List<Color> colores;
     private List<Ficha> manoFichas;
 
     /**
-     *  Constructor sin parametros de jugador
+     * Constructor que recibe el nombre del jugador y la ruta donde se encuentra
+     * su avatar.
+     *
+     * @param nombre
+     * @param rutaAvatar
      */
-    public Jugador() {
+    public Jugador(String nombre, String rutaAvatar) {
+        this.nombre = nombre;
+        this.rutaAvatar = rutaAvatar;
+        colores = new ArrayList<>();
         manoFichas = new ArrayList<>();
     }
 
     /**
      * Agrega una ficha a la mano del jugador
+     *
      * @param ficha ficha a agregar
      */
     public void agregarFicha(Ficha ficha) {
         manoFichas.add(ficha);
     }
 
+    public Ficha obtenerFicha() {
+        Random random = new Random();
+        return manoFichas.remove(random.nextInt(manoFichas.size()));
+    }
+
     /**
      * Obtiene la lista de la mano del jugador
+     *
      * @return regresa la mano de fichas del jugador
      */
     public List<Ficha> getManoFichas() {
@@ -42,6 +57,7 @@ public class Jugador {
 
     /**
      * Establece la mano de fichas del jugador
+     *
      * @param fichas mano de fichas a establecer
      */
     public void setManoFichas(List<Ficha> fichas) {
@@ -50,6 +66,7 @@ public class Jugador {
 
     /**
      * Obtiene los colores del jugador
+     *
      * @return valor de los colores del jugador
      */
     public List<Color> getColores() {
@@ -58,18 +75,42 @@ public class Jugador {
 
     /**
      * Establece los colores del jugadores
+     *
      * @param colores valor de los colores
      */
     public void setColores(List<Color> colores) {
         this.colores = colores;
     }
-    
+
     /**
      * Esetablece un turno al jugador
-      * @param turn valor del turno a establecer
+     *
+     * @param turno valor del turno a establecer
      */
-    public void setTurno(Turno turno){
+    public void setTurno(Turno turno) {
         this.turno = turno;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Jugador other = (Jugador) obj;
+        return Objects.equals(this.nombre, other.nombre);
     }
 
 }

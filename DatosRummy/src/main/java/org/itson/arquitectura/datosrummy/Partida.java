@@ -1,31 +1,38 @@
 package org.itson.arquitectura.datosrummy;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 /**
- *
  * @author Equipo4
  */
 public class Partida {
 
+    private boolean iniciada;
+    private int numeroComodines;
+    private int rangoFichas;
+    private String codigo;
+    private Tablero tablero;
     private List<Ficha> mazo;
     private List<Jugador> jugadores;
-    private int numeroComodines;
-    private boolean isIniciada;
-    private int rangoFichas;
     private List<Turno> turnos;
-    private int codigo;
-    private Tablero tablero;
 
     /**
      * Constructor sin parametros de la partida
+     *
+     * @param numeroComodines
+     * @param rangoFichas
      */
-    public Partida() {
+    public Partida(int numeroComodines, int rangoFichas) {
+        this.numeroComodines = numeroComodines;
+        this.rangoFichas = rangoFichas;
+
         mazo = new ArrayList<>();
         jugadores = new ArrayList<>();
         turnos = new ArrayList<>();
+        codigo = generarCodigo();
     }
 
     public List<Ficha> getMazo() {
@@ -48,24 +55,12 @@ public class Partida {
         return numeroComodines;
     }
 
-    public void setNumeroComodines(int numeroComodines) {
-        this.numeroComodines = numeroComodines;
-    }
-
-    public boolean isIsIniciada() {
-        return isIniciada;
-    }
-
-    public void setIsIniciada(boolean isIniciada) {
-        this.isIniciada = isIniciada;
+    public boolean isIniciada() {
+        return iniciada;
     }
 
     public int getRangoFichas() {
         return rangoFichas;
-    }
-
-    public void setRangoFichas(int rangoFichas) {
-        this.rangoFichas = rangoFichas;
     }
 
     public List<Turno> getTurnos() {
@@ -76,50 +71,105 @@ public class Partida {
         this.turnos = turnos;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public Tablero getTablero() {
-        return tablero;
-    }
-
-    public void setTablero(Tablero tablero) {
-        this.tablero = tablero;
-    }
-    
-    private void generarCodigo(){
-        
-    }
-    
-    public void agregarJugador(Jugador jugador){
-        jugadores.add(jugador);
-    }
-    
-    public void repartirFichas(){
-        for (Jugador jugador : jugadores) {
-            if (rangoFichas == 10) {
-                for (int i = 0; i < 10; i++) {
-                    jugador.agregarFicha(obtenerFicha());
-                }
-            } else if (rangoFichas == 13) {
-                for (int i = 0; i < 13; i++) {
-                    jugador.agregarFicha(obtenerFicha());
-                }
-            }
+    public boolean agregarJugador(Jugador jugador) {
+        if (jugadores.size() < 4) {
+            jugadores.add(jugador);
+            return true;
         }
+        return false;
     }
 
     public Ficha obtenerFicha() {
         Random random = new Random();
         return mazo.remove(random.nextInt(mazo.size()));
     }
-    
+
     public void agregarFichaTablero(Ficha ficha, GrupoFichas grupoFichas) {
         tablero.agregarFicha(ficha, grupoFichas);
     }
+
+    public boolean iniciarPartida() {
+        if (jugadores.size() >= 2) {
+            tablero = new Tablero();
+            mazo = generarMazo();
+            turnos = repartirTurnos();
+            repartirFichas();
+            iniciada = true;
+
+            return true;
+        }
+        return false;
+    }
+
+    private String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder nuevoCodigo = new StringBuilder(6);
+        Random random = new Random();
+
+        for (int i = 0; i < 6; i++) {
+            int index = random.nextInt(caracteres.length());
+            nuevoCodigo.append(caracteres.charAt(index));
+        }
+
+        return nuevoCodigo.toString();
+    }
+
+    private void repartirFichas() {
+        for (Jugador jugador : jugadores) {
+            for (int i = 0; i < 14; i++) {
+                jugador.agregarFicha(obtenerFicha());
+            }
+        }
+    }
+
+    private List<Ficha> generarMazo() {
+        List<Ficha> fichasGeneradas = new LinkedList<>();
+
+        NumeroConjuntoFichas conjuntoNegro = new NumeroConjuntoFichas(1);
+        NumeroConjuntoFichas conjuntoAzul = new NumeroConjuntoFichas(2);
+        NumeroConjuntoFichas conjuntoRojo = new NumeroConjuntoFichas(3);
+        NumeroConjuntoFichas conjuntoVerde = new NumeroConjuntoFichas(4);
+
+        Color negro = new Color("00000", conjuntoNegro);
+        Color azul = new Color("0014CB", conjuntoAzul);
+        Color rojo = new Color("D40000", conjuntoRojo);
+        Color verde = new Color("008309", conjuntoVerde);
+
+        for (int i = 0; i < rangoFichas; i++) {
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoNegro, negro));
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoNegro, negro));
+
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoAzul, azul));
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoAzul, azul));
+
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoRojo, rojo));
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoRojo, rojo));
+
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoVerde, verde));
+            fichasGeneradas.add(new Numerica(i + 1, conjuntoVerde, verde));
+        }
+
+        for (int i = 0; i < numeroComodines; i++) {
+            fichasGeneradas.add(new Comodin());
+        }
+
+        return fichasGeneradas;
+    }
+
+    private List<Turno> repartirTurnos() {
+        Random random = new Random();
+
+        List<Turno> turnos = new ArrayList<>();
+
+        for (int i = 0; i < jugadores.size(); i++) {
+            turnos.add(new Turno(jugadores.get(random.nextInt(jugadores.size())), i + 1));
+        }
+
+        return turnos;
+    }
+
 }

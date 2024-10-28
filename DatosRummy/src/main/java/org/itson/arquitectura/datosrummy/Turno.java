@@ -1,13 +1,12 @@
 package org.itson.arquitectura.datosrummy;
 
 /**
- *
- * @author ricar
+ * @author Equipo4
  */
 public class Turno {
 
-    private Jugador jugador;
     private int turno;
+    private Jugador jugador;
 
     /**
      * Constructor del turno
@@ -34,6 +33,28 @@ public class Turno {
 
     public void setTurno(int turno) {
         this.turno = turno;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + this.turno;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Turno other = (Turno) obj;
+        return this.turno == other.turno;
     }
 
 }

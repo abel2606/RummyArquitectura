@@ -1,24 +1,23 @@
 package org.itson.arquitectura.datosrummy;
 
 /**
- *
- * @author Abe
+ * @author Equipo4
  */
 public class Numerica extends Ficha {
 
-    private Color color;
     private int numero;
-    private TipoConjunto tipoConjunto;
+    private Color color;
+    private NumeroConjuntoFichas numeroConjunto;
 
     /**
      * Constructor de la ficha numerica
      * @param numero valor del numero de la ficha
-     * @param tipoConjunto tipo de conjunto de la ficha
+     * @param numeroConjunto numero de conjunto de la ficha
      * @param color el color de la ficha
      */
-    public Numerica(int numero, TipoConjunto tipoConjunto, Color color) {
+    public Numerica(int numero, NumeroConjuntoFichas numeroConjunto, Color color) {
         this.numero = numero;
-        this.tipoConjunto = tipoConjunto;
+        this.numeroConjunto = numeroConjunto;
         this.color = color;
     }
 
@@ -58,16 +57,21 @@ public class Numerica extends Ficha {
      * Regresa el tipo de conjunto de la ficha numerica
      * @return regresa el tipo de conjunto
      */
-    public TipoConjunto getTipoConjunto() {
-        return tipoConjunto;
+    public NumeroConjuntoFichas getNumeroConjunto() {
+        return numeroConjunto;
     }
 
     /**
      * establece el tipo de conjunto
-     * @param tipoConjunto valor del conjunto
+     * @param numeroConjunto valor del conjunto
      */
-    public void setTipoConjunto(TipoConjunto tipoConjunto) {
-        this.tipoConjunto = tipoConjunto;
+    public void setNumeroConjunto(NumeroConjuntoFichas numeroConjunto) {
+        this.numeroConjunto = numeroConjunto;
+    }
+
+    @Override
+    public String toString() {
+        return "Numerica{" + "numero=" + numero + ", color=" + color + '}';
     }
     
 }

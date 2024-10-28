@@ -6,8 +6,8 @@ org\itson\arquitectura\datosrummy\Turno.class
 org\itson\arquitectura\datosrummy\Color.class
 pruebas\Pruebas.class
 org\itson\arquitectura\datosrummy\Jugador.class
+org\itson\arquitectura\datosrummy\NumeroConjuntoFichas.class
 org\itson\arquitectura\datosrummy\Tablero.class
 org\itson\arquitectura\datosrummy\Comodin.class
 org\itson\arquitectura\datosrummy\GrupoFichas.class
-org\itson\arquitectura\datosrummy\TipoConjunto.class
 org\itson\arquitectura\datosrummy\Ficha.class

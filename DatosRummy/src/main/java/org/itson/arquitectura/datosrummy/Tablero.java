@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- *
  * @author Equipo4
  */
 public class Tablero {
