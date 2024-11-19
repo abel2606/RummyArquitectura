@@ -171,13 +171,15 @@ public class Partida {
      *
      * @param ficha La ficha a agregar
      * @param grupoFichas El grupo al que se quiere agregar la ficha
+     * @return true si se pudo agregar la ficha al tablero, false en caso
+     * contrario
      */
-    public void agregarFichaTablero(Ficha ficha, GrupoFichas grupoFichas) {
-        tablero.agregarFicha(ficha, grupoFichas);
+    public boolean agregarFichaTablero(Ficha ficha, GrupoFichas grupoFichas) {
+        return tablero.agregarFicha(ficha, grupoFichas);
     }
 
     /**
-     * Permite realizar las operaciones necesarias para iniciar la partida
+     * Permite realizar las operaciones necesarias para iniciar la partida.
      */
     public void iniciarPartida() {
         if (jugadores.size() >= 2) {
@@ -187,6 +189,33 @@ public class Partida {
             repartirFichas();
             iniciada = true;
         }
+    }
+
+    /**
+     * Permite agregar una ficha a la mano de un jugador presente en la partida.
+     *
+     * @param ficha La ficha a agregar
+     * @param jugador El jugador al que se le agregará la ficha
+     * @return true si se agregó la ficha, false en caso contrario
+     */
+    public boolean agregarFichaJugador(Ficha ficha, Jugador jugador) {
+        if (jugadores.contains(jugador)) {
+            return jugador.agregarFicha(ficha);
+        }
+        return false;
+    }
+
+    /**
+     * Permite obtener una ficha de la mano de un jugador.
+     *
+     * @param jugador El jugador del que se desea obtener la ficha
+     * @return La ficha obtenida del jugador
+     */
+    public Ficha obtenerFichaJugador(Jugador jugador) {
+        if (jugadores.contains(jugador)) {
+            return jugador.obtenerFicha();
+        }
+        return null;
     }
 
     /**
@@ -217,6 +246,7 @@ public class Partida {
         return Objects.equals(this.codigo, other.codigo);
     }
 
+    //MÉTODOS PRIVADOS
     /**
      * Permite generar un código de 6 caracteres alfanuméricos.
      *

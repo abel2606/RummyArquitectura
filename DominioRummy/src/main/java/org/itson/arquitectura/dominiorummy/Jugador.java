@@ -7,36 +7,36 @@ import java.util.Random;
 
 /**
  * Representa un jugador que juega en una partida.
- * 
+ *
  * @author Equipo4
  */
 public class Jugador {
-    
+
     /**
      * Si el jugador está listo para iniciar la partida o no.
      */
     private boolean estado;
-    
+
     /**
      * El nombre del jugador.
      */
     private String nombre;
-    
+
     /**
      * El avatar del jugador.
      */
     private String rutaAvatar;
-    
+
     /**
      * El turno en el que juega.
      */
     private Turno turno;
-    
+
     /**
      * Los colores que seleccionó el jugador para las fichas.
      */
     private List<Color> colores;
-    
+
     /**
      * Las fichas que puede usar el jugador.
      */
@@ -60,11 +60,18 @@ public class Jugador {
      * Agrega una ficha a la mano del jugador
      *
      * @param ficha ficha a agregar
+     * @return true si se pudo agregar la ficha a la mano, false en caso
+     * contrario
      */
-    public void agregarFicha(Ficha ficha) {
-        manoFichas.add(ficha);
+    public boolean agregarFicha(Ficha ficha) {
+        return manoFichas.add(ficha);
     }
 
+    /**
+     * Permite obtener una ficha de la mano del jugador.
+     *
+     * @return La ficha obtenida
+     */
     public Ficha obtenerFicha() {
         Random random = new Random();
         return manoFichas.remove(random.nextInt(manoFichas.size()));
@@ -116,7 +123,7 @@ public class Jugador {
     }
 
     /**
-     * {@inheritDoc} 
+     * {@inheritDoc}
      */
     @Override
     public int hashCode() {
@@ -126,7 +133,7 @@ public class Jugador {
     }
 
     /**
-     * {@inheritDoc} 
+     * {@inheritDoc}
      */
     @Override
     public boolean equals(Object obj) {
