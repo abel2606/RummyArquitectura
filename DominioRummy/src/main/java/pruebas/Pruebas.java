@@ -1,9 +1,13 @@
 package pruebas;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.itson.arquitectura.dominiorummy.Color;
+import org.itson.arquitectura.dominiorummy.Comodin;
+import org.itson.arquitectura.dominiorummy.Ficha;
 import org.itson.arquitectura.dominiorummy.GrupoFichas;
 import org.itson.arquitectura.dominiorummy.Numerica;
-import org.itson.arquitectura.dominiorummy.NumeroConjuntoFichas;
+import org.itson.arquitectura.dominiorummy.TipoConjunto;
 import org.itson.arquitectura.dominiorummy.Secuencia;
 
 /**
@@ -16,7 +20,7 @@ public class Pruebas {
      */
     public static void main(String[] args) {
 
-//        NumeroConjuntoFichas conjunto1 = new NumeroConjuntoFichas(1);
+//        TipoConjunto conjunto1 = new TipoConjunto(1);
 //        Color color1 = new Color("BAB400", conjunto1);
 //
 //        Ficha ficha1 = new Numerica(10, conjunto1, color1);
@@ -54,25 +58,43 @@ public class Pruebas {
 //
 //            System.out.println(ficha.toString());
 //        }
-//        GrupoFichas grupoNumero = new Numero();
-//        
-//        grupoNumero.agregarFicha(new Numerica(7, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new NumeroConjuntoFichas(1), new Color("0014CB", new NumeroConjuntoFichas(1)))));
-//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new NumeroConjuntoFichas(3), new Color("D40000", new NumeroConjuntoFichas(3)))));
-//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new NumeroConjuntoFichas(4), new Color("008309", new NumeroConjuntoFichas(4)))));
-        GrupoFichas grupoSecuencia = new Secuencia(10);
-
-        grupoSecuencia.agregarFicha(new Numerica(1, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(2, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(3, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(4, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(5, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(6, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(7, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(8, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        grupoSecuencia.agregarFicha(new Numerica(9, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2))));
-        System.out.println(grupoSecuencia.agregarFicha(new Numerica(10, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2)))));
-        System.out.println(grupoSecuencia.agregarFicha(new Numerica(11, new NumeroConjuntoFichas(2), new Color("000000", new NumeroConjuntoFichas(2)))));
+        Ficha numerica1 = new Numerica(7, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2)));
+        Ficha numerica2 = new Numerica(8, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2)));
+        Ficha numerica3 = new Numerica(9, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2)));
+        List<Ficha> fichas = new ArrayList<>();
+        fichas.add(numerica1);
+        fichas.add(numerica2);
+        fichas.add(numerica3);
+        
+        
+        GrupoFichas grupoNumero = GrupoFichas.crearGrupo(fichas, 13);
+        System.out.println(grupoNumero.toString());
+        
+        
+            Ficha comodin = new Comodin();
+            if(grupoNumero.agregarFicha(comodin)){
+                System.out.println(grupoNumero.toString());
+            }
+            else{
+                System.out.println("No se puede añadir el comodin");
+            }
+        
+//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new TipoConjunto(1), new Color("0014CB", new TipoConjunto(1)))));
+//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new TipoConjunto(3), new Color("D40000", new TipoConjunto(3)))));
+//        System.out.println(grupoNumero.agregarFicha(new Numerica(7, new TipoConjunto(4), new Color("008309", new TipoConjunto(4)))));
+//        GrupoFichas grupoSecuencia = new Secuencia(0);
+//
+//        grupoSecuencia.agregarFicha(new Numerica(1, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(2, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(3, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(4, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(5, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(6, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(7, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(8, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        grupoSecuencia.agregarFicha(new Numerica(9, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2))));
+//        System.out.println(grupoSecuencia.agregarFicha(new Numerica(10, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2)))));
+//        System.out.println(grupoSecuencia.agregarFicha(new Numerica(11, new TipoConjunto(2), new Color(0x000000, new TipoConjunto(2)))));
     }
 
 }

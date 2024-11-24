@@ -8,4 +8,10 @@ package org.itson.arquitectura.dominiorummy;
  */
 public class Comodin extends Ficha {
 
+    @Override
+    public String toString() {
+        return "Comodin{" + '}';
+    }
+
+    
 }

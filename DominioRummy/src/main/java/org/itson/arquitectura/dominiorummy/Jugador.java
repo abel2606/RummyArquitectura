@@ -10,12 +10,7 @@ import java.util.Random;
  *
  * @author Equipo4
  */
-public class Jugador {
-
-    /**
-     * Si el jugador está listo para iniciar la partida o no.
-     */
-    private boolean estado;
+public class Jugador implements IJugador {
 
     /**
      * El nombre del jugador.
@@ -23,9 +18,14 @@ public class Jugador {
     private String nombre;
 
     /**
+     * Puntuación del jugador
+     */
+    private int puntacion;
+
+    /**
      * El avatar del jugador.
      */
-    private String rutaAvatar;
+    private String avatar;
 
     /**
      * El turno en el que juega.
@@ -33,14 +33,19 @@ public class Jugador {
     private Turno turno;
 
     /**
-     * Los colores que seleccionó el jugador para las fichas.
+     * Si el jugador está listo para iniciar la partida o no.
      */
-    private List<Color> colores;
+    private boolean isListo;
 
     /**
      * Las fichas que puede usar el jugador.
      */
     private List<Ficha> manoFichas;
+
+    /**
+     * Los colores que seleccionó el jugador para las fichas.
+     */
+    private List<Color> colores;
 
     /**
      * Constructor que recibe el nombre del jugador y la ruta donde se encuentra
@@ -49,11 +54,41 @@ public class Jugador {
      * @param nombre
      * @param rutaAvatar
      */
-    public Jugador(String nombre, String rutaAvatar) {
+    public Jugador(String nombre, String avatar) {
         this.nombre = nombre;
-        this.rutaAvatar = rutaAvatar;
+        this.avatar = avatar;
         colores = new ArrayList<>();
         manoFichas = new ArrayList<>();
+    }
+
+    /**
+     * Permite establecer el nombre del jugador
+     * 
+     * @param nombre  nombre del jugador
+     */
+    @Override
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Permite establecer el avatar del jugador
+     * 
+     * @param avatar ruta de imagen del avatar a elegir
+     */
+    @Override
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    /**
+     * Permite establecer los colores de las fichas que verá el jugador.
+     *
+     * @param colores Los colores de las fichas
+     */
+    @Override
+    public void setColores(List<Color> colores) {
+        this.colores = colores;
     }
 
     /**
@@ -105,21 +140,36 @@ public class Jugador {
     }
 
     /**
-     * Permite establecer los colores de las fichas que verá el jugador.
-     *
-     * @param colores Los colores de las fichas
-     */
-    public void setColores(List<Color> colores) {
-        this.colores = colores;
-    }
-
-    /**
      * Permite establecer el turno del jugador.
      *
      * @param turno El turno del jugador
      */
     public void setTurno(Turno turno) {
         this.turno = turno;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getPuntacion() {
+        return puntacion;
+    }
+
+    public void setPuntacion(int puntacion) {
+        this.puntacion = puntacion;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public boolean isIsListo() {
+        return isListo;
+    }
+
+    public void setIsListo(boolean isListo) {
+        this.isListo = isListo;
     }
 
     /**

@@ -6,7 +6,7 @@ package org.itson.arquitectura.dominiorummy;
  *
  * @author Equipo4
  */
-public class NumeroConjuntoFichas {
+public class TipoConjunto {
 
     /**
      * El número del conjunto
@@ -18,7 +18,7 @@ public class NumeroConjuntoFichas {
      *
      * @param numero El número de. conjunto
      */
-    public NumeroConjuntoFichas(int numero) {
+    public TipoConjunto(int numero) {
         this.numero = numero;
     }
 
@@ -55,7 +55,7 @@ public class NumeroConjuntoFichas {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final NumeroConjuntoFichas other = (NumeroConjuntoFichas) obj;
+        final TipoConjunto other = (TipoConjunto) obj;
         return this.numero == other.numero;
     }
 

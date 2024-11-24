@@ -15,18 +15,19 @@ public class Numero extends GrupoFichas {
     public boolean agregarFicha(Ficha ficha) {
         if (fichas.size() < 4) {
             if (ficha instanceof Comodin) {
-                fichas.add(ficha);
+                return super.agregarFicha(ficha);
             } else if (ficha instanceof Numerica) {
                 for (Ficha fichaGrupo : fichas) {
-                    if (((Numerica) fichaGrupo).getColor().equals(((Numerica) ficha).getColor())) {
-                        return false;
-                    }
-                    if (((Numerica) ficha).getNumero() != ((Numerica) fichaGrupo).getNumero()) {
-                        return false;
+                    if (fichaGrupo instanceof Numerica) {
+                        if (((Numerica) fichaGrupo).getColor().equals(((Numerica) ficha).getColor())) {
+                            return false;
+                        }
+                        if (((Numerica) ficha).getNumero() != ((Numerica) fichaGrupo).getNumero()) {
+                            return false;
+                        }
                     }
                 }
-                fichas.add(ficha);
-                return true;
+                return super.agregarFicha(ficha);
             }
         }
         return false;

@@ -16,6 +16,7 @@ public class Secuencia extends GrupoFichas {
      * @param rangoFichas El rango de fichas que hay en la partida
      */
     public Secuencia(int rangoFichas) {
+        super();
         this.rangoFichas = rangoFichas;
     }
 
@@ -26,7 +27,8 @@ public class Secuencia extends GrupoFichas {
     public boolean agregarFicha(Ficha ficha) {
         if (fichas.size() < rangoFichas) {
             if (ficha instanceof Comodin) {
-                fichas.add(ficha);
+                return fichas.add(ficha);
+                
             } else if (ficha instanceof Numerica) {
                 for (Ficha fichaGrupo : fichas) {
                     if (!((Numerica) fichaGrupo).getColor().equals(((Numerica) ficha).getColor())) {
@@ -43,4 +45,10 @@ public class Secuencia extends GrupoFichas {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "Secuencia{" + "rangoFichas=" + rangoFichas + '}'+super.toString();
+    }
+
+    
 }

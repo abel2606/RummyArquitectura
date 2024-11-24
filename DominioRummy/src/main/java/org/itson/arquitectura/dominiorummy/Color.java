@@ -12,12 +12,12 @@ public class Color {
     /**
      * El código hexadecimal del color.
      */
-    private String codigoHex;
+    private int codigoHex;
     
     /**
      * El conjunto de fichas asociado al color.
      */
-    private NumeroConjuntoFichas numeroConjunto;
+    private TipoConjunto numeroConjunto;
 
     /**
      * Constructor que recibe el código hexadecimal y el conjunto asociado al
@@ -26,7 +26,7 @@ public class Color {
      * @param codigoHex El código hexadecimal del color
      * @param numeroConjunto El conjunto de fichas asociado al color
      */
-    public Color(String codigoHex, NumeroConjuntoFichas numeroConjunto) {
+    public Color(int codigoHex, TipoConjunto numeroConjunto) {
         this.codigoHex = codigoHex;
         this.numeroConjunto = numeroConjunto;
     }
@@ -36,7 +36,7 @@ public class Color {
      *
      * @return El código del color
      */
-    public String getCodigoHex() {
+    public int getCodigoHex() {
         return codigoHex;
     }
 
@@ -45,7 +45,7 @@ public class Color {
      *
      * @return El conjunto de fichas asociado
      */
-    public NumeroConjuntoFichas getNumeroConjunto() {
+    public TipoConjunto getNumeroConjunto() {
         return numeroConjunto;
     }
 
@@ -74,7 +74,10 @@ public class Color {
             return false;
         }
         final Color other = (Color) obj;
-        return this.codigoHex.equalsIgnoreCase(other.codigoHex);
+        return this.codigoHex == other.codigoHex;
     }
+
+    
+    
 
 }

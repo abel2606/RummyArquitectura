@@ -22,7 +22,7 @@ public class Numerica extends Ficha {
     /**
      * El conjunto al que pertenece.
      */
-    private NumeroConjuntoFichas numeroConjunto;
+    private TipoConjunto numeroConjunto;
 
     /**
      * Constructor que recibe el número de la ficha, el conjunto al que pertence
@@ -32,7 +32,7 @@ public class Numerica extends Ficha {
      * @param numeroConjunto EL conjunto al que pertenece la ficha
      * @param color El color de la ficha
      */
-    public Numerica(int numero, NumeroConjuntoFichas numeroConjunto, Color color) {
+    public Numerica(int numero, TipoConjunto numeroConjunto, Color color) {
         this.numero = numero;
         this.numeroConjunto = numeroConjunto;
         this.color = color;
@@ -70,7 +70,7 @@ public class Numerica extends Ficha {
      *
      * @return El conjunto al que pertenece
      */
-    public NumeroConjuntoFichas getNumeroConjunto() {
+    public TipoConjunto getNumeroConjunto() {
         return numeroConjunto;
     }
 
@@ -79,7 +79,7 @@ public class Numerica extends Ficha {
      *
      * @param numeroConjunto El conjunto al que pertenece
      */
-    public void setNumeroConjunto(NumeroConjuntoFichas numeroConjunto) {
+    public void setNumeroConjunto(TipoConjunto numeroConjunto) {
         this.numeroConjunto = numeroConjunto;
     }
 
@@ -114,5 +114,11 @@ public class Numerica extends Ficha {
         }
         return this.color.equals(other.color);
     }
+
+    @Override
+    public String toString() {
+        return "Numerica{" + "numero=" + numero + ", color=" + color.getCodigoHex()+'}';
+    }
+    
 
 }

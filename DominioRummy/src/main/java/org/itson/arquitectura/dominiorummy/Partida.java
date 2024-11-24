@@ -11,38 +11,9 @@ import java.util.Random;
  *
  * @author Equipo4
  */
-public class Partida {
+public class Partida implements IPartida {
 
-    /**
-     * Si la partida se encuentra iniciada o no.
-     */
-    private boolean iniciada;
-
-    /**
-     * El número total de comodines.
-     */
-    private int numeroComodines;
-
-    /**
-     * El rango máximo de las fichas.
-     */
-    private int rangoFichas;
-
-    /**
-     * El código de la partida.
-     */
-    private String codigo;
-
-    /**
-     * El tablero donde se colocarán las fichas.
-     */
-    private Tablero tablero;
-
-    /**
-     * El mazo de fichas disponibles para jalar.
-     */
-    private List<Ficha> mazo;
-
+    private static Partida partida;
     /**
      * Los jugadores presentes en la partida.
      */
@@ -52,6 +23,36 @@ public class Partida {
      * Los turnos en los que juegan los jugadores.
      */
     private List<Turno> turnos;
+    
+    /**
+     * Turno actual de la partida
+     */
+    private Turno turnoActual;
+
+    /**
+     * El número total de comodines.
+     */
+    private int numeroComodines;
+
+    /**
+     * Si la partida se encuentra iniciada o no.
+     */
+    private boolean isIniciada;
+
+    /**
+     * El rango máximo de las fichas.
+     */
+    private int rangoFichas;
+
+    /**
+     * El mazo de fichas disponibles para jalar.
+     */
+    private List<Ficha> mazo;
+
+    /**
+     * El tablero donde se colocarán las fichas.
+     */
+    private Tablero tablero;
 
     /**
      * Constructor que recibe el número de comodines y el rango de fichas.
@@ -62,11 +63,27 @@ public class Partida {
     public Partida(int numeroComodines, int rangoFichas) {
         this.numeroComodines = numeroComodines;
         this.rangoFichas = rangoFichas;
-
+        
         mazo = new ArrayList<>();
         jugadores = new ArrayList<>();
         turnos = new ArrayList<>();
-        codigo = generarCodigo();
+    }
+
+    public static Partida getInstance(int numeroComodines, int rangoFichas) {
+        if (partida == null) {
+            partida = new Partida(numeroComodines, rangoFichas);
+        }
+        return partida;
+    }
+
+    @Override
+    public void setRangoFichas(int rangoFichas) {
+       this.rangoFichas = rangoFichas;
+    }
+
+    @Override
+    public void setNumeroComodines(int numeroComodines) {
+        this.numeroComodines =  numeroComodines;
     }
 
     /**
@@ -111,7 +128,7 @@ public class Partida {
      * @return true si la partida está iniciada, false en caso contrario
      */
     public boolean isIniciada() {
-        return iniciada;
+        return isIniciada;
     }
 
     /**
@@ -130,15 +147,6 @@ public class Partida {
      */
     public List<Turno> getTurnos() {
         return turnos;
-    }
-
-    /**
-     * Permite obtener el código de la partida
-     *
-     * @return El código de la partida
-     */
-    public String getCodigo() {
-        return codigo;
     }
 
     /**
@@ -187,7 +195,7 @@ public class Partida {
             mazo = generarMazo();
             turnos = repartirTurnos();
             repartirFichas();
-            iniciada = true;
+            isIniciada = true;
         }
     }
 
@@ -224,7 +232,7 @@ public class Partida {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 73 * hash + Objects.hashCode(this.codigo);
+        hash = 41 * hash + Objects.hashCode(this.partida);
         return hash;
     }
 
@@ -243,26 +251,7 @@ public class Partida {
             return false;
         }
         final Partida other = (Partida) obj;
-        return Objects.equals(this.codigo, other.codigo);
-    }
-
-    //MÉTODOS PRIVADOS
-    /**
-     * Permite generar un código de 6 caracteres alfanuméricos.
-     *
-     * @return El código generado
-     */
-    private String generarCodigo() {
-        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        StringBuilder nuevoCodigo = new StringBuilder(6);
-        Random random = new Random();
-
-        for (int i = 0; i < 6; i++) {
-            int index = random.nextInt(caracteres.length());
-            nuevoCodigo.append(caracteres.charAt(index));
-        }
-
-        return nuevoCodigo.toString();
+        return Objects.equals(this.partida, other.partida);
     }
 
     /**
@@ -284,15 +273,15 @@ public class Partida {
     private List<Ficha> generarMazo() {
         List<Ficha> fichasGeneradas = new LinkedList<>();
 
-        NumeroConjuntoFichas conjuntoNegro = new NumeroConjuntoFichas(1);
-        NumeroConjuntoFichas conjuntoAzul = new NumeroConjuntoFichas(2);
-        NumeroConjuntoFichas conjuntoRojo = new NumeroConjuntoFichas(3);
-        NumeroConjuntoFichas conjuntoVerde = new NumeroConjuntoFichas(4);
+        TipoConjunto conjuntoNegro = new TipoConjunto(1);
+        TipoConjunto conjuntoAzul = new TipoConjunto(2);
+        TipoConjunto conjuntoRojo = new TipoConjunto(3);
+        TipoConjunto conjuntoVerde = new TipoConjunto(4);
 
-        Color negro = new Color("00000", conjuntoNegro);
-        Color azul = new Color("0014CB", conjuntoAzul);
-        Color rojo = new Color("D40000", conjuntoRojo);
-        Color verde = new Color("008309", conjuntoVerde);
+        Color negro = new Color(0x000000, conjuntoNegro);
+        Color azul = new Color(0x0014CB, conjuntoAzul);
+        Color rojo = new Color(0xD40000, conjuntoRojo);
+        Color verde = new Color(0x008309, conjuntoVerde);
 
         for (int i = 0; i < rangoFichas; i++) {
             fichasGeneradas.add(new Numerica(i + 1, conjuntoNegro, negro));
