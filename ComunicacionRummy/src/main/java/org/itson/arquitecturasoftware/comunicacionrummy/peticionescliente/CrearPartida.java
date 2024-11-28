@@ -17,16 +17,40 @@ public class CrearPartida extends PeticionCliente implements Serializable {
     private PartidaDTO partida;
 
     /**
-     * Constructor que recibe la partida creada y la IP del anfitrion de la
-     * partida.
+     * Constructor que recibe la partida creada.
      *
-     * @param ipAnfitrion La dirección IP del anfitrión
      * @param partida La partida creada
      */
-    public CrearPartida(String ipAnfitrion, PartidaDTO partida) {
+    public CrearPartida(PartidaDTO partida) {
         super.tipoPeticion = "CrearPartida";
-        this.ipAnfitrion = ipAnfitrion;
         this.partida = partida;
+    }
+
+    /**
+     * Permite obtener la dirección IP del anfitrión de la partida.
+     *
+     * @return La dirección IP del anfitrión
+     */
+    public String getIpAnfitrion() {
+        return ipAnfitrion;
+    }
+
+    /**
+     * Permite establecer la dirección IP del anfitrión de la partida.
+     *
+     * @param ipAnfitrion La dirección IP del anfitrión
+     */
+    public void setIpAnfitrion(String ipAnfitrion) {
+        this.ipAnfitrion = ipAnfitrion;
+    }
+
+    /**
+     * Permite obtener la partida.
+     *
+     * @return La partida
+     */
+    public PartidaDTO getPartida() {
+        return partida;
     }
 
 }
