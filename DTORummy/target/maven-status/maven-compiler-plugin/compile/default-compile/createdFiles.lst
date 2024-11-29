@@ -1,0 +1,10 @@
+org\itson\arquitecturasoftware\dtorummy\dto\TableroDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\SecuenciaDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\ComodinDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\JugadorDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\NumericaDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\NumeroDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\TurnoDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\PartidaDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\GrupoFichasDTO.class
+org\itson\arquitecturasoftware\dtorummy\dto\FichaDTO.class

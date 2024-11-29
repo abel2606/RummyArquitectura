@@ -1,0 +1,8 @@
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioRegistrarJugador.class
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioSolicitarInicioJuego.class
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioEjercerTurno.class
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioConfigurarPartida.class
+org\itson\arquitectura\aplicacionrummy\fachada\IAplicacionFachada.class
+org\itson\arquitectura\aplicacionrummy\fachada\AplicacionFachada.class
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioSolicitarUnirsePartida.class
+org\itson\arquitectura\aplicacionrummy\servicios\ServicioIniciarPartida.class

@@ -1,0 +1,5 @@
+org\itson\arquitecturasoftware\infraestructurarummy\subsistemasocket\CreadorPeticiones.class
+org\itson\arquitecturasoftware\infraestructurarummy\subsistemasocket\ClienteServidor.class
+org\itson\arquitecturasoftware\infraestructurarummy\excepciones\InfraestructuraException.class
+org\itson\arquitecturasoftware\infraestructurarummy\subsistemasocket\FachadaInfraestructura.class
+org\itson\arquitecturasoftware\infraestructurarummy\subsistemasocket\IFachadaInfraestructura.class
