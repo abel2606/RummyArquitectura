@@ -28,7 +28,7 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     }
     
     public void solicitarIniciarPartida(JugadorDTO jugador) {
-        aplicacionFachada.solicitarIniciarPartida(jugador);
+//        aplicacionFachada.solicitarIniciarPartida(jugador);
     }
     
     public void salirPartida() {

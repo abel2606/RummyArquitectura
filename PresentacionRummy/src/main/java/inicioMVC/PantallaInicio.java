@@ -1,52 +1,29 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * PantallaInicio.java
  */
 package inicioMVC;
 
-import configurarPartidaMVC.PantallaConfigurarPartida;
-import javax.swing.ImageIcon;
+import java.awt.Color;
 
 /**
- *
- * @author Abe
+ * Pantalla de inicio del Rummy.
+ * 
+ * @author Equipo4
  */
-public class PantallaInicio extends javax.swing.JDialog {
+public class PantallaInicio extends javax.swing.JFrame implements IPantallaInicio {
 
     /**
-     * Creates new form Inicio
+     * Creates new form PantallaInicio2
      */
-    public PantallaInicio(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    private PantallaInicio(ControlInicio control) {
         initComponents();
-        dibujarComponentes();
+        this.control = control;
+        setVisible(true);
+        
+        this.setTitle("Rummy - Inicio");
+        botonUnirsePartida.setBorderColor(new Color(112, 48, 196));
     }
 
-    public void dibujarComponentes(){
-        ImageIcon crearPartida = new ImageIcon("src\\main\\resources\\crearPartidaInicio.png");
-        ImageIcon crearPartidaHover = new ImageIcon("src\\main\\resources\\crearPartidaInicioHover.png");
-        
-        ImageIcon unirsePartida = new ImageIcon("src\\main\\resources\\unirsePartidaInicio.png");
-        ImageIcon unirsePartidaHover = new ImageIcon("src\\main\\resources\\unirsePartidaInicioHover.png");
-        
-        ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
-        ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
-
-//        btnConfiguracion.setIcon(settings);  
-//        btnConfiguracion.setSelectedIcon(settingsSelect);  
-//        btnConfiguracion.setBorderPainted(false);  
-//        btnConfiguracion.setFocusPainted(false); 
-//        
-//        btnCrearPartida.setIcon(crearPartida);  
-//        btnCrearPartida.setSelectedIcon(crearPartidaHover);  
-//        btnCrearPartida.setBorderPainted(false);  
-//        btnCrearPartida.setFocusPainted(false);
-//        
-//        btnUnirsePartida.setIcon(unirsePartida);  
-//        btnUnirsePartida.setSelectedIcon(unirsePartidaHover);  
-//        btnUnirsePartida.setBorderPainted(false);  
-//        btnUnirsePartida.setFocusPainted(false);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,72 +33,92 @@ public class PantallaInicio extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        botonUnirsePartida = new componentes.Boton();
+        botonCrearPartida = new componentes.Boton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoInicio.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rummy-texto.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+        botonUnirsePartida.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+        botonUnirsePartida.setForeground(new java.awt.Color(255, 255, 255));
+        botonUnirsePartida.setText("UNIRSE PARTIDA");
+        botonUnirsePartida.setBorderPainted(false);
+        botonUnirsePartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
+        botonUnirsePartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonUnirsePartidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonUnirsePartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 500, 90));
+
+        botonCrearPartida.setForeground(new java.awt.Color(255, 255, 255));
+        botonCrearPartida.setText("CREAR PARTIDA");
+        botonCrearPartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
+        botonCrearPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearPartidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 500, 90));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(112, 48, 196));
+        jLabel3.setText("©2024 Equipo 4+1, Inc.");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 590, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra-inferior.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cara rummy.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnUnirsePartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirsePartidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUnirsePartidaActionPerformed
+    private void botonUnirsePartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonUnirsePartidaActionPerformed
+        setVisible(false);
+        control.unirsePartida();
+    }//GEN-LAST:event_botonUnirsePartidaActionPerformed
 
-    private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
-        PantallaConfigurarPartida pantallaConfigurarPartida = new PantallaConfigurarPartida(null, true);
-    }//GEN-LAST:event_btnCrearPartidaActionPerformed
+    private void botonCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearPartidaActionPerformed
+        setVisible(false);
+        control.configurarPartida();
+    }//GEN-LAST:event_botonCrearPartidaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    public static PantallaInicio getInstance(ControlInicio control){
+        if (pantalla == null) {
+            pantalla = new PantallaInicio(control);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                PantallaInicio dialog = new PantallaInicio(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+        return pantalla;
+    }
+    
+    @Override
+    public void update() {
+        setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private componentes.Boton botonCrearPartida;
+    private componentes.Boton botonUnirsePartida;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+    private ControlInicio control;
+    private static PantallaInicio pantalla;
+    
 }

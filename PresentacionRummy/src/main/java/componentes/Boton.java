@@ -22,7 +22,7 @@ public class Boton extends JButton {
 
     public Boton() {
         setColor(new Color(100,0,143));
-        setRadius(50);
+        setRadius(80);
         setBorderColor(Color.WHITE);
         setPreferredSize(new Dimension(200,200));
         
