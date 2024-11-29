@@ -1,31 +1,50 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * CControlUnirsePartida.java
  */
 package unirsePartidaMVC;
 
+import inicioMVC.ControlInicio;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
+
 /**
- *
- * @author Dell
+ * @author Equipo4
  */
 public class ControlUnirsePartida {
 
     private static ControlUnirsePartida control;
+    private ControlInicio inicio;
+//    private ControlConfigurarJugador configurarJugador;
+    private ModeloUnirsePartida modelo;
+    private IFachadaInfraestructura infraestructura;
     
-    private ControlUnirsePartida() {
-        
+    private ControlUnirsePartida() { 
     }
     
     public void verificarCodigoPartida(String codigo){
         
     }
     
-    public void enviarSolicitudNuevoJugador(){
-        
+    public void enviarSolicitudUnirsePartida(){
+        try {
+            infraestructura.solicitarUnirsePartida();
+        } catch (InfraestructuraException ex) {
+            modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+        }
+    }
+
+    public void crearParametrosMVC() {
+        inicio = ControlInicio.getInstance();
+//        configurarJugador = ControlConfigurarJugador.getInstance();
+        infraestructura = new FachadaInfraestructura();
+        modelo = ModeloUnirsePartida.getInstance();
     }
     
-    public void siguientePantalla(){
-        
+    public void mostrarVista() {
+        modelo.notificar(null);
     }
     
     public static ControlUnirsePartida getInstance() {

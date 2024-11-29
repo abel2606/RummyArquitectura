@@ -25,7 +25,8 @@ public class ControlInicio {
     }
 
     public void unirsePartida() {
-//        unirsePartida.mostrarVista();
+        unirsePartida.mostrarVista();
+        unirsePartida.enviarSolicitudUnirsePartida();
     }
 
     public void mostrarVista() {

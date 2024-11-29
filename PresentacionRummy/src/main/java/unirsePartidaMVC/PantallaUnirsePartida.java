@@ -1,29 +1,22 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * PantallaUnirsePartida.java
  */
 package unirsePartidaMVC;
 
-import org.itson.arquitectura.dominiorummy.IJugador;
-import org.itson.arquitectura.dominiorummy.Jugador;
-import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
-import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
+import javax.swing.JOptionPane;
 
 /**
- *
- * @author Dell
+ * @author Equipo4
  */
-public class PantallaUnirsePartida extends javax.swing.JDialog {
+public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantallaUnirsePartida {
 
-    private static PantallaUnirsePartida pantallaPartida;
-    private ControlUnirsePartida control;
     /**
-     * Creates new form PantallaIntroducirCodigo
+     * Creates new form PantallaUnirsePartida2
      */
-    public PantallaUnirsePartida(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    private PantallaUnirsePartida() {
         initComponents();
-        control = new ControlUnirsePartida();
+        
+        setTitle("Rummy - Uniéndose a Partida");
     }
 
     /**
@@ -38,12 +31,9 @@ public class PantallaUnirsePartida extends javax.swing.JDialog {
         botonCancelar = new componentes.Boton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnAjustes = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1042, 643));
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botonCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
@@ -61,19 +51,13 @@ public class PantallaUnirsePartida extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("del host...");
+        jLabel1.setText("del anfitrión...");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 460, 70));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 460, 70));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel2.setText("Esperando respuesta");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 460, 70));
-
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tuerca.png"))); // NOI18N
-        btnAjustes.setText("jButton11");
-        btnAjustes.setBorder(null);
-        btnAjustes.setContentAreaFilled(false);
-        getContentPane().add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 110, 80));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 460, 70));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoSolicitarUnirse.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -86,16 +70,34 @@ public class PantallaUnirsePartida extends javax.swing.JDialog {
         setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 
-    public void solicitarUnirse(){
-        IFachadaInfraestructura infraestructura = new FachadaInfraestructura();
-        
+    public static PantallaUnirsePartida getInstance() {
+        if (pantalla == null) {
+            pantalla = new PantallaUnirsePartida();
+        }
+        return pantalla;
     }
-
+    
+    public void crearParametrosMVC() {
+        control = ControlUnirsePartida.getInstance();
+    }
+    
+    @Override
+    public void update(IModeloUnirsePartida modelo) {
+        setVisible(true);
+        
+        if (modelo.getError() != null) {
+            JOptionPane.showMessageDialog(this, modelo.getError(), 
+                    "Error al unirse a la partida.", JOptionPane.ERROR_MESSAGE);
+            setVisible(false);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Boton botonCancelar;
-    private javax.swing.JButton btnAjustes;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+    private static PantallaUnirsePartida pantalla;
+    private ControlUnirsePartida control;
 }

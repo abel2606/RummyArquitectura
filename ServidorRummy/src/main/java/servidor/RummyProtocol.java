@@ -51,7 +51,7 @@ public class RummyProtocol {
                 break;
             case "SOLICITAR_UNIRSE_PARTIDA": // Si alguien solicita unirse a una partida.
                 SolicitarUnirsePartida sup = (SolicitarUnirsePartida) peticion;
-                respuesta = new SolicitudUnirsePartida(sup.getJugador());
+                respuesta = new SolicitudUnirsePartida();
                 break;
             case "SOLICITAR_INICIAR_PARTIDA": // Si alguien solicita que inicie la partida.
                 SolicitarIniciarPartida sip = (SolicitarIniciarPartida) peticion;

@@ -137,7 +137,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botonConfirmarActionPerformed
 
     public void crearParametrosMVC() {

@@ -24,6 +24,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
      */
     public FachadaInfraestructura() {
         cliente = new ClienteServidor();
+        creadorPeticiones = new CreadorPeticiones();
         cliente.establecerConexionServidor();
     }
 
@@ -43,9 +44,9 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
      * {@inheritDoc}
      */
     @Override
-    public void solicitarUnirsePartida(JugadorDTO jugador) throws InfraestructuraException {
+    public void solicitarUnirsePartida() throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarUnirsePartida(jugador));
+            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarUnirsePartida());
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitar unirse partida");
         }
