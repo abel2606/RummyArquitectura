@@ -20,17 +20,16 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
     /**
      * Creates new form PantallaSalaEspera
      */
-    private PantallaSalaEspera(java.awt.Frame parent, boolean modal, JugadorDTO jugador) {
-        super(parent, modal);
+    private PantallaSalaEspera(ControlSalaEspera control, JugadorDTO jugador) {
         initComponents();
-        dibujarComponentes();
-        control = ControlSalaEspera.getInstance();
+        this.control = control;
         this.jugador = jugador;
+        dibujarComponentes();
     }
-    
-    public static PantallaSalaEspera getInstance(java.awt.Frame parent, boolean modal, JugadorDTO jugador) {
+
+    public static PantallaSalaEspera getInstance(ControlSalaEspera control, JugadorDTO jugador) {
         if (instance == null) {
-            instance = new PantallaSalaEspera(parent, modal, jugador);
+            instance = new PantallaSalaEspera(control, jugador);
         }
         return instance;
     }
@@ -40,10 +39,12 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
     }
 
     public void dibujarComponentes() {
-        lblNombreJugador4.setText("Pendiente...");
-        lblNombreJugador6.setText("Pendiente...");
-        lblNombreJugador7.setText("Pendiente...");
-        lblNombreJugador8.setText("Pendiente...");
+        this.setVisible(true);
+        lblNombreJugador1.setText(jugador.getNombre());
+        lblJugador1Listo.setText("PENDIENTE...");
+        lblNombreJugador6.setText("PENDIENTE...");
+        lblNombreJugador7.setText("PENDIENTE...");
+        lblNombreJugador8.setText("PENDIENTE...");
 
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
@@ -67,10 +68,17 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
         btnSalir.setFocusPainted(false);
 
     }
-    
+
     @Override
     public void update(IModeloSalaEspera modelo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JugadorDTO j1 = modelo.getJugadores().get(0);
+        if (j1.isListoParaJugar()) {
+            lblJugador1Listo.setText("¡LISTO!");
+            lblListo.setText("Cancelar");
+        } else {
+            lblJugador1Listo.setText("PENDIENTE...");
+            lblListo.setText("Listo");
+        }
     }
 
     /**
@@ -95,7 +103,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
         lblNombreJugador1 = new javax.swing.JLabel();
         lblNombreJugador2 = new javax.swing.JLabel();
         lblNombreJugador3 = new javax.swing.JLabel();
-        lblNombreJugador4 = new javax.swing.JLabel();
+        lblJugador1Listo = new javax.swing.JLabel();
         lblNombreJugador6 = new javax.swing.JLabel();
         lblNombreJugador7 = new javax.swing.JLabel();
         lblNombreJugador8 = new javax.swing.JLabel();
@@ -105,6 +113,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Rummy - Sala de Espera");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSalir.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -117,6 +126,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
         lblListo.setForeground(new java.awt.Color(255, 255, 255));
         lblListo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblListo.setText("Listo");
+        lblListo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(lblListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 90, 50));
 
         btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
@@ -167,11 +177,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
         lblNombreJugador3.setText("Jugador1");
         getContentPane().add(lblNombreJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 360, 50));
 
-        lblNombreJugador4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador4.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador4.setText("listo");
-        getContentPane().add(lblNombreJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
+        lblJugador1Listo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblJugador1Listo.setForeground(new java.awt.Color(255, 255, 255));
+        lblJugador1Listo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblJugador1Listo.setText("listo");
+        getContentPane().add(lblJugador1Listo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
 
         lblNombreJugador6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lblNombreJugador6.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,53 +226,10 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        lblNombreJugador4.setText("Listo");
+        lblJugador1Listo.setText("Listo");
         control.solicitarIniciarPartida(jugador);
 //        control.solicitudInicioPartida();
     }//GEN-LAST:event_btnListoActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaSalaEspera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaSalaEspera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaSalaEspera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaSalaEspera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JugadorDTO nuevoJugador = new JugadorDTO("Pipucate", "");
-                PantallaSalaEspera dialog = PantallaSalaEspera.getInstance(new javax.swing.JFrame(), true, nuevoJugador);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.BotonConImagen2 btnConfiguracion;
@@ -276,11 +243,11 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
     private javax.swing.JLabel lblAvatar4;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblJugador1Listo;
     private javax.swing.JLabel lblListo;
     private javax.swing.JLabel lblNombreJugador1;
     private javax.swing.JLabel lblNombreJugador2;
     private javax.swing.JLabel lblNombreJugador3;
-    private javax.swing.JLabel lblNombreJugador4;
     private javax.swing.JLabel lblNombreJugador5;
     private javax.swing.JLabel lblNombreJugador6;
     private javax.swing.JLabel lblNombreJugador7;

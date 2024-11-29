@@ -359,4 +359,9 @@ public class Partida implements IPartida {
         return turnos;
     }
 
+    public boolean solicitarInicioPartida(Jugador jugador) {
+        jugador.setIsListo(jugador.isIsListo());
+        return jugador.isIsListo();
+    }
+
 }

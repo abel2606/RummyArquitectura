@@ -102,4 +102,11 @@ public class JugadorDTO implements Serializable {
         return avatar;
     }
 
+    public boolean isListoParaJugar() {
+        return listoParaJugar;
+    }
+
+    public void setListoParaJugar(boolean listoParaJugar) {
+        this.listoParaJugar = listoParaJugar;
+    }
 }

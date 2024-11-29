@@ -98,8 +98,17 @@ public interface IDominioFachada {
 
     /**
      * Permite configurar una nueva partida
+     *
      * @param partida valor de la partida a actualizar
      * @return regresa la partida configuarda
      */
     public Partida configurarPartida(IPartida partida);
+
+    /**
+     * Permite que un jugador solicite el inicio de una partida.
+     *
+     * @param jugador Jugador que está solicitando el inicio.
+     * @return True si el jugador quiere iniciar la partida y false si no.
+     */
+    public boolean solicitarIniciarPartida(Jugador jugador);
 }

@@ -17,10 +17,11 @@ public class ControlSalaEspera {
     private static ControlSalaEspera instance;
     private IFachadaInfraestructura infraestructura;
     private ControlPartida partida;
-    public ModeloSalaEspera modeloSala;
+    public ModeloSalaEspera modeloSalaEspera;
 
     // Constructor privado para evitar la creación directa de objetos
-    private ControlSalaEspera() {
+    private ControlSalaEspera(ModeloSalaEspera modeloSalaEspera) {
+        this.modeloSalaEspera = modeloSalaEspera;
     }
 
     public void mostrarVista() {
@@ -28,7 +29,7 @@ public class ControlSalaEspera {
     }
 
     public void solicitarIniciarPartida(JugadorDTO jugador) {
-        modeloSala.solicitarIniciarPartida(jugador);
+        modeloSalaEspera.solicitarIniciarPartida(jugador);
     }
 
     public void salirPartida() {
@@ -52,9 +53,9 @@ public class ControlSalaEspera {
     }
 
     // Método público para obtener la instancia única
-    public static ControlSalaEspera getInstance() {
+    public static ControlSalaEspera getInstance(ModeloSalaEspera modeloSalaEspera) {
         if (instance == null) {
-            instance = new ControlSalaEspera();
+            instance = new ControlSalaEspera(modeloSalaEspera);
         }
         return instance;
     }

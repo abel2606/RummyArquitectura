@@ -81,4 +81,9 @@ public class DominioFachada implements IDominioFachada {
     public Partida configurarPartida(IPartida partida) {
         return this.partida.actualizarConfiguracion(partida);
     }
+
+    @Override
+    public boolean solicitarIniciarPartida(Jugador jugador) {
+        return this.partida.solicitarInicioPartida(jugador);
+    }
 }

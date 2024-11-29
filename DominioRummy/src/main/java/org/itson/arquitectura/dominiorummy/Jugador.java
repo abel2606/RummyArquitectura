@@ -52,7 +52,7 @@ public class Jugador implements IJugador {
      * su avatar.
      *
      * @param nombre
-     * @param rutaAvatar
+     * @param avatar
      */
     public Jugador(String nombre, String avatar) {
         this.nombre = nombre;

@@ -4,11 +4,18 @@
  */
 package salaEsperaMVC;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitectura.aplicacionrummy.fachada.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.fachada.IAplicacionFachada;
+import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 
 /**
  *
@@ -18,17 +25,29 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     
     private static ModeloSalaEspera instance;
     private IPantallaSalaEspera pantallaSalaEspera;
-    private List<String> nombresJugadores;
-    private List<String> avataresJugadores;
+    private List<JugadorDTO> jugadores = new ArrayList<>();
     private boolean haySolicitudUnirse;
     private IAplicacionFachada aplicacionFachada = new AplicacionFachada();
+    private IFachadaInfraestructura infraestructura = new FachadaInfraestructura();
     
     // Constructor privado para evitar la creación directa de objetos
-    private ModeloSalaEspera() {
+    private ModeloSalaEspera(IPantallaSalaEspera pantallaSalaEspera) {
+        this.pantallaSalaEspera = pantallaSalaEspera;
     }
     
-    public void solicitarIniciarPartida(JugadorDTO jugador) {
-//        aplicacionFachada.solicitarIniciarPartida(jugador);
+    public void solicitarIniciarPartida(JugadorDTO jugadorDTO) {
+        jugadorDTO.setListoParaJugar(!jugadorDTO.isListoParaJugar());
+        
+        Jugador jugador = new Jugador(jugadorDTO.getNombre(), jugadorDTO.getAvatar());
+        jugador.setIsListo(jugadorDTO.isListoParaJugar());
+        
+        aplicacionFachada.solicitarIniciarPartida(jugador);
+        try {
+            infraestructura.solicitarInicioPartida(jugadorDTO);
+        } catch (InfraestructuraException ex) {
+            Logger.getLogger(ModeloSalaEspera.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        notificar();
     }
     
     public void salirPartida() {
@@ -48,25 +67,20 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     }
     
     public void notificar() {
-        
+        pantallaSalaEspera.update(this);
     }
     
     // Método público para obtener la instancia única
-    public static ModeloSalaEspera getInstance() {
+    public static ModeloSalaEspera getInstance(IPantallaSalaEspera pantalla) {
         if (instance == null) {
-            instance = new ModeloSalaEspera();
+            instance = new ModeloSalaEspera(pantalla);
         }
         return instance;
     }
 
     @Override
-    public List<String> getNombresJugadores() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public List<String> getAvataresJugadores() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<JugadorDTO> getJugadores() {
+        return this.jugadores;
     }
 
     @Override
@@ -77,5 +91,9 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     @Override
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public void setPantalla(IPantallaSalaEspera pantalla) {
+        this.pantallaSalaEspera = pantalla;
     }
 }

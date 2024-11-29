@@ -11,6 +11,7 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 
 /**
@@ -23,7 +24,7 @@ public class ClienteHandler implements Runnable {
 
     private ServerSocket serverSocket;
     private Socket clienteSocket;
-    private RummyProtocol protocolo;
+    private RummyProtocol protocolo = new RummyProtocol();
     private ObjectInputStream in;
     private ObjectOutputStream out;
 
@@ -53,13 +54,13 @@ public class ClienteHandler implements Runnable {
             RummyServer.clientesConectados.add(out);
 
             // Aquí va algo como que: "
-            while (true) {
-                // Se obtiene la petición del cliente.
+            while (!clienteSocket.isClosed()) {
                 PeticionCliente peticion = (PeticionCliente) in.readObject();
-                // Se manda a procesar la petición.
+
                 Object respuesta = protocolo.procesarPeticion(peticion);
-                // Se envía la respuesta del servidor.
+
                 broadcast(respuesta);
+                peticion = null;
             }
         } catch (IOException | ClassNotFoundException e) {
             // Por si suceden errores y así.
@@ -107,6 +108,13 @@ public class ClienteHandler implements Runnable {
             // Se itera sobre la lista de clientes conectados.
             for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
                 // Si el cliente es el mismo que originó la petición, no se le manda nada.
+                System.out.print("El jugador: " + ((SolicitudIniciarPartida) respuesta).getJugador().getNombre());
+                boolean isListo = ((SolicitudIniciarPartida) respuesta).getJugador().isListoParaJugar();
+                if (isListo) {
+                    System.out.println("Dice que está listo para jugar");
+                } else {
+                    System.out.println("Dice que está esperando...");
+                }
                 if (cliente != out) {
                     try {
                         // Se les manda la respuesta.

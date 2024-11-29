@@ -19,7 +19,7 @@ public class SolicitarIniciarPartida extends PeticionCliente implements Serializ
      * Constructor vacío.
      */
     public SolicitarIniciarPartida(JugadorDTO jugador) {
-        super.tipoPeticion = "SolicitarIniciarPartida";
+        super.tipoPeticion = "SOLICITAR_INICIAR_PARTIDA";
         this.jugador = jugador;
     }
 

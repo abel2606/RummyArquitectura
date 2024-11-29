@@ -6,13 +6,13 @@
 package salaEsperaMVC;
 
 import java.util.List;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  *
  * @author Diego Valenzuela Parra
  */
 public interface IModeloSalaEspera {
-    public List<String> getNombresJugadores();
-    public List<String> getAvataresJugadores();
+    public List<JugadorDTO> getJugadores();
     public boolean getSolicitudUnirse();
 }

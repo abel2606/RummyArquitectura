@@ -17,7 +17,7 @@ import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.Infraestr
 public class FachadaInfraestructura implements IFachadaInfraestructura {
 
     private ClienteServidor cliente;
-    private CreadorPeticiones creadorPeticiones;
+    private CreadorPeticiones creadorPeticiones = new CreadorPeticiones();
 
     /**
      * Constructor.
