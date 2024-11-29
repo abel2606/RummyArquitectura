@@ -5,6 +5,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Parti
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaTerminada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.TurnoTerminado;
 
@@ -15,16 +16,12 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Turno
 public class ManejadorRespuestas {
     
     private IOyenteManejadorRespuestas manejadorRespuestas;
-
-    public ManejadorRespuestas(IOyenteManejadorRespuestas manejadorRespuestas) {
-        this.manejadorRespuestas = manejadorRespuestas;
-    }
     
-    public void subscribe(IOyenteManejadorRespuestas manejadorRespuestas){
+    public void subscribe(IOyenteManejadorRespuestas oyente){
         
     }
     
-    public void unsubscribe(IOyenteManejadorRespuestas manejadorRespuestas){
+    public void unsubscribe(IOyenteManejadorRespuestas oyente){
         
     }
     
@@ -56,7 +53,7 @@ public class ManejadorRespuestas {
         
     }
     
-    public void manejarSolicitudUnirseEvaluada(){
+    public void manejarSolicitudUnirseEvaluada(SolicitudUnirseEvaluada peticion){
         
     }
     

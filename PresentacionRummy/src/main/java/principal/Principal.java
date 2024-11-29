@@ -23,30 +23,30 @@ public class Principal {
      */
     public static void main(String[] args) {
         
-        ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
-        ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
-        PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
+        ModeloInicio modeloInicio = ModeloInicio.getInstance();
+        ControlInicio controlInicio = ControlInicio.getInstance();
+        PantallaInicio pantallaInicio = PantallaInicio.getInstance();
         
        
         ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
         ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
         PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
         
-        ModeloInicio modeloInicio = ModeloInicio.getInstance();
-        ControlInicio controlInicio = ControlInicio.getInstance();
-        PantallaInicio pantallaInicio = PantallaInicio.getInstance();
+        ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
+        ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
+        PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
         
-        modeloUnirsePartida.crearParametrosMVC();
-        controlUnirsePartida.crearParametrosMVC();
-        pantallaUnirsePartida.crearParametrosMVC();
+        modeloInicio.crearParametrosMVC();
+        controlInicio.crearParametrosMVC();
+        pantallaInicio.crearParametrosMVC();
         
         modeloConfigurarPartida.crearParametrosMVC();
         controlConfigurarPartida.crearParametrosMVC();
         pantallaConfigurarPartida.crearParametrosMVC();
         
-        modeloInicio.crearParametrosMVC();
-        controlInicio.crearParametrosMVC();
-        pantallaInicio.crearParametrosMVC();
+        modeloUnirsePartida.crearParametrosMVC();
+        controlUnirsePartida.crearParametrosMVC();
+        pantallaUnirsePartida.crearParametrosMVC();
     }
     
 }
