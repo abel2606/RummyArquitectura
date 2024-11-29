@@ -4,8 +4,8 @@
  */
 package salaEsperaMVC;
 
-import com.mycompany.subsistemaintersocket.FachadaSocket;
-import com.mycompany.subsistemaintersocket.IFachadaSocket;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaSocket;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaSocket;
 import partidaMVC.ControlPartida;
 
 /**
