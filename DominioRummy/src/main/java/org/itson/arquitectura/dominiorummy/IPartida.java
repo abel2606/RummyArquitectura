@@ -11,4 +11,6 @@ package org.itson.arquitectura.dominiorummy;
 public interface IPartida {
     public void setRangoFichas(int rangoFichas);
     public void setNumeroComodines(int numeroComodines);
+    public int getRangoFichas();
+    public int getNumeroComodines();
 }

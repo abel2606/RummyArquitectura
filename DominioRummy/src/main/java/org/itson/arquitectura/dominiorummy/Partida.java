@@ -23,7 +23,7 @@ public class Partida implements IPartida {
      * Los turnos en los que juegan los jugadores.
      */
     private List<Turno> turnos;
-    
+
     /**
      * Turno actual de la partida
      */
@@ -63,7 +63,7 @@ public class Partida implements IPartida {
     public Partida(int numeroComodines, int rangoFichas) {
         this.numeroComodines = numeroComodines;
         this.rangoFichas = rangoFichas;
-        
+
         mazo = new ArrayList<>();
         jugadores = new ArrayList<>();
         turnos = new ArrayList<>();
@@ -78,12 +78,94 @@ public class Partida implements IPartida {
 
     @Override
     public void setRangoFichas(int rangoFichas) {
-       this.rangoFichas = rangoFichas;
+        this.rangoFichas = rangoFichas;
     }
 
     @Override
     public void setNumeroComodines(int numeroComodines) {
-        this.numeroComodines =  numeroComodines;
+        this.numeroComodines = numeroComodines;
+    }
+
+    /**
+     * Permite saber si una partida está iniciada o no.
+     *
+     * @return true si la partida está iniciada, false en caso contrario
+     */
+    public boolean isIniciada() {
+        return isIniciada;
+    }
+
+    /**
+     * Permite obtener una ficha del mazo.
+     *
+     * @return La ficha obtenida
+     */
+    public Ficha obtenerFichaMazo() {
+        Random random = new Random();
+        return mazo.remove(random.nextInt(mazo.size()));
+    }
+
+    public boolean terminarTurno() {
+        int siguienteTurno = turnoActual.getTurno();
+        if (siguienteTurno == getTurnos().size() - 1) {
+            turnoActual = (getTurnos().get(0));
+        } else {
+            turnoActual = (getTurnos().get(siguienteTurno + 1));
+        }
+        return true;
+    }
+
+    /**
+     * Permite agregar una ficha a la mano de un jugador presente en la partida.
+     *
+     * @param ficha La ficha a agregar
+     * @param jugador El jugador al que se le agregará la ficha
+     * @return true si se agregó la ficha, false en caso contrario
+     */
+    public boolean agregarFichaJugador(Ficha ficha, Jugador jugador) {
+        if (jugadores.contains(jugador)) {
+            return jugador.agregarFicha(ficha);
+        }
+        return false;
+    }
+
+    public boolean agregarFichaGrupo(Ficha ficha, GrupoFichas grupoFichas) {
+        return tablero.agregarFicha(ficha, grupoFichas);
+    }
+
+    public GrupoFichas crearGrupoFichas(List<Ficha> fichas) {
+        return GrupoFichas.crearGrupo(fichas, rangoFichas);
+    }
+
+    public boolean terminarPartida() {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getManoFichas().isEmpty()) {
+
+                System.out.println("El jugador " + jugador.getNombre() + " ha ganado!");
+                isIniciada = false;
+                reiniciarPartida();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void reiniciarPartida() {
+        this.isIniciada = false;
+        this.turnos.clear();
+        this.jugadores.clear();
+        this.mazo.clear();
+        this.tablero = null;
+
+        this.numeroComodines = 0;
+        this.rangoFichas = 0;
+
+
+    }
+
+    public void actualizarConfiguracion(IPartida partida) {
+        this.setRangoFichas(partida.getRangoFichas());
+        this.setNumeroComodines(partida.getNumeroComodines());
     }
 
     /**
@@ -123,15 +205,6 @@ public class Partida implements IPartida {
     }
 
     /**
-     * Permite saber si una partida está iniciada o no.
-     *
-     * @return true si la partida está iniciada, false en caso contrario
-     */
-    public boolean isIniciada() {
-        return isIniciada;
-    }
-
-    /**
      * Permite obtener el rango de fichas que puede haber
      *
      * @return El rango de fichas
@@ -165,16 +238,6 @@ public class Partida implements IPartida {
     }
 
     /**
-     * Permite obtener una ficha del mazo.
-     *
-     * @return La ficha obtenida
-     */
-    public Ficha obtenerFicha() {
-        Random random = new Random();
-        return mazo.remove(random.nextInt(mazo.size()));
-    }
-
-    /**
      * Permite agregar una ficha a un grupo del tablero.
      *
      * @param ficha La ficha a agregar
@@ -199,32 +262,6 @@ public class Partida implements IPartida {
         }
     }
 
-    /**
-     * Permite agregar una ficha a la mano de un jugador presente en la partida.
-     *
-     * @param ficha La ficha a agregar
-     * @param jugador El jugador al que se le agregará la ficha
-     * @return true si se agregó la ficha, false en caso contrario
-     */
-    public boolean agregarFichaJugador(Ficha ficha, Jugador jugador) {
-        if (jugadores.contains(jugador)) {
-            return jugador.agregarFicha(ficha);
-        }
-        return false;
-    }
-
-    /**
-     * Permite obtener una ficha de la mano de un jugador.
-     *
-     * @param jugador El jugador del que se desea obtener la ficha
-     * @return La ficha obtenida del jugador
-     */
-    public Ficha obtenerFichaJugador(Jugador jugador) {
-        if (jugadores.contains(jugador)) {
-            return jugador.obtenerFicha();
-        }
-        return null;
-    }
 
     /**
      * {@inheritDoc}
@@ -260,7 +297,7 @@ public class Partida implements IPartida {
     private void repartirFichas() {
         for (Jugador jugador : jugadores) {
             for (int i = 0; i < 14; i++) {
-                jugador.agregarFicha(obtenerFicha());
+                jugador.agregarFicha(obtenerFichaMazo());
             }
         }
     }
