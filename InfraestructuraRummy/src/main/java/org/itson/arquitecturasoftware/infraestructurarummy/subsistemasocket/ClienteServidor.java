@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-//import manejadorRespuestas.ManejadorRespuestas;
+import manejadorRespuestas.ManejadorRespuestas;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 
 /**
  * Clase que permite establecer la comunicación con el servidor y enviarle
@@ -18,7 +21,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Petici
  */
 public class ClienteServidor implements Runnable {
 
-//    private ManejadorRespuestas manejador;
+    private ManejadorRespuestas manejador;
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
@@ -69,9 +72,15 @@ public class ClienteServidor implements Runnable {
     public void run() {
         try {
             while (true) {
+                manejador = new ManejadorRespuestas();
                 Object respuesta = in.readObject();
-//                manejador = new ManejadorRespuestas();
-//                manejador.manejarRespuesta(respuesta);
+                if (respuesta instanceof SolicitudUnirsePartida) {
+                    manejador.manejarSolicitudUnirsePartida((SolicitudUnirsePartida) respuesta);
+                } else if (respuesta instanceof SolicitudIniciarPartida) {
+                    manejador.manejarSolicitudIniciarPartida((SolicitudIniciarPartida) respuesta);
+                } else if (respuesta instanceof SolicitudUnirseEvaluada) {
+                    manejador.manejarSolicitudUnirseEvaluada((SolicitudUnirseEvaluada) respuesta);
+                }
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
