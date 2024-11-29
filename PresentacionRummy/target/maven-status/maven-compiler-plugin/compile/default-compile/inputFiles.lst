@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonIcono.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\componentes\FichaComponente.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonConImagen.java
@@ -34,3 +35,37 @@ C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Pr
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\registrarJugadorMVC\ControlConfigurarJugador.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\registrarJugadorMVC\PantallaConfigurarJugador.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\ControlConfigurarPartida.java
+=======
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\inicioMVC\IPantallaInicio.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\unirsePartidaMVC\ControlUnirsePartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\seleccionColorMVC\ControlColores.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\PanelImagen.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\ModeloConfigurarPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonConImagen2.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\ModeloPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\manejadorRespuestas\ManejadorRespuestas.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\Boton.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\ControlPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\registrarJugadorMVC\ModeloConfigurarJugador.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\FichaComponente.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonConImagen.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BackgroundImageLabel.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\inicioMVC\PantallaInicio.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\inicioMVC\ModeloInicio.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\org\itson\arquitectura\controladores\ControlIniciarPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonIcono.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\PantallaPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\unirsePartidaMVC\PantallaUnirsePartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\registrarJugadorMVC\PantallaConfigurarJugador.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\seleccionColorMVC\PantallaSeleccionColor.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\registrarJugadorMVC\ControlConfigurarJugador.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\ControlConfigurarPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\principal\Principal.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\seleccionColorMVC\ModeloColores.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\PantallaConfigurarPartida3.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\org\itson\arquitectura\modelos\ModeloIniciarPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\IModelo.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\IPantallaConfigurarPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\inicioMVC\ControlInicio.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\IVista.java
+>>>>>>> Stashed changes
