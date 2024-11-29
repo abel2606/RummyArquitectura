@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package seleccionColorMVC;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class ControlColores {
     
+    private static ControlColores control;
     public ModeloColores modelo;
     
     public ControlColores(){
@@ -22,6 +19,13 @@ public class ControlColores {
     
     public void agregarcoloresJugador(String[] colores){
         
+    }
+    
+    public static ControlColores getInstance() {
+        if (control == null) {
+            control = new ControlColores();
+        }
+        return control;
     }
    
 }

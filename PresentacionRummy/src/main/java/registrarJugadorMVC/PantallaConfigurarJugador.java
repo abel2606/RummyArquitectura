@@ -1,22 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package registrarJugadorMVC;
+
+import javax.swing.JCheckBox;
+
 /**
  *
- * @author Dell
+ * @author Equipo4
  */
-public class PantallaConfigurarJugador extends javax.swing.JDialog {
+public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPantallaConfigurarJugador{
 
     /**
-     * Creates new form PantallaDatosJugador
+     * Creates new form PantallaConfigurarJugador1
      */
-    public PantallaConfigurarJugador(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public PantallaConfigurarJugador() {
         initComponents();
+        seleccionarAvatar();
+        setVisible(true);
+        
+        this.setTitle("Rummy - Configurar jugador");
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,215 +28,133 @@ public class PantallaConfigurarJugador extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nombre = new javax.swing.JTextField();
-        btnConfirmar = new javax.swing.JButton();
-        btnAjustes = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
-        avatar4 = new javax.swing.JButton();
-        avatar8 = new javax.swing.JButton();
-        avatar2 = new javax.swing.JButton();
-        avatar3 = new javax.swing.JButton();
-        avatar1 = new javax.swing.JButton();
-        avatar5 = new javax.swing.JButton();
-        avatar6 = new javax.swing.JButton();
-        avatar7 = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
+        campoNombre = new javax.swing.JTextField();
+        avatar4 = new javax.swing.JCheckBox();
+        avatar2 = new javax.swing.JCheckBox();
+        avatar3 = new javax.swing.JCheckBox();
+        avatar5 = new javax.swing.JCheckBox();
+        avatar6 = new javax.swing.JCheckBox();
+        avatar1 = new javax.swing.JCheckBox();
+        avatar7 = new javax.swing.JCheckBox();
+        avatar8 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Configurar Jugador");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 540, 50));
+        campoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
+        campoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        campoNombre.setFocusable(false);
+        campoNombre.setRequestFocusEnabled(false);
+        campoNombre.setSelectionColor(new java.awt.Color(255, 255, 255));
+        getContentPane().add(campoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 640, 60));
 
-        btnConfirmar.setBackground(new java.awt.Color(100, 0, 143));
-        btnConfirmar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmar.setText("Confirmar");
-        btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
-        getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 200, 50));
+        avatar4.setForeground(new java.awt.Color(255, 255, 255));
+        avatar4.setText("Avatar 4");
+        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
 
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tuerca.png"))); // NOI18N
-        btnAjustes.setText("jButton11");
-        btnAjustes.setBorder(null);
-        btnAjustes.setContentAreaFilled(false);
-        getContentPane().add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 110, 80));
+        avatar2.setForeground(new java.awt.Color(255, 255, 255));
+        avatar2.setText("Avatar 2");
+        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
 
-        btnVolver.setBackground(new java.awt.Color(100, 0, 143));
-        btnVolver.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
-        btnVolver.setText("Volver");
-        btnVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 200, 50));
+        avatar3.setForeground(new java.awt.Color(255, 255, 255));
+        avatar3.setText("Avatar 3");
+        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, -1, -1));
 
-        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar5.png"))); // NOI18N
-        avatar4.setContentAreaFilled(false);
-        avatar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 346, 80, 80));
+        avatar5.setForeground(new java.awt.Color(255, 255, 255));
+        avatar5.setText("Avatar 5");
+        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
 
-        avatar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar9.png"))); // NOI18N
-        avatar8.setContentAreaFilled(false);
-        avatar8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 427, 80, 80));
+        avatar6.setForeground(new java.awt.Color(255, 255, 255));
+        avatar6.setText("Avatar 6");
+        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
 
-        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar2.png"))); // NOI18N
-        avatar2.setContentAreaFilled(false);
-        avatar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 346, 80, 80));
+        avatar1.setForeground(new java.awt.Color(255, 255, 255));
+        avatar1.setText("Avatar 1");
+        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
 
-        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar3.png"))); // NOI18N
-        avatar3.setContentAreaFilled(false);
-        avatar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 346, 80, 80));
+        avatar7.setForeground(new java.awt.Color(255, 255, 255));
+        avatar7.setText("Avatar 7");
+        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, -1, -1));
 
-        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1.png"))); // NOI18N
-        avatar1.setContentAreaFilled(false);
-        avatar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 346, 80, 80));
+        avatar8.setForeground(new java.awt.Color(255, 255, 255));
+        avatar8.setText("Avatar 8");
+        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, -1, -1));
 
-        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar6.png"))); // NOI18N
-        avatar5.setContentAreaFilled(false);
-        avatar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 427, 80, 80));
-
-        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar7.png"))); // NOI18N
-        avatar6.setContentAreaFilled(false);
-        avatar6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 427, 80, 80));
-
-        avatar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar8.png"))); // NOI18N
-        avatar7.setContentAreaFilled(false);
-        avatar7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                avatar7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 427, 80, 80));
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoDatosJugador.jpg"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoDatosJugador.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void avatar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar4ActionPerformed
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        
+    }//GEN-LAST:event_botonVolverActionPerformed
 
-    private void avatar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar8ActionPerformed
+    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
+        setVisible(false);
+        String nombre = campoNombre.getText();
+        String avatar = getCheckboxSeleccionado().getText();
+        control.continuarConfiguracion(nombre, avatar);
+    }//GEN-LAST:event_botonConfirmarActionPerformed
+    
+    private JCheckBox getCheckboxSeleccionado() {
+        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
 
-    private void avatar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar2ActionPerformed
-
-    private void avatar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar3ActionPerformed
-
-    private void avatar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar1ActionPerformed
-
-    private void avatar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar6ActionPerformed
-
-    private void avatar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar7ActionPerformed
-
-    private void avatar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_avatar5ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        for (JCheckBox avatar : avatars) {
+            if (avatar.isSelected()) {
+                return avatar;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaConfigurarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        return avatar1;
+    }
+    
+    private void seleccionarAvatar() {
+        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                PantallaConfigurarJugador dialog = new PantallaConfigurarJugador(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
+        for (JCheckBox avatar : avatars) {
+            avatar.addActionListener(e -> {
+                for (JCheckBox otro : avatars) {
+                    if (otro != avatar) {
+                        otro.setSelected(false);
                     }
-                });
-                dialog.setVisible(true);
-            }
-        });
+                }
+            });
+        }
+    }
+    
+    public static PantallaConfigurarJugador getInstance(){
+        if (pantalla == null) {
+            pantalla = new PantallaConfigurarJugador();
+        }
+        return pantalla;
+    }
+    
+    public void crearParametrosMVC(){
+        control = ControlConfigurarJugador.getInstance();
+    }
+    
+    @Override
+    public void update() {
+        setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton avatar1;
-    private javax.swing.JButton avatar2;
-    private javax.swing.JButton avatar3;
-    private javax.swing.JButton avatar4;
-    private javax.swing.JButton avatar5;
-    private javax.swing.JButton avatar6;
-    private javax.swing.JButton avatar7;
-    private javax.swing.JButton avatar8;
-    private javax.swing.JButton btnAjustes;
-    private javax.swing.JButton btnConfirmar;
-    private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel fondo;
-    private javax.swing.JTextField nombre;
+    private javax.swing.JCheckBox avatar1;
+    private javax.swing.JCheckBox avatar2;
+    private javax.swing.JCheckBox avatar3;
+    private javax.swing.JCheckBox avatar4;
+    private javax.swing.JCheckBox avatar5;
+    private javax.swing.JCheckBox avatar6;
+    private javax.swing.JCheckBox avatar7;
+    private javax.swing.JCheckBox avatar8;
+    private javax.swing.JTextField campoNombre;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    private ControlConfigurarJugador control;
+    private static PantallaConfigurarJugador pantalla;
+    
 }

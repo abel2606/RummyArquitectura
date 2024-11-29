@@ -1,28 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package registrarJugadorMVC;
 
-import org.itson.arquitectura.dominiorummy.Partida;
-
+import org.itson.arquitectura.dominiorummy.IJugador;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class ModeloConfigurarJugador {
-
-    PantallaConfigurarJugador pantalla;
+    
+    private static ModeloConfigurarJugador modelo;
+    private IPantallaConfigurarJugador pantalla;
 
     public ModeloConfigurarJugador() {
-        pantalla = new PantallaConfigurarJugador(null, true);
+//        pantalla = new PantallaConfigurarJugador(null, true);
 
+    }
+    
+    public void crearParametrosMVC() {
+        pantalla = PantallaConfigurarJugador.getInstance();
+    }
+    
+    public void crearJugador(IJugador jugador){
+        
     }
 
     public void mostrarVista() {
-        PantallaConfigurarJugador pantallaConfigurar = new PantallaConfigurarJugador(null, false);
-        pantallaConfigurar.setVisible(true);
+//        PantallaConfigurarJugador pantallaConfigurar = new PantallaConfigurarJugador(null, false);
+//        pantallaConfigurar.setVisible(true);
         
     }
 
@@ -34,4 +38,15 @@ public class ModeloConfigurarJugador {
 //        
 //        return partida;
 //    }
+    
+    public void notificar(){
+        pantalla.update();
+    }
+    
+    public static ModeloConfigurarJugador getInstance() {
+        if (modelo == null) {
+            modelo = new ModeloConfigurarJugador();
+        }
+        return modelo;
+    }
 }

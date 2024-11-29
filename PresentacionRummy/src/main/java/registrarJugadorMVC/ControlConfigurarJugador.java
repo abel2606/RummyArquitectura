@@ -1,30 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package registrarJugadorMVC;
+
+import inicioMVC.ControlInicio;
+import seleccionColorMVC.ControlColores;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
 public class ControlConfigurarJugador {
-    public ModeloConfigurarJugador modelo;
+    
+    private static ControlConfigurarJugador control;
+    private ControlColores controlColores;
+    private ControlInicio controlInicio;
+    private ModeloConfigurarJugador modelo;
+    
     
     public ControlConfigurarJugador(){
-        modelo = new ModeloConfigurarJugador();
     }
     
     public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
-//        modelo.crearPartida(rangoFichas, numeroComodines);
+        
 
+    }
+    
+    public void crearParametrosMVC() {
+        controlColores = ControlColores.getInstance();
+        controlInicio = ControlInicio.getInstance();
+        modelo = ModeloConfigurarJugador.getInstance();
     }
     
     public void mostrarVista() {
         modelo.mostrarVista();
     }
+    
     public void continuarConfiguracion(String nombre, String avatar){
-        
+        //yo voy a usar este
+    }
+    
+    public static ControlConfigurarJugador getInstance() {
+        if (control == null) {
+            control = new ControlConfigurarJugador();
+        }
+        return control;
     }
     
 }

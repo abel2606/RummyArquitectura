@@ -4,11 +4,10 @@
 package unirsePartidaMVC;
 
 import inicioMVC.ControlInicio;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
+import registrarJugadorMVC.ControlConfigurarJugador;
 
 /**
  * @author Equipo4
@@ -17,7 +16,7 @@ public class ControlUnirsePartida {
 
     private static ControlUnirsePartida control;
     private ControlInicio inicio;
-//    private ControlConfigurarJugador configurarJugador;
+    private ControlConfigurarJugador configurarJugador;
     private ModeloUnirsePartida modelo;
     private IFachadaInfraestructura infraestructura;
     
@@ -43,7 +42,7 @@ public class ControlUnirsePartida {
 
     public void crearParametrosMVC() {
         inicio = ControlInicio.getInstance();
-//        configurarJugador = ControlConfigurarJugador.getInstance();
+        configurarJugador = ControlConfigurarJugador.getInstance();
 //        infraestructura = new FachadaInfraestructura();
         modelo = ModeloUnirsePartida.getInstance();
     }
