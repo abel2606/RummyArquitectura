@@ -4,3 +4,8 @@
 /DominioRummy/target/
 /DTORummy/target/
 /ComunicacionRummy/target/
+/PresentacionRummy/target/
+/ServidorRummy/target/
+/InfraestructuraRummy/target/
+/AplicacionRummy/target/
+*.lst

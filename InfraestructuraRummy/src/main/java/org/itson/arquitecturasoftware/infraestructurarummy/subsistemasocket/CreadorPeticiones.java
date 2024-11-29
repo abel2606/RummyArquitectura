@@ -8,7 +8,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Inicia
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarUnirsePartida;
-import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitudUnirseEvaluada;
+import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.EvaluarSolicitud;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarTurno;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
@@ -25,10 +25,12 @@ public class CreadorPeticiones {
     /**
      * Permite crear la petición de solicitar inicio de la partida.
      *
+     * @param jugador Jugadoe que está solicitando iniciar la partida.
      * @return La petición de solicitar inicio de partida
+     *
      */
-    public PeticionCliente crearPeticionSolicitarIniciarPartida() {
-        return new SolicitarIniciarPartida();
+    public PeticionCliente crearPeticionSolicitarIniciarPartida(JugadorDTO jugador) {
+        return new SolicitarIniciarPartida(jugador);
     }
 
     /**
@@ -48,7 +50,7 @@ public class CreadorPeticiones {
      * @return La petición de solicitud evaluada de unirse a la partida
      */
     public PeticionCliente crearPeticionSolicitudUnirseEvaluada(boolean solicitudEvaluada) {
-        return new SolicitudUnirseEvaluada(solicitudEvaluada);
+        return new EvaluarSolicitud(solicitudEvaluada);
     }
 
     /**

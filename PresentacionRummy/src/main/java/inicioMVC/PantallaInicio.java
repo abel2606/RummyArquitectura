@@ -32,20 +32,20 @@ public class PantallaInicio extends javax.swing.JDialog {
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
 
-        btnConfiguracion.setIcon(settings);  
-        btnConfiguracion.setSelectedIcon(settingsSelect);  
-        btnConfiguracion.setBorderPainted(false);  
-        btnConfiguracion.setFocusPainted(false); 
-        
-        btnCrearPartida.setIcon(crearPartida);  
-        btnCrearPartida.setSelectedIcon(crearPartidaHover);  
-        btnCrearPartida.setBorderPainted(false);  
-        btnCrearPartida.setFocusPainted(false);
-        
-        btnUnirsePartida.setIcon(unirsePartida);  
-        btnUnirsePartida.setSelectedIcon(unirsePartidaHover);  
-        btnUnirsePartida.setBorderPainted(false);  
-        btnUnirsePartida.setFocusPainted(false);
+//        btnConfiguracion.setIcon(settings);  
+//        btnConfiguracion.setSelectedIcon(settingsSelect);  
+//        btnConfiguracion.setBorderPainted(false);  
+//        btnConfiguracion.setFocusPainted(false); 
+//        
+//        btnCrearPartida.setIcon(crearPartida);  
+//        btnCrearPartida.setSelectedIcon(crearPartidaHover);  
+//        btnCrearPartida.setBorderPainted(false);  
+//        btnCrearPartida.setFocusPainted(false);
+//        
+//        btnUnirsePartida.setIcon(unirsePartida);  
+//        btnUnirsePartida.setSelectedIcon(unirsePartidaHover);  
+//        btnUnirsePartida.setBorderPainted(false);  
+//        btnUnirsePartida.setFocusPainted(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,28 +56,10 @@ public class PantallaInicio extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnUnirsePartida = new componentes.BotonConImagen();
-        btnCrearPartida = new componentes.BotonConImagen();
-        btnConfiguracion = new componentes.BotonConImagen();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnUnirsePartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unirsePartidaInicio.png"))); // NOI18N
-        getContentPane().add(btnUnirsePartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 525, 117));
-
-        btnCrearPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crearPartidaInicio.png"))); // NOI18N
-        btnCrearPartida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearPartidaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCrearPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 525, 117));
-
-        btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        btnConfiguracion.setText("botonConImagen1");
-        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 72, 72));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoInicio.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
@@ -140,9 +122,6 @@ public class PantallaInicio extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private componentes.BotonConImagen btnConfiguracion;
-    private componentes.BotonConImagen btnCrearPartida;
-    private componentes.BotonConImagen btnUnirsePartida;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

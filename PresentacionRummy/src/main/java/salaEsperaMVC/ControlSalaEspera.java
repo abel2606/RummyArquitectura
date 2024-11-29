@@ -4,8 +4,8 @@
  */
 package salaEsperaMVC;
 
-import com.mycompany.subsistemaintersocket.FachadaSocket;
-import com.mycompany.subsistemaintersocket.IFachadaSocket;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import partidaMVC.ControlPartida;
 
 /**
@@ -13,13 +13,14 @@ import partidaMVC.ControlPartida;
  * @author Abe
  */
 public class ControlSalaEspera {
-    private IFachadaSocket socket;
+    
+    private IFachadaInfraestructura infraestructura;
     private ControlPartida partida;
     
     public ModeloSalaEspera modeloSala;
     
     public ControlSalaEspera(){
-        socket = new FachadaSocket();
+        infraestructura = new FachadaInfraestructura();
         partida = new ControlPartida();
         modeloSala = new ModeloSalaEspera();
     }
@@ -28,13 +29,13 @@ public class ControlSalaEspera {
         modeloSala.mostrar();
     }
     
-    public void solicitudInicioPartida(){
-        mostrarMensajeDeRespuesta(socket.obtenerRespuestaJugadores());
-    }
-    
-    public void mostrarMensajeDeRespuesta(boolean respuesta){
-        if (respuesta==true){
-            partida.mostrarPantalla();
-        }
-    }
+//    public void solicitudInicioPartida(){
+//        mostrarMensajeDeRespuesta(infraestructura.solicitarInicioPartida());
+//    }
+//    
+//    public void mostrarMensajeDeRespuesta(boolean respuesta){
+//        if (respuesta==true){
+//            partida.mostrarPantalla();
+//        }
+//    }
 }
