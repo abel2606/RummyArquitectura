@@ -56,7 +56,6 @@ public interface IDominioFachada {
      */
     public Ficha tomarFichaMazo();
 
-
     /**
      * Permite finalizar el turno del jugador actual.
      *

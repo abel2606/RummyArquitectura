@@ -14,7 +14,7 @@ import org.itson.arquitectura.dominiorummy.Ficha;
 import org.itson.arquitectura.dominiorummy.GrupoFichas;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.IPartida;
-import org.itson.arquitectura.dominiorummy.Partida;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  * @author Equipo4
@@ -47,7 +47,8 @@ public class AplicacionFachada implements IAplicacionFachada {
     }
 
     @Override
-    public void solicitarUnirsePartida() {
+    public void solicitarUnirsePartida(JugadorDTO jugador) {
+//        solicitarInicioJuego
     }
 
     @Override

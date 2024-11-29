@@ -9,3 +9,6 @@
 /InfraestructuraRummy/target/
 /AplicacionRummy/target/
 *.lst
+/ManejadorRespuestasRummy/target/
+*.lst
+*.class

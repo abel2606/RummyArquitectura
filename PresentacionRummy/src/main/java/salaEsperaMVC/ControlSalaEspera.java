@@ -4,7 +4,7 @@
  */
 package salaEsperaMVC;
 
-import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import partidaMVC.ControlPartida;
 
@@ -13,29 +13,49 @@ import partidaMVC.ControlPartida;
  * @author Abe
  */
 public class ControlSalaEspera {
-    
+
+    private static ControlSalaEspera instance;
     private IFachadaInfraestructura infraestructura;
     private ControlPartida partida;
-    
     public ModeloSalaEspera modeloSala;
-    
-    public ControlSalaEspera(){
-        infraestructura = new FachadaInfraestructura();
-        partida = new ControlPartida();
-        modeloSala = new ModeloSalaEspera();
+
+    // Constructor privado para evitar la creación directa de objetos
+    private ControlSalaEspera() {
     }
-    
-    public void mostrarVista(){
-        modeloSala.mostrar();
+
+    public void mostrarVista() {
+//        modeloSala.mostrar();
     }
-    
-//    public void solicitudInicioPartida(){
-//        mostrarMensajeDeRespuesta(infraestructura.solicitarInicioPartida());
-//    }
-//    
-//    public void mostrarMensajeDeRespuesta(boolean respuesta){
-//        if (respuesta==true){
-//            partida.mostrarPantalla();
-//        }
-//    }
+
+    public void solicitarIniciarPartida(JugadorDTO jugador) {
+        modeloSala.solicitarIniciarPartida(jugador);
+    }
+
+    public void salirPartida() {
+
+    }
+
+    public void iniciarPartida() {
+
+    }
+
+    public void evaluarSolicitudUnirse(boolean respuesta) {
+
+    }
+
+    public void notificarSolicitudUnirse() {
+
+    }
+
+    public void notificar() {
+
+    }
+
+    // Método público para obtener la instancia única
+    public static ControlSalaEspera getInstance() {
+        if (instance == null) {
+            instance = new ControlSalaEspera();
+        }
+        return instance;
+    }
 }

@@ -5,55 +5,74 @@
 package salaEsperaMVC;
 
 import javax.swing.ImageIcon;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  *
  * @author Abe
  */
-public class PantallaSalaEspera extends javax.swing.JDialog {
+public class PantallaSalaEspera extends javax.swing.JDialog implements IPantallaSalaEspera {
 
+    private static PantallaSalaEspera instance;
     private ControlSalaEspera control;
-    
+    private JugadorDTO jugador;
+
     /**
      * Creates new form PantallaSalaEspera
      */
-    public PantallaSalaEspera(java.awt.Frame parent, boolean modal) {
+    private PantallaSalaEspera(java.awt.Frame parent, boolean modal, JugadorDTO jugador) {
         super(parent, modal);
         initComponents();
         dibujarComponentes();
-        control = new ControlSalaEspera();
+        control = ControlSalaEspera.getInstance();
+        this.jugador = jugador;
+    }
+    
+    public static PantallaSalaEspera getInstance(java.awt.Frame parent, boolean modal, JugadorDTO jugador) {
+        if (instance == null) {
+            instance = new PantallaSalaEspera(parent, modal, jugador);
+        }
+        return instance;
     }
 
-    public void dibujarComponentes(){
+    public void iniciarPartida() {
+
+    }
+
+    public void dibujarComponentes() {
         lblNombreJugador4.setText("Pendiente...");
         lblNombreJugador6.setText("Pendiente...");
         lblNombreJugador7.setText("Pendiente...");
         lblNombreJugador8.setText("Pendiente...");
-        
+
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
 
-        btnConfiguracion.setIcon(settings);  
-        btnConfiguracion.setSelectedIcon(settingsSelect);  
-        btnConfiguracion.setBorderPainted(false);  
-        btnConfiguracion.setFocusPainted(false); 
-        
+        btnConfiguracion.setIcon(settings);
+        btnConfiguracion.setSelectedIcon(settingsSelect);
+        btnConfiguracion.setBorderPainted(false);
+        btnConfiguracion.setFocusPainted(false);
+
         ImageIcon boton = new ImageIcon("src\\main\\resources\\boton.png");
         ImageIcon botonHover = new ImageIcon("src\\main\\resources\\botonHover.png");
 
-        btnListo.setIcon(boton);  
-        btnListo.setSelectedIcon(botonHover);  
-        btnListo.setBorderPainted(false);  
-        btnListo.setFocusPainted(false); 
-        
-        btnSalir.setIcon(boton);  
-        btnSalir.setSelectedIcon(botonHover);  
-        btnSalir.setBorderPainted(false);  
-        btnSalir.setFocusPainted(false); 
-        
-        
+        btnListo.setIcon(boton);
+        btnListo.setSelectedIcon(botonHover);
+        btnListo.setBorderPainted(false);
+        btnListo.setFocusPainted(false);
+
+        btnSalir.setIcon(boton);
+        btnSalir.setSelectedIcon(botonHover);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setFocusPainted(false);
+
     }
     
+    @Override
+    public void update(IModeloSalaEspera modelo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -198,6 +217,7 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
         lblNombreJugador4.setText("Listo");
+        control.solicitarIniciarPartida(jugador);
 //        control.solicitudInicioPartida();
     }//GEN-LAST:event_btnListoActionPerformed
 
@@ -231,7 +251,8 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PantallaSalaEspera dialog = new PantallaSalaEspera(new javax.swing.JFrame(), true);
+                JugadorDTO nuevoJugador = new JugadorDTO("Pipucate", "");
+                PantallaSalaEspera dialog = PantallaSalaEspera.getInstance(new javax.swing.JFrame(), true, nuevoJugador);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -266,4 +287,5 @@ public class PantallaSalaEspera extends javax.swing.JDialog {
     private javax.swing.JLabel lblNombreJugador8;
     private javax.swing.JLabel lblSalir;
     // End of variables declaration//GEN-END:variables
+
 }
