@@ -8,10 +8,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 
 /**
@@ -53,24 +53,35 @@ public class ClienteHandler implements Runnable {
             // Agregar el Stream de salida del cliente a la lista global.
             RummyServer.clientesConectados.add(out);
 
-            // Aquí va algo como que: "
             while (!clienteSocket.isClosed()) {
-                PeticionCliente peticion = (PeticionCliente) in.readObject();
+                try {
+                    // Esperar y leer una petición del cliente
+                    PeticionCliente peticion = (PeticionCliente) in.readObject();
 
-                Object respuesta = protocolo.procesarPeticion(peticion);
+                    // Procesar la petición recibida
+                    Object respuesta = protocolo.procesarPeticion(peticion);
 
-                broadcast(respuesta);
-                peticion = null;
+                    // Enviar la respuesta a los demás clientes
+                    broadcast(respuesta);
+                } catch (SocketException e) {
+                    // Cliente desconectado abruptamente
+                    System.out.println("El cliente se desconectó: " + clienteSocket.getInetAddress());
+                    break;  // Salir del bucle si el cliente se desconectó
+                } catch (IOException | ClassNotFoundException e) {
+                    // Manejar errores de I/O o de deserialización
+                    Logger.getLogger(ClienteHandler.class.getName()).log(Level.SEVERE, "Error inesperado:", e);
+                    break;  // Salir del bucle en caso de error
+                }
             }
-        } catch (IOException | ClassNotFoundException e) {
-            // Por si suceden errores y así.
-            e.printStackTrace();
-            Logger.getLogger(ClienteHandler.class.getName()).log(Level.SEVERE, null, e);
+        } catch (IOException ex) {
+            Logger.getLogger(ClienteHandler.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            // Se elimina el cliente de la lista al desconectarse.
+            // Se elimina el cliente de la lista al desconectarse
             try {
-                RummyServer.clientesConectados.remove(out);
-                if (clienteSocket != null) {
+                if (out != null) {
+                    RummyServer.clientesConectados.remove(out);
+                }
+                if (clienteSocket != null && !clienteSocket.isClosed()) {
                     clienteSocket.close();
                 }
             } catch (IOException e) {
@@ -82,44 +93,28 @@ public class ClienteHandler implements Runnable {
     /**
      * Envía un objeto a todos los clientes conectados.
      *
-     * @param solicitud Objeto a enviar.
+     * @param respuesta Objeto a enviar.
      */
     private void broadcast(Object respuesta) {
-        /**
-         * Aquí se responde solo al host porque únicamente él puede aceptar o
-         * rechazar la solicitud de unirse.
-         */
-        if (respuesta instanceof SolicitudUnirsePartida solicitarUnirsePartida) { // Algo bien esto, eh
-            // Responder al host.
+        if (respuesta instanceof SolicitudUnirsePartida solicitarUnirsePartida) {
+            // Responder al host
             try {
-                // Se le manda la respuesta.
+                // Se le manda la respuesta al host
                 RummyServer.host.writeObject(solicitarUnirsePartida);
-                // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream.
+                // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
                 RummyServer.host.flush();
             } catch (IOException e) {
-                System.err.println("Error al enviar mensaje a un cliente.");
+                System.err.println("Error al enviar mensaje al host.");
                 System.out.println(e.getMessage());
             }
         } else {
-            /**
-             * Si no es una solicitud de unirse a partida, se responde a todos
-             * los clientes conectados menos al que originó la solicitud.
-             */
-            // Se itera sobre la lista de clientes conectados.
+            // Responder a todos los clientes conectados menos al que originó la solicitud
             for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
-                // Si el cliente es el mismo que originó la petición, no se le manda nada.
-                System.out.print("El jugador: " + ((SolicitudIniciarPartida) respuesta).getJugador().getNombre());
-                boolean isListo = ((SolicitudIniciarPartida) respuesta).getJugador().isListoParaJugar();
-                if (isListo) {
-                    System.out.println("Dice que está listo para jugar");
-                } else {
-                    System.out.println("Dice que está esperando...");
-                }
                 if (cliente != out) {
                     try {
-                        // Se les manda la respuesta.
+                        // Se les manda la respuesta
                         cliente.writeObject(respuesta);
-                        // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream.
+                        // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
                         cliente.flush();
                     } catch (IOException e) {
                         System.err.println("Error al enviar mensaje a un cliente.");
