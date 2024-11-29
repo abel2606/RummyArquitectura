@@ -4,18 +4,22 @@
 package configurarPartidaMVC;
 
 import javax.swing.JFrame;
+import org.itson.arquitectura.dominiorummy.IPartida;
+import org.itson.arquitectura.dominiorummy.Partida;
 
 /**
  * @author Equipo4
  */
 public class PantallaConfigurarPartida extends JFrame implements IPantallaConfigurarPartida {
 
+    private ControlConfigurarPartida control;
+
     /**
      * Creates new form PantallaConfigurarPartida3
      */
     private PantallaConfigurarPartida() {
         initComponents();
-        
+
         setTitle("Rummy - Configurar Partida");
     }
 
@@ -28,7 +32,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rangosFichas = new javax.swing.ButtonGroup();
+        grupoFichas = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         radioButtonDiezFichas = new javax.swing.JRadioButton();
         radioButtonTreceFichas = new javax.swing.JRadioButton();
@@ -42,7 +46,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
 
         jLabel1.setText("CONFIGURAR PARTIDA");
 
-        rangosFichas.add(radioButtonDiezFichas);
+        grupoFichas.add(radioButtonDiezFichas);
         radioButtonDiezFichas.setText("10 Fichas");
         radioButtonDiezFichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,36 +141,50 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
+        int cantidadRango = obtenerValorSeleccionado();
         
+        String cantidadComodines = (String) comboBoxNumeroComodines.getSelectedItem();
+
+        IPartida partida = new Partida(Integer.valueOf(cantidadComodines), cantidadRango);
+        control.crearPartida(partida);
     }//GEN-LAST:event_botonConfirmarActionPerformed
+
+    private int obtenerValorSeleccionado() {
+        if (radioButtonDiezFichas.isSelected()) {
+            return 10;
+        } else if (radioButtonTreceFichas.isSelected()) {
+            return 2;
+        }
+        return 0;
+    }
 
     public void crearParametrosMVC() {
         control = ControlConfigurarPartida.getInstance();
     }
-    
+
     @Override
     public void update() {
         setVisible(true);
     }
-    
+
     public static PantallaConfigurarPartida getInstance() {
         if (pantalla == null) {
             pantalla = new PantallaConfigurarPartida();
         }
         return pantalla;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCancelar;
     private javax.swing.JButton botonConfirmar;
     private javax.swing.JComboBox<String> comboBoxNumeroComodines;
+    private javax.swing.ButtonGroup grupoFichas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton radioButtonDiezFichas;
     private javax.swing.JRadioButton radioButtonTreceFichas;
-    private javax.swing.ButtonGroup rangosFichas;
     // End of variables declaration//GEN-END:variables
     private static PantallaConfigurarPartida pantalla;
-    private ControlConfigurarPartida control;
+
 }

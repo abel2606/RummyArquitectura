@@ -27,6 +27,7 @@ public class Principal {
         ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
         PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
         
+       
         ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
         ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
         PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();

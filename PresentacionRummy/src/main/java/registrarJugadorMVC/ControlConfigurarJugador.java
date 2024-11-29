@@ -20,6 +20,9 @@ public class ControlConfigurarJugador {
 
     }
     
+    public void mostrarVista() {
+        modelo.mostrarVista();
+    }
     public void continuarConfiguracion(String nombre, String avatar){
         
     }

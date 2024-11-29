@@ -15,6 +15,7 @@ import org.itson.arquitectura.dominiorummy.GrupoFichas;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
+import org.itson.arquitectura.dominiorummy.Partida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
@@ -28,7 +29,7 @@ public class AplicacionFachada implements IAplicacionFachada {
     private ServicioRegistrarJugador registrarJugador;
     private ServicioSolicitarInicioJuego solicitarInicioJuego;
     private ServicioSolicitarUnirsePartida solicitarUnirsePartida;
-    
+
     public AplicacionFachada() {
         configurarPartida = new ServicioConfigurarPartida();
         ejercerTurno = new ServicioEjercerTurno();
@@ -39,8 +40,13 @@ public class AplicacionFachada implements IAplicacionFachada {
     }
 
     @Override
-    public void configurarPartida(IPartida partida) {
-        
+    public Partida configurarPartida(IPartida partida) {
+        try {
+            return configurarPartida.configurarPartida(partida);
+        } catch (Exception e) {
+            System.out.println("Error al configurar la partida");
+        }
+        return null;
     }
 
     @Override
@@ -76,6 +82,5 @@ public class AplicacionFachada implements IAplicacionFachada {
     @Override
     public void iniciarPartida(IPartida partida) {
     }
-    
-    
+
 }

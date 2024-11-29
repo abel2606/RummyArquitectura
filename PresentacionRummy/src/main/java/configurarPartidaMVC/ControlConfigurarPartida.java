@@ -4,6 +4,7 @@
 package configurarPartidaMVC;
 
 import inicioMVC.ControlInicio;
+import org.itson.arquitectura.dominiorummy.IPartida;
 import registrarJugadorMVC.ControlConfigurarJugador;
 
 /**
@@ -25,6 +26,12 @@ import registrarJugadorMVC.ControlConfigurarJugador;
         modelo = ModeloConfigurarPartida.getInstance();
     }
     
+    public void crearPartida(IPartida partida){
+        if(modelo.crearPartida(partida)!=null){
+            
+            configurarJugador.mostrarVista();
+        }
+    }
     public void mostrarVista() {
         modelo.notificar();
     }

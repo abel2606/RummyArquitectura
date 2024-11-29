@@ -1,17 +1,17 @@
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Tablero.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\fachada\DominioFachada.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Ficha.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Color.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\pruebas\Pruebas.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\IPartida.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\GrupoFichas.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\IJugador.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\TipoConjunto.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Comodin.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Jugador.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Numero.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Secuencia.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\fachada\IDominioFachada.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Numerica.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Turno.java
-C:\Users\Familia\Documents\GitHub\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Partida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\IPartida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Numerica.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\IJugador.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Numero.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\pruebas\Pruebas.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Comodin.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\GrupoFichas.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Ficha.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Turno.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\fachada\DominioFachada.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\fachada\IDominioFachada.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Partida.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\TipoConjunto.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Tablero.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Jugador.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Color.java
+D:\ITSON\Semestre 5\Arquitectura de software\ProyectoFinal\RummyArquitectura\DominioRummy\src\main\java\org\itson\arquitectura\dominiorummy\Secuencia.java

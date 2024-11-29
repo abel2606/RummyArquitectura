@@ -9,6 +9,7 @@ import org.itson.arquitectura.dominiorummy.GrupoFichas;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
+import org.itson.arquitectura.dominiorummy.Partida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
@@ -16,7 +17,7 @@ import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
  */
 public interface IAplicacionFachada {
     
-    public void configurarPartida(IPartida partida);
+    public Partida configurarPartida(IPartida partida);
     public void registrarJugador(IJugador jugador);
     public void solicitarUnirsePartida(JugadorDTO jugador);
     public boolean solicitarIniciarPartida(Jugador jugador);
