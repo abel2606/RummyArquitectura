@@ -32,20 +32,20 @@ public class PantallaInicio extends javax.swing.JDialog {
         ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
         ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
 
-        btnConfiguracion.setIcon(settings);  
-        btnConfiguracion.setSelectedIcon(settingsSelect);  
-        btnConfiguracion.setBorderPainted(false);  
-        btnConfiguracion.setFocusPainted(false); 
-        
-        btnCrearPartida.setIcon(crearPartida);  
-        btnCrearPartida.setSelectedIcon(crearPartidaHover);  
-        btnCrearPartida.setBorderPainted(false);  
-        btnCrearPartida.setFocusPainted(false);
-        
-        btnUnirsePartida.setIcon(unirsePartida);  
-        btnUnirsePartida.setSelectedIcon(unirsePartidaHover);  
-        btnUnirsePartida.setBorderPainted(false);  
-        btnUnirsePartida.setFocusPainted(false);
+//        btnConfiguracion.setIcon(settings);  
+//        btnConfiguracion.setSelectedIcon(settingsSelect);  
+//        btnConfiguracion.setBorderPainted(false);  
+//        btnConfiguracion.setFocusPainted(false); 
+//        
+//        btnCrearPartida.setIcon(crearPartida);  
+//        btnCrearPartida.setSelectedIcon(crearPartidaHover);  
+//        btnCrearPartida.setBorderPainted(false);  
+//        btnCrearPartida.setFocusPainted(false);
+//        
+//        btnUnirsePartida.setIcon(unirsePartida);  
+//        btnUnirsePartida.setSelectedIcon(unirsePartidaHover);  
+//        btnUnirsePartida.setBorderPainted(false);  
+//        btnUnirsePartida.setFocusPainted(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
