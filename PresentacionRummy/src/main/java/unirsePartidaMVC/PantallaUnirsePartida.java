@@ -67,6 +67,7 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
+        control.cancelarAccion();
         setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 

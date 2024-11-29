@@ -21,7 +21,7 @@ public class TerminarPartida extends PeticionCliente implements Serializable {
      * @param partida La partida terminada
      */
     public TerminarPartida(PartidaDTO partida) {
-        super.tipoPeticion = "TerminarPartida";
+        super.tipoPeticion = "TERMINAR_PARTIDA";
         this.partida = partida;
     }
 

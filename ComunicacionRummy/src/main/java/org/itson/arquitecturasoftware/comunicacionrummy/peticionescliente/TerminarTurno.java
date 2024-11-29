@@ -22,7 +22,7 @@ public class TerminarTurno extends PeticionCliente implements Serializable {
      * @param partida La partida en su estado actual
      */
     public TerminarTurno(PartidaDTO partida) {
-        super.tipoPeticion = "TerminarTurno";
+        super.tipoPeticion = "TERMINAR_TURNO";
         this.partida = partida;
     }
 

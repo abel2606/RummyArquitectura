@@ -35,6 +35,10 @@ public class ControlUnirsePartida {
             modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
         }
     }
+    
+    public void cancelarAccion() {
+        inicio.mostrarVista();
+    }
 
     public void crearParametrosMVC() {
         inicio = ControlInicio.getInstance();

@@ -4,7 +4,6 @@
 package org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente;
 
 import java.io.Serializable;
-import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  * Clase que representa la petición de solicitar unirse a la partida.
@@ -18,7 +17,7 @@ public class SolicitarUnirsePartida extends PeticionCliente implements Serializa
      *
      */
     public SolicitarUnirsePartida() {
-        super.tipoPeticion = "SolicitarUniserPartida";
+        super.tipoPeticion = "SOLICITAR_UNIRSE_PARTIDA";
     }
 
 }

@@ -21,7 +21,7 @@ public class EvaluarSolicitud extends PeticionCliente implements Serializable {
      * @param aceptado Valor que refleja si el jugador fue aceptado en la partida o no.
      */
     public EvaluarSolicitud(boolean aceptado) {
-        super.tipoPeticion = "SolicitudUnirseEvaluada";
+        super.tipoPeticion = "EVALUAR_SOLICITUD";
         this.aceptado = aceptado;
     }
 

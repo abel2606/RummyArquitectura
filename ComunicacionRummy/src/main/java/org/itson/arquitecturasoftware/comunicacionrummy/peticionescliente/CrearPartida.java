@@ -22,7 +22,7 @@ public class CrearPartida extends PeticionCliente implements Serializable {
      * @param partida La partida creada
      */
     public CrearPartida(PartidaDTO partida) {
-        super.tipoPeticion = "CrearPartida";
+        super.tipoPeticion = "CREAR_PARTIDA";
         this.partida = partida;
     }
 
