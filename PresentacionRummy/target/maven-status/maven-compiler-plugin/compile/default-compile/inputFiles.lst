@@ -5,6 +5,7 @@ C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Pr
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\principal\Principal.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\IModelo.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\inicioMVC\IPantallaInicio.java
+C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\PantallaConfigurarPartida.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\componentes\BotonConImagen2.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\componentes\PanelImagen.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\salaEsperaMVC\IPantallaSalaEspera.java
@@ -18,7 +19,6 @@ C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\Pr
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\seleccionColorMVC\ModeloColores.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\PantallaPartida.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\unirsePartidaMVC\ControlUnirsePartida.java
-C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\PantallaConfigurarPartida3.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\partidaMVC\IVista.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\seleccionColorMVC\ControlColores.java
 C:\Users\ricar\OneDrive\Documentos\Arquitectura de Software\RummyArquitectura\PresentacionRummy\src\main\java\configurarPartidaMVC\ModeloConfigurarPartida.java

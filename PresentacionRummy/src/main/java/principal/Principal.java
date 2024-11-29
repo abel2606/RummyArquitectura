@@ -1,17 +1,18 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Principal.java
  */
 package principal;
 
+import configurarPartidaMVC.ControlConfigurarPartida;
+import configurarPartidaMVC.ModeloConfigurarPartida;
+import configurarPartidaMVC.PantallaConfigurarPartida;
 import inicioMVC.ControlInicio;
 import inicioMVC.ModeloInicio;
 import inicioMVC.PantallaInicio;
-import javax.swing.JFrame;
 
 /**
  *
- * @author ricar
+ * @author Equipo4
  */
 public class Principal {
 
@@ -20,12 +21,21 @@ public class Principal {
      */
     public static void main(String[] args) {
         
-        PantallaInicio pantallaInicio = null;
+        ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
+        ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
+        PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
         
-        ModeloInicio modeloInicio = ModeloInicio.getInstance(pantallaInicio);
-        ControlInicio controlInicio = ControlInicio.getInstance(modeloInicio, null, null);
-        PantallaInicio inicio = PantallaInicio.getInstance(controlInicio);
+        ModeloInicio modeloInicio = ModeloInicio.getInstance();
+        ControlInicio controlInicio = ControlInicio.getInstance();
+        PantallaInicio pantallaInicio = PantallaInicio.getInstance();
         
+        modeloConfigurarPartida.crearParametrosMVC();
+        controlConfigurarPartida.crearParametrosMVC();
+        pantallaConfigurarPartida.crearParametrosMVC();
+        
+        modeloInicio.crearParametrosMVC();
+        controlInicio.crearParametrosMVC();
+        pantallaInicio.crearParametrosMVC();
     }
     
 }

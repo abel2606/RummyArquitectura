@@ -10,7 +10,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -55,7 +55,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="botonConfirmar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="comboBoxNumeroComodines" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxNumeroComodines" min="-2" pref="119" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
@@ -149,6 +149,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonConfirmarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

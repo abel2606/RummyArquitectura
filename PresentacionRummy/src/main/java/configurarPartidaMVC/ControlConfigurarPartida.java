@@ -19,6 +19,12 @@ import registrarJugadorMVC.ControlConfigurarJugador;
     private ControlConfigurarPartida(){
     }
     
+    public void crearParametrosMVC() {
+        inicio = ControlInicio.getInstance();
+//        configurarJugador = ControlConfigurarJugador.getInstance();
+        modelo = ModeloConfigurarPartida.getInstance();
+    }
+    
     public void mostrarVista() {
         modelo.notificar();
     }

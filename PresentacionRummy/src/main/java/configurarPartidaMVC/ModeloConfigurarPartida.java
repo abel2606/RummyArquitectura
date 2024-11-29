@@ -9,9 +9,13 @@ package configurarPartidaMVC;
 public class ModeloConfigurarPartida {
 
     private static ModeloConfigurarPartida modelo;
-    private IPantallaConfigurarPartida vista = PantallaConfigurarPartida3.getInstance();
+    private IPantallaConfigurarPartida vista;
 
     private ModeloConfigurarPartida() {
+    }
+    
+    public void crearParametrosMVC() {
+        vista = PantallaConfigurarPartida.getInstance();
     }
     
     public void notificar() {

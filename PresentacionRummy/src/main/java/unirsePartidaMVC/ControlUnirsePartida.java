@@ -10,7 +10,9 @@ package unirsePartidaMVC;
  */
 public class ControlUnirsePartida {
 
-    public ControlUnirsePartida() {
+    private static ControlUnirsePartida control;
+    
+    private ControlUnirsePartida() {
         
     }
     
@@ -24,6 +26,13 @@ public class ControlUnirsePartida {
     
     public void siguientePantalla(){
         
+    }
+    
+    public static ControlUnirsePartida getInstance() {
+        if (control == null) {
+            control = new ControlUnirsePartida();
+        }
+        return control;
     }
     
 }

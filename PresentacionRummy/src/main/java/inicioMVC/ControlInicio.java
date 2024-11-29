@@ -17,10 +17,7 @@ public class ControlInicio {
     private ControlUnirsePartida unirsePartida;
     private ModeloInicio modelo;
 
-    private ControlInicio(ModeloInicio modelo, ControlConfigurarPartida configurarPartida, ControlUnirsePartida unirsePartida) {
-        this.configurarPartida = configurarPartida;
-        this.modelo = modelo;
-        this.unirsePartida = unirsePartida;
+    private ControlInicio() {
     }
 
     public void configurarPartida() {
@@ -34,10 +31,16 @@ public class ControlInicio {
     public void mostrarVista() {
         modelo.notificar();
     }
+    
+    public void crearParametrosMVC() {
+        configurarPartida = ControlConfigurarPartida.getInstance();
+        unirsePartida = ControlUnirsePartida.getInstance();
+        modelo = ModeloInicio.getInstance();
+    }
 
-    public static ControlInicio getInstance(ModeloInicio modelo, ControlConfigurarPartida configurarPartida, ControlUnirsePartida unirsePartida) {
+    public static ControlInicio getInstance() {
         if (control == null) {
-            control = new ControlInicio(modelo, configurarPartida, unirsePartida);
+            control = new ControlInicio();
         }
         return control;
     }

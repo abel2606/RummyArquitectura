@@ -8,13 +8,15 @@ import javax.swing.JFrame;
 /**
  * @author Equipo4
  */
-public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfigurarPartida {
+public class PantallaConfigurarPartida extends JFrame implements IPantallaConfigurarPartida {
 
     /**
      * Creates new form PantallaConfigurarPartida3
      */
-    private PantallaConfigurarPartida3() {
+    private PantallaConfigurarPartida() {
         initComponents();
+        
+        setTitle("Rummy - Configurar Partida");
     }
 
     /**
@@ -64,6 +66,11 @@ public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfi
         });
 
         botonConfirmar.setText("CONFIRMAR");
+        botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConfirmarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +99,7 @@ public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfi
                         .addComponent(botonCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonConfirmar))
-                    .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
@@ -117,6 +124,7 @@ public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfi
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void radioButtonDiezFichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDiezFichasActionPerformed
@@ -124,17 +132,26 @@ public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfi
     }//GEN-LAST:event_radioButtonDiezFichasActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        control.cancelarAccion();
     }//GEN-LAST:event_botonCancelarActionPerformed
 
+    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonConfirmarActionPerformed
+
+    public void crearParametrosMVC() {
+        control = ControlConfigurarPartida.getInstance();
+    }
+    
     @Override
     public void update() {
         setVisible(true);
     }
     
-    public static PantallaConfigurarPartida3 getInstance() {
+    public static PantallaConfigurarPartida getInstance() {
         if (pantalla == null) {
-            pantalla = new PantallaConfigurarPartida3();
+            pantalla = new PantallaConfigurarPartida();
         }
         return pantalla;
     }
@@ -150,5 +167,6 @@ public class PantallaConfigurarPartida3 extends JFrame implements IPantallaConfi
     private javax.swing.JRadioButton radioButtonTreceFichas;
     private javax.swing.ButtonGroup rangosFichas;
     // End of variables declaration//GEN-END:variables
-    private static PantallaConfigurarPartida3 pantalla;
+    private static PantallaConfigurarPartida pantalla;
+    private ControlConfigurarPartida control;
 }

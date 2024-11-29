@@ -15,9 +15,8 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     /**
      * Creates new form PantallaInicio2
      */
-    private PantallaInicio(ControlInicio control) {
+    private PantallaInicio() {
         initComponents();
-        this.control = control;
         setVisible(true);
         
         this.setTitle("Rummy - Inicio");
@@ -97,11 +96,15 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
         control.configurarPartida();
     }//GEN-LAST:event_botonCrearPartidaActionPerformed
 
-    public static PantallaInicio getInstance(ControlInicio control){
+    public static PantallaInicio getInstance(){
         if (pantalla == null) {
-            pantalla = new PantallaInicio(control);
+            pantalla = new PantallaInicio();
         }
         return pantalla;
+    }
+    
+    public void crearParametrosMVC(){
+        control = ControlInicio.getInstance();
     }
     
     @Override
@@ -120,5 +123,4 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     // End of variables declaration//GEN-END:variables
     private ControlInicio control;
     private static PantallaInicio pantalla;
-    
 }

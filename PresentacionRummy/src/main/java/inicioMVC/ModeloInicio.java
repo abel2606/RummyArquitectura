@@ -12,17 +12,20 @@ public class ModeloInicio {
     private static ModeloInicio modelo;
     private IPantallaInicio pantalla;
 
-    private ModeloInicio(PantallaInicio pantalla) {
-        this.pantalla = pantalla;
+    private ModeloInicio() {
+    }
+    
+    public void crearParametrosMVC() {
+        pantalla = PantallaInicio.getInstance();
     }
 
     public void notificar() {
         pantalla.update();
     }
 
-    public static ModeloInicio getInstance(PantallaInicio pantalla) {
+    public static ModeloInicio getInstance() {
         if (modelo == null) {
-            modelo = new ModeloInicio(pantalla);
+            modelo = new ModeloInicio();
         }
         return modelo;
     }

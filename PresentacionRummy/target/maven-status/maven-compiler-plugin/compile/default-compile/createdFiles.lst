@@ -1,11 +1,12 @@
 partidaMVC\IVista.class
 registrarJugadorMVC\ControlConfigurarJugador.class
 registrarJugadorMVC\PantallaConfigurarJugador$9.class
+configurarPartidaMVC\PantallaConfigurarPartida$2.class
 org\itson\arquitectura\vistas\PantallaIntroducirCodigo$1$1.class
+configurarPartidaMVC\PantallaConfigurarPartida.class
 componentes\BotonIcono$1.class
 registrarJugadorMVC\PantallaConfigurarJugador$6.class
 salaEsperaMVC\IPantallaSalaEspera.class
-configurarPartidaMVC\PantallaConfigurarPartida3$1.class
 inicioMVC\PantallaInicio$2.class
 componentes\Boton.class
 partidaMVC\PantallaPartida.class
@@ -18,7 +19,6 @@ org\itson\arquitectura\vistas\PantallaIntroducirCodigo$1.class
 partidaMVC\ModeloPartida.class
 salaEsperaMVC\ModeloSalaEspera.class
 inicioMVC\ModeloInicio.class
-configurarPartidaMVC\PantallaConfigurarPartida3.class
 seleccionColorMVC\ModeloColores.class
 registrarJugadorMVC\PantallaConfigurarJugador$8.class
 salaEsperaMVC\IModeloSalaEspera.class
@@ -56,7 +56,7 @@ org\itson\arquitectura\vistas\PantallaIntroducirCodigo.class
 componentes\BotonIcono.class
 manejadorRespuestas\ManejadorRespuestas.class
 unirsePartidaMVC\ControlUnirsePartida.class
+configurarPartidaMVC\PantallaConfigurarPartida$1.class
 componentes\Boton$1.class
 salaEsperaMVC\PantallaSalaEspera$1.class
-configurarPartidaMVC\PantallaConfigurarPartida3$2.class
 registrarJugadorMVC\PantallaConfigurarJugador$4.class
