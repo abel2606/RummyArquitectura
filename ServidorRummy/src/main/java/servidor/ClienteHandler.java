@@ -12,7 +12,9 @@ import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  * Clase que implementa hilos (Runnable) para representar a cada cliente que se
@@ -110,6 +112,10 @@ public class ClienteHandler implements Runnable {
         } else {
             // Responder a todos los clientes conectados menos al que originó la solicitud
             for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
+                JugadorDTO jugador = ((SolicitudIniciarPartida)respuesta).getJugador();
+                String listo = "";
+                listo = jugador.isListoParaJugar() ? "está listo" : "NO está listo";
+                System.out.println(jugador.getNombre() + " dice que " + listo);
                 if (cliente != out) {
                     try {
                         // Se les manda la respuesta

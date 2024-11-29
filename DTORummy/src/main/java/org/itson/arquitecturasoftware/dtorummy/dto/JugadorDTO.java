@@ -32,6 +32,12 @@ public class JugadorDTO implements Serializable {
         this.listoParaJugar = false;
     }
 
+    public JugadorDTO(String nombre, String avatar, boolean listoParaJugar) {
+        this.nombre = nombre;
+        this.avatar = avatar;
+        this.listoParaJugar = listoParaJugar;
+    }
+
     /**
      * Constructor que se usa cuando un jugador termina un turno. Utiliza el
      * nombre, el avatar y el total de fichas de un jugador para poder ser

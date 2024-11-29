@@ -61,7 +61,19 @@ public class ClienteServidor implements Runnable {
      * Permite finalizar la conexión con el servidor.
      */
     public void finalizarConexionServidor() {
-
+        try {
+            if (out != null) {
+                out.close();  // Cerrar el flujo de salida
+            }
+            if (in != null) {
+                in.close();  // Cerrar el flujo de entrada
+            }
+            if (socket != null && !socket.isClosed()) {
+                socket.close();  // Cerrar el socket
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

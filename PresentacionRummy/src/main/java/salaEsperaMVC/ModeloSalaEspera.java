@@ -22,54 +22,58 @@ import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFac
  * @author Abe
  */
 public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorRespuestas {
-    
+
     private static ModeloSalaEspera instance;
     private IPantallaSalaEspera pantallaSalaEspera;
     private List<JugadorDTO> jugadores = new ArrayList<>();
     private boolean haySolicitudUnirse;
     private IAplicacionFachada aplicacionFachada = new AplicacionFachada();
     private IFachadaInfraestructura infraestructura = new FachadaInfraestructura();
-    
+
     // Constructor privado para evitar la creación directa de objetos
     private ModeloSalaEspera(IPantallaSalaEspera pantallaSalaEspera) {
         this.pantallaSalaEspera = pantallaSalaEspera;
     }
-    
+
     public void solicitarIniciarPartida(JugadorDTO jugadorDTO) {
-        jugadorDTO.setListoParaJugar(!jugadorDTO.isListoParaJugar());
-        
-        Jugador jugador = new Jugador(jugadorDTO.getNombre(), jugadorDTO.getAvatar());
-        jugador.setIsListo(jugadorDTO.isListoParaJugar());
-        
-        aplicacionFachada.solicitarIniciarPartida(jugador);
+        // Crear una nueva instancia con el estado actualizado
+        JugadorDTO nuevoJugadorDTO = new JugadorDTO(
+                jugadorDTO.getNombre(),
+                jugadorDTO.getAvatar(),
+                !jugadorDTO.isListoParaJugar());
+
+        Jugador jugador = new Jugador(nuevoJugadorDTO.getNombre(), nuevoJugadorDTO.getAvatar());
+        jugador.setIsListo(nuevoJugadorDTO.isListoParaJugar());
+
+        jugadorDTO.setListoParaJugar(aplicacionFachada.solicitarIniciarPartida(jugador));
         try {
-            infraestructura.solicitarInicioPartida(jugadorDTO);
+            infraestructura.solicitarInicioPartida(nuevoJugadorDTO);
         } catch (InfraestructuraException ex) {
             Logger.getLogger(ModeloSalaEspera.class.getName()).log(Level.SEVERE, null, ex);
         }
         notificar();
     }
-    
+
     public void salirPartida() {
-        
+
     }
-    
+
     public void iniciarPartida() {
-        
+
     }
-    
+
     public void evaluarSolicitudUnirse(boolean respuesta) {
-        
+
     }
-    
+
     public void notificarSolicitudUnirse() {
-        
+
     }
-    
+
     public void notificar() {
         pantallaSalaEspera.update(this);
     }
-    
+
     // Método público para obtener la instancia única
     public static ModeloSalaEspera getInstance(IPantallaSalaEspera pantalla) {
         if (instance == null) {
@@ -92,7 +96,7 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
     public void setPantalla(IPantallaSalaEspera pantalla) {
         this.pantallaSalaEspera = pantalla;
     }
