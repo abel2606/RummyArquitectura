@@ -27,7 +27,6 @@ public class Principal {
         ControlInicio controlInicio = ControlInicio.getInstance();
         PantallaInicio pantallaInicio = PantallaInicio.getInstance();
         
-       
         ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
         ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
         PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();

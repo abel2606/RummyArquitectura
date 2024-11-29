@@ -46,9 +46,6 @@ public class RummyServer {
                  * cliente que se acaba de aceptar.
                  */
                 new Thread(new ClienteHandler(clienteSocket)).start();
-                if (clientesConectados.size() == 1) {
-                    host = new ObjectOutputStream(clienteSocket.getOutputStream());
-                }
             }
         } catch (IOException e) {
             // Por si suceden cositas que no deberían suceder.

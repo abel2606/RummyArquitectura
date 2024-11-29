@@ -15,6 +15,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Petici
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import static servidor.RummyServer.host;
 
 /**
  * Clase que implementa hilos (Runnable) para representar a cada cliente que se
@@ -54,6 +55,11 @@ public class ClienteHandler implements Runnable {
 
             // Agregar el Stream de salida del cliente a la lista global.
             RummyServer.clientesConectados.add(out);
+
+            if (RummyServer.clientesConectados.size() == 1) {
+                host = new ObjectOutputStream(clienteSocket.getOutputStream());
+            }
+            System.out.println(RummyServer.host);
 
             while (!clienteSocket.isClosed()) {
                 try {
@@ -112,7 +118,7 @@ public class ClienteHandler implements Runnable {
         } else {
             // Responder a todos los clientes conectados menos al que originó la solicitud
             for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
-                JugadorDTO jugador = ((SolicitudIniciarPartida)respuesta).getJugador();
+                JugadorDTO jugador = ((SolicitudIniciarPartida) respuesta).getJugador();
                 String listo = "";
                 listo = jugador.isListoParaJugar() ? "está listo" : "NO está listo";
                 System.out.println(jugador.getNombre() + " dice que " + listo);
