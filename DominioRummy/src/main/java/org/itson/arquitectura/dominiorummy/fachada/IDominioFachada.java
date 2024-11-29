@@ -8,6 +8,7 @@ import org.itson.arquitectura.dominiorummy.Ficha;
 import org.itson.arquitectura.dominiorummy.GrupoFichas;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
+import org.itson.arquitectura.dominiorummy.Partida;
 
 /**
  * @author Equipo4
@@ -96,4 +97,10 @@ public interface IDominioFachada {
      */
     public boolean agregarFichaJugador(Ficha ficha, Jugador jugador);
 
+    /**
+     * Permite configurar una nueva partida
+     * @param partida valor de la partida a actualizar
+     * @return regresa la partida configuarda
+     */
+    public Partida configurarPartida(IPartida partida);
 }

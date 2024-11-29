@@ -163,9 +163,10 @@ public class Partida implements IPartida {
 
     }
 
-    public void actualizarConfiguracion(IPartida partida) {
+    public Partida actualizarConfiguracion(IPartida partida) {
         this.setRangoFichas(partida.getRangoFichas());
         this.setNumeroComodines(partida.getNumeroComodines());
+        return getInstance(numeroComodines, rangoFichas);
     }
 
     /**

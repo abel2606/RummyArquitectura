@@ -18,9 +18,8 @@ public class DominioFachada implements IDominioFachada {
     private Partida partida;
 
     public DominioFachada(int numeroComodines, int rangoFichas) {
-        partida = new Partida(numeroComodines, rangoFichas);
+        partida = Partida.getInstance(numeroComodines, rangoFichas);
     }
-
 
     /**
      * {@inheritDoc}
@@ -29,7 +28,7 @@ public class DominioFachada implements IDominioFachada {
     public boolean agregarFichaTablero(Ficha ficha, GrupoFichas grupoFichas) {
         return partida.agregarFichaTablero(ficha, grupoFichas);
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -55,7 +54,7 @@ public class DominioFachada implements IDominioFachada {
 
     @Override
     public GrupoFichas crearGrupoFichas(List<Ficha> grupoFichas) {
-       return partida.crearGrupoFichas(grupoFichas);
+        return partida.crearGrupoFichas(grupoFichas);
     }
 
     @Override
@@ -78,6 +77,8 @@ public class DominioFachada implements IDominioFachada {
         this.partida.iniciarPartida();
     }
 
-   
-
+    @Override
+    public Partida configurarPartida(IPartida partida) {
+        return this.partida.actualizarConfiguracion(partida);
+    }
 }

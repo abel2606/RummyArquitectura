@@ -13,7 +13,7 @@ import org.itson.arquitectura.dominiorummy.fachada.IDominioFachada;
  */
 public class ServicioConfigurarPartida {
 
-    private final IDominioFachada dominioFachada;
+    private IDominioFachada dominioFachada;
 
     /**
      * Constructor que inicializa el servicio con la fachada de dominio.
@@ -32,9 +32,9 @@ public class ServicioConfigurarPartida {
      * @param rangoFichas Rango de las fichas numéricas.
      * @return La partida configurada.
      */
-    public Partida configurarPartida(int numeroComodines, int rangoFichas) {
-        dominioFachada.
-        return 
+    public Partida configurarPartida(IPartida partida) {
+        return dominioFachada.configurarPartida(partida);
+        
     }
 
 }

@@ -11,4 +11,9 @@ import org.itson.arquitectura.dominiorummy.fachada.IDominioFachada;
 public class ServicioSolicitarInicioJuego {
     
     private IDominioFachada dominio;
+
+    
+    
+    
+    
 }
