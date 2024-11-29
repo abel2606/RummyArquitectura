@@ -20,7 +20,7 @@ public interface IFachadaInfraestructura {
      * cuando lso jgadores que se encuentran en la sala de espera desean iniciar
      * la partida.
      *
-     * @param jugador Jugadoe que está solicitando iniciar la partida.
+     * @param jugador Jugador que está solicitando iniciar la partida.
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
     public void solicitarInicioPartida(JugadorDTO jugador) throws InfraestructuraException;
@@ -29,10 +29,9 @@ public interface IFachadaInfraestructura {
      * Permite enviar la petición de solicitar unirse a la partida. Debe usarse
      * cuando un jugador nuevo desea unirse a la partida.
      *
-     * @param jugador El jugador que se desea unir a la partida
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
-    public void solicitarUnirsePartida(JugadorDTO jugador) throws InfraestructuraException;
+    public void solicitarUnirsePartida() throws InfraestructuraException;
 
     /**
      * Permite enviar la petición de solicitud de unirse a partida evaluada.

@@ -1,33 +1,30 @@
 partidaMVC\IVista.class
 registrarJugadorMVC\ControlConfigurarJugador.class
 registrarJugadorMVC\PantallaConfigurarJugador$9.class
-<<<<<<< Updated upstream
 configurarPartidaMVC\PantallaConfigurarPartida$2.class
-org\itson\arquitectura\vistas\PantallaIntroducirCodigo$1$1.class
 configurarPartidaMVC\PantallaConfigurarPartida.class
 componentes\BotonIcono$1.class
 registrarJugadorMVC\PantallaConfigurarJugador$6.class
 salaEsperaMVC\IPantallaSalaEspera.class
-=======
-componentes\BotonIcono$1.class
-registrarJugadorMVC\PantallaConfigurarJugador$6.class
-configurarPartidaMVC\PantallaConfigurarPartida3$1.class
->>>>>>> Stashed changes
 inicioMVC\PantallaInicio$2.class
 componentes\Boton.class
 partidaMVC\PantallaPartida.class
 inicioMVC\ControlInicio.class
 configurarPartidaMVC\ControlConfigurarPartida.class
 registrarJugadorMVC\PantallaConfigurarJugador.class
+unirsePartidaMVC\ModeloUnirsePartida.class
 inicioMVC\PantallaInicio$1.class
 partidaMVC\PantallaPartida$2.class
 partidaMVC\ModeloPartida.class
+salaEsperaMVC\ModeloSalaEspera.class
 inicioMVC\ModeloInicio.class
 seleccionColorMVC\ModeloColores.class
 registrarJugadorMVC\PantallaConfigurarJugador$8.class
+salaEsperaMVC\IModeloSalaEspera.class
 registrarJugadorMVC\PantallaConfigurarJugador$1.class
 registrarJugadorMVC\ModeloConfigurarJugador.class
 org\itson\arquitectura\controladores\ControlIniciarPartida.class
+unirsePartidaMVC\Pruebas.class
 componentes\BackgroundImageLabel.class
 registrarJugadorMVC\PantallaConfigurarJugador$7.class
 partidaMVC\ControlPartida.class
@@ -36,11 +33,14 @@ unirsePartidaMVC\PantallaUnirsePartida.class
 componentes\FichaComponente.class
 registrarJugadorMVC\PantallaConfigurarJugador$9$1.class
 registrarJugadorMVC\PantallaConfigurarJugador$2.class
+salaEsperaMVC\PantallaSalaEspera$2$1.class
 componentes\PanelImagen.class
 inicioMVC\IPantallaInicio.class
+salaEsperaMVC\PantallaSalaEspera.class
 registrarJugadorMVC\PantallaConfigurarJugador$5.class
 componentes\BotonConImagen.class
 seleccionColorMVC\PantallaSeleccionColor$1.class
+configurarPartidaMVC\PantallaConfigurarPartida$3.class
 inicioMVC\PantallaInicio.class
 configurarPartidaMVC\IPantallaConfigurarPartida.class
 partidaMVC\IModelo.class
@@ -49,20 +49,19 @@ org\itson\arquitectura\modelos\ModeloIniciarPartida.class
 seleccionColorMVC\PantallaSeleccionColor$1$1.class
 seleccionColorMVC\PantallaSeleccionColor.class
 partidaMVC\PantallaPartida$1.class
+salaEsperaMVC\ControlSalaEspera.class
+unirsePartidaMVC\IModeloUnirsePartida.class
+salaEsperaMVC\PantallaSalaEspera$2.class
 unirsePartidaMVC\PantallaUnirsePartida$1.class
-unirsePartidaMVC\PantallaUnirsePartida$1$1.class
 componentes\BotonConImagen2.class
 configurarPartidaMVC\ModeloConfigurarPartida.class
 registrarJugadorMVC\PantallaConfigurarJugador$3.class
 partidaMVC\PantallaPartida$2$1.class
+unirsePartidaMVC\IPantallaUnirsePartida.class
 componentes\BotonIcono.class
 manejadorRespuestas\ManejadorRespuestas.class
 unirsePartidaMVC\ControlUnirsePartida.class
 configurarPartidaMVC\PantallaConfigurarPartida$1.class
 componentes\Boton$1.class
-<<<<<<< Updated upstream
 salaEsperaMVC\PantallaSalaEspera$1.class
-=======
-configurarPartidaMVC\PantallaConfigurarPartida3$2.class
->>>>>>> Stashed changes
 registrarJugadorMVC\PantallaConfigurarJugador$4.class

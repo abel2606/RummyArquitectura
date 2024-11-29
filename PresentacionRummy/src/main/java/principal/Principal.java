@@ -9,6 +9,8 @@ import configurarPartidaMVC.PantallaConfigurarPartida;
 import inicioMVC.ControlInicio;
 import inicioMVC.ModeloInicio;
 import inicioMVC.PantallaInicio;
+import unirsePartidaMVC.ControlUnirsePartida;
+import unirsePartidaMVC.ModeloUnirsePartida;
 
 /**
  *
@@ -21,6 +23,10 @@ public class Principal {
      */
     public static void main(String[] args) {
         
+        ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
+        ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
+        PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
+        
         ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
         ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
         PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
@@ -28,6 +34,10 @@ public class Principal {
         ModeloInicio modeloInicio = ModeloInicio.getInstance();
         ControlInicio controlInicio = ControlInicio.getInstance();
         PantallaInicio pantallaInicio = PantallaInicio.getInstance();
+        
+        modeloUnirsePartida.crearParametrosMVC();
+        controlUnirsePartida.crearParametrosMVC();
+        pantallaUnirsePartida.crearParametrosMVC();
         
         modeloConfigurarPartida.crearParametrosMVC();
         controlConfigurarPartida.crearParametrosMVC();

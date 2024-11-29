@@ -5,8 +5,7 @@ package configurarPartidaMVC;
 
 /**
  * @author Equipo4
- */
-public class ModeloConfigurarPartida {
+ */public class ModeloConfigurarPartida {
 
     private static ModeloConfigurarPartida modelo;
     private IPantallaConfigurarPartida vista;

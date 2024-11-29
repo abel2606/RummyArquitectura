@@ -36,11 +36,10 @@ public class CreadorPeticiones {
     /**
      * Permite crear la petición de solicitar unirse a la partida.
      *
-     * @param jugador El jugador que solicita unirse a la partida
      * @return La petición de solicitar unirse a la partida
      */
-    public PeticionCliente crearPeticionSolicitarUnirsePartida(JugadorDTO jugador) {
-        return new SolicitarUnirsePartida(jugador);
+    public PeticionCliente crearPeticionSolicitarUnirsePartida() {
+        return new SolicitarUnirsePartida();
     }
 
     /**
