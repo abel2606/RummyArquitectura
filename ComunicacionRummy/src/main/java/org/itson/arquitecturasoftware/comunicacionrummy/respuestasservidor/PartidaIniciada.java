@@ -11,7 +11,7 @@ import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
  *
  * @author Equipo4
  */
-public class PartidaInciada implements Serializable {
+public class PartidaIniciada implements Serializable {
 
     private PartidaDTO partida;
 
@@ -20,7 +20,7 @@ public class PartidaInciada implements Serializable {
      *
      * @param partida La partida iniciada
      */
-    public PartidaInciada(PartidaDTO partida) {
+    public PartidaIniciada(PartidaDTO partida) {
         this.partida = partida;
     }
 

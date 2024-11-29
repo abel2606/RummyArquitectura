@@ -31,9 +31,9 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
      * {@inheritDoc}
      */
     @Override
-    public void solicitarInicioPartida() throws InfraestructuraException {
+    public void solicitarInicioPartida(JugadorDTO jugador) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarIniciarPartida());
+            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarIniciarPartida(jugador));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitar inicio partida");
         }

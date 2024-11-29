@@ -13,7 +13,7 @@ import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
  */
 public class CrearPartida extends PeticionCliente implements Serializable {
 
-    private String ipAnfitrion;
+//    private String ipAnfitrion;
     private PartidaDTO partida;
 
     /**
@@ -26,23 +26,23 @@ public class CrearPartida extends PeticionCliente implements Serializable {
         this.partida = partida;
     }
 
-    /**
-     * Permite obtener la dirección IP del anfitrión de la partida.
-     *
-     * @return La dirección IP del anfitrión
-     */
-    public String getIpAnfitrion() {
-        return ipAnfitrion;
-    }
-
-    /**
-     * Permite establecer la dirección IP del anfitrión de la partida.
-     *
-     * @param ipAnfitrion La dirección IP del anfitrión
-     */
-    public void setIpAnfitrion(String ipAnfitrion) {
-        this.ipAnfitrion = ipAnfitrion;
-    }
+//    /**
+//     * Permite obtener la dirección IP del anfitrión de la partida.
+//     *
+//     * @return La dirección IP del anfitrión
+//     */
+//    public String getIpAnfitrion() {
+//        return ipAnfitrion;
+//    }
+//
+//    /**
+//     * Permite establecer la dirección IP del anfitrión de la partida.
+//     *
+//     * @param ipAnfitrion La dirección IP del anfitrión
+//     */
+//    public void setIpAnfitrion(String ipAnfitrion) {
+//        this.ipAnfitrion = ipAnfitrion;
+//    }
 
     /**
      * Permite obtener la partida.

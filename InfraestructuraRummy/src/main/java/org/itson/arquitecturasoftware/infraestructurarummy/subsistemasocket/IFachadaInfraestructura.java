@@ -22,7 +22,7 @@ public interface IFachadaInfraestructura {
      *
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
-    public void solicitarInicioPartida() throws InfraestructuraException;
+    public void solicitarInicioPartida(JugadorDTO jugador) throws InfraestructuraException;
 
     /**
      * Permite enviar la petición de solicitar unirse a la partida. Debe usarse

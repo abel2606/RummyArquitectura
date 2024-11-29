@@ -16,6 +16,7 @@ public class JugadorDTO implements Serializable {
     private int puntuacion;
     private String nombre;
     private String avatar;
+    private boolean listoParaJugar;
 
     /**
      * Constructor que se usa cuando un jugador solicita unirse a una partida.
@@ -28,6 +29,7 @@ public class JugadorDTO implements Serializable {
     public JugadorDTO(String nombre, String avatar) {
         this.nombre = nombre;
         this.avatar = avatar;
+        this.listoParaJugar = false;
     }
 
     /**

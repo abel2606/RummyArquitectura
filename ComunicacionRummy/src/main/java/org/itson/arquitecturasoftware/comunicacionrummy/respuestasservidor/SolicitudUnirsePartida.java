@@ -1,5 +1,5 @@
 /*
- * SolicitarUnirsePartida.java
+ * SolicitudUnirsePartida.java
  */
 package org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor;
 
