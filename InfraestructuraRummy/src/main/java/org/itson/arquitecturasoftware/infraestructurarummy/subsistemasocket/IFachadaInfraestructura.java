@@ -20,6 +20,7 @@ public interface IFachadaInfraestructura {
      * cuando lso jgadores que se encuentran en la sala de espera desean iniciar
      * la partida.
      *
+     * @param jugador Jugadoe que está solicitando iniciar la partida.
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
     public void solicitarInicioPartida(JugadorDTO jugador) throws InfraestructuraException;

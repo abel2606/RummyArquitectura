@@ -25,7 +25,9 @@ public class CreadorPeticiones {
     /**
      * Permite crear la petición de solicitar inicio de la partida.
      *
+     * @param jugador Jugadoe que está solicitando iniciar la partida.
      * @return La petición de solicitar inicio de partida
+     *
      */
     public PeticionCliente crearPeticionSolicitarIniciarPartida(JugadorDTO jugador) {
         return new SolicitarIniciarPartida(jugador);
