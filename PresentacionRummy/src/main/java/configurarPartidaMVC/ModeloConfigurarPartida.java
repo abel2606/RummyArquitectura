@@ -5,12 +5,11 @@ package configurarPartidaMVC;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import manejadorRespuestas.IOyenteManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitectura.aplicacionrummy.fachada.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.fachada.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Partida;
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;

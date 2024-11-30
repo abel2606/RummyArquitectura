@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import manejadorRespuestas.ManejadorRespuestas;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
+import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
  * Clase que permite establecer la comunicación con el servidor y enviarle

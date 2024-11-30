@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import manejadorRespuestas.IOyenteManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitectura.aplicacionrummy.fachada.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.fachada.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.Jugador;

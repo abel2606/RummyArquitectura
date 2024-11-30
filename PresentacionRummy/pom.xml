@@ -22,11 +22,6 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>ManejadorRespuestasRummy</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.itson.arquitecturasoftware</groupId>
             <artifactId>DTORummy</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -39,6 +34,11 @@
         <dependency>
             <groupId>org.itson.arquitecturasoftware</groupId>
             <artifactId>ServidorRummy</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.itson.arquitecturasoftware</groupId>
+            <artifactId>ManejadorRespuestasRummyNuevo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

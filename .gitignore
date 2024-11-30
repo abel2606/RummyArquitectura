@@ -12,3 +12,6 @@
 /ManejadorRespuestasRummy/target/
 *.lst
 *.class
+/InfraestructuraRummyORIGINAL/target/
+/ManejadorRespuestasRummyOG/target/
+/ManejadorRespuestasRummyNuevo/target/
