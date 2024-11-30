@@ -19,7 +19,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Solic
  *
  * @author Equipo4
  */
-public class ClienteServidor implements Runnable {
+public class ClienteSocket implements Runnable {
 
     private ManejadorRespuestas manejador;
     private Socket socket;
