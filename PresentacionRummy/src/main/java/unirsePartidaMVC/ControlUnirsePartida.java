@@ -19,43 +19,48 @@ public class ControlUnirsePartida {
     private ControlConfigurarJugador configurarJugador;
     private ModeloUnirsePartida modelo;
     private IFachadaInfraestructura infraestructura;
-    
-    private ControlUnirsePartida() { 
+
+    private ControlUnirsePartida() {
     }
-    
-    public void verificarCodigoPartida(String codigo){
-        
+
+    public void verificarCodigoPartida(String codigo) {
+
     }
-    
-    public void enviarSolicitudUnirsePartida(){
+
+    public void enviarSolicitudUnirsePartida() {
+        try {
+            infraestructura.solicitarUnirsePartida();
+        } catch (InfraestructuraException ex) {
+            modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+        }
+    }
+
+    public void cancelarAccion() {
+        inicio.mostrarVista();
+    }
+
+    public void crearParametrosMVC() {
         try {
             infraestructura = new FachadaInfraestructura();
             infraestructura.solicitarUnirsePartida();
         } catch (InfraestructuraException ex) {
             modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
         }
-    }
-    
-    public void cancelarAccion() {
-        inicio.mostrarVista();
-    }
-
-    public void crearParametrosMVC() {
         inicio = ControlInicio.getInstance();
         configurarJugador = ControlConfigurarJugador.getInstance();
 //        infraestructura = new FachadaInfraestructura();
         modelo = ModeloUnirsePartida.getInstance();
     }
-    
+
     public void mostrarVista() {
         modelo.notificar(null);
     }
-    
+
     public static ControlUnirsePartida getInstance() {
         if (control == null) {
             control = new ControlUnirsePartida();
         }
         return control;
     }
-    
+
 }

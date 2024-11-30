@@ -12,7 +12,7 @@ import org.itson.arquitectura.dominiorummy.fachada.IDominioFachada;
 /**
  * @author Equipo4
  */
-public class ServicioRegistrarJugador {
+class ServicioRegistrarJugador {
     
     private IDominioFachada dominio;
 

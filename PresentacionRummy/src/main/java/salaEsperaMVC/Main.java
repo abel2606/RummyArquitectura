@@ -16,7 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JugadorDTO jugador = new JugadorDTO("Pipucate", "");
+        JugadorDTO jugador = new JugadorDTO("Ricardo", "");
         IPantallaSalaEspera pantalla = null;
         ModeloSalaEspera modelo = ModeloSalaEspera.getInstance(pantalla);
         ControlSalaEspera control = ControlSalaEspera.getInstance(modelo);

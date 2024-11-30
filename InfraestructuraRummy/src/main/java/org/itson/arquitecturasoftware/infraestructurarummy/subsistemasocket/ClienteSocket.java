@@ -84,8 +84,8 @@ public class ClienteSocket implements Runnable {
     @Override
     public void run() {
         try {
+            manejador = new ManejadorRespuestas();
             while (true) {
-                manejador = new ManejadorRespuestas();
                 Object respuesta = in.readObject();
                 if (respuesta instanceof PartidaCreada partidaCreada) {
                     manejador.manejarPartidaCreada(partidaCreada);
