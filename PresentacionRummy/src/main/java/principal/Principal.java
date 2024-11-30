@@ -9,6 +9,9 @@ import configurarPartidaMVC.PantallaConfigurarPartida;
 import inicioMVC.ControlInicio;
 import inicioMVC.ModeloInicio;
 import inicioMVC.PantallaInicio;
+import registrarJugadorMVC.ControlConfigurarJugador;
+import registrarJugadorMVC.ModeloConfigurarJugador;
+import registrarJugadorMVC.PantallaConfigurarJugador;
 import unirsePartidaMVC.ControlUnirsePartida;
 import unirsePartidaMVC.ModeloUnirsePartida;
 
@@ -31,6 +34,10 @@ public class Principal {
         ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
         PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
         
+        ModeloConfigurarJugador modeloConfigurarJugador = ModeloConfigurarJugador.getInstance();
+        ControlConfigurarJugador controlConfigurarJugador = ControlConfigurarJugador.getInstance();
+        PantallaConfigurarJugador pantallaConfigurarJugador = PantallaConfigurarJugador.getInstance();
+        
         ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
         ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
         PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
@@ -42,6 +49,10 @@ public class Principal {
         modeloConfigurarPartida.crearParametrosMVC();
         controlConfigurarPartida.crearParametrosMVC();
         pantallaConfigurarPartida.crearParametrosMVC();
+        
+        modeloConfigurarJugador.crearParametrosMVC();
+        controlConfigurarJugador.crearParametrosMVC();
+        pantallaConfigurarJugador.crearParametrosMVC();
         
         modeloUnirsePartida.crearParametrosMVC();
         controlUnirsePartida.crearParametrosMVC();

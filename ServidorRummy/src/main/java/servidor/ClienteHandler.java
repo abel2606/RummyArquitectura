@@ -12,10 +12,10 @@ import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
-import static servidor.RummyServer.host;
 
 /**
  * Clase que implementa hilos (Runnable) para representar a cada cliente que se
@@ -55,11 +55,6 @@ public class ClienteHandler implements Runnable {
 
             // Agregar el Stream de salida del cliente a la lista global.
             RummyServer.clientesConectados.add(out);
-
-            if (RummyServer.clientesConectados.size() == 1) {
-                host = new ObjectOutputStream(clienteSocket.getOutputStream());
-            }
-            System.out.println(RummyServer.host);
 
             while (!clienteSocket.isClosed()) {
                 try {
@@ -109,6 +104,20 @@ public class ClienteHandler implements Runnable {
             try {
                 // Se le manda la respuesta al host
                 RummyServer.host.writeObject(solicitarUnirsePartida);
+                // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
+                RummyServer.host.flush();
+            } catch (IOException e) {
+                System.err.println("Error al enviar mensaje al host.");
+                System.out.println(e.getMessage());
+            }
+        } else if (respuesta instanceof PartidaCreada partidaCreada) {
+            // Se indica que el host es el jugador que creó la partida.
+            RummyServer.host = out;
+            System.out.println("HOST: " + RummyServer.host);
+            // Responder al host
+            try {
+                // Se le manda la respuesta al host
+                RummyServer.host.writeObject(partidaCreada);
                 // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
                 RummyServer.host.flush();
             } catch (IOException e) {

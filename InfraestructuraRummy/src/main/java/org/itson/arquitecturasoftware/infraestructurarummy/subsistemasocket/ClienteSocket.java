@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import manejadorRespuestas.ManejadorRespuestas;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
@@ -86,12 +87,14 @@ public class ClienteSocket implements Runnable {
             while (true) {
                 manejador = new ManejadorRespuestas();
                 Object respuesta = in.readObject();
-                if (respuesta instanceof SolicitudUnirsePartida) {
-                    manejador.manejarSolicitudUnirsePartida((SolicitudUnirsePartida) respuesta);
-                } else if (respuesta instanceof SolicitudIniciarPartida) {
-                    manejador.manejarSolicitudIniciarPartida((SolicitudIniciarPartida) respuesta);
-                } else if (respuesta instanceof SolicitudUnirseEvaluada) {
-                    manejador.manejarSolicitudUnirseEvaluada((SolicitudUnirseEvaluada) respuesta);
+                if (respuesta instanceof PartidaCreada partidaCreada) {
+                    manejador.manejarPartidaCreada(partidaCreada);
+                } else if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
+                    manejador.manejarSolicitudUnirsePartida(solicitudUnirsePartida);
+                } else if (respuesta instanceof SolicitudIniciarPartida solicitudIniciarPartida) {
+                    manejador.manejarSolicitudIniciarPartida(solicitudIniciarPartida);
+                } else if (respuesta instanceof SolicitudUnirseEvaluada solicitudUnirseEvaluada) {
+                    manejador.manejarSolicitudUnirseEvaluada(solicitudUnirseEvaluada);
                 }
             }
         } catch (IOException | ClassNotFoundException e) {

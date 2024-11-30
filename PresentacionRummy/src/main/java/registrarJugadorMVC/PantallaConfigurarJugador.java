@@ -14,7 +14,6 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     public PantallaConfigurarJugador() {
         initComponents();
         seleccionarAvatar();
-        setVisible(true);
         
         this.setTitle("Rummy - Configurar jugador");
     }

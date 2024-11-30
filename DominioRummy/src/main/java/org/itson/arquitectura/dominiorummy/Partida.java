@@ -60,7 +60,7 @@ public class Partida implements IPartida {
      * @param numeroComodines El número de comodines
      * @param rangoFichas El rango de fichas
      */
-    public Partida(int numeroComodines, int rangoFichas) {
+    public Partida() {
         this.numeroComodines = numeroComodines;
         this.rangoFichas = rangoFichas;
 
@@ -69,9 +69,9 @@ public class Partida implements IPartida {
         turnos = new ArrayList<>();
     }
 
-    public static Partida getInstance(int numeroComodines, int rangoFichas) {
+    public static Partida getInstance() {
         if (partida == null) {
-            partida = new Partida(numeroComodines, rangoFichas);
+            partida = new Partida();
         }
         return partida;
     }
@@ -84,6 +84,11 @@ public class Partida implements IPartida {
     @Override
     public void setNumeroComodines(int numeroComodines) {
         this.numeroComodines = numeroComodines;
+    }
+    
+    @Override
+    public void aniadirJugador(IJugador jugador) {
+        this.jugadores.add((Jugador) jugador);
     }
 
     /**
@@ -166,7 +171,7 @@ public class Partida implements IPartida {
     public Partida actualizarConfiguracion(IPartida partida) {
         this.setRangoFichas(partida.getRangoFichas());
         this.setNumeroComodines(partida.getNumeroComodines());
-        return getInstance(numeroComodines, rangoFichas);
+        return getInstance();
     }
 
     /**
@@ -183,6 +188,7 @@ public class Partida implements IPartida {
      *
      * @return La lista de jugadores que hay
      */
+    @Override
     public List<Jugador> getJugadores() {
         return jugadores;
     }
@@ -261,17 +267,6 @@ public class Partida implements IPartida {
             repartirFichas();
             isIniciada = true;
         }
-    }
-
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.partida);
-        return hash;
     }
 
     /**

@@ -14,24 +14,17 @@ import java.util.List;
  */
 public class PartidaDTO implements Serializable {
 
-    private JugadorDTO anfitrion;
     private TableroDTO tablero;
     private List<FichaDTO> mazo;
     private List<JugadorDTO> jugadores;
     private List<TurnoDTO> turnos;
+    private int numeroComodines;
+    private int rangoFichas;
 
-    /**
-     * Constructor que se usa cuando se configura la partida. Se emplea cuando
-     * un usuario quiere que otros usuarios se unan a la partida. Recibe el
-     * anfitrión la partida para que el servidor sepa a quien notificar las
-     * solicitudes de unirse.
-     *
-     * @param anfitrion El anfitrión de la partida
-     */
-    public PartidaDTO(JugadorDTO anfitrion) {
-        this.anfitrion = anfitrion;
+    public PartidaDTO() {
+        
     }
-
+    
     /**
      * Constructor que se usa cuando se realiza un cambio durante la partida y
      * se le tiene que notificar a los otros jugadores.
@@ -48,13 +41,10 @@ public class PartidaDTO implements Serializable {
         this.turnos = turnos;
     }
 
-    /**
-     * Permite obtener al anfitrión de la partida.
-     *
-     * @return El anfitrión de la partida
-     */
-    public JugadorDTO getAnfitrion() {
-        return anfitrion;
+    public PartidaDTO(List<JugadorDTO> jugadores, int numeroComodines, int rangoFichas) {
+        this.jugadores = jugadores;
+        this.numeroComodines = numeroComodines;
+        this.rangoFichas = rangoFichas;
     }
 
     /**

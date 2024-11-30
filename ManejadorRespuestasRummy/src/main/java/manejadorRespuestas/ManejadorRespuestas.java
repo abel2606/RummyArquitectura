@@ -15,7 +15,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Turno
  */
 public class ManejadorRespuestas {
     
-    private IOyenteManejadorRespuestas manejadorRespuestas;
+    private IOyenteManejadorRespuestas oyente;
     
     public void subscribe(IOyenteManejadorRespuestas oyente){
         
@@ -38,7 +38,9 @@ public class ManejadorRespuestas {
     }
     
     public void manejarPartidaCreada(PartidaCreada partidaCreada){
-        
+      //if (la partida fue creada exitosamente
+            notificar();
+      //}  
     }
     
     public void manejarPartidaIniciada(PartidaIniciada partidaIniciada){
@@ -58,7 +60,7 @@ public class ManejadorRespuestas {
     }
     
     public void notificar(){
-        
+        oyente.update();
     }
     
 }

@@ -18,7 +18,7 @@ public class DominioFachada implements IDominioFachada {
     private Partida partida;
 
     public DominioFachada(int numeroComodines, int rangoFichas) {
-        partida = Partida.getInstance(numeroComodines, rangoFichas);
+        partida = Partida.getInstance();
     }
 
     /**

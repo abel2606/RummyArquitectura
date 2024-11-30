@@ -1,5 +1,7 @@
 package manejadorRespuestas;
 
+import org.itson.arquitectura.dominiorummy.IPartida;
+
 /**
  *
  * @author Equipo4

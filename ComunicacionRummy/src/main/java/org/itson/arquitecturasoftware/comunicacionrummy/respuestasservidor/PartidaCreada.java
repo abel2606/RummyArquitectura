@@ -1,13 +1,14 @@
 package org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor;
 
+import java.io.Serializable;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
 /**
  *
  * @author Equipo4
  */
-public class PartidaCreada {
-    
+public class PartidaCreada implements Serializable {
+
     private PartidaDTO partida;
 
     public PartidaCreada(PartidaDTO partida) {
@@ -17,7 +18,5 @@ public class PartidaCreada {
     public PartidaDTO getPartida() {
         return partida;
     }
-    
-    
-    
+
 }

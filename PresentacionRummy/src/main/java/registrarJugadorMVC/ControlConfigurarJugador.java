@@ -19,8 +19,7 @@ public class ControlConfigurarJugador {
     }
     
     public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
-        
-
+        crearParametrosMVC();
     }
     
     public void crearParametrosMVC() {

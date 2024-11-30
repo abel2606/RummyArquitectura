@@ -16,14 +16,14 @@ import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.Infraestr
  */
 public class FachadaInfraestructura implements IFachadaInfraestructura {
 
-    private ClienteServidor cliente;
+    private ClienteSocket cliente;
     private CreadorPeticiones creadorPeticiones = new CreadorPeticiones();
 
     /**
      * Constructor.
      */
     public FachadaInfraestructura() {
-        cliente = new ClienteServidor();
+        cliente = new ClienteSocket();
         creadorPeticiones = new CreadorPeticiones();
         cliente.establecerConexionServidor();
     }

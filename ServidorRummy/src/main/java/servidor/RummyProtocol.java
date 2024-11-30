@@ -8,6 +8,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Solici
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarTurno;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaTerminada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
@@ -43,7 +44,7 @@ public class RummyProtocol {
         switch (tipoPeticion) {
             case "CREAR_PARTIDA": // Si se quiere crear una partida.
                 CrearPartida cp = (CrearPartida) peticion;
-                respuesta = new PartidaIniciada(cp.getPartida());
+                respuesta = new PartidaCreada(cp.getPartida());
                 break;
             case "INICIAR_PARTIDA": // Cuando se inicia una partida.
                 IniciarPartida ip = (IniciarPartida) peticion;

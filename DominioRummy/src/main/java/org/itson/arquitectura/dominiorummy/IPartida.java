@@ -4,6 +4,8 @@
  */
 package org.itson.arquitectura.dominiorummy;
 
+import java.util.List;
+
 /**
  *
  * @author Abe
@@ -11,6 +13,8 @@ package org.itson.arquitectura.dominiorummy;
 public interface IPartida {
     public void setRangoFichas(int rangoFichas);
     public void setNumeroComodines(int numeroComodines);
+    public void aniadirJugador(IJugador jugador);
     public int getRangoFichas();
     public int getNumeroComodines();
+    public List<Jugador> getJugadores();
 }

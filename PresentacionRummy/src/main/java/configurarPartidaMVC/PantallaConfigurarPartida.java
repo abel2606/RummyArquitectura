@@ -4,7 +4,9 @@
 package configurarPartidaMVC;
 
 import javax.swing.JFrame;
+import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.IPartida;
+import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.Partida;
 
 /**
@@ -13,7 +15,9 @@ import org.itson.arquitectura.dominiorummy.Partida;
 public class PantallaConfigurarPartida extends JFrame implements IPantallaConfigurarPartida {
 
     private ControlConfigurarPartida control;
-
+    private IPartida partida;
+    private IJugador jugador;
+    
     /**
      * Creates new form PantallaConfigurarPartida3
      */
@@ -21,6 +25,12 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         initComponents();
 
         setTitle("Rummy - Configurar Partida");
+    }
+    
+    @Override
+    public void crearPartida() {
+        this.setVisible(false);
+        control.cambiarVista();
     }
 
     /**
@@ -143,9 +153,13 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
         int cantidadRango = obtenerValorSeleccionado();
         
-        String cantidadComodines = (String) comboBoxNumeroComodines.getSelectedItem();
+        int cantidadComodines = Integer.parseInt(comboBoxNumeroComodines.getSelectedItem().toString());
 
-        IPartida partida = new Partida(Integer.valueOf(cantidadComodines), cantidadRango);
+        jugador = new Jugador();
+        partida = new Partida();
+        partida.setNumeroComodines(cantidadComodines);
+        partida.setRangoFichas(cantidadRango);
+        partida.aniadirJugador(jugador);
         control.crearPartida(partida);
     }//GEN-LAST:event_botonConfirmarActionPerformed
 
@@ -153,7 +167,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         if (radioButtonDiezFichas.isSelected()) {
             return 10;
         } else if (radioButtonTreceFichas.isSelected()) {
-            return 2;
+            return 13;
         }
         return 0;
     }
