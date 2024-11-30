@@ -50,7 +50,6 @@ configurarPartidaMVC\ModeloConfigurarPartida.class
 partidaMVC\PantallaPartida$2$1.class
 unirsePartidaMVC\IPantallaUnirsePartida.class
 componentes\BotonIcono.class
-manejadorRespuestas\ManejadorRespuestas.class
 unirsePartidaMVC\ControlUnirsePartida.class
 configurarPartidaMVC\PantallaConfigurarPartida$1.class
 componentes\Boton$1.class

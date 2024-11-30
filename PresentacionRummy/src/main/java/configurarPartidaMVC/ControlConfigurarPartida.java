@@ -18,6 +18,7 @@ public class ControlConfigurarPartida {
     private ControlInicio inicio;
     private ControlConfigurarJugador controlConfigurarJugador;
     private ModeloConfigurarPartida modelo;
+    private IPartida partida;
 
     private ControlConfigurarPartida() {
     }

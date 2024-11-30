@@ -171,6 +171,7 @@ public class Partida implements IPartida {
     public Partida actualizarConfiguracion(IPartida partida) {
         this.setRangoFichas(partida.getRangoFichas());
         this.setNumeroComodines(partida.getNumeroComodines());
+        this.setJugadores(partida.getJugadores());
         return getInstance();
     }
 

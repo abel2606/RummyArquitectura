@@ -1,6 +1,9 @@
 package registrarJugadorMVC;
 
 import org.itson.arquitectura.dominiorummy.IJugador;
+import org.itson.arquitectura.dominiorummy.IPartida;
+import org.itson.arquitectura.dominiorummy.Partida;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  *
@@ -10,6 +13,8 @@ public class ModeloConfigurarJugador {
     
     private static ModeloConfigurarJugador modelo;
     private IPantallaConfigurarJugador pantalla;
+    private IPartida partida;
+    private JugadorDTO jugador;
 
     public ModeloConfigurarJugador() {
 //        pantalla = new PantallaConfigurarJugador(null, true);
@@ -18,6 +23,7 @@ public class ModeloConfigurarJugador {
     
     public void crearParametrosMVC() {
         pantalla = PantallaConfigurarJugador.getInstance();
+        partida = Partida.getInstance();
     }
     
     public void crearJugador(IJugador jugador){
@@ -25,9 +31,7 @@ public class ModeloConfigurarJugador {
     }
 
     public void mostrarVista() {
-//        PantallaConfigurarJugador pantallaConfigurar = new PantallaConfigurarJugador(null, false);
-//        pantallaConfigurar.setVisible(true);
-        
+        notificar();
     }
 
 //    public Partida crearPartida(int rangoFichas, int numeroComodines) {
