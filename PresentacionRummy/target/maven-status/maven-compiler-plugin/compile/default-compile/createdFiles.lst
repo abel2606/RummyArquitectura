@@ -20,7 +20,6 @@ seleccionColorMVC\ModeloColores.class
 salaEsperaMVC\IModeloSalaEspera.class
 registrarJugadorMVC\ModeloConfigurarJugador.class
 org\itson\arquitectura\controladores\ControlIniciarPartida.class
-unirsePartidaMVC\Pruebas.class
 componentes\BackgroundImageLabel.class
 partidaMVC\ControlPartida.class
 principal\Principal.class

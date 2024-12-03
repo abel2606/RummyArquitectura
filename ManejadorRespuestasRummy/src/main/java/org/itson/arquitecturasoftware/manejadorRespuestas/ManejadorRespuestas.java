@@ -8,33 +8,30 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Solic
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.TurnoTerminado;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
 /**
  *
  * @author Equipo4
  */
-public class ManejadorRespuestas {
+public class ManejadorRespuestas implements IManejadorRespuestas {
 
-    private static ManejadorRespuestas instance;
     private IOyenteManejadorRespuestas oyente;
-
-    private ManejadorRespuestas() {
-        
-    }
     
-    public static ManejadorRespuestas getInstance() {
-        if (instance == null) {
-            instance = new ManejadorRespuestas();
-        }
-        return instance;
+    private PartidaDTO partida;
+    private JugadorDTO jugador;
+    private boolean solicitudUnirseEvaluada;
+
+    public ManejadorRespuestas() {
     }
     
     public void subscribe(IOyenteManejadorRespuestas oyente) {
         this.oyente = oyente;
     }
 
-    public void unsubscribe(IOyenteManejadorRespuestas oyente) {
-
+    public void unsubscribe() {
+        this.oyente = null;
     }
 
     public void manejarSolicitudUnirsePartida(SolicitudUnirsePartida solicitud) {
@@ -66,11 +63,27 @@ public class ManejadorRespuestas {
     }
 
     public void manejarSolicitudUnirseEvaluada(SolicitudUnirseEvaluada peticion) {
-
+        this.solicitudUnirseEvaluada = peticion.isSolicitudEvaluada();
+        notificar();
     }
 
     public void notificar() {
-        oyente.update();
+        oyente.update(this);
+    }
+
+    @Override
+    public PartidaDTO getPartida() {
+        return partida;
+    }
+
+    @Override
+    public JugadorDTO getJugador() {
+        return jugador;
+    }
+
+    @Override
+    public boolean getSolicitudUnirseEvaluada() {
+        return solicitudUnirseEvaluada;
     }
 
 }

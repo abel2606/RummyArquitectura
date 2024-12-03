@@ -6,6 +6,6 @@ package org.itson.arquitecturasoftware.manejadorRespuestas;
  */
 public interface IOyenteManejadorRespuestas {
     
-    public void update();
+    public void update(IManejadorRespuestas contexto);
     
 }

@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
-import org.itson.arquitectura.aplicacionrummy.fachada.AplicacionFachada;
-import org.itson.arquitectura.aplicacionrummy.fachada.IAplicacionFachada;
+import org.itson.arquitectura.aplicacionrummy.servicios.AplicacionFachada;
+import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
+import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
 
 /**
  *
@@ -93,7 +94,7 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     }
 
     @Override
-    public void update() {
+    public void update(IManejadorRespuestas contexto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

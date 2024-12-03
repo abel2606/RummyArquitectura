@@ -23,37 +23,32 @@ public class ControlUnirsePartida {
     private ControlUnirsePartida() {
     }
 
-    public void verificarCodigoPartida(String codigo) {
-
-    }
-
     public void enviarSolicitudUnirsePartida() {
         try {
             infraestructura.solicitarUnirsePartida();
         } catch (InfraestructuraException ex) {
-            modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+            modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+            modelo.notificar();
         }
     }
 
     public void cancelarAccion() {
         inicio.mostrarVista();
     }
+    
+    public void iniciarConfigurarJugador(){
+        
+    }
 
     public void crearParametrosMVC() {
-        try {
-            infraestructura = new FachadaInfraestructura();
-            infraestructura.solicitarUnirsePartida();
-        } catch (InfraestructuraException ex) {
-            modelo.notificar("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
-        }
         inicio = ControlInicio.getInstance();
         configurarJugador = ControlConfigurarJugador.getInstance();
-//        infraestructura = new FachadaInfraestructura();
+        infraestructura = new FachadaInfraestructura();
         modelo = ModeloUnirsePartida.getInstance();
     }
 
     public void mostrarVista() {
-        modelo.notificar(null);
+        modelo.notificar();
     }
 
     public static ControlUnirsePartida getInstance() {

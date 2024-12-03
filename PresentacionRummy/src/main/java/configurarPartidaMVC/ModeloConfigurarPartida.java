@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
-import org.itson.arquitectura.aplicacionrummy.fachada.AplicacionFachada;
-import org.itson.arquitectura.aplicacionrummy.fachada.IAplicacionFachada;
+import org.itson.arquitectura.aplicacionrummy.servicios.AplicacionFachada;
+import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.Partida;
@@ -17,6 +17,7 @@ import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
 import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
@@ -30,7 +31,7 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas {
     private ManejadorRespuestas manejador;
 
     private ModeloConfigurarPartida() {
-        manejador = ManejadorRespuestas.getInstance();
+        manejador = new ManejadorRespuestas();
         manejador.subscribe(this);
     }
 
@@ -65,7 +66,7 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas {
     }
 
     @Override
-    public void update() {
+    public void update(IManejadorRespuestas contexto) {
         vista.crearPartida();
     }
 

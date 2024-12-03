@@ -67,8 +67,8 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
+        this.setVisible(false);
         control.cancelarAccion();
-        setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     public static PantallaUnirsePartida getInstance() {
@@ -90,6 +90,17 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
             JOptionPane.showMessageDialog(this, modelo.getError(), 
                     "Error al unirse a la partida.", JOptionPane.ERROR_MESSAGE);
             setVisible(false);
+        }
+        
+        if (modelo.getSolicitudUnirseEvaluada() == true) {
+            JOptionPane.showMessageDialog(this, "El anfitrión ha aceptado tu solicitud! :)",
+                    "Solicitud Aceptada.", JOptionPane.INFORMATION_MESSAGE);
+            control.iniciarConfigurarJugador();
+        } else {
+            JOptionPane.showMessageDialog(this, "El anfitrión ha rechazado tu solicitud :(",
+                    "Solicitud Denegada.", JOptionPane.INFORMATION_MESSAGE);
+            this.setVisible(false);
+            control.cancelarAccion();
         }
     }
     
