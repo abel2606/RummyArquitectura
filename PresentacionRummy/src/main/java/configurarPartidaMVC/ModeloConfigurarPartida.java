@@ -14,7 +14,6 @@ import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.Partida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
-import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
@@ -23,16 +22,16 @@ import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 /**
  * @author Equipo4
  */
-public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas {
+public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IModeloConfigurarPartida {
 
     private static ModeloConfigurarPartida modelo;
     private IPantallaConfigurarPartida vista;
     private IPartida partida;
     private ManejadorRespuestas manejador;
+    private Boolean isPartidaCreada;
 
     private ModeloConfigurarPartida() {
-        manejador = new ManejadorRespuestas();
-        manejador.subscribe(this);
+        manejador = ManejadorRespuestas.getInstance();
     }
 
     public void crearParametrosMVC() {
@@ -40,19 +39,16 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas {
     }
 
     public void notificar() {
-        vista.update();
+        vista.update(this);
     }
 
     public void crearPartida(IPartida partida) {
         IAplicacionFachada aplicacionFachada = new AplicacionFachada();
         FachadaInfraestructura infraestructura = new FachadaInfraestructura();
-        Partida partidaCreada = aplicacionFachada.configurarPartida(partida);
-        List<JugadorDTO> jugadores = convertirJugadores(partidaCreada.getJugadores());
-        int numeroComodines = partidaCreada.getNumeroComodines();
-        int rangoFichas = partidaCreada.getRangoFichas();
-        PartidaDTO partidaDTO = new PartidaDTO(jugadores, numeroComodines, rangoFichas);
+        aplicacionFachada.configurarPartida(partida);
         try {
-            infraestructura.crearPartida(partidaDTO);
+            manejador.subscribe(this);
+            infraestructura.crearPartida();
         } catch (InfraestructuraException ex) {
             Logger.getLogger(ModeloConfigurarPartida.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -67,7 +63,13 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas {
 
     @Override
     public void update(IManejadorRespuestas contexto) {
-        vista.crearPartida();
+        this.isPartidaCreada = contexto.isPartidaCreada();
+        notificar();
+    }
+
+    @Override
+    public Boolean isPartidaCreada() {
+        return this.isPartidaCreada;
     }
 
     private List<JugadorDTO> convertirJugadores(List<Jugador> jugadores) {

@@ -1,7 +1,6 @@
 package org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor;
 
 import java.io.Serializable;
-import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
 /**
  *
@@ -9,14 +8,14 @@ import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
  */
 public class PartidaCreada implements Serializable {
 
-    private PartidaDTO partida;
+    private boolean partidaCreada;
 
-    public PartidaCreada(PartidaDTO partida) {
-        this.partida = partida;
+    public PartidaCreada(boolean partidaCreada) {
+        this.partidaCreada = partidaCreada;
     }
 
-    public PartidaDTO getPartida() {
-        return partida;
+    public boolean isPartidaCreada() {
+        return partidaCreada;
     }
 
 }

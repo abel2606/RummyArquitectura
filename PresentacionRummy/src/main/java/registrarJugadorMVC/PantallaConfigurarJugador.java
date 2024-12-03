@@ -13,7 +13,7 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
      */
     public PantallaConfigurarJugador() {
         initComponents();
-        seleccionarAvatar();
+//        seleccionarAvatar();
         
         this.setTitle("Rummy - Configurar jugador");
     }
@@ -27,20 +27,34 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoImagenes = new javax.swing.ButtonGroup();
+        btnConfirmar = new componentes.Boton();
         campoNombre = new javax.swing.JTextField();
-        avatar4 = new javax.swing.JCheckBox();
-        avatar2 = new javax.swing.JCheckBox();
-        avatar3 = new javax.swing.JCheckBox();
-        avatar5 = new javax.swing.JCheckBox();
-        avatar6 = new javax.swing.JCheckBox();
-        avatar1 = new javax.swing.JCheckBox();
-        avatar7 = new javax.swing.JCheckBox();
-        avatar8 = new javax.swing.JCheckBox();
+        avatar1 = new javax.swing.JRadioButton();
+        avatar2 = new javax.swing.JRadioButton();
+        avatar3 = new javax.swing.JRadioButton();
+        avatar4 = new javax.swing.JRadioButton();
+        avatar5 = new javax.swing.JRadioButton();
+        avatar6 = new javax.swing.JRadioButton();
+        avatar7 = new javax.swing.JRadioButton();
+        avatar8 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Configurar Jugador");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
+        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnConfirmar.setRadius(50);
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 180, 60));
 
         campoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
         campoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -50,37 +64,37 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         campoNombre.setSelectionColor(new java.awt.Color(255, 255, 255));
         getContentPane().add(campoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 640, 60));
 
-        avatar4.setForeground(new java.awt.Color(255, 255, 255));
-        avatar4.setText("Avatar 4");
-        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
+        grupoImagenes.add(avatar1);
+        avatar1.setText("jRadioButton1");
+        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
-        avatar2.setForeground(new java.awt.Color(255, 255, 255));
-        avatar2.setText("Avatar 2");
-        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
+        grupoImagenes.add(avatar2);
+        avatar2.setText("jRadioButton1");
+        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
 
-        avatar3.setForeground(new java.awt.Color(255, 255, 255));
-        avatar3.setText("Avatar 3");
-        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, -1, -1));
+        grupoImagenes.add(avatar3);
+        avatar3.setText("jRadioButton2");
+        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 240, -1, -1));
 
-        avatar5.setForeground(new java.awt.Color(255, 255, 255));
-        avatar5.setText("Avatar 5");
-        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
+        grupoImagenes.add(avatar4);
+        avatar4.setText("jRadioButton3");
+        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, -1, -1));
 
-        avatar6.setForeground(new java.awt.Color(255, 255, 255));
-        avatar6.setText("Avatar 6");
-        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
+        grupoImagenes.add(avatar5);
+        avatar5.setText("jRadioButton4");
+        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
 
-        avatar1.setForeground(new java.awt.Color(255, 255, 255));
-        avatar1.setText("Avatar 1");
-        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
+        grupoImagenes.add(avatar6);
+        avatar6.setText("jRadioButton5");
+        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, -1, -1));
 
-        avatar7.setForeground(new java.awt.Color(255, 255, 255));
-        avatar7.setText("Avatar 7");
-        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, -1, -1));
+        grupoImagenes.add(avatar7);
+        avatar7.setText("jRadioButton6");
+        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, -1, -1));
 
-        avatar8.setForeground(new java.awt.Color(255, 255, 255));
-        avatar8.setText("Avatar 8");
-        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, -1, -1));
+        grupoImagenes.add(avatar8);
+        avatar8.setText("jRadioButton7");
+        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoDatosJugador.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -89,41 +103,38 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        
-    }//GEN-LAST:event_botonVolverActionPerformed
-
-    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         setVisible(false);
         String nombre = campoNombre.getText();
-        String avatar = getCheckboxSeleccionado().getText();
+        String avatar = "";
         control.continuarConfiguracion(nombre, avatar);
-    }//GEN-LAST:event_botonConfirmarActionPerformed
+    }//GEN-LAST:event_btnConfirmarActionPerformed
     
-    private JCheckBox getCheckboxSeleccionado() {
-        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
-
-        for (JCheckBox avatar : avatars) {
-            if (avatar.isSelected()) {
-                return avatar;
-            }
-        }
-        return avatar1;
-    }
+//    private JCheckBox getCheckboxSeleccionado() {
+//        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
+//
+//        for (JCheckBox avatar : avatars) {
+//            if (avatar.isSelected()) {
+//                return avatar;
+//            }
+//        }
+//        grupoImagenes.get
+//        return avatar1;
+//    }
     
-    private void seleccionarAvatar() {
-        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
-
-        for (JCheckBox avatar : avatars) {
-            avatar.addActionListener(e -> {
-                for (JCheckBox otro : avatars) {
-                    if (otro != avatar) {
-                        otro.setSelected(false);
-                    }
-                }
-            });
-        }
-    }
+//    private void seleccionarAvatar() {
+//        JCheckBox[] avatars = {avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8};
+//
+//        for (JCheckBox avatar : avatars) {
+//            avatar.addActionListener(e -> {
+//                for (JCheckBox otro : avatars) {
+//                    if (otro != avatar) {
+//                        otro.setSelected(false);
+//                    }
+//                }
+//            });
+//        }
+//    }
     
     public static PantallaConfigurarJugador getInstance(){
         if (pantalla == null) {
@@ -142,15 +153,17 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox avatar1;
-    private javax.swing.JCheckBox avatar2;
-    private javax.swing.JCheckBox avatar3;
-    private javax.swing.JCheckBox avatar4;
-    private javax.swing.JCheckBox avatar5;
-    private javax.swing.JCheckBox avatar6;
-    private javax.swing.JCheckBox avatar7;
-    private javax.swing.JCheckBox avatar8;
+    private javax.swing.JRadioButton avatar1;
+    private javax.swing.JRadioButton avatar2;
+    private javax.swing.JRadioButton avatar3;
+    private javax.swing.JRadioButton avatar4;
+    private javax.swing.JRadioButton avatar5;
+    private javax.swing.JRadioButton avatar6;
+    private javax.swing.JRadioButton avatar7;
+    private javax.swing.JRadioButton avatar8;
+    private componentes.Boton btnConfirmar;
     private javax.swing.JTextField campoNombre;
+    private javax.swing.ButtonGroup grupoImagenes;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     private ControlConfigurarJugador control;

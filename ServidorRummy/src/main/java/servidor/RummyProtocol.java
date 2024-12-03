@@ -1,3 +1,6 @@
+/**
+ * RummyProtocol.java
+ */
 package servidor;
 
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.CrearPartida;
@@ -22,16 +25,6 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Turno
  * @author Diego Valenzuela Parra
  */
 public class RummyProtocol {
-//    private static int WAITING;
-//    private static String CREAR_PARTIDA;
-//    private static String INICIAR_PARTIDA;
-//    private static String SOLICITAR_UNIRSE_PARTIDA;
-//    private static String SOLICITAR_INICIO_PARTIDA;
-//    private static String SOLICITUD_UNIRSE_EVALUADA;
-//    private static String SOLICITUD_INICIO_EVALUADA;
-//    private static String TURNO_TERMINADO;
-//    private static String PARTIDA_TERMINADA;
-
     /**
      * Método que procesa las peticiones de los clientes.
      *
@@ -43,8 +36,12 @@ public class RummyProtocol {
         Object respuesta = null; // Se declara la variable de respuesta.
         switch (tipoPeticion) {
             case "CREAR_PARTIDA": // Si se quiere crear una partida.
-                CrearPartida cp = (CrearPartida) peticion;
-                respuesta = new PartidaCreada(cp.getPartida());
+                if (!RummyServer.partidaExistente) {
+                    RummyServer.partidaExistente = true;
+                    respuesta = new PartidaCreada(true);
+                } else {
+                    respuesta = new PartidaCreada(false);
+                }
                 break;
             case "INICIAR_PARTIDA": // Cuando se inicia una partida.
                 IniciarPartida ip = (IniciarPartida) peticion;

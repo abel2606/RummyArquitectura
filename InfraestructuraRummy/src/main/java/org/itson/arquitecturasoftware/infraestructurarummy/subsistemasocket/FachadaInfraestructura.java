@@ -80,9 +80,9 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
      * {@inheritDoc}
      */
     @Override
-    public void crearPartida(PartidaDTO partida) throws InfraestructuraException {
+    public void crearPartida() throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionCrearPartida(partida));
+            cliente.enviarPeticion(creadorPeticiones.crearPeticionCrearPartida());
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de crear partida");
         }

@@ -10,8 +10,6 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Parti
  */
 public interface IPantallaConfigurarPartida {
     
-    public void update();
-
-    public void crearPartida();
+    public void update(IModeloConfigurarPartida modelo);
     
 }

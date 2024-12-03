@@ -27,5 +27,9 @@ public class ControlColores {
         }
         return control;
     }
+
+    public void mostrarVista(String nombre, String avatar) {
+        modelo.mostrarVista();
+    }
    
 }

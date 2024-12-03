@@ -25,6 +25,7 @@ partidaMVC\ControlPartida.class
 principal\Principal.class
 unirsePartidaMVC\PantallaUnirsePartida.class
 componentes\FichaComponente.class
+configurarPartidaMVC\IModeloConfigurarPartida.class
 componentes\PanelImagen.class
 inicioMVC\IPantallaInicio.class
 salaEsperaMVC\PantallaSalaEspera.class

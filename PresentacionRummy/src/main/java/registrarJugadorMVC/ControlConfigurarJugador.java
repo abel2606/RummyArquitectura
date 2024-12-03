@@ -33,7 +33,7 @@ public class ControlConfigurarJugador {
     }
     
     public void continuarConfiguracion(String nombre, String avatar){
-        //yo voy a usar este
+        controlColores.mostrarVista(nombre, avatar);
     }
     
     public static ControlConfigurarJugador getInstance() {

@@ -21,8 +21,16 @@ public class RummyServer {
      * salida de cada cliente conectado.
      */
     public static final CopyOnWriteArrayList<ObjectOutputStream> clientesConectados = new CopyOnWriteArrayList<>();
-
+    
+    /**
+     * Variable con el Stream de salida del host.
+     */
     public static ObjectOutputStream host = null;
+    
+    /**
+     * Variable para indicar si hay o no una partida existente actualmente en el servidor.
+     */
+    public static boolean partidaExistente;
 
     /**
      * Método principal.

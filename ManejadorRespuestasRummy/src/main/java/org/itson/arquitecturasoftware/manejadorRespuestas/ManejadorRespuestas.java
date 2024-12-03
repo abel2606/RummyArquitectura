@@ -17,21 +17,18 @@ import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
  */
 public class ManejadorRespuestas implements IManejadorRespuestas {
 
+    private static ManejadorRespuestas manejador;
     private IOyenteManejadorRespuestas oyente;
-    
     private PartidaDTO partida;
     private JugadorDTO jugador;
     private boolean solicitudUnirseEvaluada;
+    private boolean isPartidaCreada;
 
-    public ManejadorRespuestas() {
+    private ManejadorRespuestas() {
     }
-    
+
     public void subscribe(IOyenteManejadorRespuestas oyente) {
         this.oyente = oyente;
-    }
-
-    public void unsubscribe() {
-        this.oyente = null;
     }
 
     public void manejarSolicitudUnirsePartida(SolicitudUnirsePartida solicitud) {
@@ -47,6 +44,7 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
     }
 
     public void manejarPartidaCreada(PartidaCreada partidaCreada) {
+        this.isPartidaCreada = partidaCreada.isPartidaCreada();
         notificar();
     }
 
@@ -86,4 +84,15 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
         return solicitudUnirseEvaluada;
     }
 
+    @Override
+    public boolean isPartidaCreada() {
+        return this.isPartidaCreada;
+    }
+
+    public static ManejadorRespuestas getInstance() {
+        if (manejador == null) {
+            manejador = new ManejadorRespuestas();
+        }
+        return manejador;
+    }
 }

@@ -61,7 +61,7 @@ public interface IFachadaInfraestructura {
      * @param partida La partida creada
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
-    public void crearPartida(PartidaDTO partida) throws InfraestructuraException;
+    public void crearPartida() throws InfraestructuraException;
 
     /**
      * Permite enviar la petición de terminar turno. Debe usarse cuando un

@@ -17,4 +17,5 @@ public interface IManejadorRespuestas {
     
     public boolean getSolicitudUnirseEvaluada();
     
+    public boolean isPartidaCreada();
 }

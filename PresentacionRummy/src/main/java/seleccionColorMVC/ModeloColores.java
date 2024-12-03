@@ -8,8 +8,10 @@ package seleccionColorMVC;
  *
  * @author Abe
  */
-public class ModeloColores {
+public class ModeloColores implements IModeloColores {
     public PantallaSeleccionColor pantalla;
+    private String nombre;
+    private String avatar;
     
     public ModeloColores(){
         pantalla = new PantallaSeleccionColor(null, true);
@@ -19,7 +21,7 @@ public class ModeloColores {
         
     }
     
-    public void mostrarVista(){
+    public void notificar(){
         
     }
     
@@ -29,5 +31,15 @@ public class ModeloColores {
 
     public void agregarJugadorPartida(){
         
+    }
+
+    @Override
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    @Override
+    public String getAvatar() {
+        return this.avatar;
     }
 }

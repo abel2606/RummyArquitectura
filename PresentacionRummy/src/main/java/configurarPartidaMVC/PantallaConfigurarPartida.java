@@ -4,6 +4,7 @@
 package configurarPartidaMVC;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
@@ -17,7 +18,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     private ControlConfigurarPartida control;
     private IPartida partida;
     private IJugador jugador;
-    
+
     /**
      * Creates new form PantallaConfigurarPartida3
      */
@@ -26,8 +27,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
 
         setTitle("Rummy - Configurar Partida");
     }
-    
-    @Override
+
     public void crearPartida() {
         this.setVisible(false);
         control.cambiarVista();
@@ -64,6 +64,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
             }
         });
 
+        grupoFichas.add(radioButtonTreceFichas);
         radioButtonTreceFichas.setText("13 Fichas");
 
         jLabel2.setText("Rango de Fichas:");
@@ -152,7 +153,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
         int cantidadRango = obtenerValorSeleccionado();
-        
+
         int cantidadComodines = Integer.parseInt(comboBoxNumeroComodines.getSelectedItem().toString());
 
         jugador = new Jugador();
@@ -177,8 +178,19 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     }
 
     @Override
-    public void update() {
-        setVisible(true);
+    public void update(IModeloConfigurarPartida modelo) {
+        Boolean isPartidaCreada = modelo.isPartidaCreada();
+        System.out.println(isPartidaCreada);
+        if (isPartidaCreada == null) {
+            this.setVisible(true);
+        } else if (isPartidaCreada) {
+            crearPartida();
+        } else {
+            setVisible(false);
+            JOptionPane.showMessageDialog(this, "Ya existe una partida :(",
+                    "¡Epa, papu!", JOptionPane.ERROR_MESSAGE);
+            control.cancelarAccion();
+        }
     }
 
     public static PantallaConfigurarPartida getInstance() {

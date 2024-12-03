@@ -14,6 +14,7 @@ import registrarJugadorMVC.ModeloConfigurarJugador;
 import registrarJugadorMVC.PantallaConfigurarJugador;
 import unirsePartidaMVC.ControlUnirsePartida;
 import unirsePartidaMVC.ModeloUnirsePartida;
+import unirsePartidaMVC.PantallaUnirsePartida;
 
 /**
  *
@@ -40,7 +41,7 @@ public class Principal {
         
         ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
         ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
-        PantallaConfigurarPartida pantallaUnirsePartida = PantallaConfigurarPartida.getInstance();
+        PantallaUnirsePartida pantallaUnirsePartida = PantallaUnirsePartida.getInstance();
         
         modeloInicio.crearParametrosMVC();
         controlInicio.crearParametrosMVC();

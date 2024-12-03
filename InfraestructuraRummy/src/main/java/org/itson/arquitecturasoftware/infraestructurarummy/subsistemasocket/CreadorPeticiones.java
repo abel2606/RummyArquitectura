@@ -65,11 +65,10 @@ public class CreadorPeticiones {
     /**
      * Permite crear la petición de crear partida.
      *
-     * @param partida La partida creada
      * @return La petición de crear partida
      */
-    public PeticionCliente crearPeticionCrearPartida(PartidaDTO partida) {
-        return new CrearPartida(partida);
+    public PeticionCliente crearPeticionCrearPartida() {
+        return new CrearPartida();
     }
 
     /**

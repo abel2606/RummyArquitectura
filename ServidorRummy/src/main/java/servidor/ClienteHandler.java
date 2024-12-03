@@ -13,9 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
-import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  * Clase que implementa hilos (Runnable) para representar a cada cliente que se
@@ -79,13 +77,21 @@ public class ClienteHandler implements Runnable {
         } catch (IOException ex) {
             Logger.getLogger(ClienteHandler.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            // Se elimina el cliente de la lista al desconectarse
+            // Si un cliente se desconecta abruptamente.
             try {
+                // Se elimina su Stream de salida de la lista.
                 if (out != null) {
                     RummyServer.clientesConectados.remove(out);
                 }
+                
+                // Se cierra el socket.
                 if (clienteSocket != null && !clienteSocket.isClosed()) {
                     clienteSocket.close();
+                }
+                
+                // Si es el host, ya no se hace referencia a él en la variable host.
+                if (RummyServer.host == out) {
+                    RummyServer.host = null;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -94,55 +100,57 @@ public class ClienteHandler implements Runnable {
     }
 
     /**
-     * Envía un objeto a todos los clientes conectados.
+     * Método para redireccionar respuestas
      *
      * @param respuesta Objeto a enviar.
      */
     private void broadcast(Object respuesta) {
-        if (respuesta instanceof SolicitudUnirsePartida solicitarUnirsePartida) {
-            // Responder al host
-            try {
-                // Se le manda la respuesta al host
-                RummyServer.host.writeObject(solicitarUnirsePartida);
-                // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
-                RummyServer.host.flush();
-            } catch (IOException e) {
-                System.err.println("Error al enviar mensaje al host.");
-                System.out.println(e.getMessage());
-            }
+        if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
+            enviarHost(solicitudUnirsePartida);
         } else if (respuesta instanceof PartidaCreada partidaCreada) {
-            // Se indica que el host es el jugador que creó la partida.
-            RummyServer.host = out;
-            System.out.println("HOST: " + RummyServer.host);
+            if (partidaCreada.isPartidaCreada()) {
+                // Se indica que el host es el jugador que creó la partida.
+                RummyServer.host = out;
+                System.out.println("HOST: " + RummyServer.host);
+            }
             // Responder al host
             try {
                 // Se le manda la respuesta al host
-                RummyServer.host.writeObject(partidaCreada);
+                out.writeObject(partidaCreada);
                 // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
-                RummyServer.host.flush();
+                out.flush();
             } catch (IOException e) {
                 System.err.println("Error al enviar mensaje al host.");
                 System.out.println(e.getMessage());
             }
         } else {
-            // Responder a todos los clientes conectados menos al que originó la solicitud
-            for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
-                JugadorDTO jugador = ((SolicitudIniciarPartida) respuesta).getJugador();
-                String listo = "";
-                listo = jugador.isListoParaJugar() ? "está listo" : "NO está listo";
-                System.out.println(jugador.getNombre() + " dice que " + listo);
-                if (cliente != out) {
-                    try {
-                        // Se les manda la respuesta
-                        cliente.writeObject(respuesta);
-                        // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
-                        cliente.flush();
-                    } catch (IOException e) {
-                        System.err.println("Error al enviar mensaje a un cliente.");
-                        System.out.println(e.getMessage());
-                    }
-                }
+            enviarTodos(respuesta);
+        }
+    }
+
+    private void enviarHost(SolicitudUnirsePartida solicitud) {
+        // Responder al host
+        enviarCliente(RummyServer.host, solicitud);
+    }
+
+    private void enviarTodos(Object respuesta) {
+        // Responder a todos los clientes conectados menos al que originó la solicitud
+        for (ObjectOutputStream cliente : RummyServer.clientesConectados) {
+            if (cliente != out) {
+                enviarCliente(cliente, respuesta);
             }
+        }
+    }
+
+    private void enviarCliente(ObjectOutputStream cliente, Object respuesta) {
+        try {
+            // Se les manda la respuesta
+            cliente.writeObject(respuesta);
+            // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
+            cliente.flush();
+        } catch (IOException e) {
+            System.err.println("Error al enviar mensaje a un cliente.");
+            System.out.println(e.getMessage());
         }
     }
 }
