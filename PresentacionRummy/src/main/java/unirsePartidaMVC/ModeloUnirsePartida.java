@@ -5,6 +5,7 @@ package unirsePartidaMVC;
 
 import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
  * @author Equipo4
@@ -13,6 +14,7 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
 
     private static ModeloUnirsePartida modelo;
     private IPantallaUnirsePartida pantalla;
+    private ManejadorRespuestas manejador;
     
     private String error;
     private boolean solicitudUnirseEvaluada;
@@ -25,6 +27,7 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
     }
 
     public void notificar() {
+        manejador = ManejadorRespuestas.getInstance();
         pantalla.update(this);
     }
 
@@ -51,7 +54,8 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
 
     @Override
     public void update(IManejadorRespuestas contexto) {
-        pantalla.update(this);
+        this.solicitudUnirseEvaluada = contexto.getSolicitudUnirseEvaluada();
+        notificar();
     }
     
     

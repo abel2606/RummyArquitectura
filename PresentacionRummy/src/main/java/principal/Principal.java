@@ -26,23 +26,22 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        ModeloInicio modeloInicio = ModeloInicio.getInstance();
-        ControlInicio controlInicio = ControlInicio.getInstance();
-        PantallaInicio pantallaInicio = PantallaInicio.getInstance();
-        
-        ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
-        ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
-        PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
-        
         ModeloConfigurarJugador modeloConfigurarJugador = ModeloConfigurarJugador.getInstance();
         ControlConfigurarJugador controlConfigurarJugador = ControlConfigurarJugador.getInstance();
         PantallaConfigurarJugador pantallaConfigurarJugador = PantallaConfigurarJugador.getInstance();
-        
+
+        ModeloConfigurarPartida modeloConfigurarPartida = ModeloConfigurarPartida.getInstance();
+        ControlConfigurarPartida controlConfigurarPartida = ControlConfigurarPartida.getInstance();
+        PantallaConfigurarPartida pantallaConfigurarPartida = PantallaConfigurarPartida.getInstance();
+
         ModeloUnirsePartida modeloUnirsePartida = ModeloUnirsePartida.getInstance();
         ControlUnirsePartida controlUnirsePartida = ControlUnirsePartida.getInstance();
         PantallaUnirsePartida pantallaUnirsePartida = PantallaUnirsePartida.getInstance();
-        
+
+        ModeloInicio modeloInicio = ModeloInicio.getInstance();
+        ControlInicio controlInicio = ControlInicio.getInstance();
+        PantallaInicio pantallaInicio = PantallaInicio.getInstance();
+
         modeloInicio.crearParametrosMVC();
         controlInicio.crearParametrosMVC();
         pantallaInicio.crearParametrosMVC();
@@ -54,10 +53,18 @@ public class Principal {
         modeloConfigurarJugador.crearParametrosMVC();
         controlConfigurarJugador.crearParametrosMVC();
         pantallaConfigurarJugador.crearParametrosMVC();
-        
+
         modeloUnirsePartida.crearParametrosMVC();
         controlUnirsePartida.crearParametrosMVC();
         pantallaUnirsePartida.crearParametrosMVC();
+
+        modeloConfigurarPartida.crearParametrosMVC();
+        controlConfigurarPartida.crearParametrosMVC();
+        pantallaConfigurarPartida.crearParametrosMVC();
+
+        modeloInicio.crearParametrosMVC();
+        controlInicio.crearParametrosMVC();
+        pantallaInicio.crearParametrosMVC();
     }
-    
+
 }
