@@ -3,12 +3,9 @@
  */
 package configurarPartidaMVC;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import org.itson.arquitectura.dominiorummy.IJugador;
-import org.itson.arquitectura.dominiorummy.IPartida;
-import org.itson.arquitectura.dominiorummy.Jugador;
-import org.itson.arquitectura.dominiorummy.Partida;
 
 /**
  * @author Equipo4
@@ -16,8 +13,6 @@ import org.itson.arquitectura.dominiorummy.Partida;
 public class PantallaConfigurarPartida extends JFrame implements IPantallaConfigurarPartida {
 
     private ControlConfigurarPartida control;
-    private IPartida partida;
-    private IJugador jugador;
 
     /**
      * Creates new form PantallaConfigurarPartida3
@@ -26,11 +21,9 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         initComponents();
 
         setTitle("Rummy - Configurar Partida");
-    }
-
-    public void crearPartida() {
-        this.setVisible(false);
-        control.cambiarVista();
+        jPanel1.setBackground(new Color(53, 19, 79, 200));
+        radioButtonDiezFichas.setBackground(new Color(0, 0, 0, 0));
+        radioButtonTreceFichas.setBackground(new Color(0, 0, 0, 0));
     }
 
     /**
@@ -43,135 +36,163 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     private void initComponents() {
 
         grupoFichas = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        radioButtonDiezFichas = new javax.swing.JRadioButton();
-        radioButtonTreceFichas = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         comboBoxNumeroComodines = new javax.swing.JComboBox<>();
-        botonCancelar = new javax.swing.JButton();
-        botonConfirmar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        radioButtonTreceFichas = new javax.swing.JRadioButton();
+        radioButtonDiezFichas = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        botonCancelar = new componentes.Boton();
+        botonCrearPartida = new componentes.Boton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("CONFIGURAR PARTIDA");
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+
+        comboBoxNumeroComodines.setBackground(new java.awt.Color(112, 48, 196));
+        comboBoxNumeroComodines.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        comboBoxNumeroComodines.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
+        comboBoxNumeroComodines.setFocusable(false);
+
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Número de Comodines:");
+
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Rango de número de fichas:");
+
+        grupoFichas.add(radioButtonTreceFichas);
+        radioButtonTreceFichas.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        radioButtonTreceFichas.setForeground(new java.awt.Color(255, 255, 255));
+        radioButtonTreceFichas.setText("13 Fichas");
+        radioButtonTreceFichas.setFocusPainted(false);
 
         grupoFichas.add(radioButtonDiezFichas);
+        radioButtonDiezFichas.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        radioButtonDiezFichas.setForeground(new java.awt.Color(255, 255, 255));
         radioButtonDiezFichas.setText("10 Fichas");
+        radioButtonDiezFichas.setFocusPainted(false);
         radioButtonDiezFichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioButtonDiezFichasActionPerformed(evt);
             }
         });
 
-        grupoFichas.add(radioButtonTreceFichas);
-        radioButtonTreceFichas.setText("13 Fichas");
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CONFIGURAR PARTIDA");
 
-        jLabel2.setText("Rango de Fichas:");
-
-        jLabel3.setText("Número de Comodines:");
-
-        comboBoxNumeroComodines.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
-
-        botonCancelar.setText("CANCELAR");
+        botonCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        botonCancelar.setText("Cancelar");
+        botonCancelar.setFocusPainted(false);
+        botonCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         botonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCancelarActionPerformed(evt);
             }
         });
 
-        botonConfirmar.setText("CONFIRMAR");
-        botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        botonCrearPartida.setForeground(new java.awt.Color(255, 255, 255));
+        botonCrearPartida.setText("Crear Partida");
+        botonCrearPartida.setFocusPainted(false);
+        botonCrearPartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        botonCrearPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonConfirmarActionPerformed(evt);
+                botonCrearPartidaActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
                         .addComponent(jLabel2)
-                        .addGap(31, 31, 31)
+                        .addGap(27, 27, 27)
                         .addComponent(radioButtonDiezFichas)
-                        .addGap(18, 18, 18)))
-                .addComponent(radioButtonTreceFichas)
-                .addGap(63, 63, 63))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel3)
+                        .addGap(20, 20, 20)
+                        .addComponent(radioButtonTreceFichas))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel3)
+                        .addGap(32, 32, 32)
+                        .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonConfirmar))
-                    .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel1)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioButtonTreceFichas)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(radioButtonDiezFichas))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioButtonDiezFichas)
+                    .addComponent(radioButtonTreceFichas))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonCancelar)
-                    .addComponent(botonConfirmar))
-                .addGap(43, 43, 43))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 760, 350));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
+        this.setVisible(false);
+        control.cancelarAccion();
+    }//GEN-LAST:event_botonCancelarActionPerformed
+
     private void radioButtonDiezFichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonDiezFichasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radioButtonDiezFichasActionPerformed
 
-    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        setVisible(false);
-        control.cancelarAccion();
-    }//GEN-LAST:event_botonCancelarActionPerformed
+    private void botonCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearPartidaActionPerformed
+        if (radioButtonDiezFichas.isSelected() || radioButtonTreceFichas.isSelected()) {
+            rangoFichas = 0;
 
-    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
-        int cantidadRango = obtenerValorSeleccionado();
+            if (radioButtonDiezFichas.isSelected()) {
+                rangoFichas = 10;
+            } else if (radioButtonTreceFichas.isSelected()) {
+                rangoFichas = 13;
+            }
 
-        int cantidadComodines = Integer.parseInt(comboBoxNumeroComodines.getSelectedItem().toString());
-
-        jugador = new Jugador();
-        partida = new Partida();
-        partida.setNumeroComodines(cantidadComodines);
-        partida.setRangoFichas(cantidadRango);
-        partida.aniadirJugador(jugador);
-        control.crearPartida(partida);
-    }//GEN-LAST:event_botonConfirmarActionPerformed
-
-    private int obtenerValorSeleccionado() {
-        if (radioButtonDiezFichas.isSelected()) {
-            return 10;
-        } else if (radioButtonTreceFichas.isSelected()) {
-            return 13;
+            numeroComodines = Integer.parseInt(comboBoxNumeroComodines.getSelectedItem().toString());
+            
+            control.verificarPartidaCreada();
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar el rango de fichas.",
+                    "Alerta!!!", JOptionPane.WARNING_MESSAGE);
         }
-        return 0;
-    }
+    }//GEN-LAST:event_botonCrearPartidaActionPerformed
 
     public void crearParametrosMVC() {
         control = ControlConfigurarPartida.getInstance();
@@ -179,12 +200,13 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
 
     @Override
     public void update(IModeloConfigurarPartida modelo) {
-        Boolean isPartidaCreada = modelo.isPartidaCreada();
+        isPartidaCreada = modelo.isPartidaCreada();
         System.out.println(isPartidaCreada);
         if (isPartidaCreada == null) {
             this.setVisible(true);
-        } else if (isPartidaCreada) {
-            crearPartida();
+        } else if (!isPartidaCreada) {
+            this.setVisible(false);
+            control.crearPartida(rangoFichas, numeroComodines);
         } else {
             setVisible(false);
             JOptionPane.showMessageDialog(this, "Ya existe una partida :(",
@@ -201,16 +223,20 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JButton botonConfirmar;
+    private componentes.Boton botonCancelar;
+    private componentes.Boton botonCrearPartida;
     private javax.swing.JComboBox<String> comboBoxNumeroComodines;
+    private javax.swing.JLabel fondo;
     private javax.swing.ButtonGroup grupoFichas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton radioButtonDiezFichas;
     private javax.swing.JRadioButton radioButtonTreceFichas;
     // End of variables declaration//GEN-END:variables
+    private Boolean isPartidaCreada;
+    private int rangoFichas;
+    private int numeroComodines;
     private static PantallaConfigurarPartida pantalla;
-
 }

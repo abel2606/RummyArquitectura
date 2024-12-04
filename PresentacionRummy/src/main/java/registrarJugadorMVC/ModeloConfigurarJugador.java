@@ -17,8 +17,6 @@ public class ModeloConfigurarJugador {
     private JugadorDTO jugador;
 
     public ModeloConfigurarJugador() {
-//        pantalla = new PantallaConfigurarJugador(null, true);
-
     }
     
     public void crearParametrosMVC() {
@@ -27,21 +25,7 @@ public class ModeloConfigurarJugador {
     }
     
     public void crearJugador(IJugador jugador){
-        
     }
-
-    public void mostrarVista() {
-        notificar();
-    }
-
-//    public Partida crearPartida(int rangoFichas, int numeroComodines) {
-//        Partida partida = new Partida();
-//        
-//        partida.setRangoFichas(rangoFichas);
-//        partida.setNumeroComodines(numeroComodines);
-//        
-//        return partida;
-//    }
     
     public void notificar(){
         pantalla.update();

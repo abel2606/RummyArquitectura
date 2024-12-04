@@ -4,8 +4,11 @@
 package configurarPartidaMVC;
 
 import inicioMVC.ControlInicio;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.itson.arquitectura.dominiorummy.IPartida;
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import registrarJugadorMVC.ControlConfigurarJugador;
 
 /**
@@ -29,11 +32,23 @@ public class ControlConfigurarPartida {
         modelo = ModeloConfigurarPartida.getInstance();
     }
 
-    public void crearPartida(IPartida partida) {
-        modelo.crearPartida(partida);
+    public void crearPartida(int rangoFichas, int numeroComodines) {
+        modelo.crearPartida(rangoFichas, numeroComodines);
+        
+        controlConfigurarJugador.mostrarVista();
     }
     
-    public void cambiarVista() {
+    public void verificarPartidaCreada() {
+        modelo.suscribirseManejador();
+        FachadaInfraestructura infraestructura = new FachadaInfraestructura();
+        try {
+            infraestructura.crearPartida();
+        } catch (InfraestructuraException ex) {
+            Logger.getLogger(ModeloConfigurarPartida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void iniciarConfigurarJugador() {
         controlConfigurarJugador.mostrarVista();
     }
     

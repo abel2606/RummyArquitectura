@@ -14,10 +14,12 @@ unirsePartidaMVC\ModeloUnirsePartida.class
 inicioMVC\PantallaInicio$1.class
 partidaMVC\PantallaPartida$2.class
 partidaMVC\ModeloPartida.class
+seleccionColorMVC\IModeloColores.class
 salaEsperaMVC\ModeloSalaEspera.class
 inicioMVC\ModeloInicio.class
 seleccionColorMVC\ModeloColores.class
 salaEsperaMVC\IModeloSalaEspera.class
+registrarJugadorMVC\PantallaConfigurarJugador$1.class
 registrarJugadorMVC\ModeloConfigurarJugador.class
 org\itson\arquitectura\controladores\ControlIniciarPartida.class
 componentes\BackgroundImageLabel.class
@@ -31,7 +33,6 @@ inicioMVC\IPantallaInicio.class
 salaEsperaMVC\PantallaSalaEspera.class
 componentes\BotonConImagen.class
 seleccionColorMVC\PantallaSeleccionColor$1.class
-configurarPartidaMVC\PantallaConfigurarPartida$3.class
 inicioMVC\PantallaInicio.class
 registrarJugadorMVC\IPantallaConfigurarJugador.class
 configurarPartidaMVC\IPantallaConfigurarPartida.class

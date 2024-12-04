@@ -38,13 +38,13 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rummy-texto.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         botonUnirsePartida.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
         botonUnirsePartida.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,8 +80,8 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cara rummy.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
         setLocationRelativeTo(null);
@@ -116,7 +116,7 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Boton botonCrearPartida;
     private componentes.Boton botonUnirsePartida;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

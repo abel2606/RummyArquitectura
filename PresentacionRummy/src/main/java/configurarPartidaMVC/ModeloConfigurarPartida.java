@@ -5,8 +5,6 @@ package configurarPartidaMVC;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitectura.aplicacionrummy.servicios.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
@@ -14,8 +12,6 @@ import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.Partida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
-import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
-import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
 import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
@@ -26,15 +22,16 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IMod
 
     private static ModeloConfigurarPartida modelo;
     private IPantallaConfigurarPartida vista;
-    private IPartida partida;
+
     private ManejadorRespuestas manejador;
     private Boolean isPartidaCreada;
+    private IPartida partida;
 
     private ModeloConfigurarPartida() {
-        manejador = ManejadorRespuestas.getInstance();
     }
 
     public void crearParametrosMVC() {
+        manejador = ManejadorRespuestas.getInstance();
         vista = PantallaConfigurarPartida.getInstance();
     }
 
@@ -42,16 +39,17 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IMod
         vista.update(this);
     }
 
-    public void crearPartida(IPartida partida) {
+    public void crearPartida(int rangoFichas, int cantidadComodines) {
+        partida = Partida.getInstance();
+        partida.setNumeroComodines(cantidadComodines);
+        partida.setRangoFichas(rangoFichas);
+
         IAplicacionFachada aplicacionFachada = new AplicacionFachada();
-        FachadaInfraestructura infraestructura = new FachadaInfraestructura();
         aplicacionFachada.configurarPartida(partida);
-        try {
-            manejador.subscribe(this);
-            infraestructura.crearPartida();
-        } catch (InfraestructuraException ex) {
-            Logger.getLogger(ModeloConfigurarPartida.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    }
+    
+    public void suscribirseManejador() {
+        manejador.subscribe(this);
     }
 
     public static ModeloConfigurarPartida getInstance() {

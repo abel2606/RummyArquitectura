@@ -18,10 +18,6 @@ public class ControlConfigurarJugador {
     public ControlConfigurarJugador(){
     }
     
-    public void iniciarConfiguracion(int rangoFichas, int numeroComodines){
-        crearParametrosMVC();
-    }
-    
     public void crearParametrosMVC() {
         controlColores = ControlColores.getInstance();
         controlInicio = ControlInicio.getInstance();
@@ -29,7 +25,7 @@ public class ControlConfigurarJugador {
     }
     
     public void mostrarVista() {
-        modelo.mostrarVista();
+        modelo.notificar();
     }
     
     public void continuarConfiguracion(String nombre, String avatar){

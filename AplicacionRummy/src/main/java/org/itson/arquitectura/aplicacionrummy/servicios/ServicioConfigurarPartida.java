@@ -34,7 +34,7 @@ class ServicioConfigurarPartida {
      */
     public Partida configurarPartida(IPartida partida) {
         return dominioFachada.configurarPartida(partida);
-        
+
     }
 
 }

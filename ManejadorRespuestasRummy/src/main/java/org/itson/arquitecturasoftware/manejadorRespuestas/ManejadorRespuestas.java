@@ -12,7 +12,6 @@ import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
 /**
- *
  * @author Equipo4
  */
 public class ManejadorRespuestas implements IManejadorRespuestas {

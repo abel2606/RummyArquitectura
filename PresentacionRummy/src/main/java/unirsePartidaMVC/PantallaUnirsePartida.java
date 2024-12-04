@@ -28,13 +28,31 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonCancelar = new componentes.Boton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        botonCancelar = new componentes.Boton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1040, 640));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(223, 181, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("del anfitrión...");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 360, 70));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Esperando respuesta");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 460, 70));
 
         botonCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
         botonCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -47,19 +65,11 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
                 botonCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 260, 80));
+        jPanel1.add(botonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 260, 80));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("del anfitrión...");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 460, 70));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 560, 340));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel2.setText("Esperando respuesta");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 460, 70));
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoSolicitarUnirse.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -109,6 +119,7 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     private static PantallaUnirsePartida pantalla;
     private ControlUnirsePartida control;

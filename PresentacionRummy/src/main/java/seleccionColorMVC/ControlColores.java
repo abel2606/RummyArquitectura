@@ -29,7 +29,7 @@ public class ControlColores {
     }
 
     public void mostrarVista(String nombre, String avatar) {
-        modelo.mostrarVista();
+        modelo.notificar();
     }
    
 }

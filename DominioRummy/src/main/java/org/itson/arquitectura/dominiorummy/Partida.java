@@ -56,14 +56,8 @@ public class Partida implements IPartida {
 
     /**
      * Constructor que recibe el número de comodines y el rango de fichas.
-     *
-     * @param numeroComodines El número de comodines
-     * @param rangoFichas El rango de fichas
      */
-    public Partida() {
-        this.numeroComodines = numeroComodines;
-        this.rangoFichas = rangoFichas;
-
+    private Partida() {
         mazo = new ArrayList<>();
         jugadores = new ArrayList<>();
         turnos = new ArrayList<>();
@@ -164,8 +158,6 @@ public class Partida implements IPartida {
 
         this.numeroComodines = 0;
         this.rangoFichas = 0;
-
-
     }
 
     public Partida actualizarConfiguracion(IPartida partida) {
@@ -208,6 +200,7 @@ public class Partida implements IPartida {
      *
      * @return El número de comodines
      */
+    @Override
     public int getNumeroComodines() {
         return numeroComodines;
     }
@@ -217,6 +210,7 @@ public class Partida implements IPartida {
      *
      * @return El rango de fichas
      */
+    @Override
     public int getRangoFichas() {
         return rangoFichas;
     }
@@ -270,6 +264,7 @@ public class Partida implements IPartida {
         }
     }
 
+    //No hay razón para tener este método
     /**
      * {@inheritDoc}
      */

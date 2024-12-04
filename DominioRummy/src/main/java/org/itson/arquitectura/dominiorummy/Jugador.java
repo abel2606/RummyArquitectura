@@ -47,9 +47,6 @@ public class Jugador implements IJugador {
      */
     private List<Color> colores;
 
-    public Jugador() {
-    }
-
     /**
      * Constructor que recibe el nombre del jugador y la ruta donde se encuentra
      * su avatar.
