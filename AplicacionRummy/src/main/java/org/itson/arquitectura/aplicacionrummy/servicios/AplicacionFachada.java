@@ -45,6 +45,11 @@ public class AplicacionFachada implements IAplicacionFachada {
 
     @Override
     public void registrarJugador(IJugador jugador) {
+        try {
+            registrarJugador.unirsePartida(jugador);
+        } catch (Exception e) {
+            System.out.println("Error al registrar jugador");
+        }
     }
 
     @Override

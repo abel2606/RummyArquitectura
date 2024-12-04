@@ -13,8 +13,8 @@ public class ModeloConfigurarJugador {
     
     private static ModeloConfigurarJugador modelo;
     private IPantallaConfigurarJugador pantalla;
-    private IPartida partida;
-    private JugadorDTO jugador;
+    private boolean host;
+    
 
     public ModeloConfigurarJugador() {
     }

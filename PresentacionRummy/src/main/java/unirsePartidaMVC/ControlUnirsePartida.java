@@ -38,7 +38,7 @@ public class ControlUnirsePartida {
     }
     
     public void iniciarConfigurarJugador(){
-        configurarJugador.mostrarVista();
+        configurarJugador.mostrarVista(false);
     }
 
     public void crearParametrosMVC() {

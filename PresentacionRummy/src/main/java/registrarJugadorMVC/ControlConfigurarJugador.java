@@ -13,6 +13,7 @@ public class ControlConfigurarJugador {
     private ControlColores controlColores;
     private ControlInicio controlInicio;
     private ModeloConfigurarJugador modelo;
+    private boolean host;
     
     
     public ControlConfigurarJugador(){
@@ -24,12 +25,13 @@ public class ControlConfigurarJugador {
         modelo = ModeloConfigurarJugador.getInstance();
     }
     
-    public void mostrarVista() {
+    public void mostrarVista(boolean host) {
+        this.host = host;
         modelo.notificar();
     }
     
     public void continuarConfiguracion(String nombre, String avatar){
-        controlColores.asignarNombreYAvatarJugador(nombre, avatar);
+        controlColores.asignarNombreYAvatarJugador(nombre, avatar, this.host);
     }
     
     public static ControlConfigurarJugador getInstance() {

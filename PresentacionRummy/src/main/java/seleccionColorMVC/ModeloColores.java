@@ -2,10 +2,13 @@ package seleccionColorMVC;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.Color;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.TipoConjunto;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 
 /**
  *
@@ -15,8 +18,11 @@ public class ModeloColores implements IModeloColores {
     
     private static ModeloColores modelo;
     private IPantallaSeleccionarColor pantalla;
+    private IAplicacionFachada fachadaAplicacion;
+    private IFachadaInfraestructura fachadaInfraestructura;
     private String nombre;
     private String avatar;
+    private boolean host;
     
     public ModeloColores(){
     }
@@ -29,12 +35,17 @@ public class ModeloColores implements IModeloColores {
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
         
-        //ya q creé el jugador aquí va a ir la lógica de donde se manda al servlet o a partida
+//        if(this.host == true){
+//            fachadaAplicacion.registrarJugador(jugador);
+//        } else {
+//            fachadaInfraestructura.solicitarInicioPartida(convertirJugadorAJugadorDTO(jugador));
+//        } 
     }
     
-    public void asignarNombreYAvatarJugador(String nombre, String avatar){
+    public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host){
         this.nombre = nombre;
         this.avatar = avatar;
+        this.host = host;
     }
     
     public void notificar(){
@@ -69,6 +80,10 @@ public class ModeloColores implements IModeloColores {
         }
 
         return listaColores;
+    }
+    
+    private JugadorDTO convertirJugadorAJugadorDTO(Jugador jugador){
+        return new JugadorDTO(jugador.getNombre(), jugador.getAvatar());
     }
 }
 

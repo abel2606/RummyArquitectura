@@ -35,7 +35,7 @@ public class ControlConfigurarPartida {
     public void crearPartida(int rangoFichas, int numeroComodines) {
         modelo.crearPartida(rangoFichas, numeroComodines);
         
-        controlConfigurarJugador.mostrarVista();
+        controlConfigurarJugador.mostrarVista(true);
     }
     
     public void verificarPartidaCreada() {
@@ -49,7 +49,7 @@ public class ControlConfigurarPartida {
     }
     
     public void iniciarConfigurarJugador() {
-        controlConfigurarJugador.mostrarVista();
+        controlConfigurarJugador.mostrarVista(true);
     }
     
     public void mostrarVista() {

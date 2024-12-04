@@ -19,8 +19,8 @@ public class ControlColores {
         modelo = ModeloColores.getInstance();
     }
     
-    public void asignarNombreYAvatarJugador(String nombre, String avatar){
-        modelo.asignarNombreYAvatarJugador(nombre, avatar);
+    public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host){
+        modelo.asignarNombreYAvatarJugador(nombre, avatar, host);
         mostrarVista();
     }
     
