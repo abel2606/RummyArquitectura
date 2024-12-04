@@ -1,5 +1,7 @@
 package seleccionColorMVC;
 
+import java.util.List;
+
 /**
  *
  * @author Equipo4
@@ -7,18 +9,23 @@ package seleccionColorMVC;
 public class ControlColores {
     
     private static ControlColores control;
-    public ModeloColores modelo;
+    private ModeloColores modelo;
     
     public ControlColores(){
         modelo = new ModeloColores();
     }
     
-    public void iniciarConfiguracion(String nombre, String avatar){
-        
+    public void crearParametrosMVC(){
+        modelo = ModeloColores.getInstance();
     }
     
-    public void agregarcoloresJugador(String[] colores){
-        
+    public void asignarNombreYAvatarJugador(String nombre, String avatar){
+        modelo.asignarNombreYAvatarJugador(nombre, avatar);
+        mostrarVista();
+    }
+    
+    public void asignarColoresJugador(List<Integer> colores){
+        modelo.asignarColoresJugador(colores);
     }
     
     public static ControlColores getInstance() {
@@ -28,7 +35,7 @@ public class ControlColores {
         return control;
     }
 
-    public void mostrarVista(String nombre, String avatar) {
+    public void mostrarVista() {
         modelo.notificar();
     }
    

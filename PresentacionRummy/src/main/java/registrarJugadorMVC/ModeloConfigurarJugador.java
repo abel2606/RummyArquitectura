@@ -21,10 +21,10 @@ public class ModeloConfigurarJugador {
     
     public void crearParametrosMVC() {
         pantalla = PantallaConfigurarJugador.getInstance();
-        partida = Partida.getInstance();
     }
     
-    public void crearJugador(IJugador jugador){
+    public void crearJugador(){
+        
     }
     
     public void notificar(){

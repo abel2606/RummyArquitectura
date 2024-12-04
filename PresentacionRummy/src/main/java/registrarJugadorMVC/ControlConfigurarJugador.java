@@ -29,7 +29,7 @@ public class ControlConfigurarJugador {
     }
     
     public void continuarConfiguracion(String nombre, String avatar){
-        controlColores.mostrarVista(nombre, avatar);
+        controlColores.asignarNombreYAvatarJugador(nombre, avatar);
     }
     
     public static ControlConfigurarJugador getInstance() {
