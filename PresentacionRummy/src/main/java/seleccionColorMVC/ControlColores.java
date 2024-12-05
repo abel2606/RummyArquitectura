@@ -1,6 +1,7 @@
 package seleccionColorMVC;
 
 import java.util.List;
+import salaEsperaMVC.ControlSalaEspera;
 
 /**
  * @author Equipo4
@@ -8,6 +9,7 @@ import java.util.List;
 public class ControlColores {
 
     private static ControlColores control;
+    private ControlSalaEspera salaEspera;
     private ModeloColores modelo;
 
     public ControlColores() {
@@ -16,6 +18,7 @@ public class ControlColores {
 
     public void crearParametrosMVC() {
         modelo = ModeloColores.getInstance();
+        salaEspera = ControlSalaEspera.getInstance(null);
     }
 
     public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host) {

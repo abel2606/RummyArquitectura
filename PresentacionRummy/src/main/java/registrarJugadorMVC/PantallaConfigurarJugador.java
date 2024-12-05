@@ -1,25 +1,25 @@
 package registrarJugadorMVC;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.JCheckBox;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Equipo4
  */
-public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPantallaConfigurarJugador{
+public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPantallaConfigurarJugador {
 
-    private ControlConfigurarJugador control;
-    
     /**
      * Creates new form PantallaConfigurarJugador1
      */
     public PantallaConfigurarJugador() {
         initComponents();
-        
+
         this.setTitle("Rummy - Configurar jugador");
+
+        labelEscojaAvatar.setForeground(Color.WHITE);
+        labelIngreseNombre.setForeground(Color.WHITE);
+        jPanel1.setBackground(new Color(53, 19, 79, 255));
     }
 
     /**
@@ -32,8 +32,8 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     private void initComponents() {
 
         grupoImagenes = new javax.swing.ButtonGroup();
-        botonVolver = new componentes.Boton();
-        campoNombre = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        avatar8 = new javax.swing.JRadioButton();
         avatar1 = new javax.swing.JRadioButton();
         avatar2 = new javax.swing.JRadioButton();
         avatar3 = new javax.swing.JRadioButton();
@@ -41,17 +41,55 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         avatar5 = new javax.swing.JRadioButton();
         avatar6 = new javax.swing.JRadioButton();
         avatar7 = new javax.swing.JRadioButton();
-        avatar8 = new javax.swing.JRadioButton();
+        botonVolver = new componentes.Boton();
         botonConfirmar = new componentes.Boton();
+        labelEscojaAvatar = new javax.swing.JLabel();
+        labelIngreseNombre = new javax.swing.JLabel();
+        textFieldNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Configurar Jugador");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
+
+        grupoImagenes.add(avatar8);
+        avatar8.setForeground(new java.awt.Color(255, 255, 255));
+        avatar8.setText("Avatar 8");
+
+        grupoImagenes.add(avatar1);
+        avatar1.setForeground(new java.awt.Color(255, 255, 255));
+        avatar1.setText("Avatar 1");
+
+        grupoImagenes.add(avatar2);
+        avatar2.setForeground(new java.awt.Color(255, 255, 255));
+        avatar2.setText("Avatar 2");
+
+        grupoImagenes.add(avatar3);
+        avatar3.setForeground(new java.awt.Color(255, 255, 255));
+        avatar3.setText("Avatar 3");
+
+        grupoImagenes.add(avatar4);
+        avatar4.setForeground(new java.awt.Color(255, 255, 255));
+        avatar4.setText("Avatar 4");
+
+        grupoImagenes.add(avatar5);
+        avatar5.setForeground(new java.awt.Color(255, 255, 255));
+        avatar5.setText("Avatar 5");
+
+        grupoImagenes.add(avatar6);
+        avatar6.setForeground(new java.awt.Color(255, 255, 255));
+        avatar6.setText("Avatar 6");
+
+        grupoImagenes.add(avatar7);
+        avatar7.setForeground(new java.awt.Color(255, 255, 255));
+        avatar7.setText("Avatar 7");
+
         botonVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
+        botonVolver.setFocusPainted(false);
         botonVolver.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         botonVolver.setRadius(50);
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -59,59 +97,11 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
                 botonVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 180, 60));
-
-        campoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
-        campoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        campoNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        campoNombre.setFocusable(false);
-        campoNombre.setRequestFocusEnabled(false);
-        campoNombre.setSelectionColor(new java.awt.Color(255, 255, 255));
-        getContentPane().add(campoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 640, 60));
-
-        grupoImagenes.add(avatar1);
-        avatar1.setForeground(new java.awt.Color(255, 255, 255));
-        avatar1.setText("Avatar 1");
-        getContentPane().add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
-
-        grupoImagenes.add(avatar2);
-        avatar2.setForeground(new java.awt.Color(255, 255, 255));
-        avatar2.setText("Avatar 2");
-        getContentPane().add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
-
-        grupoImagenes.add(avatar3);
-        avatar3.setForeground(new java.awt.Color(255, 255, 255));
-        avatar3.setText("Avatar 3");
-        getContentPane().add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, -1, -1));
-
-        grupoImagenes.add(avatar4);
-        avatar4.setForeground(new java.awt.Color(255, 255, 255));
-        avatar4.setText("Avatar 4");
-        getContentPane().add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
-
-        grupoImagenes.add(avatar5);
-        avatar5.setForeground(new java.awt.Color(255, 255, 255));
-        avatar5.setText("Avatar 5");
-        getContentPane().add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
-
-        grupoImagenes.add(avatar6);
-        avatar6.setForeground(new java.awt.Color(255, 255, 255));
-        avatar6.setText("Avatar 6");
-        getContentPane().add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
-
-        grupoImagenes.add(avatar7);
-        avatar7.setForeground(new java.awt.Color(255, 255, 255));
-        avatar7.setText("Avatar 7");
-        getContentPane().add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, -1, -1));
-
-        grupoImagenes.add(avatar8);
-        avatar8.setForeground(new java.awt.Color(255, 255, 255));
-        avatar8.setText("Avatar 8");
-        getContentPane().add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, -1, -1));
 
         botonConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         botonConfirmar.setText("Confirmar");
+        botonConfirmar.setFocusPainted(false);
         botonConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         botonConfirmar.setRadius(50);
         botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -119,9 +109,93 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
                 botonConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 540, 180, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondoDatosJugador.png"))); // NOI18N
+        labelEscojaAvatar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        labelEscojaAvatar.setText("Seleccione su avatar");
+
+        labelIngreseNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        labelIngreseNombre.setText("Ingrese su nombre");
+
+        textFieldNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 30)); // NOI18N
+        textFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(avatar3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(avatar7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(avatar8)))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avatar1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(avatar4, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(avatar2)
+                            .addComponent(avatar5)))
+                    .addComponent(avatar6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelEscojaAvatar)
+                        .addGap(271, 271, 271))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelIngreseNombre)
+                        .addGap(282, 282, 282))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(labelIngreseNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(labelEscojaAvatar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(avatar4)
+                    .addComponent(avatar3)
+                    .addComponent(avatar5)
+                    .addComponent(avatar6))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(avatar8)
+                    .addComponent(avatar1)
+                    .addComponent(avatar2)
+                    .addComponent(avatar7))
+                .addGap(92, 92, 92)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 800, 480));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -133,12 +207,23 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
-        String nombre = campoNombre.getText();
-        AbstractButton avatarSeleccionado = null;
-        if (nombre != null) {
+        String nombre = textFieldNombre.getText();
+        String avatar = "";
+        if (!nombre.isBlank()) {
             if (grupoImagenes.getSelection() != null) {
-                avatarSeleccionado = (AbstractButton) grupoImagenes.getSelection();
-                String avatar = avatarSeleccionado.getText();
+                if (avatar1.isSelected()) {
+                    avatar = "awa";
+                } else if (avatar2.isSelected()) {
+                    avatar = "ewe";
+                } else if (avatar3.isSelected()) {
+                    avatar = "iwi";
+                } else if (avatar4.isSelected()) {
+                    avatar = "owo";
+                } else if (avatar5.isSelected()) {
+                    avatar = "uwu";
+                } else if (avatar6.isSelected()) {
+                    avatar = "ywy";
+                }
                 control.continuarConfiguracion(nombre, avatar);
                 setVisible(false);
             } else {
@@ -147,23 +232,21 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
             }
         } else {
             JOptionPane.showMessageDialog(this, "Debe ingresar un nombre de usuario.",
-                        "Alerta", JOptionPane.WARNING_MESSAGE);
+                    "Alerta", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_botonConfirmarActionPerformed
-    
-    
-    
-    public static PantallaConfigurarJugador getInstance(){
+
+    public static PantallaConfigurarJugador getInstance() {
         if (pantalla == null) {
             pantalla = new PantallaConfigurarJugador();
         }
         return pantalla;
     }
-    
-    public void crearParametrosMVC(){
+
+    public void crearParametrosMVC() {
         control = ControlConfigurarJugador.getInstance();
     }
-    
+
     @Override
     public void update() {
         setVisible(true);
@@ -180,10 +263,13 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     private javax.swing.JRadioButton avatar8;
     private componentes.Boton botonConfirmar;
     private componentes.Boton botonVolver;
-    private javax.swing.JTextField campoNombre;
     private javax.swing.ButtonGroup grupoImagenes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelEscojaAvatar;
+    private javax.swing.JLabel labelIngreseNombre;
+    private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
     private static PantallaConfigurarJugador pantalla;
-    
+    private ControlConfigurarJugador control;
 }
