@@ -6,23 +6,26 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.swing.JColorChooser;
 
 /**
  *
  * @author Equipo4
  */
-public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPantallaSeleccionarColor{
+public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPantallaSeleccionarColor {
 
+    private Color color1, color2, color3, color4;
     private ControlColores control;
-    
+
     /**
      * Creates new form PantallaSeleccionarColor1
      */
     private PantallaSeleccionarColor() {
+        color1 = new Color(255,51,51);
+        color2 = new Color(51,0,255);
+        color3 = new Color(255,255,51);
+        color4 = new Color(0,0,0);
         initComponents();
-        crearBotonesColores();
-//        validacionColores();
         
         setTitle("Rummy - Seleccionar Colores");
     }
@@ -40,6 +43,10 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         jLabel4 = new javax.swing.JLabel();
         botonVolver = new componentes.Boton();
         botonConfirmar = new componentes.Boton();
+        btnColor1 = new componentes.Boton();
+        btnColor3 = new componentes.Boton();
+        btnColor4 = new componentes.Boton();
+        btnColor2 = new componentes.Boton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,12 +54,15 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(53, 19, 79));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Selecciona los colores de sus fichas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 694, 58));
 
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
@@ -64,6 +74,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
                 botonVolverActionPerformed(evt);
             }
         });
+        jPanel1.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 274, 230, 50));
 
         botonConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         botonConfirmar.setText("Confirmar");
@@ -75,33 +86,43 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
                 botonConfirmarActionPerformed(evt);
             }
         });
+        jPanel1.add(botonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 230, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9))
-        );
+        btnColor1.setBackground(new java.awt.Color(255, 51, 51));
+        btnColor1.setRadius(50);
+        btnColor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 120, 120));
+
+        btnColor3.setBackground(new java.awt.Color(255, 255, 51));
+        btnColor3.setRadius(50);
+        btnColor3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnColor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 120, 120));
+
+        btnColor4.setBackground(new java.awt.Color(0, 0, 0));
+        btnColor4.setRadius(50);
+        btnColor4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnColor4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 120, 120));
+
+        btnColor2.setBackground(new java.awt.Color(51, 0, 255));
+        btnColor2.setRadius(50);
+        btnColor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColor2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnColor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 120, 120));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 760, 350));
 
@@ -112,63 +133,117 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        
-    }//GEN-LAST:event_botonVolverActionPerformed
-
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
-        listaColores.add(colorButton1.getSelectedColor().getRGB());
-        listaColores.add(colorButton2.getSelectedColor().getRGB());
-        listaColores.add(colorButton3.getSelectedColor().getRGB());
-        listaColores.add(colorButton4.getSelectedColor().getRGB());
-        
+        listaColores.add(color1.getRGB());
+        listaColores.add(color2.getRGB());
+        listaColores.add(color3.getRGB());
+        listaColores.add(color4.getRGB());
+
         control.asignarColoresJugador(listaColores);
         setVisible(false);
     }//GEN-LAST:event_botonConfirmarActionPerformed
 
-    public void crearParametrosMVC(){
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+
+    }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void btnColor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor1ActionPerformed
+        color1 = color1.BLACK;
+        color1 = JColorChooser.showDialog(this, "Selecciona un color", color1);
+
+        if (color1 == null) {
+            color1 = color1.WHITE;
+        }
+        btnColor1.setColor(color1);
+
+        btnColor1.setBackground(color1);
+        btnColor1.setColorClick(color1);
+        btnColor1.setColorOver(color1);
+        System.out.println(color1.toString());
+        System.out.println(color1);
+        System.out.println(Integer.toHexString(color1.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor1ActionPerformed
+
+    private void btnColor3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor3ActionPerformed
+        color3 = color3.BLACK;
+        color3 = JColorChooser.showDialog(this, "Selecciona un color", color3);
+
+        if (color3 == null) {
+            color3 = color3.WHITE;
+        }
+        btnColor3.setColor(color3);
+
+        btnColor3.setBackground(color3);
+        btnColor3.setColorClick(color3);
+        btnColor3.setColorOver(color3);
+        System.out.println(color3.toString());
+        System.out.println(color3);
+        System.out.println(Integer.toHexString(color3.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor3ActionPerformed
+
+    private void btnColor4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor4ActionPerformed
+        color4 = color4.BLACK;
+        color4 = JColorChooser.showDialog(this, "Selecciona un color", color4);
+
+        if (color4 == null) {
+            color4 = color4.WHITE;
+        }
+
+        btnColor4.setColor(color4);
+
+        btnColor4.setBackground(color4);
+        btnColor4.setColorClick(color4);
+        btnColor4.setColorOver(color4);
+        System.out.println(color4.toString());
+        System.out.println(color4);
+        System.out.println(Integer.toHexString(color1.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor4ActionPerformed
+
+    private void btnColor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColor2ActionPerformed
+        color2 = color2.BLACK;
+        color2 = JColorChooser.showDialog(this, "Selecciona un color", color2);
+
+        if (color2 == null) {
+            color2 = color2.WHITE;
+        }
+
+        btnColor2.setColor(color2);
+
+        btnColor2.setBackground(color2);
+        btnColor2.setColorClick(color2);
+        btnColor2.setColorOver(color2);
+        System.out.println(color2.toString());
+        System.out.println(color2);
+        System.out.println(Integer.toHexString(color2.getRGB()).substring(2));
+    }//GEN-LAST:event_btnColor2ActionPerformed
+
+    public void crearParametrosMVC() {
         control = ControlColores.getInstance();
     }
-    
+
     @Override
-    public void update(IModeloColores modelo){
+    public void update(IModeloColores modelo) {
         //si agregamos los colorchooser pues aquí se podría validar que no sea el mismo
         //color 4 veces, o tal vez eso podría ir en el botón, en un método, no lo sé papus es solo una idea
         this.setVisible(true);
-        
+
         if (modelo.getError() != null) {
             JOptionPane.showMessageDialog(this, modelo.getError(),
                     "Error!!!", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    public static PantallaSeleccionarColor getInstance(){
+
+    public static PantallaSeleccionarColor getInstance() {
         if (pantalla == null) {
             pantalla = new PantallaSeleccionarColor();
         }
         return pantalla;
     }
-    
-    private void crearBotonesColores() {
-        colorButton1.setBounds(105, 150, 100, 30);
-        colorButton2.setBounds(255, 150, 100, 30);
-        colorButton3.setBounds(405, 150, 100, 30);
-        colorButton4.setBounds(555, 150, 100, 30);
 
-        jPanel1.add(colorButton1);
-        jPanel1.add(colorButton2);
-        jPanel1.add(colorButton3);
-        jPanel1.add(colorButton4);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 760, 350));
-
-        pack();
-    }
-    
-    private String convertirColorAHex(Color color){
+    private String convertirColorAHex(Color color) {
         return String.format("%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
     }
-    
+
 //    private void validacionColores() {
 //        JCheckBox[] checkboxesColores = {checkboxColor1, checkboxColor2, checkboxColor3, checkboxColor4,
 //                checkboxColor5, checkboxColor6, checkboxColor7, checkboxColor8};
@@ -193,10 +268,13 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
 //        }
 //    }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Boton botonConfirmar;
     private componentes.Boton botonVolver;
+    private componentes.Boton btnColor1;
+    private componentes.Boton btnColor2;
+    private componentes.Boton btnColor3;
+    private componentes.Boton btnColor4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
