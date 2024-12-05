@@ -22,10 +22,15 @@ import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
  */
 public class ClienteSocket implements Runnable {
 
+    private static ClienteSocket clienteSocket;
     private ManejadorRespuestas manejador;
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
+    
+    private ClienteSocket() {
+        
+    }
 
     /**
      * Permite establecer la conexión con el servidor.
@@ -100,6 +105,13 @@ public class ClienteSocket implements Runnable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    
+    public static ClienteSocket getInstance() {
+        if (clienteSocket == null) {
+            clienteSocket = new ClienteSocket();
+        }
+        return clienteSocket;
     }
 
 }

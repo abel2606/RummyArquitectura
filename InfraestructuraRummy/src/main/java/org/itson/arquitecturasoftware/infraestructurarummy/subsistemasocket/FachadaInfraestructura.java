@@ -23,7 +23,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
      * Constructor.
      */
     public FachadaInfraestructura() {
-        cliente = new ClienteSocket();
+        cliente = ClienteSocket.getInstance();
         creadorPeticiones = new CreadorPeticiones();
         cliente.establecerConexionServidor();
     }
