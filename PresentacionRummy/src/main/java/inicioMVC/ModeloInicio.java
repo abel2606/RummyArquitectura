@@ -4,13 +4,13 @@
 package inicioMVC;
 
 import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
- *
- * @author ricar
+ * @author Equipo4
  */
-public class ModeloInicio implements IModeloInicio {
+public class ModeloInicio implements IModeloInicio, IOyenteManejadorRespuestas {
 
     private static ModeloInicio modelo;
     private IPantallaInicio vista;
@@ -38,10 +38,6 @@ public class ModeloInicio implements IModeloInicio {
         return modelo;
     }
 
-    void verificarPartidaCreada() {
-
-    }
-
     @Override
     public Boolean isPartidaCreada() {
         return isPartidaCreada;
@@ -49,7 +45,7 @@ public class ModeloInicio implements IModeloInicio {
 
     @Override
     public void update(IManejadorRespuestas contexto) {
-        this.VerificacionPartidaCreada = contexto.getVerificacionPartidaCreada){
+        this.isPartidaCreada = contexto.isPartidaCreada();
         notificar();
     }
         

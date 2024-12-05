@@ -3,8 +3,6 @@
  */
 package configurarPartidaMVC;
 
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
-
 /**
  * @author Equipo4
  */

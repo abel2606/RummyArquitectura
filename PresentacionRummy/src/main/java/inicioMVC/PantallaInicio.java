@@ -4,10 +4,11 @@
 package inicioMVC;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  * Pantalla de inicio del Rummy.
- * 
+ *
  * @author Equipo4
  */
 public class PantallaInicio extends javax.swing.JFrame implements IPantallaInicio {
@@ -18,7 +19,7 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     private PantallaInicio() {
         initComponents();
         setVisible(true);
-        
+
         this.setTitle("Rummy - Inicio");
         botonUnirsePartida.setBorderColor(new Color(112, 48, 196));
     }
@@ -97,26 +98,30 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     private void botonCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearPartidaActionPerformed
         setVisible(false);
         control.verificarPartidaCreada();
-//        control.configurarPartida();
     }//GEN-LAST:event_botonCrearPartidaActionPerformed
 
-    public static PantallaInicio getInstance(){
+    public static PantallaInicio getInstance() {
         if (pantalla == null) {
             pantalla = new PantallaInicio();
         }
         return pantalla;
     }
-    
-    public void crearParametrosMVC(){
+
+    public void crearParametrosMVC() {
         control = ControlInicio.getInstance();
     }
-    
+
     @Override
     public void update(IModeloInicio modelo) {
         setVisible(true);
-        boolean isPartidaCreada = modelo.isPartidaCreada();
-        if (isPartidaCreada) {
-            control.configurarPartida();
+        Boolean isPartidaCreada = modelo.isPartidaCreada();
+        if (isPartidaCreada != null) {
+            if (!isPartidaCreada) {
+                control.configurarPartida();
+            } else {
+                JOptionPane.showMessageDialog(this, "Ya existe una partida :(",
+                        "¡Epa, papu!", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

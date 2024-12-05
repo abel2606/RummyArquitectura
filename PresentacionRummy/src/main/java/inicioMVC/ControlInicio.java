@@ -42,7 +42,16 @@ public class ControlInicio {
         configurarPartida = ControlConfigurarPartida.getInstance();
         unirsePartida = ControlUnirsePartida.getInstance();
         modelo = ModeloInicio.getInstance();
+    }
+    
+    public void verificarPartidaCreada() {
         infraestructura = new FachadaInfraestructura();
+        try {
+            infraestructura.verificarPartidaCreada();
+        } catch (InfraestructuraException ex) {
+            modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+            modelo.notificar();
+        }
     }
 
     public static ControlInicio getInstance() {
@@ -50,15 +59,6 @@ public class ControlInicio {
             control = new ControlInicio();
         }
         return control;
-    }
-
-    void verificarPartidaCreada() {
-        try {
-            infraestructura.verificarPartidaCreada();
-        } catch (InfraestructuraException ex) {
-            modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
-            modelo.notificar();
-        }
     }
 
 }

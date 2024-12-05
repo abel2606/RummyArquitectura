@@ -1,7 +1,6 @@
 package org.itson.arquitecturasoftware.manejadorRespuestas;
 
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.JugadorUnidoPartida;
-import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaTerminada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
@@ -40,11 +39,6 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
 
     public void manejarJugadorUnidoPartida(JugadorUnidoPartida jugador) {
 
-    }
-
-    public void manejarPartidaCreada(PartidaCreada partidaCreada) {
-        this.isPartidaCreada = partidaCreada.isPartidaCreada();
-        notificar();
     }
 
     public void manejarPartidaIniciada(PartidaIniciada partidaIniciada) {
