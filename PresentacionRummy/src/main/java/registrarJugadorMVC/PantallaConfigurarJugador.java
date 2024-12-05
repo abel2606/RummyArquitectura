@@ -58,49 +58,49 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         grupoImagenes.add(avatarLeia);
         avatarLeia.setForeground(new java.awt.Color(255, 255, 255));
         avatarLeia.setContentAreaFilled(false);
-        avatarLeia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon6.png"))); // NOI18N
+        avatarLeia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-leia.png"))); // NOI18N
         jPanel1.add(avatarLeia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         grupoImagenes.add(avatarR2D2);
         avatarR2D2.setForeground(new java.awt.Color(255, 255, 255));
         avatarR2D2.setContentAreaFilled(false);
-        avatarR2D2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon7.png"))); // NOI18N
+        avatarR2D2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-r2d2.png"))); // NOI18N
         jPanel1.add(avatarR2D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
         grupoImagenes.add(avatarLuke);
         avatarLuke.setForeground(new java.awt.Color(255, 255, 255));
         avatarLuke.setContentAreaFilled(false);
-        avatarLuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon8.png"))); // NOI18N
+        avatarLuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-luke.png"))); // NOI18N
         jPanel1.add(avatarLuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
 
         grupoImagenes.add(avatarHarleyQuinn);
         avatarHarleyQuinn.setForeground(new java.awt.Color(255, 255, 255));
         avatarHarleyQuinn.setContentAreaFilled(false);
-        avatarHarleyQuinn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon2.png"))); // NOI18N
+        avatarHarleyQuinn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-harley-quinn.png"))); // NOI18N
         jPanel1.add(avatarHarleyQuinn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         grupoImagenes.add(avatarBatman);
         avatarBatman.setForeground(new java.awt.Color(255, 255, 255));
         avatarBatman.setContentAreaFilled(false);
-        avatarBatman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon3.png"))); // NOI18N
+        avatarBatman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-batman.png"))); // NOI18N
         jPanel1.add(avatarBatman, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
 
         grupoImagenes.add(avatarCatWoman);
         avatarCatWoman.setForeground(new java.awt.Color(255, 255, 255));
         avatarCatWoman.setContentAreaFilled(false);
-        avatarCatWoman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon4.png"))); // NOI18N
+        avatarCatWoman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cat-woman.png"))); // NOI18N
         jPanel1.add(avatarCatWoman, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         grupoImagenes.add(avatarJoker);
         avatarJoker.setForeground(new java.awt.Color(255, 255, 255));
         avatarJoker.setContentAreaFilled(false);
-        avatarJoker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon1.png"))); // NOI18N
+        avatarJoker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-joker.png"))); // NOI18N
         jPanel1.add(avatarJoker, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         grupoImagenes.add(avatarObiWan);
         avatarObiWan.setForeground(new java.awt.Color(255, 255, 255));
         avatarObiWan.setContentAreaFilled(false);
-        avatarObiWan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
+        avatarObiWan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-obi-wan.png"))); // NOI18N
         jPanel1.add(avatarObiWan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         botonVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
@@ -160,21 +160,21 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         if (!nombre.isBlank()) {
             if (grupoImagenes.getSelection() != null) {
                 if (avatarR2D2.isSelected()) {
-                    avatar = "icon-r2d2.png";
+                    avatar = "/icon-r2d2.png";
                 } else if (avatarLuke.isSelected()) {
-                    avatar = "icon-luke.png";
+                    avatar = "/icon-luke.png";
                 } else if (avatarLeia.isSelected()) {
-                    avatar = "icon-leia.png";
+                    avatar = "/icon-leia.png";
                 } else if (avatarObiWan.isSelected()) {
-                    avatar = "icon-obi-wan.png";
+                    avatar = "/icon-obi-wan.png";
                 } else if (avatarHarleyQuinn.isSelected()) {
-                    avatar = "icon-harley-quinn.png";
+                    avatar = "/icon-harley-quinn.png";
                 } else if (avatarBatman.isSelected()) {
-                    avatar = "icon-batman.png";
+                    avatar = "/icon-batman.png";
                 } else if (avatarCatWoman.isSelected()) {
-                    avatar = "icon-cat-woman.png";
+                    avatar = "/icon-cat-woman.png";
                 } else if (avatarJoker.isSelected()) {
-                    avatar = "icon-joker.png";
+                    avatar = "/icon-joker.png";
                 }
 
                 if (host) {

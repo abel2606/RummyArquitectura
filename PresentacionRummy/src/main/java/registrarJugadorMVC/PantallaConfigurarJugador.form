@@ -60,7 +60,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon6.png"/>
+              <Image iconType="3" name="/icon-leia.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -79,7 +79,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon7.png"/>
+              <Image iconType="3" name="/icon-r2d2.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -98,7 +98,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon8.png"/>
+              <Image iconType="3" name="/icon-luke.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -117,7 +117,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon2.png"/>
+              <Image iconType="3" name="/icon-harley-quinn.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -136,7 +136,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon3.png"/>
+              <Image iconType="3" name="/icon-batman.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -155,7 +155,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon4.png"/>
+              <Image iconType="3" name="/icon-cat-woman.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -174,7 +174,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon1.png"/>
+              <Image iconType="3" name="/icon-joker.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -193,7 +193,7 @@
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon5.png"/>
+              <Image iconType="3" name="/icon-obi-wan.png"/>
             </Property>
           </Properties>
           <Constraints>

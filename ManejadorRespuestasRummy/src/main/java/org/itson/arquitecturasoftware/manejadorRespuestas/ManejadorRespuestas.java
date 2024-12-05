@@ -33,6 +33,7 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
 
     public void manejarSolicitudUnirsePartida(SolicitudUnirsePartida solicitud) {
         notificar();
+        this.jugador = null;
     }
 
     public void manejarSolicitudIniciarPartida(SolicitudIniciarPartida solicitud) {
@@ -97,5 +98,10 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
             manejador = new ManejadorRespuestas();
         }
         return manejador;
+    }
+
+    @Override
+    public void resetJugador() {
+        this.jugador = null;
     }
 }

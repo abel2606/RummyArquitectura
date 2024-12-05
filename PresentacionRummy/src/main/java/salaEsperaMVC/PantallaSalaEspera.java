@@ -4,7 +4,9 @@
  */
 package salaEsperaMVC;
 
+import java.awt.Image;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
@@ -24,15 +26,15 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
      */
     private PantallaSalaEspera() {
         initComponents();
-        
+
         lblAvatar2.setVisible(false);
         lblAvatar3.setVisible(false);
         lblAvatar4.setVisible(false);
-        
+
         lblNombre2.setVisible(false);
         lblNombre3.setVisible(false);
         lblNombre4.setVisible(false);
-        
+
         lblEstado2.setVisible(false);
         lblEstado3.setVisible(false);
         lblEstado4.setVisible(false);
@@ -242,9 +244,9 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                     new Object[]{"Aceptar", "Rechazar"},
                     "Rechazar"
             );
-            
+
             boolean aceptado = (respuesta == JOptionPane.YES_OPTION);
-            
+
             control.evaluarSolicitudUnirse(aceptado);
         }
         jugadores = modelo.getJugadores();
@@ -254,14 +256,15 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
             llenarDatosJugador(jugadores.get(2), 3);
             llenarDatosJugador(jugadores.get(3), 4);
         } catch (NullPointerException | IndexOutOfBoundsException e) {
-            
+
         }
     }
 
     private void llenarDatosJugador(JugadorDTO jugador, int numeroJugador) {
         switch (numeroJugador) {
             case 1:
-                // Poner imagen de avatar
+
+                lblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource(jugador.getAvatar())));
                 lblNombre1.setText(jugador.getNombre());
                 lblEstado1.setText(mostrarEstado(jugador));
                 break;
@@ -269,8 +272,8 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                 lblAvatar2.setVisible(true);
                 lblNombre2.setVisible(true);
                 lblEstado2.setVisible(true);
-                
-                // Poner imagen de avatar
+
+                lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource(jugador.getAvatar())));
                 lblNombre2.setText(jugador.getNombre());
                 lblEstado2.setText(mostrarEstado(jugador));
                 break;
@@ -278,16 +281,16 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                 lblAvatar3.setVisible(true);
                 lblNombre3.setVisible(true);
                 lblEstado3.setVisible(true);
-                
-                // Poner imagen de avatar
+
+                lblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource(jugador.getAvatar())));
                 lblNombre3.setText(jugador.getNombre());
                 lblEstado3.setText(mostrarEstado(jugador));
             case 4:
                 lblAvatar4.setVisible(true);
                 lblNombre4.setVisible(true);
                 lblEstado4.setVisible(true);
-                
-                // Poner imagen de avatar
+
+                lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource(jugador.getAvatar())));
                 lblNombre4.setText(jugador.getNombre());
                 lblEstado4.setText(mostrarEstado(jugador));
                 break;

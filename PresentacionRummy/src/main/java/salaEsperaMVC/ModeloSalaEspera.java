@@ -131,14 +131,17 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     public void update(IManejadorRespuestas contexto) {
         if (contexto.getJugador() == null) {
             this.haySolicitudUnirse = true;
+            manejador.resetJugador();
         } else {
             JugadorDTO jugadorDTO = contexto.getJugador();
             IJugador nuevoJugador = new Jugador(jugadorDTO.getNombre(), jugadorDTO.getAvatar());
             aplicacionFachada.registrarJugador(nuevoJugador);
             jugadores = convertirJugadoresADTO(aplicacionFachada.obtenerJugadores(partida));
             this.haySolicitudUnirse = false;
+            manejador.resetJugador();
         }
         notificar();
+        manejador.resetJugador();
     }
 
     public void crearParametrosMVC() {
