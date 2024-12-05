@@ -28,6 +28,8 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
     private PantallaSalaEspera() {
         initComponents();
         
+        setTitle("Rummy - Sala de Espera");
+        
         jPanel1.setBackground(new Color(53, 19, 79, 255));
 
         lblAvatar2.setVisible(false);
@@ -78,8 +80,9 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
 
         btnListo.setForeground(new java.awt.Color(255, 255, 255));
         btnListo.setText("¡Listo!");
-        btnListo.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnListo.setRadius(60);
+        btnListo.setFocusPainted(false);
+        btnListo.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        btnListo.setRadius(50);
         btnListo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListoActionPerformed(evt);
@@ -88,8 +91,9 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
 
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
-        btnSalir.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnSalir.setRadius(60);
+        btnSalir.setFocusPainted(false);
+        btnSalir.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        btnSalir.setRadius(50);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,33 +103,41 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
         lblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1.png"))); // NOI18N
 
         lblNombre1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre1.setText("jLabel4");
 
         lblEstado1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado1.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEstado1.setText("jLabel5");
 
         lblEstado2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado2.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEstado2.setText("jLabel5");
 
         lblNombre2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre2.setText("jLabel4");
 
         lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar2.png"))); // NOI18N
 
         lblEstado4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado4.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEstado4.setText("jLabel5");
 
         lblEstado3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado3.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEstado3.setText("jLabel5");
 
         lblNombre3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre3.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre3.setText("jLabel4");
 
         lblNombre4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre4.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre4.setText("jLabel4");
 
         lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar5.png"))); // NOI18N
@@ -209,6 +221,7 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
