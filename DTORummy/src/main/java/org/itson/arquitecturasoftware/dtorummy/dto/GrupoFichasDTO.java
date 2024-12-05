@@ -5,6 +5,7 @@ package org.itson.arquitecturasoftware.dtorummy.dto;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Clase que representa las grupos de fichas que se pueden colocar en el tablero
@@ -34,4 +35,27 @@ public class GrupoFichasDTO implements Serializable {
         return fichas;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GrupoFichasDTO that = (GrupoFichasDTO) o;
+        return Objects.equals(fichas, that.fichas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fichas);
+    }
+
+    @Override
+    public String toString() {
+        return "GrupoFichasDTO{"
+                + "fichas=" + fichas
+                + '}';
+    }
 }

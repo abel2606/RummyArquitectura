@@ -7,8 +7,15 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.itson.arquitecturasoftware.dtorummy.dto.ComodinDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.FichaDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.GrupoFichasDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.NumericaDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.SecuenciaDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.TableroDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.TurnoDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
@@ -281,7 +288,8 @@ public class Partida implements IPartida {
             jugadoresDTO.add(jugadorDTO);
         }
         
-        PartidaDTO partida = new PartidaDTO(jugadoresDTO, numeroComodines, rangoFichas);
+        List<GrupoFichasDTO> grupoFichas = new LinkedList<>();
+        PartidaDTO partida = new PartidaDTO(new TableroDTO(grupoFichas), fichasToDTO(mazo), jugadoresDTO, turnosToDTO(turnos));
         
         
         try {
@@ -291,7 +299,7 @@ public class Partida implements IPartida {
         }
     }
     
-    /**
+     /**
      * Convierte una lista de jugador a jugadorDTO unicamente para iniciar partida
      * @param jugadores jugadores 
      * @return jugadoresDTO
@@ -305,6 +313,41 @@ public class Partida implements IPartida {
         return jugadoresDTO;
     }
     
+    /**
+     * Crea un grupo de fichas y las convierte a DTO
+     * @param fichas
+     * @return 
+     */
+    private List<FichaDTO> fichasToDTO(List<Ficha> fichas){
+        List<FichaDTO> fichasDTO = new LinkedList<>();
+        for (Ficha ficha : fichas) {
+            FichaDTO fichaDTO = null;
+            if(ficha instanceof Numerica){
+                int numeroFicha = ((Numerica) ficha).getNumero();
+                 fichaDTO = new NumericaDTO(numeroFicha);
+            }
+            else if(ficha instanceof Comodin){
+                 fichaDTO = new ComodinDTO();
+            }
+            fichasDTO.add(fichaDTO);
+        }
+        
+        return fichasDTO;
+    }
+    
+    /**
+     * Convierte una lista de turnos a turnosDTO para iniciarPartida
+     * @param turnos turnos
+     * @return valor del turnodto
+     */
+    private List<TurnoDTO> turnosToDTO(List<Turno> turnos){
+        List<TurnoDTO> turnosDTO = new LinkedList<>();
+        for (Turno turno : turnos) {
+            TurnoDTO turnoDTO = new TurnoDTO(turno.getTurno(), new JugadorDTO(turno.getJugador().getNombre(), turno.getJugador().getAvatar(), turno.getJugador().isIsListo()));
+            turnosDTO.add(turnoDTO);
+        }
+        return turnosDTO;
+    }
     /**
      * Regresa una partidaDTO para iniciar partida
      * @param partida valor de la partida
