@@ -16,14 +16,14 @@ import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.Infraestr
  */
 public class FachadaInfraestructura implements IFachadaInfraestructura {
 
-    private ClienteSocket cliente;
+    private ClienteSocket clienteSocket;
     private CreadorPeticiones creadorPeticiones = new CreadorPeticiones();
 
     /**
      * Constructor.
      */
     public FachadaInfraestructura() {
-        cliente = ClienteSocket.getInstance();
+        clienteSocket = ClienteSocket.getInstance();
         creadorPeticiones = new CreadorPeticiones();
     }
 
@@ -33,7 +33,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void solicitarInicioPartida(JugadorDTO jugador) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarIniciarPartida(jugador));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionSolicitarIniciarPartida(jugador));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitar inicio partida");
         }
@@ -45,7 +45,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void solicitarUnirsePartida() throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitarUnirsePartida());
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionSolicitarUnirsePartida());
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitar unirse partida");
         }
@@ -57,7 +57,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void evaluarSolicitudUnirsePartida(boolean solicitudEvaluada) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionSolicitudUnirseEvaluada(solicitudEvaluada));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionSolicitudUnirseEvaluada(solicitudEvaluada));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitud unirse evaluada");
         }
@@ -69,7 +69,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void iniciarPartida(PartidaDTO partida) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionIniciarPartida(partida));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionIniciarPartida(partida));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de iniciar partida");
         }
@@ -81,7 +81,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void crearPartida() throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionCrearPartida());
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionCrearPartida());
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de crear partida");
         }
@@ -93,7 +93,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void terminarTurno(PartidaDTO partida) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionTerminarTurno(partida));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionTerminarTurno(partida));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar turno");
         }
@@ -105,7 +105,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void terminarPartida(PartidaDTO partida) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.crearPeticionTerminarTurno(partida));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionTerminarTurno(partida));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
         }

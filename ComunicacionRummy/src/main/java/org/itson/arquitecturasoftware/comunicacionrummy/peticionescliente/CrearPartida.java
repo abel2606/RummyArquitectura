@@ -4,7 +4,6 @@
 package org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente;
 
 import java.io.Serializable;
-import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
 /**
  * Clase que representa la petición de crear partida.

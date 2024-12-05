@@ -14,6 +14,11 @@ public class PeticionCliente implements Serializable {
 
     protected String tipoPeticion;
 
+    /**
+     * Permite obtener el tipo de la petición.
+     *
+     * @return El tipo de la petición
+     */
     public String getTipoPeticion() {
         return tipoPeticion;
     }

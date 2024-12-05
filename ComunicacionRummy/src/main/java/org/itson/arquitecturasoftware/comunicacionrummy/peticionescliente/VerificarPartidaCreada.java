@@ -1,15 +1,24 @@
+/*
+ * VerificarPartidaCreada.java
+ */
 package org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente;
 
+import java.io.Serializable;
+
 /**
+ * Clase que representa la petición de verificar si hay una partida creada. Se
+ * usa cuando un jugador quiere crear una partida y el sistema necesita revisar
+ * si hay una partida creada por otro jugador.
  *
- * @author Diego Valenzuela Parra
+ * @author Equipo4
  */
-public class VerificarPartidaCreada extends PeticionCliente {
+public class VerificarPartidaCreada extends PeticionCliente implements Serializable {
 
     /**
-     * Constructor que recibe la partida creada.
+     * Constructor.
      */
     public VerificarPartidaCreada() {
-        super.tipoPeticion = "VERIFICAR_PARTIDA_CREADA";
+        this.tipoPeticion = "VERIFICAR_PARTIDA_CREADA";
     }
+
 }

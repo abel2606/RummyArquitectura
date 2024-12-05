@@ -39,7 +39,7 @@ public class ModeloColores implements IModeloColores {
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
         
-        if(this.host == true){
+        if(host){
             fachadaAplicacion.registrarJugador(jugador);
         } else {
             try {
