@@ -57,43 +57,51 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
 
         grupoImagenes.add(avatar8);
         avatar8.setForeground(new java.awt.Color(255, 255, 255));
-        avatar8.setText("Avatar 8");
-        jPanel1.add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        avatar8.setContentAreaFilled(false);
+        avatar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon6.png"))); // NOI18N
+        jPanel1.add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         grupoImagenes.add(avatar1);
         avatar1.setForeground(new java.awt.Color(255, 255, 255));
-        avatar1.setText("Avatar 1");
-        jPanel1.add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
+        avatar1.setContentAreaFilled(false);
+        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon7.png"))); // NOI18N
+        jPanel1.add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
         grupoImagenes.add(avatar2);
         avatar2.setForeground(new java.awt.Color(255, 255, 255));
-        avatar2.setText("Avatar 2");
-        jPanel1.add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
+        avatar2.setContentAreaFilled(false);
+        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon8.png"))); // NOI18N
+        jPanel1.add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
 
         grupoImagenes.add(avatar3);
         avatar3.setForeground(new java.awt.Color(255, 255, 255));
+        avatar3.setContentAreaFilled(false);
         avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon2.png"))); // NOI18N
         jPanel1.add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         grupoImagenes.add(avatar4);
         avatar4.setForeground(new java.awt.Color(255, 255, 255));
+        avatar4.setContentAreaFilled(false);
         avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon3.png"))); // NOI18N
         jPanel1.add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
 
         grupoImagenes.add(avatar5);
         avatar5.setForeground(new java.awt.Color(255, 255, 255));
+        avatar5.setContentAreaFilled(false);
         avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon4.png"))); // NOI18N
         jPanel1.add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         grupoImagenes.add(avatar6);
         avatar6.setForeground(new java.awt.Color(255, 255, 255));
+        avatar6.setContentAreaFilled(false);
         avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon1.png"))); // NOI18N
         jPanel1.add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         grupoImagenes.add(avatar7);
         avatar7.setForeground(new java.awt.Color(255, 255, 255));
-        avatar7.setText("Avatar 7");
-        jPanel1.add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, -1));
+        avatar7.setContentAreaFilled(false);
+        avatar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
+        jPanel1.add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         botonVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
