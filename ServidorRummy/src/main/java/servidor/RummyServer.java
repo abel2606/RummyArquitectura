@@ -31,6 +31,11 @@ public class RummyServer {
      * Variable para indicar si hay o no una partida existente actualmente en el servidor.
      */
     public static boolean partidaExistente;
+    
+    /**
+     * Variable para identificar al último jugador que ha solicitado unirse a la partida.
+     */
+    public static ObjectOutputStream ultimoJugador = null;
 
     /**
      * Método principal.

@@ -17,7 +17,7 @@ public class ControlColores {
 
     public void crearParametrosMVC() {
         modelo = ModeloColores.getInstance();
-        salaEspera = ControlSalaEspera.getInstance(null);
+        salaEspera = ControlSalaEspera.getInstance();
     }
 
     public void asignarNombreAvatarJugador(String nombre, String avatar) {
@@ -26,6 +26,8 @@ public class ControlColores {
 
     public void crearJugador(List<Integer> colores) {
         modelo.crearJugador(colores);
+        salaEspera.asignarNombreAvatarJugador(modelo.getNombre(), modelo.getAvatar());
+        salaEspera.mostrarVista();
     }
 
     public static ControlColores getInstance() {

@@ -12,6 +12,9 @@ import inicioMVC.PantallaInicio;
 import registrarJugadorMVC.ControlConfigurarJugador;
 import registrarJugadorMVC.ModeloConfigurarJugador;
 import registrarJugadorMVC.PantallaConfigurarJugador;
+import salaEsperaMVC.ControlSalaEspera;
+import salaEsperaMVC.ModeloSalaEspera;
+import salaEsperaMVC.PantallaSalaEspera;
 import seleccionColorMVC.ControlColores;
 import seleccionColorMVC.ModeloColores;
 import seleccionColorMVC.PantallaSeleccionarColor;
@@ -29,6 +32,10 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        ModeloSalaEspera modeloSalaEspera = ModeloSalaEspera.getInstance();
+        ControlSalaEspera controlSalaEspera = ControlSalaEspera.getInstance();
+        PantallaSalaEspera pantallaSalaEspera = PantallaSalaEspera.getInstance();
 
         ModeloColores modeloColores = ModeloColores.getInstance();
         ControlColores controlColores = ControlColores.getInstance();
@@ -69,6 +76,10 @@ public class Principal {
         modeloColores.crearParametrosMVC();
         controlColores.crearParametrosMVC();
         pantallaColores.crearParametrosMVC();
+        
+        modeloSalaEspera.crearParametrosMVC();
+        controlSalaEspera.crearParametrosMVC();
+        pantallaSalaEspera.crearParametrosMVC();
     }
 
 }

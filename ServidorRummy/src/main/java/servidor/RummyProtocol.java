@@ -3,18 +3,19 @@
  */
 package servidor;
 
-import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.CrearPartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.EnviarJugadorAnfitrion;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.EvaluarSolicitud;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.IniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarIniciarPartida;
-import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarTurno;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.JugadorUnidoPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaTerminada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.TurnoTerminado;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
@@ -55,7 +56,6 @@ public class RummyProtocol {
                 respuesta = new PartidaIniciada(ip.getPartida());
                 break;
             case "SOLICITAR_UNIRSE_PARTIDA": // Si alguien solicita unirse a una partida.
-                SolicitarUnirsePartida sup = (SolicitarUnirsePartida) peticion;
                 respuesta = new SolicitudUnirsePartida();
                 break;
             case "SOLICITAR_INICIAR_PARTIDA": // Si alguien solicita que inicie la partida.
@@ -64,7 +64,11 @@ public class RummyProtocol {
                 break;
             case "EVALUAR_SOLICITUD": // Cuando el host acepta o rechaza a alguien.
                 EvaluarSolicitud es = (EvaluarSolicitud) peticion;
-                respuesta = new EvaluarSolicitud(es.isAceptado());
+                respuesta = new SolicitudUnirseEvaluada(es.isAceptado());
+                break;
+            case "ENVIAR_JUGADOR_ANFITRION": // Cuando se mandan los datos del usuario al host.
+                EnviarJugadorAnfitrion eja = (EnviarJugadorAnfitrion) peticion;
+                respuesta = new JugadorUnidoPartida(eja.getJugador());
                 break;
             case "TERMINAR_TURNO": // Cuando un jugador termina su turno.
                 TerminarTurno tt = (TerminarTurno) peticion;

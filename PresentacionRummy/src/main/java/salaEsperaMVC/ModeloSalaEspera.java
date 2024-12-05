@@ -11,12 +11,16 @@ import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IOyenteManejadorRespuestas;
 import org.itson.arquitectura.aplicacionrummy.servicios.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
+import org.itson.arquitectura.dominiorummy.IJugador;
+import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitectura.dominiorummy.Jugador;
+import org.itson.arquitectura.dominiorummy.Partida;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
  *
@@ -26,14 +30,39 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
 
     private static ModeloSalaEspera instance;
     private IPantallaSalaEspera pantallaSalaEspera;
-    private List<JugadorDTO> jugadores = new ArrayList<>();
     private boolean haySolicitudUnirse;
-    private IAplicacionFachada aplicacionFachada = new AplicacionFachada();
     private IFachadaInfraestructura infraestructura = new FachadaInfraestructura();
-
+    private IAplicacionFachada aplicacionFachada = new AplicacionFachada();
+    private IPartida partida = Partida.getInstance();
+    private List<JugadorDTO> jugadores = new ArrayList<>();
+    private JugadorDTO jugador;
+    private String error;
+    private ManejadorRespuestas manejador;
+    
     // Constructor privado para evitar la creación directa de objetos
-    private ModeloSalaEspera(IPantallaSalaEspera pantallaSalaEspera) {
-        this.pantallaSalaEspera = pantallaSalaEspera;
+    private ModeloSalaEspera()  {
+    }
+
+    public void asignarNombreAvatarJugador(String nombre, String avatar) {
+        jugador = new JugadorDTO(nombre, avatar, false);
+    }
+
+    /**
+     * Método para convertir la lista de jugadores entidad a DTO.
+     *
+     * @param jugadores Lista de jugadores entidad.
+     * @return La lista de jugadores ya convertidos a DTO.
+     */
+    private List<JugadorDTO> convertirJugadoresADTO(List<Jugador> jugadoresEntidad) {
+        List<JugadorDTO> jugadoresActualizados = new ArrayList<>();
+        for (Jugador jugadorEntidad : jugadoresEntidad) {
+            JugadorDTO jugadorDTO = new JugadorDTO(
+                    jugadorEntidad.getNombre(),
+                    jugadorEntidad.getAvatar(),
+                    jugadorEntidad.isIsListo());
+            jugadoresActualizados.add(jugadorDTO);
+        }
+        return jugadoresActualizados;
     }
 
     public void solicitarIniciarPartida(JugadorDTO jugadorDTO) {
@@ -63,10 +92,6 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
 
     }
 
-    public void evaluarSolicitudUnirse(boolean respuesta) {
-
-    }
-
     public void notificarSolicitudUnirse() {
 
     }
@@ -76,29 +101,54 @@ public class ModeloSalaEspera implements IModeloSalaEspera, IOyenteManejadorResp
     }
 
     // Método público para obtener la instancia única
-    public static ModeloSalaEspera getInstance(IPantallaSalaEspera pantalla) {
+    public static ModeloSalaEspera getInstance() {
         if (instance == null) {
-            instance = new ModeloSalaEspera(pantalla);
+            instance = new ModeloSalaEspera();
         }
         return instance;
     }
 
     @Override
     public List<JugadorDTO> getJugadores() {
-        return this.jugadores;
+        return convertirJugadoresADTO(aplicacionFachada.obtenerJugadores(partida));
+    }
+
+    @Override
+    public JugadorDTO getJugador() {
+        return jugador;
     }
 
     @Override
     public boolean getSolicitudUnirse() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return haySolicitudUnirse;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 
     @Override
     public void update(IManejadorRespuestas contexto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (contexto.getJugador() == null) {
+            this.haySolicitudUnirse = true;
+        } else {
+            JugadorDTO jugadorDTO = contexto.getJugador();
+            IJugador nuevoJugador = new Jugador(jugadorDTO.getNombre(), jugadorDTO.getAvatar());
+            aplicacionFachada.registrarJugador(nuevoJugador);
+            jugadores = convertirJugadoresADTO(aplicacionFachada.obtenerJugadores(partida));
+            this.haySolicitudUnirse = false;
+        }
+        notificar();
     }
 
-    public void setPantalla(IPantallaSalaEspera pantalla) {
-        this.pantallaSalaEspera = pantalla;
+    public void crearParametrosMVC() {
+        pantallaSalaEspera = PantallaSalaEspera.getInstance();
+        manejador = ManejadorRespuestas.getInstance();
+
     }
+
+    void suscribirse() {
+        manejador.subscribe(this);
+    }
+
 }

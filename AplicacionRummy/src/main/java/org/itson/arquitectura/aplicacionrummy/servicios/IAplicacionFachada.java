@@ -34,5 +34,7 @@ public interface IAplicacionFachada {
     public void isPartidaIniciada();
 
     public void iniciarPartida(IPartida partida);
+    
+    public List<Jugador> obtenerJugadores(IPartida partida);
 
 }

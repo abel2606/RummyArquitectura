@@ -47,7 +47,6 @@ partidaMVC\IModelo.class
 seleccionColorMVC\IPantallaSeleccionarColor.class
 registrarJugadorMVC\IModeloConfigurarJugador.class
 componentes\ColorChooserButton$1.class
-salaEsperaMVC\Main.class
 seleccionColorMVC\PantallaSeleccionarColor$1.class
 seleccionColorMVC\ControlColores.class
 partidaMVC\PantallaPartida$1.class

@@ -10,6 +10,6 @@ public interface IModeloUnirsePartida {
     
     public String getError();
     
-    public boolean getSolicitudUnirseEvaluada();
+    public Boolean getSolicitudUnirseEvaluada();
     
 }

@@ -1,84 +1,41 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package salaEsperaMVC;
 
-import javax.swing.ImageIcon;
+import java.util.List;
+import javax.swing.JOptionPane;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  *
- * @author Abe
+ * @author Equipo4
  */
-public class PantallaSalaEspera extends javax.swing.JDialog implements IPantallaSalaEspera {
+public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaSalaEspera {
 
     private static PantallaSalaEspera instance;
     private ControlSalaEspera control;
-    private JugadorDTO jugador;
+    private JugadorDTO jugador; // ERES TÚ PAPU
+    private List<JugadorDTO> jugadores;
 
     /**
-     * Creates new form PantallaSalaEspera
+     * Creates new form PantallaSalaEspera2
      */
-    private PantallaSalaEspera(ControlSalaEspera control, JugadorDTO jugador) {
+    private PantallaSalaEspera() {
         initComponents();
-        this.control = control;
-        this.jugador = jugador;
-        dibujarComponentes();
-    }
-
-    public static PantallaSalaEspera getInstance(ControlSalaEspera control, JugadorDTO jugador) {
-        if (instance == null) {
-            instance = new PantallaSalaEspera(control, jugador);
-        }
-        return instance;
-    }
-
-    public void iniciarPartida() {
-
-    }
-
-    public void dibujarComponentes() {
-        this.setVisible(true);
-        lblNombreJugador1.setText(jugador.getNombre());
-        lblJugador1Listo.setText("PENDIENTE...");
-        lblNombreJugador6.setText("PENDIENTE...");
-        lblNombreJugador7.setText("PENDIENTE...");
-        lblNombreJugador8.setText("PENDIENTE...");
-
-        ImageIcon settings = new ImageIcon("src\\main\\resources\\settings.png");
-        ImageIcon settingsSelect = new ImageIcon("src\\main\\resources\\settings2.png");
-
-        btnConfiguracion.setIcon(settings);
-        btnConfiguracion.setSelectedIcon(settingsSelect);
-        btnConfiguracion.setBorderPainted(false);
-        btnConfiguracion.setFocusPainted(false);
-
-        ImageIcon boton = new ImageIcon("src\\main\\resources\\boton.png");
-        ImageIcon botonHover = new ImageIcon("src\\main\\resources\\botonHover.png");
-
-        btnListo.setIcon(boton);
-        btnListo.setSelectedIcon(botonHover);
-        btnListo.setBorderPainted(false);
-        btnListo.setFocusPainted(false);
-
-        btnSalir.setIcon(boton);
-        btnSalir.setSelectedIcon(botonHover);
-        btnSalir.setBorderPainted(false);
-        btnSalir.setFocusPainted(false);
-
-    }
-
-    @Override
-    public void update(IModeloSalaEspera modelo) {
-        JugadorDTO j1 = modelo.getJugadores().get(0);
-        if (j1.isListoParaJugar()) {
-            lblJugador1Listo.setText("¡LISTO!");
-            lblListo.setText("Cancelar");
-        } else {
-            lblJugador1Listo.setText("PENDIENTE...");
-            lblListo.setText("Listo");
-        }
+        
+        lblAvatar2.setVisible(false);
+        lblAvatar3.setVisible(false);
+        lblAvatar4.setVisible(false);
+        
+        lblNombre2.setVisible(false);
+        lblNombre3.setVisible(false);
+        lblNombre4.setVisible(false);
+        
+        lblEstado2.setVisible(false);
+        lblEstado3.setVisible(false);
+        lblEstado4.setVisible(false);
     }
 
     /**
@@ -90,169 +47,272 @@ public class PantallaSalaEspera extends javax.swing.JDialog implements IPantalla
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblSalir = new javax.swing.JLabel();
-        lblListo = new javax.swing.JLabel();
-        btnConfiguracion = new componentes.BotonConImagen2();
-        btnListo = new componentes.BotonConImagen2();
-        btnSalir = new componentes.BotonConImagen2();
+        jPanel1 = new javax.swing.JPanel();
+        btnListo = new componentes.Boton();
+        btnSalir = new componentes.Boton();
+        jLabel2 = new javax.swing.JLabel();
         lblAvatar1 = new javax.swing.JLabel();
+        lblNombre1 = new javax.swing.JLabel();
+        lblEstado1 = new javax.swing.JLabel();
+        lblEstado2 = new javax.swing.JLabel();
+        lblNombre2 = new javax.swing.JLabel();
         lblAvatar2 = new javax.swing.JLabel();
-        lblAvatar3 = new javax.swing.JLabel();
+        lblEstado4 = new javax.swing.JLabel();
+        lblEstado3 = new javax.swing.JLabel();
+        lblNombre3 = new javax.swing.JLabel();
+        lblNombre4 = new javax.swing.JLabel();
         lblAvatar4 = new javax.swing.JLabel();
-        lblNombreJugador5 = new javax.swing.JLabel();
-        lblNombreJugador1 = new javax.swing.JLabel();
-        lblNombreJugador2 = new javax.swing.JLabel();
-        lblNombreJugador3 = new javax.swing.JLabel();
-        lblJugador1Listo = new javax.swing.JLabel();
-        lblNombreJugador6 = new javax.swing.JLabel();
-        lblNombreJugador7 = new javax.swing.JLabel();
-        lblNombreJugador8 = new javax.swing.JLabel();
-        lblCodigo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        lblFondo = new javax.swing.JLabel();
+        lblAvatar3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Rummy - Sala de Espera");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1040, 640));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblSalir.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblSalir.setForeground(new java.awt.Color(255, 255, 255));
-        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSalir.setText("Salir");
-        getContentPane().add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 90, 50));
-
-        lblListo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblListo.setForeground(new java.awt.Color(255, 255, 255));
-        lblListo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblListo.setText("Listo");
-        lblListo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(lblListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 90, 50));
-
-        btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 72, 72));
-
-        btnListo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
-        btnListo.setToolTipText("");
+        btnListo.setForeground(new java.awt.Color(255, 255, 255));
+        btnListo.setText("¡Listo!");
+        btnListo.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnListo.setRadius(60);
         btnListo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 165, 61));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boton.png"))); // NOI18N
-        btnSalir.setToolTipText("");
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 165, 61));
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnSalir.setRadius(60);
 
-        lblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 60, 60));
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Esperando jugadores");
 
-        lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, 60));
+        lblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1.png"))); // NOI18N
 
-        lblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 60, 60));
+        lblNombre1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre1.setText("jLabel4");
 
-        lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar1Sala.png"))); // NOI18N
-        getContentPane().add(lblAvatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 60, 60));
+        lblEstado1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstado1.setText("jLabel5");
 
-        lblNombreJugador5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador5.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador5.setText("Jugador1");
-        getContentPane().add(lblNombreJugador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 360, 60));
+        lblEstado2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstado2.setText("jLabel5");
 
-        lblNombreJugador1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador1.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador1.setText("Jugador1");
-        getContentPane().add(lblNombreJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 360, 50));
+        lblNombre2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre2.setText("jLabel4");
 
-        lblNombreJugador2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador2.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador2.setText("Jugador1");
-        getContentPane().add(lblNombreJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 360, 50));
+        lblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar2.png"))); // NOI18N
 
-        lblNombreJugador3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador3.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador3.setText("Jugador1");
-        getContentPane().add(lblNombreJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 360, 50));
+        lblEstado4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstado4.setText("jLabel5");
 
-        lblJugador1Listo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblJugador1Listo.setForeground(new java.awt.Color(255, 255, 255));
-        lblJugador1Listo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblJugador1Listo.setText("listo");
-        getContentPane().add(lblJugador1Listo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 360, 50));
+        lblEstado3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblEstado3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEstado3.setText("jLabel5");
 
-        lblNombreJugador6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador6.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador6.setText("listo");
-        getContentPane().add(lblNombreJugador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 360, 50));
+        lblNombre3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre3.setText("jLabel4");
 
-        lblNombreJugador7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador7.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador7.setText("listo");
-        getContentPane().add(lblNombreJugador7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 360, 50));
+        lblNombre4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblNombre4.setText("jLabel4");
 
-        lblNombreJugador8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNombreJugador8.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreJugador8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblNombreJugador8.setText("listo");
-        getContentPane().add(lblNombreJugador8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 360, 60));
+        lblAvatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar5.png"))); // NOI18N
 
-        lblCodigo.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCodigo.setText("xxxxxx");
-        getContentPane().add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, 130, 50));
+        lblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatar3.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Esperando jugadores");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 360, 50));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnListo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblAvatar4)
+                            .addComponent(lblAvatar3)
+                            .addComponent(lblAvatar2)
+                            .addComponent(lblAvatar1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblEstado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblEstado2, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblEstado3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblEstado4, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))))
+                .addGap(53, 53, 53))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblAvatar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEstado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblAvatar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEstado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblAvatar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEstado3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblAvatar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEstado4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnListo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Código:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 130, 50));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 800, 520));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo.jpg"))); // NOI18N
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo-morado.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        lblJugador1Listo.setText("Listo");
-        control.solicitarIniciarPartida(jugador);
-//        control.solicitudInicioPartida();
+
     }//GEN-LAST:event_btnListoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private componentes.BotonConImagen2 btnConfiguracion;
-    private componentes.BotonConImagen2 btnListo;
-    private componentes.BotonConImagen2 btnSalir;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private componentes.Boton btnListo;
+    private componentes.Boton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAvatar1;
     private javax.swing.JLabel lblAvatar2;
     private javax.swing.JLabel lblAvatar3;
     private javax.swing.JLabel lblAvatar4;
-    private javax.swing.JLabel lblCodigo;
-    private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblJugador1Listo;
-    private javax.swing.JLabel lblListo;
-    private javax.swing.JLabel lblNombreJugador1;
-    private javax.swing.JLabel lblNombreJugador2;
-    private javax.swing.JLabel lblNombreJugador3;
-    private javax.swing.JLabel lblNombreJugador5;
-    private javax.swing.JLabel lblNombreJugador6;
-    private javax.swing.JLabel lblNombreJugador7;
-    private javax.swing.JLabel lblNombreJugador8;
-    private javax.swing.JLabel lblSalir;
+    private javax.swing.JLabel lblEstado1;
+    private javax.swing.JLabel lblEstado2;
+    private javax.swing.JLabel lblEstado3;
+    private javax.swing.JLabel lblEstado4;
+    private javax.swing.JLabel lblNombre1;
+    private javax.swing.JLabel lblNombre2;
+    private javax.swing.JLabel lblNombre3;
+    private javax.swing.JLabel lblNombre4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(IModeloSalaEspera modelo) {
+        this.setVisible(true);
+        jugador = modelo.getJugador();
+        if (modelo.getSolicitudUnirse()) {
+            int respuesta = JOptionPane.showOptionDialog(
+                    null,
+                    "Alguien está solicitando unirse a la partida.",
+                    "¡Un nuevo jugador ha aparecido!",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    new Object[]{"Aceptar", "Rechazar"},
+                    "Rechazar"
+            );
+            
+            boolean aceptado = (respuesta == JOptionPane.YES_OPTION);
+            
+            control.evaluarSolicitudUnirse(aceptado);
+        }
+        jugadores = modelo.getJugadores();
+        try {
+            llenarDatosJugador(jugadores.get(0), 1);
+            llenarDatosJugador(jugadores.get(1), 2);
+            llenarDatosJugador(jugadores.get(2), 3);
+            llenarDatosJugador(jugadores.get(3), 4);
+        } catch (NullPointerException | IndexOutOfBoundsException e) {
+            
+        }
+    }
+
+    private void llenarDatosJugador(JugadorDTO jugador, int numeroJugador) {
+        switch (numeroJugador) {
+            case 1:
+                // Poner imagen de avatar
+                lblNombre1.setText(jugador.getNombre());
+                lblEstado1.setText(mostrarEstado(jugador));
+                break;
+            case 2:
+                lblAvatar2.setVisible(true);
+                lblNombre2.setVisible(true);
+                lblEstado2.setVisible(true);
+                
+                // Poner imagen de avatar
+                lblNombre2.setText(jugador.getNombre());
+                lblEstado2.setText(mostrarEstado(jugador));
+                break;
+            case 3:
+                lblAvatar3.setVisible(true);
+                lblNombre3.setVisible(true);
+                lblEstado3.setVisible(true);
+                
+                // Poner imagen de avatar
+                lblNombre3.setText(jugador.getNombre());
+                lblEstado3.setText(mostrarEstado(jugador));
+            case 4:
+                lblAvatar4.setVisible(true);
+                lblNombre4.setVisible(true);
+                lblEstado4.setVisible(true);
+                
+                // Poner imagen de avatar
+                lblNombre4.setText(jugador.getNombre());
+                lblEstado4.setText(mostrarEstado(jugador));
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
+    public String mostrarEstado(JugadorDTO jugador) {
+        if (jugador.isListoParaJugar()) {
+            return "¡LISTO!";
+        } else {
+            return "PENDIENTE...";
+        }
+    }
+
+    public static PantallaSalaEspera getInstance() {
+        if (instance == null) {
+            instance = new PantallaSalaEspera();
+        }
+        return instance;
+    }
+
+    public void crearParametrosMVC() {
+        control = ControlSalaEspera.getInstance();
+    }
 
 }

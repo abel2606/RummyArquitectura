@@ -25,7 +25,7 @@ public class ControlUnirsePartida {
 
     public void enviarSolicitudUnirsePartida() {
         try {
-            infraestructura = new FachadaInfraestructura();
+            infraestructura.establecerConexion();
             infraestructura.solicitarUnirsePartida();
         } catch (InfraestructuraException ex) {
             modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
@@ -36,8 +36,8 @@ public class ControlUnirsePartida {
     public void cancelarAccion() {
         inicio.mostrarVista();
     }
-    
-    public void iniciarConfigurarJugador(){
+
+    public void iniciarConfigurarJugador() {
         configurarJugador.mostrarVista(false);
     }
 
@@ -45,9 +45,11 @@ public class ControlUnirsePartida {
         inicio = ControlInicio.getInstance();
         configurarJugador = ControlConfigurarJugador.getInstance();
         modelo = ModeloUnirsePartida.getInstance();
+        infraestructura = new FachadaInfraestructura();
     }
 
     public void mostrarVista() {
+        modelo.suscribirse();
         modelo.notificar();
     }
 

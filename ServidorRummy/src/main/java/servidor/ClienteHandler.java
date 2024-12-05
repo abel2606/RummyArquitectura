@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
 
@@ -89,6 +90,7 @@ public class ClienteHandler implements Runnable {
      */
     private void broadcast(Object respuesta) {
         if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
+            RummyServer.ultimoJugador = out;
             enviarHost(solicitudUnirsePartida);
         } else if (respuesta instanceof VerificacionPartidaCreada verificacionPartidaCreada) {
             enviarCliente(out, verificacionPartidaCreada);
@@ -98,6 +100,9 @@ public class ClienteHandler implements Runnable {
                 RummyServer.host = out;
                 System.out.println("HOST: " + RummyServer.host);
             }
+        } else if (respuesta instanceof SolicitudUnirseEvaluada solicitudUnirseEvaluada) {
+            System.out.println(RummyServer.ultimoJugador);
+            enviarCliente(RummyServer.ultimoJugador, solicitudUnirseEvaluada);
         } else {
             enviarTodos(respuesta);
         }

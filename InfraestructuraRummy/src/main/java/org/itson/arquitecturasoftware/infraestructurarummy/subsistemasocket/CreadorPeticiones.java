@@ -50,7 +50,7 @@ public class CreadorPeticiones {
      * @param solicitudEvaluada la solicitud evaluada
      * @return La petición de solicitud evaluada de unirse a la partida
      */
-    public PeticionCliente crearPeticionSolicitudUnirseEvaluada(boolean solicitudEvaluada) {
+    public PeticionCliente crearPeticionEvaluarSolicitud(boolean solicitudEvaluada) {
         return new EvaluarSolicitud(solicitudEvaluada);
     }
 

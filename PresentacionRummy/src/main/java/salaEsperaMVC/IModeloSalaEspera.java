@@ -14,5 +14,6 @@ import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
  */
 public interface IModeloSalaEspera {
     public List<JugadorDTO> getJugadores();
+    public JugadorDTO getJugador();
     public boolean getSolicitudUnirse();
 }

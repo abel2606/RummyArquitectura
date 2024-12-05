@@ -32,15 +32,16 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
     }
 
     public void manejarSolicitudUnirsePartida(SolicitudUnirsePartida solicitud) {
-
+        notificar();
     }
 
     public void manejarSolicitudIniciarPartida(SolicitudIniciarPartida solicitud) {
 
     }
 
-    public void manejarJugadorUnidoPartida(JugadorUnidoPartida jugador) {
-
+    public void manejarJugadorUnidoPartida(JugadorUnidoPartida jugadorUnido) {
+        this.jugador = jugadorUnido.getJugador();
+        notificar();
     }
 
     public void manejarPartidaIniciada(PartidaIniciada partidaIniciada) {

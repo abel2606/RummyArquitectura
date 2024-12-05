@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.IniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.JugadorUnidoPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
@@ -103,6 +104,8 @@ public class ClienteSocket implements Runnable {
                     manejador.manejarSolicitudUnirseEvaluada(solicitudUnirseEvaluada);
                 } else if (respuesta instanceof PartidaIniciada partidaIniciada){
                     manejador.manejarPartidaIniciada(partidaIniciada);
+                } else if (respuesta instanceof JugadorUnidoPartida jugadorUnidoPartida){
+                    manejador.manejarJugadorUnidoPartida(jugadorUnidoPartida);
                 }
               
             }

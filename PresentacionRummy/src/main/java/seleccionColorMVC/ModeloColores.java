@@ -39,6 +39,7 @@ public class ModeloColores implements IModeloColores {
     public void asignarNombreAvatarJugador(String nombre, String avatar) {
         this.nombre = nombre;
         this.avatar = avatar;
+        
     }
 
     public void notificar() {
@@ -69,5 +70,12 @@ public class ModeloColores implements IModeloColores {
 
         return listaColores;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
 }

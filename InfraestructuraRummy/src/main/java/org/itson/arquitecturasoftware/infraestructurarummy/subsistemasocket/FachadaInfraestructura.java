@@ -57,7 +57,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     @Override
     public void evaluarSolicitudUnirsePartida(boolean solicitudEvaluada) throws InfraestructuraException {
         try {
-            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionSolicitudUnirseEvaluada(solicitudEvaluada));
+            clienteSocket.enviarPeticion(creadorPeticiones.crearPeticionEvaluarSolicitud(solicitudEvaluada));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de solicitud unirse evaluada");
         }

@@ -82,4 +82,14 @@ public class AplicacionFachada implements IAplicacionFachada {
     public void iniciarPartida(IPartida partida) {
     }
 
+    /**
+     * Método que obtiene la lista de jugadores que están en la partida.
+     *
+     * @return La lista de jugadores.
+     */
+    @Override
+    public List<Jugador> obtenerJugadores(IPartida partida) {
+        return solicitarUnirsePartida.obtenerJugadores(partida);
+    }
+
 }

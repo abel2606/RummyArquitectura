@@ -1,21 +1,22 @@
 package org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor;
 
-import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
+import java.io.Serializable;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 
 /**
  *
  * @author Equipo4
  */
-public class JugadorUnidoPartida {
+public class JugadorUnidoPartida implements Serializable {
     
-    private PartidaDTO partida;
+    private JugadorDTO jugador;
 
-    public JugadorUnidoPartida(PartidaDTO partida) {
-        this.partida = partida;
+    public JugadorUnidoPartida(JugadorDTO jugador) {
+        this.jugador = jugador;
     }
 
-    public PartidaDTO getPartida() {
-        return partida;
+    public JugadorDTO getJugador() {
+        return jugador;
     }
     
 }

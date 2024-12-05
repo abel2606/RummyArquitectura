@@ -102,15 +102,16 @@ public class PantallaUnirsePartida extends javax.swing.JFrame implements IPantal
             setVisible(false);
         }
         
-        if (modelo.getSolicitudUnirseEvaluada() == true) {
-            JOptionPane.showMessageDialog(this, "El anfitrión ha aceptado tu solicitud! :)",
-                    "Solicitud Aceptada.", JOptionPane.INFORMATION_MESSAGE);
-            control.iniciarConfigurarJugador();
-        } else {
-            JOptionPane.showMessageDialog(this, "El anfitrión ha rechazado tu solicitud :(",
-                    "Solicitud Denegada.", JOptionPane.INFORMATION_MESSAGE);
-            this.setVisible(false);
-            control.cancelarAccion();
+        if (modelo.getSolicitudUnirseEvaluada() != null) {
+            if (modelo.getSolicitudUnirseEvaluada() == true) {
+                setVisible(false);
+                control.iniciarConfigurarJugador();
+            } else {
+                JOptionPane.showMessageDialog(this, "El anfitrión ha rechazado tu solicitud :(",
+                        "Solicitud Denegada.", JOptionPane.INFORMATION_MESSAGE);
+                this.setVisible(false);
+                control.cancelarAccion();
+            }
         }
     }
     

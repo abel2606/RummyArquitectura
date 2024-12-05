@@ -5,6 +5,8 @@
 package salaEsperaMVC;
 
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import partidaMVC.ControlPartida;
 
@@ -20,12 +22,16 @@ public class ControlSalaEspera {
     public ModeloSalaEspera modeloSalaEspera;
 
     // Constructor privado para evitar la creación directa de objetos
-    private ControlSalaEspera(ModeloSalaEspera modeloSalaEspera) {
-        this.modeloSalaEspera = modeloSalaEspera;
+    private ControlSalaEspera() {
+    }
+
+    public void asignarNombreAvatarJugador(String nombre, String avatar) {
+        modeloSalaEspera.asignarNombreAvatarJugador(nombre, avatar);
     }
 
     public void mostrarVista() {
-//        modeloSala.mostrar();
+        modeloSalaEspera.suscribirse();
+        modeloSalaEspera.notificar();
     }
 
     public void solicitarIniciarPartida(JugadorDTO jugador) {
@@ -41,7 +47,12 @@ public class ControlSalaEspera {
     }
 
     public void evaluarSolicitudUnirse(boolean respuesta) {
-
+        try {
+            infraestructura.evaluarSolicitudUnirsePartida(respuesta);
+        } catch (InfraestructuraException ex) {
+            modeloSalaEspera.setError("Ocurrió un error al evaluar la solicitud, intenta de nuevo más tarde.");
+            notificar();
+        }
     }
 
     public void notificarSolicitudUnirse() {
@@ -53,10 +64,15 @@ public class ControlSalaEspera {
     }
 
     // Método público para obtener la instancia única
-    public static ControlSalaEspera getInstance(ModeloSalaEspera modeloSalaEspera) {
+    public static ControlSalaEspera getInstance() {
         if (instance == null) {
-            instance = new ControlSalaEspera(modeloSalaEspera);
+            instance = new ControlSalaEspera();
         }
         return instance;
+    }
+
+    public void crearParametrosMVC() {
+        modeloSalaEspera = ModeloSalaEspera.getInstance();
+        infraestructura = new FachadaInfraestructura();
     }
 }

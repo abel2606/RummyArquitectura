@@ -17,17 +17,17 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
     private ManejadorRespuestas manejador;
     
     private String error;
-    private boolean solicitudUnirseEvaluada;
+    private Boolean solicitudUnirseEvaluada = null;
 
     private ModeloUnirsePartida() {
     }
 
     public void crearParametrosMVC() {
         pantalla = PantallaUnirsePartida.getInstance();
+        manejador = ManejadorRespuestas.getInstance();
     }
 
     public void notificar() {
-        manejador = ManejadorRespuestas.getInstance();
         pantalla.update(this);
     }
 
@@ -48,7 +48,7 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
     }
 
     @Override
-    public boolean getSolicitudUnirseEvaluada() {
+    public Boolean getSolicitudUnirseEvaluada() {
         return solicitudUnirseEvaluada;
     }
 
@@ -56,6 +56,10 @@ public class ModeloUnirsePartida implements IModeloUnirsePartida, IOyenteManejad
     public void update(IManejadorRespuestas contexto) {
         this.solicitudUnirseEvaluada = contexto.getSolicitudUnirseEvaluada();
         notificar();
+    }
+
+    void suscribirse() {
+        manejador.subscribe(this);
     }
     
     
