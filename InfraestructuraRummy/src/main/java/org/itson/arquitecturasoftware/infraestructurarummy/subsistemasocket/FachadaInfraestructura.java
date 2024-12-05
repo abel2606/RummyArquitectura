@@ -127,5 +127,4 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
         }
     }
-
 }

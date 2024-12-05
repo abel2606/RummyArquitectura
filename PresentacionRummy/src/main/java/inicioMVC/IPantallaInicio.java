@@ -8,5 +8,5 @@ package inicioMVC;
  */
 public interface IPantallaInicio {
     
-    public void update();
+    public void update(IModeloInicio modelo);
 }

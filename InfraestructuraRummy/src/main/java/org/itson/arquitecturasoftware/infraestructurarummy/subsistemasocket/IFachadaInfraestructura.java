@@ -82,12 +82,17 @@ public interface IFachadaInfraestructura {
 
     /**
      * Permite enviar una solicitud para verificar si ya hay una partida creada.
+     *
+     * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
     public void verificarPartidaCreada() throws InfraestructuraException;
-    
+
     /**
      * Permite enviar un jugador que se quiere unir al host.
+     *
+     * @param jugador Jugador que se quiere unir a la partida.
+     * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
-    public void enviarJugadorAnfitrion() throws InfraestructuraException;
+    public void enviarJugadorAnfitrion(JugadorDTO jugador) throws InfraestructuraException;
 
 }
