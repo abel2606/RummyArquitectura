@@ -224,7 +224,12 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
                 } else if (avatar6.isSelected()) {
                     avatar = "ywy";
                 }
-                control.continuarConfiguracion(nombre, avatar);
+                
+                if (host) {
+                    control.iniciarSeleccionarColores(nombre, avatar);
+                } else {
+                    control.enviarInformacionAnfitrion(nombre, avatar);
+                }
                 setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un avatar.",
@@ -248,8 +253,15 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     }
 
     @Override
-    public void update() {
-        setVisible(true);
+    public void update(IModeloConfigurarJugador modelo) {
+        
+        if (modelo.getError() == null) {
+            setVisible(true);
+            this.host = modelo.isHost();
+        } else {
+            JOptionPane.showMessageDialog(this, modelo.getError(),
+                    "¡Epa papu!", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -272,4 +284,5 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     // End of variables declaration//GEN-END:variables
     private static PantallaConfigurarJugador pantalla;
     private ControlConfigurarJugador control;
+    private Boolean host;
 }

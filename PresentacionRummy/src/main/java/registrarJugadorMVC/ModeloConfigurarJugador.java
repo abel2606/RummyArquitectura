@@ -1,40 +1,52 @@
 package registrarJugadorMVC;
 
-import org.itson.arquitectura.dominiorummy.IJugador;
-import org.itson.arquitectura.dominiorummy.IPartida;
-import org.itson.arquitectura.dominiorummy.Partida;
-import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
-
 /**
  *
  * @author Equipo4
  */
-public class ModeloConfigurarJugador {
-    
+public class ModeloConfigurarJugador implements IModeloConfigurarJugador {
+
     private static ModeloConfigurarJugador modelo;
     private IPantallaConfigurarJugador pantalla;
-    private boolean host;
-    
+    private Boolean host;
+    private String error;
 
     public ModeloConfigurarJugador() {
     }
-    
+
     public void crearParametrosMVC() {
         pantalla = PantallaConfigurarJugador.getInstance();
     }
-    
-    public void crearJugador(){
-        
+
+    public void crearJugador() {
+    }
+
+    public void setHost(boolean isHost) {
+        this.host = isHost;
     }
     
-    public void notificar(){
-        pantalla.update();
+    public void setError(String error) {
+        this.error = error;
     }
-    
+
+    public void notificar() {
+        pantalla.update(this);
+    }
+
     public static ModeloConfigurarJugador getInstance() {
         if (modelo == null) {
             modelo = new ModeloConfigurarJugador();
         }
         return modelo;
+    }
+
+    @Override
+    public Boolean isHost() {
+        return this.host;
+    }
+
+    @Override
+    public String getError() {
+        return this.error;
     }
 }
