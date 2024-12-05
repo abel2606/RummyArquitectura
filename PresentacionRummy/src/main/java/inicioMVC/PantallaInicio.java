@@ -50,6 +50,7 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
         botonUnirsePartida.setForeground(new java.awt.Color(255, 255, 255));
         botonUnirsePartida.setText("UNIRSE PARTIDA");
         botonUnirsePartida.setBorderPainted(false);
+        botonUnirsePartida.setFocusPainted(false);
         botonUnirsePartida.setFocusable(false);
         botonUnirsePartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
         botonUnirsePartida.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +62,7 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
 
         botonCrearPartida.setForeground(new java.awt.Color(255, 255, 255));
         botonCrearPartida.setText("CREAR PARTIDA");
+        botonCrearPartida.setFocusPainted(false);
         botonCrearPartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
         botonCrearPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

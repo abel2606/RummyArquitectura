@@ -212,10 +212,15 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
     }
     
     @Override
-    public void update(){
+    public void update(IModeloColores modelo){
         //si agregamos los colorchooser pues aquí se podría validar que no sea el mismo
         //color 4 veces, o tal vez eso podría ir en el botón, en un método, no lo sé papus es solo una idea
         this.setVisible(true);
+        
+        if (modelo.getError() != null) {
+            JOptionPane.showMessageDialog(this, modelo.getError(),
+                    "Error!!!", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public static PantallaSeleccionarColor getInstance(){

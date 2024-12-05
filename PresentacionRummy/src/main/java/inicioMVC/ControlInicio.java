@@ -7,7 +7,6 @@ import configurarPartidaMVC.ControlConfigurarPartida;
 import unirsePartidaMVC.ControlUnirsePartida;
 
 /**
- *
  * @author Equipo4
  */
 public class ControlInicio {

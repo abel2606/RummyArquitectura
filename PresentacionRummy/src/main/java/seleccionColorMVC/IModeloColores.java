@@ -1,15 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * IModeloColores.java
  */
-
 package seleccionColorMVC;
 
 /**
- *
- * @author Diego Valenzuela Parra
+ * @author Equipo4
  */
 interface IModeloColores {
-    public String getNombre();
-    public String getAvatar();
+
+    public String getError();
 }

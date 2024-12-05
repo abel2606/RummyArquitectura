@@ -2,6 +2,8 @@ package seleccionColorMVC;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.Color;
 import org.itson.arquitectura.dominiorummy.IJugador;
@@ -21,6 +23,7 @@ public class ModeloColores implements IModeloColores {
     private IPantallaSeleccionarColor pantalla;
     private IAplicacionFachada fachadaAplicacion;
     private IFachadaInfraestructura fachadaInfraestructura;
+    private String error;
     private String nombre;
     private String avatar;
     private boolean host;
@@ -32,14 +35,18 @@ public class ModeloColores implements IModeloColores {
        pantalla = PantallaSeleccionarColor.getInstance();
     }
     
-    public void asignarColoresJugador(List<Integer> colores) throws InfraestructuraException{
+    public void asignarColoresJugador(List<Integer> colores) {
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
         
         if(this.host == true){
             fachadaAplicacion.registrarJugador(jugador);
         } else {
-            fachadaInfraestructura.solicitarUnirsePartida();
+            try {
+                fachadaInfraestructura.solicitarUnirsePartida();
+            } catch (InfraestructuraException ex) {
+                error = "Hubo un error al guardar el jugador. :(";
+            }
         } 
     }
     
@@ -50,7 +57,7 @@ public class ModeloColores implements IModeloColores {
     }
     
     public void notificar(){
-        pantalla.update();
+        pantalla.update(this);
     }
     
     public static ModeloColores getInstance() {
@@ -61,13 +68,8 @@ public class ModeloColores implements IModeloColores {
     }
 
     @Override
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    @Override
-    public String getAvatar() {
-        return this.avatar;
+    public String getError() {
+        return this.error;
     }
     
     private List<Color> convertirColores(List<Integer> colores) {

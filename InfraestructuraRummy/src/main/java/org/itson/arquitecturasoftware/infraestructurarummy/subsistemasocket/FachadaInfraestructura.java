@@ -1,4 +1,4 @@
-/*
+ /*
  * InfraestructuraFachada.java
  */
 package org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket;
