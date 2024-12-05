@@ -5,6 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 
 /**
  * Representa una partida del juego.
@@ -55,12 +62,17 @@ public class Partida implements IPartida {
     private Tablero tablero;
 
     /**
+     * Infraestructura a la que se accede
+     */
+    private IFachadaInfraestructura infraestructura;
+    /**
      * Constructor que recibe el número de comodines y el rango de fichas.
      */
     private Partida() {
         mazo = new ArrayList<>();
         jugadores = new ArrayList<>();
         turnos = new ArrayList<>();
+        infraestructura = new FachadaInfraestructura();
     }
 
     public static Partida getInstance() {
@@ -262,7 +274,46 @@ public class Partida implements IPartida {
             repartirFichas();
             isIniciada = true;
         }
+        
+        List<JugadorDTO> jugadoresDTO = new LinkedList<>();
+        for (Jugador jugador : jugadores) {
+            JugadorDTO jugadorDTO = new JugadorDTO(jugador.getNombre(), jugador.getAvatar(), jugador.isIsListo());
+            jugadoresDTO.add(jugadorDTO);
+        }
+        
+        PartidaDTO partida = new PartidaDTO(jugadoresDTO, numeroComodines, rangoFichas);
+        
+        
+        try {
+            infraestructura.iniciarPartida(partidaToDTO(Partida.getInstance()));
+        } catch (InfraestructuraException ex) {
+            Logger.getLogger(Partida.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    /**
+     * Convierte una lista de jugador a jugadorDTO unicamente para iniciar partida
+     * @param jugadores jugadores 
+     * @return jugadoresDTO
+     */
+    private List<JugadorDTO> jugadoresToDTO(List<Jugador> jugadores){
+        List<JugadorDTO> jugadoresDTO = new LinkedList<>();
+        for (Jugador jugador : jugadores) {
+            JugadorDTO jugadorDTO = new JugadorDTO(jugador.getNombre(), jugador.getAvatar(), jugador.isIsListo());
+            jugadoresDTO.add(jugadorDTO);
+        }
+        return jugadoresDTO;
+    }
+    
+    /**
+     * Regresa una partidaDTO para iniciar partida
+     * @param partida valor de la partida
+     * @return valore de la partidaDTO
+     */
+    private PartidaDTO partidaToDTO(Partida partida){
+        return new PartidaDTO(jugadoresToDTO(partida.jugadores), partida.getNumeroComodines(), partida.getRangoFichas());
+    }
+    
 
     //No hay razón para tener este método
     /**
