@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.IniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaIniciada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
@@ -99,7 +101,10 @@ public class ClienteSocket implements Runnable {
                     manejador.manejarSolicitudIniciarPartida(solicitudIniciarPartida);
                 } else if (respuesta instanceof SolicitudUnirseEvaluada solicitudUnirseEvaluada) {
                     manejador.manejarSolicitudUnirseEvaluada(solicitudUnirseEvaluada);
+                } else if (respuesta instanceof PartidaIniciada partidaIniciada){
+                    manejador.manejarPartidaIniciada(partidaIniciada);
                 }
+              
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

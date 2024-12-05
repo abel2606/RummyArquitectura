@@ -22,6 +22,7 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
     private JugadorDTO jugador;
     private boolean solicitudUnirseEvaluada;
     private boolean isPartidaCreada;
+    
 
     private ManejadorRespuestas() {
     }
@@ -43,7 +44,9 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
     }
 
     public void manejarPartidaIniciada(PartidaIniciada partidaIniciada) {
-
+        this.partida = partidaIniciada.getPartida();
+        notificar();
+        
     }
 
     public void manejarTurnoTerminado(TurnoTerminado turnoTerminado) {

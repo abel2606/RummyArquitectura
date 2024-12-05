@@ -11,4 +11,17 @@
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
     <name>DominioRummy</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.itson.arquitecturasoftware</groupId>
+            <artifactId>DTORummy</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.mycompany</groupId>
+            <artifactId>InfraestructuraRummy</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
