@@ -111,9 +111,10 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
         }
     }
 
+    @Override
     public void verificarPartidaCreada() throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.verificarPartidaCreada());
+            clienteSocket.enviarPeticion(creadorPeticiones.verificarPartidaCreada());
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
         }
@@ -121,7 +122,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     
     public void enviarJugadorAnfitrion(JugadorDTO jugador) throws InfraestructuraException {
         try {
-            cliente.enviarPeticion(creadorPeticiones.enviarJugadorAnfitrion(jugador));
+            clienteSocket.enviarPeticion(creadorPeticiones.enviarJugadorAnfitrion(jugador));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
         }

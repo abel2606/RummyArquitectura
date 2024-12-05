@@ -58,7 +58,6 @@ public interface IFachadaInfraestructura {
      * Permite enviar la petición de crear partida. Debe usarse cuando un
      * anfitrión configura una partida para que otros jugadores puedan unirse.
      *
-     * @param partida La partida creada
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
     public void crearPartida() throws InfraestructuraException;
@@ -80,5 +79,15 @@ public interface IFachadaInfraestructura {
      * @throws InfraestructuraException Si al sale mal al enviar la petición
      */
     public void terminarPartida(PartidaDTO partida) throws InfraestructuraException;
+
+    /**
+     * Permite enviar una solicitud para verificar si ya hay una partida creada.
+     */
+    public void verificarPartidaCreada() throws InfraestructuraException;
+    
+    /**
+     * Permite enviar un jugador que se quiere unir al host.
+     */
+    public void enviarJugadorAnfitrion() throws InfraestructuraException;
 
 }
