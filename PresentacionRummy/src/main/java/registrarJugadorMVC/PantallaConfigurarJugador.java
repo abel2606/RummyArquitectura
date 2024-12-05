@@ -53,38 +53,47 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         grupoImagenes.add(avatar8);
         avatar8.setForeground(new java.awt.Color(255, 255, 255));
         avatar8.setText("Avatar 8");
+        jPanel1.add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
 
         grupoImagenes.add(avatar1);
         avatar1.setForeground(new java.awt.Color(255, 255, 255));
         avatar1.setText("Avatar 1");
+        jPanel1.add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
 
         grupoImagenes.add(avatar2);
         avatar2.setForeground(new java.awt.Color(255, 255, 255));
         avatar2.setText("Avatar 2");
+        jPanel1.add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
 
         grupoImagenes.add(avatar3);
         avatar3.setForeground(new java.awt.Color(255, 255, 255));
-        avatar3.setText("Avatar 3");
+        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon2.png"))); // NOI18N
+        jPanel1.add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         grupoImagenes.add(avatar4);
         avatar4.setForeground(new java.awt.Color(255, 255, 255));
-        avatar4.setText("Avatar 4");
+        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon3.png"))); // NOI18N
+        jPanel1.add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
 
         grupoImagenes.add(avatar5);
         avatar5.setForeground(new java.awt.Color(255, 255, 255));
-        avatar5.setText("Avatar 5");
+        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon4.png"))); // NOI18N
+        jPanel1.add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         grupoImagenes.add(avatar6);
         avatar6.setForeground(new java.awt.Color(255, 255, 255));
-        avatar6.setText("Avatar 6");
+        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon1.png"))); // NOI18N
+        jPanel1.add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         grupoImagenes.add(avatar7);
         avatar7.setForeground(new java.awt.Color(255, 255, 255));
         avatar7.setText("Avatar 7");
+        jPanel1.add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, -1));
 
         botonVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,6 +106,7 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
                 botonVolverActionPerformed(evt);
             }
         });
+        jPanel1.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 407, 230, 50));
 
         botonConfirmar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonConfirmar.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,89 +119,19 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
                 botonConfirmarActionPerformed(evt);
             }
         });
+        jPanel1.add(botonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 407, 230, 50));
 
         labelEscojaAvatar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         labelEscojaAvatar.setText("Seleccione su avatar");
+        jPanel1.add(labelEscojaAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 176, -1, -1));
 
         labelIngreseNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         labelIngreseNombre.setText("Ingrese su nombre");
+        jPanel1.add(labelIngreseNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 50, -1, -1));
 
         textFieldNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 30)); // NOI18N
         textFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(118, 118, 118)
-                                .addComponent(avatar3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(avatar7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(avatar8)))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(avatar1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(avatar4, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(avatar2)
-                            .addComponent(avatar5)))
-                    .addComponent(avatar6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelEscojaAvatar)
-                        .addGap(271, 271, 271))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelIngreseNombre)
-                        .addGap(282, 282, 282))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(labelIngreseNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(labelEscojaAvatar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(avatar4)
-                    .addComponent(avatar3)
-                    .addComponent(avatar5)
-                    .addComponent(avatar6))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(avatar8)
-                    .addComponent(avatar1)
-                    .addComponent(avatar2)
-                    .addComponent(avatar7))
-                .addGap(92, 92, 92)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
-        );
+        jPanel1.add(textFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 91, 536, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 800, 480));
 
