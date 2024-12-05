@@ -95,4 +95,9 @@ public interface IFachadaInfraestructura {
      */
     public void enviarJugadorAnfitrion(JugadorDTO jugador) throws InfraestructuraException;
 
+    /**
+     * Permite establecer la conexión con el servidor.
+     */
+    public void establecerConexion();
+
 }
