@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.PartidaCreada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
 
 /**
  * Clase que implementa hilos (Runnable) para representar a cada cliente que se
@@ -107,21 +108,13 @@ public class ClienteHandler implements Runnable {
     private void broadcast(Object respuesta) {
         if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
             enviarHost(solicitudUnirsePartida);
+        } else if (respuesta instanceof VerificacionPartidaCreada verificacionPartidaCreada) {
+            enviarCliente(out, verificacionPartidaCreada);
         } else if (respuesta instanceof PartidaCreada partidaCreada) {
             if (partidaCreada.isPartidaCreada()) {
                 // Se indica que el host es el jugador que creó la partida.
                 RummyServer.host = out;
                 System.out.println("HOST: " + RummyServer.host);
-            }
-            // Responder al host
-            try {
-                // Se le manda la respuesta al host
-                out.writeObject(partidaCreada);
-                // Fuerza el envío inmediato de los datos almacenados en el buffer del Stream
-                out.flush();
-            } catch (IOException e) {
-                System.err.println("Error al enviar mensaje al host.");
-                System.out.println(e.getMessage());
             }
         } else {
             enviarTodos(respuesta);

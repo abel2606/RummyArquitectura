@@ -17,6 +17,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Parti
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.TurnoTerminado;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
 
 /**
  * Clase que representa el protocolo de comunicación entre los clientes y el
@@ -35,13 +36,18 @@ public class RummyProtocol {
         String tipoPeticion = peticion.getTipoPeticion(); // Se obtiene el tipo de petición.
         Object respuesta = null; // Se declara la variable de respuesta.
         switch (tipoPeticion) {
-            case "CREAR_PARTIDA": // Si se quiere crear una partida.
-                if (!RummyServer.partidaExistente) {
-                    RummyServer.partidaExistente = true;
-                    respuesta = new PartidaCreada(true);
+            case "VERIFICAR_PARTIDA_CREADA": // Si se quiere verificar si hay una partida existente.
+                if (RummyServer.partidaExistente) {
+                    // Devuelve true si YA HAY una partida.
+                    respuesta = new VerificacionPartidaCreada(true);
                 } else {
-                    respuesta = new PartidaCreada(false);
+                    // Devuelve false si NO HAY una partida.
+                    respuesta = new VerificacionPartidaCreada(false);
                 }
+                break;
+            case "CREAR_PARTIDA": // Si se quiere crear una partida.
+                // Se indica que el host es el jugador que creó la partida.
+                respuesta =  new PartidaCreada(true);
                 break;
             case "INICIAR_PARTIDA": // Cuando se inicia una partida.
                 IniciarPartida ip = (IniciarPartida) peticion;

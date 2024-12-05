@@ -52,4 +52,8 @@ public class ModeloInicio implements IModeloInicio, IOyenteManejadorRespuestas {
     public void setError(String error) {
         this.error = error;
     }
+
+    void suscribirse() {
+        manejador.subscribe(this);
+    }
 }

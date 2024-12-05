@@ -7,6 +7,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.Solic
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.TurnoTerminado;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
@@ -55,6 +56,11 @@ public class ManejadorRespuestas implements IManejadorRespuestas {
 
     public void manejarSolicitudUnirseEvaluada(SolicitudUnirseEvaluada peticion) {
         this.solicitudUnirseEvaluada = peticion.isSolicitudEvaluada();
+        notificar();
+    }
+    
+    public void manejarVerificacionPartidaCreada(VerificacionPartidaCreada verificacion) {
+        this.isPartidaCreada = verificacion.isPartidaCreada();
         notificar();
     }
 

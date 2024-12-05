@@ -11,6 +11,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Petici
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudIniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirseEvaluada;
 import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.SolicitudUnirsePartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.respuestasservidor.VerificacionPartidaCreada;
 import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
 
 /**
@@ -90,7 +91,9 @@ public class ClienteSocket implements Runnable {
             manejador = ManejadorRespuestas.getInstance();
             while (true) {
                 Object respuesta = in.readObject();
-                if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
+                if (respuesta instanceof VerificacionPartidaCreada verificacion) {
+                    manejador.manejarVerificacionPartidaCreada(verificacion);
+                } else if (respuesta instanceof SolicitudUnirsePartida solicitudUnirsePartida) {
                     manejador.manejarSolicitudUnirsePartida(solicitudUnirsePartida);
                 } else if (respuesta instanceof SolicitudIniciarPartida solicitudIniciarPartida) {
                     manejador.manejarSolicitudIniciarPartida(solicitudIniciarPartida);

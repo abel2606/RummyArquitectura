@@ -47,6 +47,8 @@ public class ControlInicio {
     public void verificarPartidaCreada() {
         infraestructura = new FachadaInfraestructura();
         try {
+            modelo.suscribirse();
+            infraestructura.establecerConexion();
             infraestructura.verificarPartidaCreada();
         } catch (InfraestructuraException ex) {
             modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");

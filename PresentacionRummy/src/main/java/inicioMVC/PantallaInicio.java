@@ -117,6 +117,7 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
         Boolean isPartidaCreada = modelo.isPartidaCreada();
         if (isPartidaCreada != null) {
             if (!isPartidaCreada) {
+                setVisible(false);
                 control.configurarPartida();
             } else {
                 JOptionPane.showMessageDialog(this, "Ya existe una partida :(",
