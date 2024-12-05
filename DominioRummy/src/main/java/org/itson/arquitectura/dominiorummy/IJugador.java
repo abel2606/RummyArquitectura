@@ -14,4 +14,6 @@ public interface IJugador {
     public void setNombre(String nombre);
     public void setAvatar(String avatar);
     public void setColores(List<Color> colores);
+    public String getNombre();
+    public String getAvatar();
 }

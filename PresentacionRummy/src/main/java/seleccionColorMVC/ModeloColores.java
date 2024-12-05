@@ -8,6 +8,7 @@ import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.TipoConjunto;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 
 /**
@@ -31,15 +32,15 @@ public class ModeloColores implements IModeloColores {
        pantalla = PantallaSeleccionarColor.getInstance();
     }
     
-    public void asignarColoresJugador(List<Integer> colores){
+    public void asignarColoresJugador(List<Integer> colores) throws InfraestructuraException{
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
         
-//        if(this.host == true){
-//            fachadaAplicacion.registrarJugador(jugador);
-//        } else {
-//            fachadaInfraestructura.solicitarInicioPartida(convertirJugadorAJugadorDTO(jugador));
-//        } 
+        if(this.host == true){
+            fachadaAplicacion.registrarJugador(jugador);
+        } else {
+            fachadaInfraestructura.solicitarUnirsePartida();
+        } 
     }
     
     public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host){
@@ -82,7 +83,7 @@ public class ModeloColores implements IModeloColores {
         return listaColores;
     }
     
-    private JugadorDTO convertirJugadorAJugadorDTO(Jugador jugador){
+    private JugadorDTO convertirJugadorAJugadorDTO(IJugador jugador){
         return new JugadorDTO(jugador.getNombre(), jugador.getAvatar());
     }
 }

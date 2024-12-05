@@ -148,6 +148,7 @@ public class Jugador implements IJugador {
         this.turno = turno;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
@@ -160,6 +161,7 @@ public class Jugador implements IJugador {
         this.puntacion = puntacion;
     }
 
+    @Override
     public String getAvatar() {
         return avatar;
     }
