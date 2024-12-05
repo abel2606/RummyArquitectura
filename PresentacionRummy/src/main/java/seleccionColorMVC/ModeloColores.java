@@ -8,9 +8,6 @@ import org.itson.arquitectura.dominiorummy.Color;
 import org.itson.arquitectura.dominiorummy.IJugador;
 import org.itson.arquitectura.dominiorummy.Jugador;
 import org.itson.arquitectura.dominiorummy.TipoConjunto;
-import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
-import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
-import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 
 /**
  * @author Equipo4
@@ -20,7 +17,6 @@ public class ModeloColores implements IModeloColores {
     private static ModeloColores modelo;
     private IPantallaSeleccionarColor pantalla;
     private IAplicacionFachada fachadaAplicacion;
-    private IFachadaInfraestructura fachadaInfraestructura;
     private String error;
     private String nombre;
     private String avatar;
@@ -32,29 +28,17 @@ public class ModeloColores implements IModeloColores {
     public void crearParametrosMVC() {
         pantalla = PantallaSeleccionarColor.getInstance();
     }
-
-    public void asignarColoresJugador(List<Integer> colores) {
+    
+    public void crearJugador(List<Integer> colores) {
+        fachadaAplicacion = new AplicacionFachada();
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
-        fachadaAplicacion = new AplicacionFachada();
-
-        if (host) {
-            fachadaAplicacion.registrarJugador(jugador);
-        } else {
-            fachadaAplicacion.registrarJugador(jugador);
-            JugadorDTO jugadorNuevo = new JugadorDTO(nombre, avatar);
-            try {
-                fachadaInfraestructura.enviarJugadorAnfitrion(jugadorNuevo);
-            } catch (InfraestructuraException ex) {
-                error = "Hubo un error al guardar el jugador. :(";
-            }
-        }
+        fachadaAplicacion.registrarJugador(jugador);
     }
 
-    public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host) {
+    public void asignarNombreAvatarJugador(String nombre, String avatar) {
         this.nombre = nombre;
         this.avatar = avatar;
-        this.host = host;
     }
 
     public void notificar() {
@@ -85,8 +69,5 @@ public class ModeloColores implements IModeloColores {
 
         return listaColores;
     }
-
-    private JugadorDTO convertirJugadorAJugadorDTO(IJugador jugador) {
-        return new JugadorDTO(jugador.getNombre(), jugador.getAvatar());
-    }
+    
 }

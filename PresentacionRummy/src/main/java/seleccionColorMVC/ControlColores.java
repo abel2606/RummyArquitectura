@@ -20,13 +20,12 @@ public class ControlColores {
         salaEspera = ControlSalaEspera.getInstance(null);
     }
 
-    public void asignarNombreYAvatarJugador(String nombre, String avatar, boolean host) {
-        modelo.asignarNombreYAvatarJugador(nombre, avatar, host);
-        mostrarVista();
+    public void asignarNombreAvatarJugador(String nombre, String avatar) {
+        modelo.asignarNombreAvatarJugador(nombre, avatar);
     }
 
-    public void asignarColoresJugador(List<Integer> colores) {
-        modelo.asignarColoresJugador(colores);
+    public void crearJugador(List<Integer> colores) {
+        modelo.crearJugador(colores);
     }
 
     public static ControlColores getInstance() {

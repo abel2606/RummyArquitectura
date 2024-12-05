@@ -6,6 +6,6 @@ package registrarJugadorMVC;
  */
 public interface IPantallaConfigurarJugador {
     
-    public void update();
+    public void update(IModeloConfigurarJugador modelo);
     
 }

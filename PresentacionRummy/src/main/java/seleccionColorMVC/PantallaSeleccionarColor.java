@@ -122,7 +122,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         listaColores.add(colorButton3.getSelectedColor().getRGB());
         listaColores.add(colorButton4.getSelectedColor().getRGB());
         
-        control.asignarColoresJugador(listaColores);
+        control.crearJugador(listaColores);
         setVisible(false);
     }//GEN-LAST:event_botonConfirmarActionPerformed
 
