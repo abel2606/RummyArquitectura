@@ -78,27 +78,7 @@ public class ClienteHandler implements Runnable {
         } catch (IOException ex) {
             Logger.getLogger(ClienteHandler.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            // Si un cliente se desconecta abruptamente.
-            try {
-                // Se elimina su Stream de salida de la lista.
-                if (out != null) {
-                    RummyServer.clientesConectados.remove(out);
-                }
-                
-                // Se cierra el socket.
-                if (clienteSocket != null && !clienteSocket.isClosed()) {
-                    clienteSocket.close();
-                }
-                
-                // Si es el host, ya no se hace referencia a él en la variable host.
-                if (RummyServer.host == out) {
-                    RummyServer.host = null;
-                }
-                
-                RummyServer.partidaExistente = false;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            desconectarUsuario();
         }
     }
 
@@ -146,6 +126,30 @@ public class ClienteHandler implements Runnable {
         } catch (IOException e) {
             System.err.println("Error al enviar mensaje a un cliente.");
             System.out.println(e.getMessage());
+        }
+    }
+
+    private void desconectarUsuario() {
+        // Si un cliente se desconecta abruptamente.
+        try {
+            // Se elimina su Stream de salida de la lista.
+            if (out != null) {
+                RummyServer.clientesConectados.remove(out);
+            }
+
+            // Se cierra el socket.
+            if (clienteSocket != null && !clienteSocket.isClosed()) {
+                clienteSocket.close();
+            }
+
+            // Si es el host, ya no se hace referencia a él en la variable host.
+            if (RummyServer.host == out) {
+                RummyServer.host = null;
+            }
+
+            RummyServer.partidaExistente = false;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

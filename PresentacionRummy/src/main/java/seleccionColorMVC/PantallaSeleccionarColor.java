@@ -58,7 +58,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         botonVolver.setText("Volver");
         botonVolver.setFocusPainted(false);
         botonVolver.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        botonVolver.setRadius(50);
+        botonVolver.setRadius(60);
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
@@ -69,7 +69,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         botonConfirmar.setText("Confirmar");
         botonConfirmar.setFocusPainted(false);
         botonConfirmar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        botonConfirmar.setRadius(50);
+        botonConfirmar.setRadius(60);
         botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonConfirmarActionPerformed(evt);
