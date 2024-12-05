@@ -18,9 +18,6 @@ public class ModeloConfigurarJugador implements IModeloConfigurarJugador {
         pantalla = PantallaConfigurarJugador.getInstance();
     }
 
-    public void crearJugador() {
-    }
-
     public void setHost(boolean isHost) {
         this.host = isHost;
     }

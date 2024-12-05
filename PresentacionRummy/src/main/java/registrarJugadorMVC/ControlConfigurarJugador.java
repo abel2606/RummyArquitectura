@@ -1,8 +1,6 @@
 package registrarJugadorMVC;
 
 import inicioMVC.ControlInicio;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;

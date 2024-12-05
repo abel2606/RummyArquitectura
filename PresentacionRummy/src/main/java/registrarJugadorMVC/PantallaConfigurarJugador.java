@@ -33,14 +33,14 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
 
         grupoImagenes = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        avatar8 = new javax.swing.JRadioButton();
-        avatar1 = new javax.swing.JRadioButton();
-        avatar2 = new javax.swing.JRadioButton();
-        avatar3 = new javax.swing.JRadioButton();
-        avatar4 = new javax.swing.JRadioButton();
-        avatar5 = new javax.swing.JRadioButton();
-        avatar6 = new javax.swing.JRadioButton();
-        avatar7 = new javax.swing.JRadioButton();
+        avatarLeia = new javax.swing.JRadioButton();
+        avatarR2D2 = new javax.swing.JRadioButton();
+        avatarLuke = new javax.swing.JRadioButton();
+        avatarHarleyQuinn = new javax.swing.JRadioButton();
+        avatarBatman = new javax.swing.JRadioButton();
+        avatarCatWoman = new javax.swing.JRadioButton();
+        avatarJoker = new javax.swing.JRadioButton();
+        avatarObiWan = new javax.swing.JRadioButton();
         botonVolver = new componentes.Boton();
         botonConfirmar = new componentes.Boton();
         labelEscojaAvatar = new javax.swing.JLabel();
@@ -55,53 +55,53 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        grupoImagenes.add(avatar8);
-        avatar8.setForeground(new java.awt.Color(255, 255, 255));
-        avatar8.setContentAreaFilled(false);
-        avatar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon6.png"))); // NOI18N
-        jPanel1.add(avatar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        grupoImagenes.add(avatarLeia);
+        avatarLeia.setForeground(new java.awt.Color(255, 255, 255));
+        avatarLeia.setContentAreaFilled(false);
+        avatarLeia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon6.png"))); // NOI18N
+        jPanel1.add(avatarLeia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
-        grupoImagenes.add(avatar1);
-        avatar1.setForeground(new java.awt.Color(255, 255, 255));
-        avatar1.setContentAreaFilled(false);
-        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon7.png"))); // NOI18N
-        jPanel1.add(avatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        grupoImagenes.add(avatarR2D2);
+        avatarR2D2.setForeground(new java.awt.Color(255, 255, 255));
+        avatarR2D2.setContentAreaFilled(false);
+        avatarR2D2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon7.png"))); // NOI18N
+        jPanel1.add(avatarR2D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
-        grupoImagenes.add(avatar2);
-        avatar2.setForeground(new java.awt.Color(255, 255, 255));
-        avatar2.setContentAreaFilled(false);
-        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon8.png"))); // NOI18N
-        jPanel1.add(avatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
+        grupoImagenes.add(avatarLuke);
+        avatarLuke.setForeground(new java.awt.Color(255, 255, 255));
+        avatarLuke.setContentAreaFilled(false);
+        avatarLuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon8.png"))); // NOI18N
+        jPanel1.add(avatarLuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
 
-        grupoImagenes.add(avatar3);
-        avatar3.setForeground(new java.awt.Color(255, 255, 255));
-        avatar3.setContentAreaFilled(false);
-        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon2.png"))); // NOI18N
-        jPanel1.add(avatar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
+        grupoImagenes.add(avatarHarleyQuinn);
+        avatarHarleyQuinn.setForeground(new java.awt.Color(255, 255, 255));
+        avatarHarleyQuinn.setContentAreaFilled(false);
+        avatarHarleyQuinn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon2.png"))); // NOI18N
+        jPanel1.add(avatarHarleyQuinn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
-        grupoImagenes.add(avatar4);
-        avatar4.setForeground(new java.awt.Color(255, 255, 255));
-        avatar4.setContentAreaFilled(false);
-        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon3.png"))); // NOI18N
-        jPanel1.add(avatar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
+        grupoImagenes.add(avatarBatman);
+        avatarBatman.setForeground(new java.awt.Color(255, 255, 255));
+        avatarBatman.setContentAreaFilled(false);
+        avatarBatman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon3.png"))); // NOI18N
+        jPanel1.add(avatarBatman, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
 
-        grupoImagenes.add(avatar5);
-        avatar5.setForeground(new java.awt.Color(255, 255, 255));
-        avatar5.setContentAreaFilled(false);
-        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon4.png"))); // NOI18N
-        jPanel1.add(avatar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
+        grupoImagenes.add(avatarCatWoman);
+        avatarCatWoman.setForeground(new java.awt.Color(255, 255, 255));
+        avatarCatWoman.setContentAreaFilled(false);
+        avatarCatWoman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon4.png"))); // NOI18N
+        jPanel1.add(avatarCatWoman, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
-        grupoImagenes.add(avatar6);
-        avatar6.setForeground(new java.awt.Color(255, 255, 255));
-        avatar6.setContentAreaFilled(false);
-        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon1.png"))); // NOI18N
-        jPanel1.add(avatar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+        grupoImagenes.add(avatarJoker);
+        avatarJoker.setForeground(new java.awt.Color(255, 255, 255));
+        avatarJoker.setContentAreaFilled(false);
+        avatarJoker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon1.png"))); // NOI18N
+        jPanel1.add(avatarJoker, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
-        grupoImagenes.add(avatar7);
-        avatar7.setForeground(new java.awt.Color(255, 255, 255));
-        avatar7.setContentAreaFilled(false);
-        avatar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
-        jPanel1.add(avatar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+        grupoImagenes.add(avatarObiWan);
+        avatarObiWan.setForeground(new java.awt.Color(255, 255, 255));
+        avatarObiWan.setContentAreaFilled(false);
+        avatarObiWan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
+        jPanel1.add(avatarObiWan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         botonVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,20 +159,24 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
         String avatar = "";
         if (!nombre.isBlank()) {
             if (grupoImagenes.getSelection() != null) {
-                if (avatar1.isSelected()) {
-                    avatar = "awa";
-                } else if (avatar2.isSelected()) {
-                    avatar = "ewe";
-                } else if (avatar3.isSelected()) {
-                    avatar = "iwi";
-                } else if (avatar4.isSelected()) {
-                    avatar = "owo";
-                } else if (avatar5.isSelected()) {
-                    avatar = "uwu";
-                } else if (avatar6.isSelected()) {
-                    avatar = "ywy";
+                if (avatarR2D2.isSelected()) {
+                    avatar = "icon-r2d2.png";
+                } else if (avatarLuke.isSelected()) {
+                    avatar = "icon-luke.png";
+                } else if (avatarLeia.isSelected()) {
+                    avatar = "icon-leia.png";
+                } else if (avatarObiWan.isSelected()) {
+                    avatar = "icon-obi-wan.png";
+                } else if (avatarHarleyQuinn.isSelected()) {
+                    avatar = "icon-harley-quinn.png";
+                } else if (avatarBatman.isSelected()) {
+                    avatar = "icon-batman.png";
+                } else if (avatarCatWoman.isSelected()) {
+                    avatar = "icon-cat-woman.png";
+                } else if (avatarJoker.isSelected()) {
+                    avatar = "icon-joker.png";
                 }
-                
+
                 if (host) {
                     control.iniciarSeleccionarColores(nombre, avatar);
                 } else {
@@ -202,7 +206,7 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
 
     @Override
     public void update(IModeloConfigurarJugador modelo) {
-        
+
         if (modelo.getError() == null) {
             setVisible(true);
             this.host = modelo.isHost();
@@ -213,14 +217,14 @@ public class PantallaConfigurarJugador extends javax.swing.JFrame implements IPa
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton avatar1;
-    private javax.swing.JRadioButton avatar2;
-    private javax.swing.JRadioButton avatar3;
-    private javax.swing.JRadioButton avatar4;
-    private javax.swing.JRadioButton avatar5;
-    private javax.swing.JRadioButton avatar6;
-    private javax.swing.JRadioButton avatar7;
-    private javax.swing.JRadioButton avatar8;
+    private javax.swing.JRadioButton avatarBatman;
+    private javax.swing.JRadioButton avatarCatWoman;
+    private javax.swing.JRadioButton avatarHarleyQuinn;
+    private javax.swing.JRadioButton avatarJoker;
+    private javax.swing.JRadioButton avatarLeia;
+    private javax.swing.JRadioButton avatarLuke;
+    private javax.swing.JRadioButton avatarObiWan;
+    private javax.swing.JRadioButton avatarR2D2;
     private componentes.Boton botonConfirmar;
     private componentes.Boton botonVolver;
     private javax.swing.ButtonGroup grupoImagenes;
