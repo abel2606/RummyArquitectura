@@ -30,6 +30,7 @@ partidaMVC\ControlPartida.class
 principal\Principal.class
 unirsePartidaMVC\PantallaUnirsePartida.class
 componentes\FichaComponente.class
+inicioMVC\IModeloInicio.class
 configurarPartidaMVC\IModeloConfigurarPartida.class
 registrarJugadorMVC\PantallaConfigurarJugador$2.class
 componentes\PanelImagen.class

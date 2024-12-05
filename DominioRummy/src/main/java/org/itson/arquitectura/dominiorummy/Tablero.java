@@ -34,4 +34,9 @@ public class Tablero {
         return grupoFichasTablero.agregarFicha(ficha);
     }
 
+    public List<GrupoFichas> getGruposFichas() {
+        return gruposFichas;
+    }
+
+    
 }

@@ -126,6 +126,7 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     /**
      * {@inheritDoc}
      */
+    @Override
     public void enviarJugadorAnfitrion(JugadorDTO jugador) throws InfraestructuraException {
         try {
             clienteSocket.enviarPeticion(creadorPeticiones.enviarJugadorAnfitrion(jugador));

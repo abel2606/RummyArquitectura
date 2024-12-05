@@ -21,9 +21,9 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         initComponents();
 
         setTitle("Rummy - Configurar Partida");
-        jPanel1.setBackground(new Color(53, 19, 79, 200));
-        radioButtonDiezFichas.setBackground(new Color(0, 0, 0, 0));
-        radioButtonTreceFichas.setBackground(new Color(0, 0, 0, 0));
+        jPanel1.setBackground(new Color(53, 19, 79, 255));
+        radioButtonDiezFichas.setBackground(new Color(53, 19, 79, 255));
+        radioButtonTreceFichas.setBackground(new Color(53, 19, 79, 255));
     }
 
     /**
@@ -50,10 +50,11 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
 
         comboBoxNumeroComodines.setBackground(new java.awt.Color(112, 48, 196));
         comboBoxNumeroComodines.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        comboBoxNumeroComodines.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxNumeroComodines.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
         comboBoxNumeroComodines.setFocusable(false);
 
@@ -87,10 +88,12 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CONFIGURAR PARTIDA");
 
+        botonCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 5, true));
         botonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         botonCancelar.setText("Cancelar");
         botonCancelar.setFocusPainted(false);
         botonCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        botonCancelar.setRadius(50);
         botonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCancelarActionPerformed(evt);
@@ -101,6 +104,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
         botonCrearPartida.setText("Crear Partida");
         botonCrearPartida.setFocusPainted(false);
         botonCrearPartida.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        botonCrearPartida.setRadius(50);
         botonCrearPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCrearPartidaActionPerformed(evt);
@@ -128,13 +132,13 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
                         .addComponent(jLabel3)
                         .addGap(32, 32, 32)
                         .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,11 +154,11 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(comboBoxNumeroComodines, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9))
+                    .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCrearPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 760, 350));

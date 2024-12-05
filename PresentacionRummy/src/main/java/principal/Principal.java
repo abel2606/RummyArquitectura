@@ -12,6 +12,9 @@ import inicioMVC.PantallaInicio;
 import registrarJugadorMVC.ControlConfigurarJugador;
 import registrarJugadorMVC.ModeloConfigurarJugador;
 import registrarJugadorMVC.PantallaConfigurarJugador;
+import seleccionColorMVC.ControlColores;
+import seleccionColorMVC.ModeloColores;
+import seleccionColorMVC.PantallaSeleccionarColor;
 import unirsePartidaMVC.ControlUnirsePartida;
 import unirsePartidaMVC.ModeloUnirsePartida;
 import unirsePartidaMVC.PantallaUnirsePartida;
@@ -26,6 +29,11 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        ModeloColores modeloColores = new ModeloColores();
+        ControlColores controlColores = new ControlColores();
+        PantallaSeleccionarColor pantallaColores = new PantallaSeleccionarColor();
+        
         ModeloConfigurarJugador modeloConfigurarJugador = ModeloConfigurarJugador.getInstance();
         ControlConfigurarJugador controlConfigurarJugador = ControlConfigurarJugador.getInstance();
         PantallaConfigurarJugador pantallaConfigurarJugador = PantallaConfigurarJugador.getInstance();
@@ -41,7 +49,7 @@ public class Principal {
         ModeloInicio modeloInicio = ModeloInicio.getInstance();
         ControlInicio controlInicio = ControlInicio.getInstance();
         PantallaInicio pantallaInicio = PantallaInicio.getInstance();
-
+        
         modeloInicio.crearParametrosMVC();
         controlInicio.crearParametrosMVC();
         pantallaInicio.crearParametrosMVC();
@@ -49,22 +57,19 @@ public class Principal {
         modeloConfigurarPartida.crearParametrosMVC();
         controlConfigurarPartida.crearParametrosMVC();
         pantallaConfigurarPartida.crearParametrosMVC();
+        
+        modeloUnirsePartida.crearParametrosMVC();
+        controlUnirsePartida.crearParametrosMVC();
+        pantallaUnirsePartida.crearParametrosMVC();
         
         modeloConfigurarJugador.crearParametrosMVC();
         controlConfigurarJugador.crearParametrosMVC();
         pantallaConfigurarJugador.crearParametrosMVC();
 
-        modeloUnirsePartida.crearParametrosMVC();
-        controlUnirsePartida.crearParametrosMVC();
-        pantallaUnirsePartida.crearParametrosMVC();
-
-        modeloConfigurarPartida.crearParametrosMVC();
-        controlConfigurarPartida.crearParametrosMVC();
-        pantallaConfigurarPartida.crearParametrosMVC();
-
-        modeloInicio.crearParametrosMVC();
-        controlInicio.crearParametrosMVC();
-        pantallaInicio.crearParametrosMVC();
+        modeloColores.crearParametrosMVC();
+        controlColores.crearParametrosMVC();
+        pantallaColores.crearParametrosMVC();
+        
     }
 
 }
