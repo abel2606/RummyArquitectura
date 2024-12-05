@@ -4,6 +4,7 @@
 package org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket;
 
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.CrearPartida;
+import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.EnviarJugadorAnfitrion;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.IniciarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.PeticionCliente;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.SolicitarIniciarPartida;
@@ -11,6 +12,7 @@ import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.Solici
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.EvaluarSolicitud;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarPartida;
 import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.TerminarTurno;
+import org.itson.arquitecturasoftware.comunicacionrummy.peticionescliente.VerificarPartidaCreada;
 import org.itson.arquitecturasoftware.dtorummy.dto.JugadorDTO;
 import org.itson.arquitecturasoftware.dtorummy.dto.PartidaDTO;
 
@@ -89,6 +91,14 @@ public class CreadorPeticiones {
      */
     public PeticionCliente crearPeticionTerminarPartida(PartidaDTO partida) {
         return new TerminarPartida(partida);
+    }
+
+    PeticionCliente verificarPartidaCreada() {
+        return new VerificarPartidaCreada();
+    }
+
+    PeticionCliente enviarJugadorAnfitrion(JugadorDTO jugador) {
+        return new EnviarJugadorAnfitrion(jugador);
     }
 
 }

@@ -15,8 +15,6 @@ public class CrearPartida extends PeticionCliente implements Serializable {
 
     /**
      * Constructor que recibe la partida creada.
-     *
-     * @param partida La partida creada
      */
     public CrearPartida() {
         super.tipoPeticion = "CREAR_PARTIDA";

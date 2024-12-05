@@ -42,7 +42,7 @@ public class ControlConfigurarPartida {
         modelo.suscribirseManejador();
         FachadaInfraestructura infraestructura = new FachadaInfraestructura();
         try {
-            infraestructura.crearPartida();
+            infraestructura.verificarPartidaCreada();
         } catch (InfraestructuraException ex) {
             Logger.getLogger(ModeloConfigurarPartida.class.getName()).log(Level.SEVERE, null, ex);
         }

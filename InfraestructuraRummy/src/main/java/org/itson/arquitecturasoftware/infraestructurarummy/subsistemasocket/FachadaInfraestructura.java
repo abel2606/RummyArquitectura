@@ -25,7 +25,6 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     public FachadaInfraestructura() {
         cliente = ClienteSocket.getInstance();
         creadorPeticiones = new CreadorPeticiones();
-        cliente.establecerConexionServidor();
     }
 
     /**
@@ -107,6 +106,22 @@ public class FachadaInfraestructura implements IFachadaInfraestructura {
     public void terminarPartida(PartidaDTO partida) throws InfraestructuraException {
         try {
             cliente.enviarPeticion(creadorPeticiones.crearPeticionTerminarTurno(partida));
+        } catch (IOException ex) {
+            throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
+        }
+    }
+
+    public void verificarPartidaCreada() throws InfraestructuraException {
+        try {
+            cliente.enviarPeticion(creadorPeticiones.verificarPartidaCreada());
+        } catch (IOException ex) {
+            throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
+        }
+    }
+    
+    public void enviarJugadorAnfitrion(JugadorDTO jugador) throws InfraestructuraException {
+        try {
+            cliente.enviarPeticion(creadorPeticiones.enviarJugadorAnfitrion(jugador));
         } catch (IOException ex) {
             throw new InfraestructuraException("Hubo un error al enviar la petición de terminar partida");
         }
