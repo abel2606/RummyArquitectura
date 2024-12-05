@@ -48,6 +48,7 @@ public class RummyProtocol {
             case "CREAR_PARTIDA": // Si se quiere crear una partida.
                 // Se indica que el host es el jugador que creó la partida.
                 respuesta =  new PartidaCreada(true);
+                RummyServer.partidaExistente = true;
                 break;
             case "INICIAR_PARTIDA": // Cuando se inicia una partida.
                 IniciarPartida ip = (IniciarPartida) peticion;

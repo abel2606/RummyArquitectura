@@ -190,7 +190,7 @@ public class PantallaConfigurarPartida extends JFrame implements IPantallaConfig
             control.verificarPartidaCreada();
         } else {
             JOptionPane.showMessageDialog(this, "Debe seleccionar el rango de fichas.",
-                    "Alerta!!!", JOptionPane.WARNING_MESSAGE);
+                    "¡Epa, papu!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_botonCrearPartidaActionPerformed
 

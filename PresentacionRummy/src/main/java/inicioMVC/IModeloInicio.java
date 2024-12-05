@@ -10,5 +10,10 @@ package inicioMVC;
  * @author Diego Valenzuela Parra
  */
 interface IModeloInicio {
+    
+    /**
+     * Método que devuelve TRUE si hay una partida en el servidor.
+     * @return 
+     */
     public Boolean isPartidaCreada();
 }

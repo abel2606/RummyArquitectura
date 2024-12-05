@@ -94,6 +94,8 @@ public class ClienteHandler implements Runnable {
                 if (RummyServer.host == out) {
                     RummyServer.host = null;
                 }
+                
+                RummyServer.partidaExistente = false;
             } catch (IOException e) {
                 e.printStackTrace();
             }

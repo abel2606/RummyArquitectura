@@ -9,5 +9,11 @@ package configurarPartidaMVC;
  * @author Diego Valenzuela Parra
  */
 interface IModeloConfigurarPartida {
+
+    /**
+     * * Método que devuelve TRUE si hay una partida en el servidor.
+     *
+     * @return
+     */
     public Boolean isPartidaCreada();
 }

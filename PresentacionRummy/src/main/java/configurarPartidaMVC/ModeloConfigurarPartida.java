@@ -26,6 +26,7 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IMod
     private ManejadorRespuestas manejador;
     private Boolean isPartidaCreada;
     private IPartida partida;
+    private String error;
 
     private ModeloConfigurarPartida() {
     }
@@ -37,6 +38,7 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IMod
 
     public void notificar() {
         vista.update(this);
+        isPartidaCreada = null;
     }
 
     public void crearPartida(int rangoFichas, int cantidadComodines) {
@@ -80,6 +82,10 @@ public class ModeloConfigurarPartida implements IOyenteManejadorRespuestas, IMod
             jugadoresDTO.add(jugadorDTO);
         }
         return jugadoresDTO;
+    }
+
+    void setError(String error) {
+        this.error = error;
     }
 
 }

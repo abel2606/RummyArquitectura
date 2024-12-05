@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import org.itson.arquitectura.dominiorummy.IPartida;
 import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
 import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import registrarJugadorMVC.ControlConfigurarJugador;
 
 /**
@@ -21,7 +22,7 @@ public class ControlConfigurarPartida {
     private ControlInicio inicio;
     private ControlConfigurarJugador controlConfigurarJugador;
     private ModeloConfigurarPartida modelo;
-    private IPartida partida;
+    private IFachadaInfraestructura infraestructura;
 
     private ControlConfigurarPartida() {
     }
@@ -30,17 +31,22 @@ public class ControlConfigurarPartida {
         inicio = ControlInicio.getInstance();
         controlConfigurarJugador = ControlConfigurarJugador.getInstance();
         modelo = ModeloConfigurarPartida.getInstance();
+        infraestructura = new FachadaInfraestructura();
     }
 
     public void crearPartida(int rangoFichas, int numeroComodines) {
-        modelo.crearPartida(rangoFichas, numeroComodines);
-        
-        controlConfigurarJugador.mostrarVista(true);
+        try {
+            modelo.crearPartida(rangoFichas, numeroComodines);
+            controlConfigurarJugador.mostrarVista(true);
+            infraestructura.crearPartida();
+        } catch (InfraestructuraException ex) {
+            modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+            modelo.notificar();
+        }
     }
     
     public void verificarPartidaCreada() {
         modelo.suscribirseManejador();
-        FachadaInfraestructura infraestructura = new FachadaInfraestructura();
         try {
             infraestructura.verificarPartidaCreada();
         } catch (InfraestructuraException ex) {
