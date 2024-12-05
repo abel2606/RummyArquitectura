@@ -4,6 +4,11 @@
 package inicioMVC;
 
 import configurarPartidaMVC.ControlConfigurarPartida;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.itson.arquitecturasoftware.infraestructurarummy.excepciones.InfraestructuraException;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.FachadaInfraestructura;
+import org.itson.arquitecturasoftware.infraestructurarummy.subsistemasocket.IFachadaInfraestructura;
 import unirsePartidaMVC.ControlUnirsePartida;
 
 /**
@@ -15,6 +20,7 @@ public class ControlInicio {
     private ControlConfigurarPartida configurarPartida;
     private ControlUnirsePartida unirsePartida;
     private ModeloInicio modelo;
+    private IFachadaInfraestructura infraestructura;
 
     private ControlInicio() {
     }
@@ -36,6 +42,7 @@ public class ControlInicio {
         configurarPartida = ControlConfigurarPartida.getInstance();
         unirsePartida = ControlUnirsePartida.getInstance();
         modelo = ModeloInicio.getInstance();
+        infraestructura = new FachadaInfraestructura();
     }
 
     public static ControlInicio getInstance() {
@@ -43,6 +50,15 @@ public class ControlInicio {
             control = new ControlInicio();
         }
         return control;
+    }
+
+    void verificarPartidaCreada() {
+        try {
+            infraestructura.verificarPartidaCreada();
+        } catch (InfraestructuraException ex) {
+            modelo.setError("Ocurrió un error al enviar la solicitud, intenta de nuevo más tarde.");
+            modelo.notificar();
+        }
     }
 
 }

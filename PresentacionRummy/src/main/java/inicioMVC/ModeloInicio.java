@@ -3,24 +3,32 @@
  */
 package inicioMVC;
 
+import org.itson.arquitecturasoftware.manejadorRespuestas.IManejadorRespuestas;
+import org.itson.arquitecturasoftware.manejadorRespuestas.ManejadorRespuestas;
+
 /**
  *
  * @author ricar
  */
-public class ModeloInicio {
+public class ModeloInicio implements IModeloInicio {
 
     private static ModeloInicio modelo;
-    private IPantallaInicio pantalla;
+    private IPantallaInicio vista;
+
+    private ManejadorRespuestas manejador;
+    private Boolean isPartidaCreada;
+    private String error;
 
     private ModeloInicio() {
     }
-    
+
     public void crearParametrosMVC() {
-        pantalla = PantallaInicio.getInstance();
+        manejador = ManejadorRespuestas.getInstance();
+        vista = PantallaInicio.getInstance();
     }
 
     public void notificar() {
-        pantalla.update();
+        vista.update(this);
     }
 
     public static ModeloInicio getInstance() {
@@ -28,5 +36,24 @@ public class ModeloInicio {
             modelo = new ModeloInicio();
         }
         return modelo;
+    }
+
+    void verificarPartidaCreada() {
+
+    }
+
+    @Override
+    public Boolean isPartidaCreada() {
+        return isPartidaCreada;
+    }
+
+    @Override
+    public void update(IManejadorRespuestas contexto) {
+        this.VerificacionPartidaCreada = contexto.getVerificacionPartidaCreada){
+        notificar();
+    }
+        
+    public void setError(String error) {
+        this.error = error;
     }
 }

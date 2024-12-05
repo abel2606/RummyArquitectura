@@ -96,7 +96,8 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
 
     private void botonCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearPartidaActionPerformed
         setVisible(false);
-        control.configurarPartida();
+        control.verificarPartidaCreada();
+//        control.configurarPartida();
     }//GEN-LAST:event_botonCrearPartidaActionPerformed
 
     public static PantallaInicio getInstance(){
@@ -111,8 +112,12 @@ public class PantallaInicio extends javax.swing.JFrame implements IPantallaInici
     }
     
     @Override
-    public void update() {
+    public void update(IModeloInicio modelo) {
         setVisible(true);
+        boolean isPartidaCreada = modelo.isPartidaCreada();
+        if (isPartidaCreada) {
+            control.configurarPartida();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
