@@ -54,35 +54,8 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" pref="694" max="-2" attributes="0"/>
-                          <EmptySpace pref="32" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="checkboxColor1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="checkboxColor5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="checkboxColor2" min="-2" max="-2" attributes="0"/>
-                              <Component id="checkboxColor6" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="checkboxColor3" min="-2" max="-2" attributes="0"/>
-                              <Component id="checkboxColor7" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="checkboxColor4" min="-2" max="-2" attributes="0"/>
-                              <Component id="checkboxColor8" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="jLabel4" min="-2" pref="694" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -91,21 +64,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="80" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="checkboxColor1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="checkboxColor5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkboxColor8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="botonConfirmar" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="botonVolver" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
@@ -157,94 +116,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonConfirmarActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="3" red="fc" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="3" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="fc0303"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkboxColor1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor2">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fc" green="3" red="7" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fc" green="3" red="7" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="0703fc"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="f4" red="fc" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="f4" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="fcf403"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor4">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="fc" red="18" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="fc" red="18" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="18fc03"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor5">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="8c" green="3" red="fc" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="8c" green="3" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="fc038c"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor6">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fc" green="3" red="a9" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fc" green="3" red="a9" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="a903fc"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor7">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="6b" red="fc" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3" green="6b" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="fc6b03"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="checkboxColor8">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="000000"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
