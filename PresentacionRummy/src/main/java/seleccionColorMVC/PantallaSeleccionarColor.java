@@ -1,18 +1,12 @@
 package seleccionColorMVC;
 
+import componentes.ColorChooserButton;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
 
 /**
  *
@@ -25,13 +19,12 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
     /**
      * Creates new form PantallaSeleccionarColor1
      */
-    public PantallaSeleccionarColor() {
+    private PantallaSeleccionarColor() {
         initComponents();
         crearBotonesColores();
 //        validacionColores();
         
         setTitle("Rummy - Seleccionar Colores");
-        jPanel1.setBackground(new Color(53, 19, 79, 200));
     }
 
     /**
@@ -51,9 +44,10 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SeleccionarColor");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 3, true));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,6 +58,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         botonVolver.setText("Volver");
         botonVolver.setFocusPainted(false);
         botonVolver.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        botonVolver.setRadius(50);
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
@@ -74,6 +69,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         botonConfirmar.setText("Confirmar");
         botonConfirmar.setFocusPainted(false);
         botonConfirmar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        botonConfirmar.setRadius(50);
         botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonConfirmarActionPerformed(evt);
@@ -86,24 +82,24 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(169, 169, 169)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(191, 191, 191)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9))
         );
 
@@ -113,6 +109,7 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
@@ -120,10 +117,11 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
-        listaColores.add(Integer.parseInt("0x"+convertirColorAHex(colorButton1.getSelectedColor())));
-        listaColores.add(Integer.parseInt("0x"+convertirColorAHex(colorButton2.getSelectedColor())));
-        listaColores.add(Integer.parseInt("0x"+convertirColorAHex(colorButton3.getSelectedColor())));
-        listaColores.add(Integer.parseInt("0x"+convertirColorAHex(colorButton4.getSelectedColor())));
+        listaColores.add(colorButton1.getSelectedColor().getRGB());
+        listaColores.add(colorButton2.getSelectedColor().getRGB());
+        listaColores.add(colorButton3.getSelectedColor().getRGB());
+        listaColores.add(colorButton4.getSelectedColor().getRGB());
+        
         control.asignarColoresJugador(listaColores);
         setVisible(false);
     }//GEN-LAST:event_botonConfirmarActionPerformed
@@ -208,67 +206,5 @@ public class PantallaSeleccionarColor extends javax.swing.JFrame implements IPan
     ColorChooserButton colorButton1 = new ColorChooserButton(Color.RED);
     ColorChooserButton colorButton2 = new ColorChooserButton(Color.BLUE);
     ColorChooserButton colorButton3 = new ColorChooserButton(Color.GREEN);
-    ColorChooserButton colorButton4 = new ColorChooserButton(Color.YELLOW);
-      
-    public class ColorChooserButton extends JButton {
-
-        private Color current;
-
-        public ColorChooserButton(Color c) {
-            setSelectedColor(c); 
-            addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent arg0) {
-                    Color newColor = JColorChooser.showDialog(null, "Choose a color", current);
-                    setSelectedColor(newColor);
-                }
-            });
-        }
-
-        public Color getSelectedColor() {
-            return current;
-        }
-
-        public void setSelectedColor(Color newColor) {
-            setSelectedColor(newColor, true);
-        }
-
-        public void setSelectedColor(Color newColor, boolean notify) {
-
-            if (newColor == null) return;
-
-            current = newColor;
-            setIcon(createIcon(current, 16, 16));
-            repaint();
-
-            if (notify) {
-                // Notify everybody that may be interested.
-                for (ColorChangedListener l : listeners) {
-                    l.colorChanged(newColor);
-                }
-            }
-        }
-
-        public static interface ColorChangedListener {
-            public void colorChanged(Color newColor);
-        }
-
-        private List<ColorChangedListener> listeners = new ArrayList<ColorChangedListener>();
-
-        public void addColorChangedListener(ColorChangedListener toAdd) {
-            listeners.add(toAdd);
-        }
-
-        public static  ImageIcon createIcon(Color main, int width, int height) {
-            BufferedImage image = new BufferedImage(width, height, java.awt.image.BufferedImage.TYPE_INT_RGB);
-            Graphics2D graphics = image.createGraphics();
-            graphics.setColor(main);
-            graphics.fillRect(0, 0, width, height);
-            graphics.setXORMode(Color.DARK_GRAY);
-            graphics.drawRect(0, 0, width-1, height-1);
-            image.flush();
-            ImageIcon icon = new ImageIcon(image);
-            return icon;
-        }
-    }
+    ColorChooserButton colorButton4 = new ColorChooserButton(Color.BLACK);
 }

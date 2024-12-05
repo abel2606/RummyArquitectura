@@ -12,8 +12,7 @@ public class ControlColores {
     private ControlSalaEspera salaEspera;
     private ModeloColores modelo;
 
-    public ControlColores() {
-        modelo = new ModeloColores();
+    private ControlColores() {
     }
 
     public void crearParametrosMVC() {

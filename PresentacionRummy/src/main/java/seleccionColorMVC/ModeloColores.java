@@ -2,6 +2,7 @@ package seleccionColorMVC;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.itson.arquitectura.aplicacionrummy.servicios.AplicacionFachada;
 import org.itson.arquitectura.aplicacionrummy.servicios.IAplicacionFachada;
 import org.itson.arquitectura.dominiorummy.Color;
 import org.itson.arquitectura.dominiorummy.IJugador;
@@ -25,7 +26,7 @@ public class ModeloColores implements IModeloColores {
     private String avatar;
     private boolean host;
 
-    public ModeloColores() {
+    private ModeloColores() {
     }
 
     public void crearParametrosMVC() {
@@ -35,10 +36,12 @@ public class ModeloColores implements IModeloColores {
     public void asignarColoresJugador(List<Integer> colores) {
         IJugador jugador = new Jugador(this.nombre, this.avatar);
         jugador.setColores((convertirColores(colores)));
+        fachadaAplicacion = new AplicacionFachada();
 
         if (host) {
             fachadaAplicacion.registrarJugador(jugador);
         } else {
+            fachadaAplicacion.registrarJugador(jugador);
             JugadorDTO jugadorNuevo = new JugadorDTO(nombre, avatar);
             try {
                 fachadaInfraestructura.enviarJugadorAnfitrion(jugadorNuevo);
