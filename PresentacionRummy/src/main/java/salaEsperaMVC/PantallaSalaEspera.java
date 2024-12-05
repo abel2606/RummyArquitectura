@@ -4,6 +4,7 @@
  */
 package salaEsperaMVC;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -26,6 +27,8 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
      */
     private PantallaSalaEspera() {
         initComponents();
+        
+        jPanel1.setBackground(new Color(53, 19, 79, 255));
 
         lblAvatar2.setVisible(false);
         lblAvatar3.setVisible(false);
@@ -71,6 +74,8 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
         setMinimumSize(new java.awt.Dimension(1040, 640));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 48, 196), 4, true));
+
         btnListo.setForeground(new java.awt.Color(255, 255, 255));
         btnListo.setText("¡Listo!");
         btnListo.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -87,6 +92,7 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
         btnSalir.setRadius(60);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Esperando jugadores");
 
@@ -153,7 +159,7 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblEstado2, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                                .addComponent(lblEstado2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -161,7 +167,7 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblNombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblEstado4, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))))
+                                .addComponent(lblEstado4, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))))
                 .addGap(53, 53, 53))
         );
         jPanel1Layout.setVerticalGroup(
@@ -193,7 +199,7 @@ public class PantallaSalaEspera extends javax.swing.JFrame implements IPantallaS
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 800, 520));

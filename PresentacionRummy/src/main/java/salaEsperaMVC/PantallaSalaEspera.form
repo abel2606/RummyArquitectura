@@ -29,6 +29,15 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true" thickness="4">
+              <Color PropertyName="color" blue="c4" green="30" red="70" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="50" width="800" height="520"/>
@@ -64,7 +73,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblNombre2" min="-2" pref="412" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="lblEstado2" pref="188" max="32767" attributes="0"/>
+                                  <Component id="lblEstado2" pref="180" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblNombre3" min="-2" pref="412" max="-2" attributes="0"/>
@@ -74,7 +83,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblNombre4" min="-2" pref="412" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="lblEstado4" pref="188" max="32767" attributes="0"/>
+                                  <Component id="lblEstado4" pref="180" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -117,7 +126,7 @@
                       <Component id="btnListo" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="btnSalir" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,6 +163,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Esperando jugadores"/>
